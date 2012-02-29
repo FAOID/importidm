@@ -33,21 +33,19 @@ public class ImportIdm {
 
 	@Test
 	public void testImportSurvey() throws Exception {
-		// IMPORT MODEL
 		importModel();
 	}
 
 	private Survey importModel() throws IOException, SurveyImportException,
 			InvalidIdmlException {
 		File idmFile = new File(
-				"E:/work/workspace/importidm/src/main/resources/idnfi.idm.xml");
+				"E:\\work\\new\\importidm\\src\\main\\resources\\idnfi.idm.xml");
 		FileInputStream is = new FileInputStream(idmFile);
-		// URL idm = ClassLoader.getSystemResource("test.idm.xml");
-		// InputStream is = idm.openStream();
 		CollectIdmlBindingContext idmlBindingContext = new CollectIdmlBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext
 				.createSurveyUnmarshaller();
 		Survey survey = surveyUnmarshaller.unmarshal(is);
+		surveyDao.clearModel(survey);
 		surveyDao.importModel(survey);
 		return survey;
 	}

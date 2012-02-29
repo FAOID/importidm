@@ -21,7 +21,7 @@
 	                <label>Plot</label>
 	                <tabs>
 		                <tab name="plot_det">
-		                    <label>Details (2)</label>
+		                    <label>Detail (2)</label>
 		                </tab>
 		                <tab name="shrubs_regen">
 		                    <label>Shrubs &amp; Regeneration (3)</label>
@@ -3080,7 +3080,7 @@
     </spatialReferenceSystems>
     <schema>
         <entity name="cluster" ui:tab="cluster">
-            <label>Cluster</label>
+            <label>Klaster</label>
             <entity name="task" multiple="true" since="2.0">
                 <label type="heading">Quality assurance field</label>
                 <code name="type" list="bp_data_task" key="true">
