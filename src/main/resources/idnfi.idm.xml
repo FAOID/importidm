@@ -5,7 +5,6 @@
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/openforis/idm/reengineering/idm-api/src/main/resources/idml3.xsd">
      <!--http://www.openforis.org/idml/3.0 ../../../../idm-api/src/main/resources/idml3.xsd-->
-    <name>idnfi</name>
     <project>Indonesia NFI</project>
     <cycle>1</cycle>
     <description>
