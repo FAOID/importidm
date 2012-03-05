@@ -3134,7 +3134,7 @@
         </spatialReferenceSystem>
     </spatialReferenceSystems>
     <schema>
-        <entity name="cluster" ui:tab="cluster">
+        <entity name="enumeration_natural_forest" ui:tab="cluster">
             <entity name="key_generation">
                 <code name="id" key="true" list="sampling_design" strict="false">
                     <label>ID</label>
@@ -3161,10 +3161,11 @@
                 <number name="small_or_big_part" type="integer" required="true">
                     <label>Small or Big Part</label>
                 </number>
-            </entity><!-- key_generation-->
+            </entity>
+            <!-- key_generation-->
 
             <entity name="data_location">
-                <number name="control" type="integer">
+                <number name="record_type" type="integer">
                     <label>Record Type (foxpro:01)</label>
                 </number>
                 <code name="province" required="true" list="province_list">
@@ -3209,7 +3210,9 @@
                 <code name="month" list="month" required="true">
                     <label>Month</label>
                 </code>
-            </entity><!-- data_location-->
+            </entity>
+            <!-- data_location-->
+            
             <entity name="trees_and_poles">
                 <number name="consec_number" type="integer">
                     <label>Consecutive Number (auto filled in FoxPro)</label>
@@ -3229,6 +3232,7 @@
                 <number name="damage" type="integer">
                     <label>Damage</label>
                 </number>
+                
                 <entity name="tree_more_than_20cm">
                     <number name="butress_height" type="real">
                         <label>Butress Height(foxpro:calculate)</label>
@@ -3243,6 +3247,7 @@
                         <label>Infestation</label>
                     </number>
                 </entity>
+                
                 <entity name="bole_height">
                     <number name="horizontal_distance" type="real">
                         <label>Horizontal Distance</label>
@@ -3257,7 +3262,7 @@
                         <label>Per. Crown Point</label>
                     </number>
                 </entity>
-                
+
                 <entity name="buttress_and_dab">
                     <number name="horizontal_distance" type="real">
                         <label>Horizontal Distance</label>
@@ -3275,9 +3280,50 @@
                         <label>1/4 bars</label>
                     </number>
                 </entity>
-            </entity>
-                
-            
-        </entity>
+            </entity><!-- trees and poles -->
+            <entity name="seedling_saplings_rattan">
+                <number name="consec_number" type="integer">
+                    <label>Consecutive Number (auto filled in FoxPro)</label>
+                </number>
+                <text name="name_of_species">
+                    <label>Name of species</label>
+                </text>
+                <number name="count">
+                    <label>Count (foxpro:just label, noentry in foxpro)</label>
+                </number>
+                <number name="record_type" type="integer">
+                    <label>Record Type (foxpro:4)</label>
+                </number>
+                <text name="species_code">
+                    <label>Species Code (foxpro:just label, noentry in foxpro)</label>
+                </text>
+                <number name="seedlings" type="integer">
+                    <label>Seedlings</label>
+                </number>
+                <number name="saplings" type="integer">
+                    <label>Saplings</label>
+                </number>
+                <number name="rattan_less_than_29m" type="real">
+                    <label>Rattan &lt;= 2.9m</label>
+                </number>
+                <entity name="rattan_greater_than_3m">
+                    <number name="stems" type="real">
+                        <label>Stems</label>
+                    </number>
+                    <number name="diameter_max" type="real">
+                        <label>Diameter Maximum</label>
+                    </number>
+                    <number name="diameter_min" type="real">
+                        <label>Diameter Minimum</label>
+                    </number>
+                    <number name="d_average" type="real">
+                        <label>D average</label>
+                    </number>
+                    <number name="l_average" type="real">
+                        <label>L average</label>
+                    </number>
+                </entity><!-- rattan_greater_than_3m -->
+            </entity><!--seedling_saplings_rattan-->
+        </entity><!-- enumeration natural forest -->
     </schema>
 </survey>
