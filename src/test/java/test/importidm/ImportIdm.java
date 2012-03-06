@@ -20,7 +20,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:test-context.xml" })
+@ContextConfiguration
 @TransactionConfiguration(defaultRollback = false)
 @Transactional
 public class ImportIdm {
