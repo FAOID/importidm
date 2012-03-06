@@ -39,7 +39,7 @@ public class ImportIdm {
 	private Survey importModel() throws IOException, SurveyImportException,
 			InvalidIdmlException {
 		File idmFile = new File(
-				"E:\\work\\importidm\\src\\main\\resources\\candidate.idnfi.idm.xml");
+				"E:\\work\\importidm\\src\\main\\resources\\simple.idm.xml");
 		FileInputStream is = new FileInputStream(idmFile);
 		CollectIdmlBindingContext idmlBindingContext = new CollectIdmlBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
