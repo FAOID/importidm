@@ -3137,120 +3137,484 @@
         </spatialReferenceSystem>
     </spatialReferenceSystems>
     <schema>
-        <entity name="enumeration_natural_forest" ui:tab="cluster">
-            <entity name="key_generation">
-                <code name="id" key="true" list="sampling_design" strict="false">
-                    <label>ID</label>
-                </code>
-                <coordinate name="vehicle_location" required="true">
-                    <label>Vehicle location</label>
-                    <distance max="100000" to="lookup('sampling_design', 'plot_centre', id, 1)"
-                        flag="error"/>
-                    <distance max="50000" to="lookup('sampling_design', 'plot_centre', id, 1)"
-                        flag="warn"/>
-                </coordinate>
-                <number name="inventory_year" type="integer" required="true">
-                    <label>Inventory Year</label>
-                </number>
-                <number name="control_number" type="integer" required="true">
-                    <label>Control Number</label>
-                </number>
-                <number name="track_number" type="integer" required="true">
-                    <label>Track Number</label>
-                </number>
-                <number name="sub_plot_number" type="integer" required="true">
-                    <label>Sub Plot Number</label>
-                </number>
-                <number name="small_or_big_part" type="integer" required="true">
-                    <label>Small or Big Part</label>
-                </number>
-            </entity>
-            <!-- key_generation-->
+        <entity name="cluster" ui:tab="cluster">
+            <!--<entity name="key_generation">-->
+            <code name="id" key="true" list="sampling_design" strict="false">
+                <label>ID</label>
+            </code>
+            <coordinate name="vehicle_location" required="true">
+                <label>Vehicle location</label>
+                <distance max="100000" to="lookup('sampling_design', 'plot_centre', id, 1)"
+                    flag="error"/>
+                <distance max="50000" to="lookup('sampling_design', 'plot_centre', id, 1)"
+                    flag="warn"/>
+            </coordinate>
+            <number name="inventory_year" type="integer" required="true">
+                <label>Inventory Year</label>
+            </number>
+            <number name="control_number" type="integer" required="true">
+                <label>Control Number</label>
+            </number>
+            <number name="track_number" type="integer" required="true">
+                <label>Track Number</label>
+            </number>
+            <number name="sub_plot_number" type="integer" required="true">
+                <label>Sub Plot Number</label>
+            </number>
+            <number name="small_or_big_part" type="integer" required="true">
+                <label>Small or Big Part</label>
+            </number>
+            <!--</entity>-->
+            <!-- key_generation -->
 
-            <entity name="data_location">
-                <number name="record_type" type="integer">
-                    <label>Record Type (foxpro:01)</label>
-                </number>
-                <code name="province" required="true" list="province_list">
-                    <label>Province</label>
-                </code>
-                <code name="land_system" required="true" list="land_system_list">
-                    <label>Land System</label>
-                </code>
-                <number name="altitude" required="true" type="integer">
-                    <label>Altitude</label>
-                </number>
-                <code name="land_category" required="true" list="land_category_list">
-                    <label>Land Category</label>
-                </code>
-                <code name="forest_type" required="true" list="forest_type_list">
-                    <label>Forest Type</label>
-                </code>
-                <code name="stand_condition" required="true" list="stand_condition_list">
-                    <label>Stand Condition</label>
-                </code>
-                <number name="year_of_logging" required="true" type="integer">
-                    <label>Year of Logging</label>
-                </number>
-                <code name="terrain" required="true" list="terrain_list">
-                    <label>Terrain</label>
-                </code>
-                <code name="slope" required="true" list="slope_list">
-                    <label>Slope</label>
-                </code>
-                <code name="aspect" required="true" list="aspect_list">
-                    <label>Aspect</label>
-                </code>
-                <number name="sector_degree" type="real">
-                    <label>Sector Degree</label>
-                </number>
-                <number name="distance_to_segment" type="real">
-                    <label>Distance to Segment (empty in the foxpro)</label>
-                </number>
-                <number name="crew_number" type="real">
-                    <label>Crew Number</label>
-                </number>
-                <code name="month" list="month" required="true">
-                    <label>Month</label>
-                </code>
+            <entity name="enumeration_natural_forest">
+                <entity name="data_location">
+                    <!-- form A-->
+                    <number name="record_type" type="integer">
+                        <label>Record Type (foxpro:01)</label>
+                    </number>
+                    <code name="province" required="true" list="province_list">
+                        <label>Province</label>
+                    </code>
+                    <code name="land_system" required="true" list="land_system_list">
+                        <label>Land System</label>
+                    </code>
+                    <number name="altitude" required="true" type="integer">
+                        <label>Altitude</label>
+                    </number>
+                    <code name="land_category" required="true" list="land_category_list">
+                        <label>Land Category</label>
+                    </code>
+                    <code name="forest_type" required="true" list="forest_type_list">
+                        <label>Forest Type</label>
+                    </code>
+                    <code name="stand_condition" required="true" list="stand_condition_list">
+                        <label>Stand Condition</label>
+                    </code>
+                    <number name="year_of_logging" required="true" type="integer">
+                        <label>Year of Logging</label>
+                    </number>
+                    <code name="terrain" required="true" list="terrain_list">
+                        <label>Terrain</label>
+                    </code>
+                    <code name="slope" required="true" list="slope_list">
+                        <label>Slope</label>
+                    </code>
+                    <code name="aspect" required="true" list="aspect_list">
+                        <label>Aspect</label>
+                    </code>
+                    <number name="sector_degree" type="real">
+                        <label>Sector Degree</label>
+                    </number>
+                    <number name="distance_to_segment" type="real">
+                        <label>Distance to Segment (empty in the foxpro)</label>
+                    </number>
+                    <number name="crew_number" type="real">
+                        <label>Crew Number</label>
+                    </number>
+                    <code name="month" list="month" required="true">
+                        <label>Month</label>
+                    </code>
+                </entity>
+                <!-- data_location-->
+
+                <entity name="trees_and_poles">
+                    <number name="consec_number" type="integer">
+                        <label>Consecutive Number (auto filled in FoxPro)</label>
+                    </number>
+                    <number name="control" type="integer">
+                        <label>Record Type (foxpro:02)</label>
+                    </number>
+                    <text name="name_of_species">
+                        <label>Name of Species</label>
+                    </text>
+                    <text name="species_code">
+                        <label>Species Code</label>
+                    </text>
+                    <number name="dbr_or_ab" type="real">
+                        <label>DBR or AB</label>
+                    </number>
+                    <number name="damage" type="integer">
+                        <label>Damage</label>
+                    </number>
+
+                    <entity name="tree_more_than_20cm">
+                        <number name="butress_height" type="real">
+                            <label>Butress Height(foxpro:calculate)</label>
+                        </number>
+                        <number name="bole_height" type="real">
+                            <label>Bole height(foxpro:calculated)</label>
+                        </number>
+                        <number name="grade" type="integer">
+                            <label>Grade</label>
+                        </number>
+                        <number name="infestation" type="integer">
+                            <label>Infestation</label>
+                        </number>
+                    </entity>
+
+                    <entity name="bole_height">
+                        <number name="horizontal_distance" type="real">
+                            <label>Horizontal Distance</label>
+                        </number>
+                        <number name="height_of_base" type="real">
+                            <label>Height of Base</label>
+                        </number>
+                        <number name="percent_base" type="real">
+                            <label>Percent base</label>
+                        </number>
+                        <number name="per_crown_point" type="real">
+                            <label>Per. Crown Point</label>
+                        </number>
+                    </entity>
+
+                    <entity name="buttress_and_dab">
+                        <number name="horizontal_distance" type="real">
+                            <label>Horizontal Distance</label>
+                        </number>
+                        <number name="percent_base" type="real">
+                            <label>Percent base</label>
+                        </number>
+                        <number name="percent_buttress" type="real">
+                            <label>Percent buttress</label>
+                        </number>
+                        <number name="full_bars" type="real">
+                            <label>Full bars</label>
+                        </number>
+                        <number name="quarter_bars" type="real">
+                            <label>1/4 bars</label>
+                        </number>
+                    </entity>
+                </entity>
+                <!-- trees and poles -->
+                <entity name="seedling_saplings_rattan">
+                    <number name="consec_number" type="integer">
+                        <label>Consecutive Number (auto filled in FoxPro)</label>
+                    </number>
+                    <text name="name_of_species">
+                        <label>Name of species</label>
+                    </text>
+                    <number name="count">
+                        <label>Count (foxpro:just label, noentry in foxpro)</label>
+                    </number>
+                    <number name="record_type" type="integer">
+                        <label>Record Type (foxpro:4)</label>
+                    </number>
+                    <text name="species_code">
+                        <label>Species Code (foxpro:just label, noentry in foxpro)</label>
+                    </text>
+                    <number name="seedlings" type="integer">
+                        <label>Seedlings</label>
+                    </number>
+                    <number name="saplings" type="integer">
+                        <label>Saplings</label>
+                    </number>
+                    <number name="rattan_less_than_29m" type="real">
+                        <label>Rattan &lt;= 2.9m</label>
+                    </number>
+                    <entity name="rattan_greater_than_3m">
+                        <number name="stems" type="real">
+                            <label>Stems</label>
+                        </number>
+                        <number name="diameter_max" type="real">
+                            <label>Diameter Maximum</label>
+                        </number>
+                        <number name="diameter_min" type="real">
+                            <label>Diameter Minimum</label>
+                        </number>
+                        <number name="d_average" type="real">
+                            <label>D average</label>
+                        </number>
+                        <number name="l_average" type="real">
+                            <label>L average</label>
+                        </number>
+                    </entity>
+                    <!-- rattan_greater_than_3m -->
+                </entity>
+                <!--seedling_saplings_rattan-->
             </entity>
-            <!-- data_location-->
-            
-            <entity name="trees_and_poles">
+            <!-- enumeration natural forest -->
+
+            <entity name="enumeration_plantation_mangrove_and_pine">
+                <entity name="data_location">
+                    <!-- form A-->
+                    <number name="record_type" type="integer">
+                        <label>Record Type (foxpro:01)</label>
+                    </number>
+                    <code name="province" required="true" list="province_list">
+                        <label>Province</label>
+                    </code>
+                    <code name="land_system" required="true" list="land_system_list">
+                        <label>Land System</label>
+                    </code>
+                    <number name="altitude" required="true" type="integer">
+                        <label>Altitude</label>
+                    </number>
+                    <code name="land_category" required="true" list="land_category_list">
+                        <label>Land Category</label>
+                    </code>
+                    <code name="forest_type" required="true" list="forest_type_list">
+                        <label>Forest Type</label>
+                    </code>
+                    <code name="stand_condition" required="true" list="stand_condition_list">
+                        <label>Stand Condition</label>
+                    </code>
+                    <number name="year_of_logging" required="true" type="integer">
+                        <label>Year of Logging</label>
+                    </number>
+                    <code name="terrain" required="true" list="terrain_list">
+                        <label>Terrain</label>
+                    </code>
+                    <code name="slope" required="true" list="slope_list">
+                        <label>Slope</label>
+                    </code>
+                    <code name="aspect" required="true" list="aspect_list">
+                        <label>Aspect</label>
+                    </code>
+                    <number name="sector_degree" type="real">
+                        <label>Sector Degree</label>
+                    </number>
+                    <number name="distance_to_segment" type="real">
+                        <label>Distance to Segment (empty in the foxpro)</label>
+                    </number>
+                    <number name="crew_number" type="real">
+                        <label>Crew Number</label>
+                    </number>
+                    <code name="month" list="month" required="true">
+                        <label>Month</label>
+                    </code>
+                </entity>
+                <!-- data_location-->
+
+                <entity name="trees_and_poles">
+                    <number name="consec_number" type="integer">
+                        <label>Consecutive Number (auto filled in FoxPro)</label>
+                    </number>
+                    <number name="control" type="integer">
+                        <label>Record Type (foxpro:02)</label>
+                    </number>
+                    <text name="name_of_species">
+                        <label>Name of Species</label>
+                    </text>
+                    <text name="species_code">
+                        <label>Species Code</label>
+                    </text>
+                    <number name="dbr_or_ab" type="real">
+                        <label>DBR or AB</label>
+                    </number>
+                    <number name="damage" type="integer">
+                        <label>Damage</label>
+                    </number>
+
+                    <entity name="tree_more_than_20cm">
+                        <number name="butress_height" type="real">
+                            <label>Butress Height(foxpro:calculate)</label>
+                        </number>
+                        <number name="bole_height" type="real">
+                            <label>Bole height(foxpro:calculated)</label>
+                        </number>
+                        <number name="grade" type="integer">
+                            <label>Grade</label>
+                        </number>
+                        <number name="infestation" type="integer">
+                            <label>Infestation</label>
+                        </number>
+                    </entity>
+
+                    <entity name="bole_height">
+                        <number name="horizontal_distance" type="real">
+                            <label>Horizontal Distance</label>
+                        </number>
+                        <number name="height_of_base" type="real">
+                            <label>Height of Base</label>
+                        </number>
+                        <number name="percent_base" type="real">
+                            <label>Percent base</label>
+                        </number>
+                        <number name="per_crown_point" type="real">
+                            <label>Per. Crown Point</label>
+                        </number>
+                    </entity>
+
+                    <entity name="buttress_and_dab">
+                        <number name="horizontal_distance" type="real">
+                            <label>Horizontal Distance</label>
+                        </number>
+                        <number name="percent_base" type="real">
+                            <label>Percent base</label>
+                        </number>
+                        <number name="percent_buttress" type="real">
+                            <label>Percent buttress</label>
+                        </number>
+                        <number name="full_bars" type="real">
+                            <label>Full bars</label>
+                        </number>
+                        <number name="quarter_bars" type="real">
+                            <label>1/4 bars</label>
+                        </number>
+                    </entity>
+                </entity>
+                <!-- trees and poles -->
+                <entity name="seedling_saplings_rattan">
+                    <number name="consec_number" type="integer">
+                        <label>Consecutive Number (auto filled in FoxPro)</label>
+                    </number>
+                    <text name="name_of_species">
+                        <label>Name of species</label>
+                    </text>
+                    <number name="count">
+                        <label>Count (foxpro:just label, noentry in foxpro)</label>
+                    </number>
+                    <number name="record_type" type="integer">
+                        <label>Record Type (foxpro:4)</label>
+                    </number>
+                    <text name="species_code">
+                        <label>Species Code (foxpro:just label, noentry in foxpro)</label>
+                    </text>
+                    <number name="seedlings" type="integer">
+                        <label>Seedlings</label>
+                    </number>
+                    <number name="saplings" type="integer">
+                        <label>Saplings</label>
+                    </number>
+                    <number name="rattan_less_than_29m" type="real">
+                        <label>Rattan &lt;= 2.9m</label>
+                    </number>
+                    <entity name="rattan_greater_than_3m">
+                        <number name="stems" type="real">
+                            <label>Stems</label>
+                        </number>
+                        <number name="diameter_max" type="real">
+                            <label>Diameter Maximum</label>
+                        </number>
+                        <number name="diameter_min" type="real">
+                            <label>Diameter Minimum</label>
+                        </number>
+                        <number name="d_average" type="real">
+                            <label>D average</label>
+                        </number>
+                        <number name="l_average" type="real">
+                            <label>L average</label>
+                        </number>
+                    </entity>
+                    <!-- rattan_greater_than_3m -->
+                </entity>
+                <!--seedling_saplings_rattan-->
+            </entity>
+            <!--enumeration_plantation_mangrove_and_pine-->
+
+            <entity name="enumeration_bamboo">
                 <number name="consec_number" type="integer">
                     <label>Consecutive Number (auto filled in FoxPro)</label>
                 </number>
-                <number name="control" type="integer">
-                    <label>Record Type (foxpro:02)</label>
+                <number name="record_type" type="integer">
+                    <label>Record Type (foxpro:10)</label>
                 </number>
                 <text name="name_of_species">
-                    <label>Name of Species</label>
+                    <label>Name of species</label>
                 </text>
                 <text name="species_code">
                     <label>Species Code</label>
                 </text>
-                <number name="dbr_or_ab" type="real">
-                    <label>DBR or AB</label>
-                </number>
-                <number name="damage" type="integer">
-                    <label>Damage</label>
-                </number>
-                
-                <entity name="tree_more_than_20cm">
-                    <number name="butress_height" type="real">
-                        <label>Butress Height(foxpro:calculate)</label>
+
+                <entity name="number_of_bamboo_culms">
+                    <number name="one_year" type="integer">
+                        <label>1 - Year</label>
                     </number>
-                    <number name="bole_height" type="real">
-                        <label>Bole height(foxpro:calculated)</label>
+                    <number name="two_year" type="integer">
+                        <label>2 - Year</label>
                     </number>
-                    <number name="grade" type="integer">
-                        <label>Grade</label>
+                    <number name="total" type="integer">
+                        <label>Total</label>
                     </number>
-                    <number name="infestation" type="integer">
-                        <label>Infestation</label>
+                    <number name="live_stumps" type="integer">
+                        <label>Live Stumps</label>
                     </number>
                 </entity>
-                
+                <entity name="one_year_old">
+                    <entity name="low_part">
+                        <number name="dbh" type="real">
+                            <label>D B H</label>
+                        </number>
+                        <number name="length">
+                            <label>Length</label>
+                        </number>
+                        <number name="weight">
+                            <label>Weight</label>
+                        </number>
+                    </entity>
+                    <entity name="top">
+                        <number name="length">
+                            <label>Length</label>
+                        </number>
+                        <number name="weight">
+                            <label>Weight</label>
+                        </number>
+                    </entity>
+                </entity>
+
+                <entity name="two_year_old">
+                    <entity name="low_part">
+                        <number name="dbh" type="real">
+                            <label>D B H</label>
+                        </number>
+                        <number name="length">
+                            <label>Length</label>
+                        </number>
+                        <number name="weight">
+                            <label>Weight</label>
+                        </number>
+                    </entity>
+                    <entity name="top">
+                        <number name="length">
+                            <label>Length</label>
+                        </number>
+                        <number name="weight">
+                            <label>Weight</label>
+                        </number>
+                    </entity>
+                </entity>
+
+                <entity name="more_than_three_year_old">
+                    <entity name="low_part">
+                        <number name="dbh" type="real">
+                            <label>D B H</label>
+                        </number>
+                        <number name="length">
+                            <label>Length</label>
+                        </number>
+                        <number name="weight">
+                            <label>Weight</label>
+                        </number>
+                    </entity>
+                    <entity name="top">
+                        <number name="length">
+                            <label>Length</label>
+                        </number>
+                        <number name="weight">
+                            <label>Weight</label>
+                        </number>
+                    </entity>
+                </entity>
+            </entity>
+            <!--enumeration_bamboo-->
+            <entity name="enumeration_sagu">
+                <text name="species_or_variety">
+                    <label>Species/Variety</label>
+                </text>
+                <number name="record_type" type="integer">
+                    <label>Record Type (foxpro:15)</label>
+                </number>
+                <text name="species_code">
+                    <label>Species Code</label>
+                </text>
+                <number name="cons_culm_number" type="integer">
+                    <label>Cons Culm Number</label>
+                </number>
+                <number name="clump_diameter" type="real">
+                    <label>Clump Diameter</label>
+                </number>
+
                 <entity name="bole_height">
                     <number name="horizontal_distance" type="real">
                         <label>Horizontal Distance</label>
@@ -3259,74 +3623,119 @@
                         <label>Height of Base</label>
                     </number>
                     <number name="percent_base" type="real">
-                        <label>Percent base</label>
+                        <label>Percent Base</label>
                     </number>
-                    <number name="per_crown_point" type="real">
-                        <label>Per. Crown Point</label>
+
+                    <number name="percent_crown_point" type="real">
+                        <label>Percent Crown Point</label>
                     </number>
                 </entity>
 
-                <entity name="buttress_and_dab">
-                    <number name="horizontal_distance" type="real">
-                        <label>Horizontal Distance</label>
+                <entity name="m1_m2_m3_stems">
+                    <number name="number_of_stems_in_clump" type="integer">
+                        <label>Number of Stems in Clump</label>
                     </number>
-                    <number name="percent_base" type="real">
-                        <label>Percent base</label>
+                    <number name="stems_consec_no_clump" type="integer">
+                        <label>Stems Consecutive No/Clump</label>
                     </number>
-                    <number name="percent_buttress" type="real">
-                        <label>Percent buttress</label>
+                    <number name="damage" type="integer">
+                        <label>Damage</label>
                     </number>
-                    <number name="full_bars" type="real">
-                        <label>Full bars</label>
+                    <number name="dbh" type="real">
+                        <label>D B H</label>
                     </number>
-                    <number name="quarter_bars" type="real">
-                        <label>1/4 bars</label>
+                    <number name="bole_height" type="real">
+                        <label>Bole Height</label>
+                    </number>
+                    <number name="maturity_class" type="integer">
+                        <label>Maturity Class</label>
                     </number>
                 </entity>
-            </entity><!-- trees and poles -->
-            <entity name="seedling_saplings_rattan">
-                <number name="consec_number" type="integer">
-                    <label>Consecutive Number (auto filled in FoxPro)</label>
-                </number>
-                <text name="name_of_species">
-                    <label>Name of species</label>
-                </text>
-                <number name="count">
-                    <label>Count (foxpro:just label, noentry in foxpro)</label>
-                </number>
-                <number name="record_type" type="integer">
-                    <label>Record Type (foxpro:4)</label>
-                </number>
-                <text name="species_code">
-                    <label>Species Code (foxpro:just label, noentry in foxpro)</label>
-                </text>
-                <number name="seedlings" type="integer">
-                    <label>Seedlings</label>
-                </number>
-                <number name="saplings" type="integer">
-                    <label>Saplings</label>
-                </number>
-                <number name="rattan_less_than_29m" type="real">
-                    <label>Rattan &lt;= 2.9m</label>
-                </number>
-                <entity name="rattan_greater_than_3m">
-                    <number name="stems" type="real">
-                        <label>Stems</label>
+
+                <entity name="count_for_young_or_overmature_stemps">
+                    <number name="no_seedlings_in_sub_plot" type="integer">
+                        <label>No Seedlings in Sub Plot</label>
                     </number>
-                    <number name="diameter_max" type="real">
-                        <label>Diameter Maximum</label>
+                    <number name="no_seedlings_in_clump" type="integer">
+                        <label>No Seedlings in Clump</label>
                     </number>
-                    <number name="diameter_min" type="real">
-                        <label>Diameter Minimum</label>
+                    <number name="m4_stems_in_clump" type="integer">
+                        <label>M4 Stems in Clump</label>
                     </number>
-                    <number name="d_average" type="real">
-                        <label>D average</label>
+                </entity>
+            </entity>
+            <!-- enumeration_sagu -->
+
+            <entity name="enumeration_nipa">
+                <entity name="data_location">
+                    <!-- form A, mostly copied from enumeration natural forest, there are some fields differences though-->
+                    <number name="record_type" type="integer">
+                        <label>Record Type (foxpro:16)</label>
                     </number>
-                    <number name="l_average" type="real">
-                        <label>L average</label>
+                    <code name="province" required="true" list="province_list">
+                        <label>Province</label>
+                    </code>
+                    <code name="land_system" required="true" list="land_system_list">
+                        <label>Land System</label>
+                    </code>
+                    <number name="altitude" required="true" type="integer">
+                        <label>Altitude</label>
                     </number>
-                </entity><!-- rattan_greater_than_3m -->
-            </entity><!--seedling_saplings_rattan-->
-        </entity><!-- enumeration natural forest -->
+                    <code name="land_category" required="true" list="land_category_list">
+                        <label>Land Category</label>
+                    </code>
+                    <code name="forest_type" required="true" list="forest_type_list">
+                        <label>Forest Type</label>
+                    </code>
+                    <code name="stand_condition" required="true" list="stand_condition_list">
+                        <label>Stand Condition Cut/Uncut (choice : c/u)</label>
+                    </code>
+                    <number name="year_of_cutting" required="true" type="integer">
+                        <label>Year of Cutting</label>
+                    </number>
+                    <code name="terrain" required="true" list="terrain_list">
+                        <label>Terrain</label>
+                    </code>
+                    <code name="slope" required="true" list="slope_list">
+                        <label>Slope</label>
+                    </code>
+                    <code name="aspect" required="true" list="aspect_list">
+                        <label>Aspect</label>
+                    </code>
+                </entity>
+                <!-- data_location-->
+                <entity name="partition">
+                    <number name="sector_degree" type="real">
+                        <label>Sector Degree</label>
+                    </number>
+                    <number name="distance_to_segment" type="real">
+                        <label>Distance to Segment (empty in the foxpro)</label>
+                    </number>
+                    <number name="large_small_part" type="integer">
+                        <label>Large / Small Part</label>
+                    </number>
+                </entity>
+
+                <entity name="number_of_records">
+                    <number name="m1" type="integer">
+                        <label>M1</label>
+                    </number>
+                    <number name="m2" type="integer">
+                        <label>M2</label>
+                    </number>
+                    <number name="no_of_seedlings" type="integer">
+                        <label>Number of Seedlings</label>
+                    </number>
+                </entity>
+                <number name="crew_number" type="real">
+                    <label>Crew Number</label>
+                </number>
+                <code name="month" list="month" required="true">
+                    <label>Month</label>
+                </code>
+            </entity>
+            <!-- enumeration_nipa -->
+        </entity>
+        <!-- cluster -->
     </schema>
 </survey>
