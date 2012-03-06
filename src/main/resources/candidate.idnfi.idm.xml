@@ -13,14 +13,17 @@
             <tabs>
                 <tab name="cluster">
                     <label>Klaster</label>
-                    <!--<tabs>
+                </tab>
+                <tab name="plot">
+                    <label>Plot</label>
+                    <tabs>
                         <tab name="key_generation">
                             <label>Key Criteria</label>
                         </tab>
                         <tab name="data_location">
                             <label>Data Location</label>
                         </tab>
-                    </tabs>-->
+                    </tabs>
                 </tab>
             </tabs>
         </flex>
