@@ -3,10 +3,13 @@ package test.importidm;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import org.openforis.collect.model.CollectSurvey;
 import org.openforis.collect.model.CollectSurveyContext;
 import org.openforis.collect.persistence.RecordDao;
 import org.openforis.collect.persistence.SurveyDao;
@@ -46,15 +49,14 @@ public class ImportIdm {
 
 	private Survey importModel() throws IOException, SurveyImportException,
 			InvalidIdmlException {
-		File idmFile = new File(
-				"E:\\work\\importidm\\src\\main\\resources\\simple.idm.xml");
-		FileInputStream is = new FileInputStream(idmFile);
-		CollectIdmlBindingContext idmlBindingContext = new CollectIdmlBindingContext(new CollectSurveyContext(expressionFactory, validator));
-		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext
-				.createSurveyUnmarshaller();
-		Survey survey = surveyUnmarshaller.unmarshal(is);
-		//surveyDao.clearModel();
+		URL idm = ClassLoader.getSystemResource("updated.candidate.idnfi.idm.xml");
+		InputStream is = idm.openStream();
+		CollectSurveyContext surveyContext = new CollectSurveyContext(expressionFactory, validator);
+		CollectIdmlBindingContext idmlBindingContext = new CollectIdmlBindingContext(surveyContext);
+		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
+		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
 		survey.setName("idnfi");
+		surveyDao.clearModel();
 		surveyDao.importModel(survey);
 		return survey;
 	}
