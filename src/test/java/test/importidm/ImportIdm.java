@@ -49,7 +49,7 @@ public class ImportIdm {
 
 	private Survey importModel() throws IOException, SurveyImportException,
 			InvalidIdmlException {
-		URL idm = ClassLoader.getSystemResource("updated.candidate.idnfi.idm.xml");
+		URL idm = ClassLoader.getSystemResource("candidate.idnfi.idm.xml");
 		InputStream is = idm.openStream();
 		CollectSurveyContext surveyContext = new CollectSurveyContext(expressionFactory, validator);
 		CollectIdmlBindingContext idmlBindingContext = new CollectIdmlBindingContext(surveyContext);
