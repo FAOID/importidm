@@ -14,7 +14,7 @@
                 <tab name="cluster">
                     <label>Klaster</label>
                 </tab>
-                <tab name="plot">
+<!--                <tab name="plot">
                     <label>Plot</label>
                     <tabs>
                         <tab name="key_generation">
@@ -24,6 +24,30 @@
                             <label>Data Location</label>
                         </tab>
                     </tabs>
+                </tab>-->
+                <tab name="natural_forest">
+                    <label>Natural Forest</label>
+                </tab>
+                <tab name="mangrove_pine">
+                    <label>Mangrove and Pine</label>
+                </tab>
+                <tab name="bamboo">
+                    <label>Bamboo</label>
+                </tab>
+                <tab name="sagu">
+                    <label>Sagu</label>
+                </tab>
+                <tab name="nipa">
+                    <label>Nipa</label>
+                </tab>
+                <tab name="plot_a">
+                    <label>Plot A</label>
+                </tab>
+                <tab name="plot_b">
+                    <label>Plot B</label>
+                </tab>
+                <tab name="sample_tree">
+                    <label>Sample Tree</label>
                 </tab>
             </tabs>
         </flex>
@@ -413,6 +437,7 @@
     <schema>
         <entity name="cluster" ui:tab="cluster">
             <!--<entity name="key_generation">-->
+            <label type="instance">Cluster</label>
             <code name="id" key="true" list="sampling_design" strict="false">
                 <label>ID</label>
             </code>
@@ -441,7 +466,7 @@
             <!--</entity>-->
             <!-- key_generation -->
 
-            <entity name="enumeration_natural_forest">
+            <entity name="enumeration_natural_forest" ui:tab="natural_forest">
                 <entity name="data_location">
                     <!-- form A-->
                     <number name="record_type" type="integer">
@@ -609,7 +634,7 @@
             </entity>
             <!-- enumeration natural forest -->
 
-            <entity name="enumeration_plantation_mangrove_and_pine">
+            <entity name="enumeration_plantation_mangrove_and_pine" ui:tab="mangrove_pine">
                 <entity name="data_location">
                     <!-- form A-->
                     <number name="record_type" type="integer">
@@ -777,7 +802,7 @@
             </entity>
             <!--enumeration_plantation_mangrove_and_pine-->
 
-            <entity name="enumeration_bamboo">
+            <entity name="enumeration_bamboo" ui:tab="bamboo">
                 <number name="consec_number" type="integer">
                     <label>Consecutive Number (auto filled in FoxPro)</label>
                 </number>
@@ -872,7 +897,7 @@
                 </entity>
             </entity>
             <!--enumeration_bamboo-->
-            <entity name="enumeration_sagu">
+            <entity name="enumeration_sagu" ui:tab="sagu">
                 <text name="species_or_variety">
                     <label>Species/Variety</label>
                 </text>
@@ -940,7 +965,7 @@
             </entity>
             <!-- enumeration_sagu -->
 
-            <entity name="enumeration_nipa">
+            <entity name="enumeration_nipa" ui:tab="nipa">
                 <entity name="data_location">
                     <!-- form A, mostly copied from enumeration natural forest, there are some fields differences though-->
                     <number name="record_type" type="integer">
@@ -1073,7 +1098,7 @@
                 </entity>
             </entity>
             <!-- enumeration_nipa -->
-            <entity name="permanent_plot_a">
+            <entity name="permanent_plot_a" ui:tab="plot_a">
                 <entity name="partition">
                     <number name="squares" type="integer">
                         <label>Squares</label>
@@ -1190,7 +1215,7 @@
             </entity>
             <!--permanent_plot_a-->
 
-            <entity name="permanent_plot_b">
+            <entity name="permanent_plot_b" ui:tab="plot_b">
                 <entity name="partition">
                     <number name="sector_degrees" type="real">
                         <label>Sector Degrees</label>
@@ -1298,7 +1323,7 @@
 
             </entity>
             <!-- permanent_plot_b -->
-            <entity name="measurement_of_felled_sample_tree">
+            <entity name="measurement_of_felled_sample_tree" ui:tab="sample_tree">
                 <entity name="key_generation"><!-- maybe we must restructure this -->
                     <coordinate name="vehicle_location" required="true">
                         <label>Vehicle location</label>
