@@ -568,12 +568,40 @@
             <label type="item">Land System</label>
             <items>
                 <item>
+                    <code>0</code>
+                    <label>Flat and undulating (0-10%)</label>
+                </item>
+                <item>
                     <code>1</code>
-                    <label>What A</label>
+                    <label>Lowland gully</label>
                 </item>
                 <item>
                     <code>2</code>
-                    <label>What B</label>
+                    <label>Lower slope or mould</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>Mid slope</label>
+                </item>
+                <item>
+                    <code>4</code>
+                    <label>Uper slope</label>
+                </item>
+                <item>
+                    <code>5</code>
+                    <label>Slope gully</label>
+                </item>
+                <item>
+                    <code>6</code>
+                    <label>Hill top</label>
+                </item>
+                <item>
+                    <code>7</code>
+                    <label>Ridge</label>
+                </item>
+                <item>
+                    <code>8</code>
+                    <label>Rock slide</label>
                 </item>
             </items>
         </list>
@@ -581,25 +609,69 @@
             <label type="item">Land System</label>
             <items>
                 <item>
+                    <code>0</code>
+                    <label>0 - 10 % step 10</label>
+                </item>
+                <item>
                     <code>1</code>
-                    <label>What A</label>
+                    <label>11 - 25 % step 15 limit for caterpillar</label>
                 </item>
                 <item>
                     <code>2</code>
-                    <label>What B</label>
+                    <label>26 - 45 % step 20 TGHK limit</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>46-70 % step 25 limit for cable</label>
+                </item>
+                <item>
+                    <code>4</code>
+                    <label>71 - 100 % step 30 limit for enumeration</label>
+                </item>
+                <item>
+                    <code>5</code>
+                    <label>101+ %</label>
                 </item>
             </items>
         </list>
         <list name="aspect_list">
-            <label type="item">Land System</label>
+            <label type="item">Aspect</label>
             <items>
                 <item>
+                    <code>0</code>
+                    <label>Flat and undulating (0-10%)</label>
+                </item>
+                <item>
                     <code>1</code>
-                    <label>What A</label>
+                    <label>N 338-22 degrees</label>
                 </item>
                 <item>
                     <code>2</code>
-                    <label>What B</label>
+                    <label>NE 23-67 degrees</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>E 68-112 degrees</label>
+                </item>
+                <item>
+                    <code>4</code>
+                    <label>SE 113-157 degrees</label>
+                </item>
+                <item>
+                    <code>5</code>
+                    <label>S 158-202 degrees</label>
+                </item>
+                <item>
+                    <code>6</code>
+                    <label>SW 203-247 degrees</label>
+                </item>
+                <item>
+                    <code>7</code>
+                    <label>W 248-292 degrees</label>
+                </item>
+                <item>
+                    <code>8</code>
+                    <label>NW 293-337 degrees</label>
                 </item>
             </items>
         </list>
