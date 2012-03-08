@@ -13,19 +13,7 @@
             <tabs>
                 <tab name="cluster">
                     <label>Klaster</label>
-                </tab>
-<!--                <tab name="plot">
-                    <label>Plot</label>
-                    <tabs>
-                        <tab name="key_generation">
-                            <label>Key Criteria</label>
-                        </tab>
-                        <tab name="data_location">
-                            <label>Data Location</label>
-                        </tab>
-                    </tabs>
-                </tab>-->
-                <tab name="natural_forest">
+                </tab><tab name="natural_forest">
                     <label>Natural Forest</label>
                 </tab>
                 <tab name="mangrove_pine">
@@ -215,7 +203,87 @@
                 </item>
                 <item>
                     <code>2</code>
-                    <label>Jakarta</label>
+                    <label>Sumatera Utara</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>Sumatera Barat</label>
+                </item>
+                <item>
+                    <code>4</code>
+                    <label>Riau</label>
+                </item>
+                <item>
+                    <code>5</code>
+                    <label>Jambi</label>
+                </item>
+                <item>
+                    <code>6</code>
+                    <label>Sumatera Selatan</label>
+                </item>
+                <item>
+                    <code>7</code>
+                    <label>Lampung</label>
+                </item>
+                <item>
+                    <code>8</code>
+                    <label>Bengkulu</label>
+                </item>
+                <item>
+                    <code>14</code>
+                    <label>Bali</label>
+                </item>
+                <item>
+                    <code>15</code>
+                    <label>Nusa Tenggara Barat</label>
+                </item>
+                <item>
+                    <code>16</code>
+                    <label>Nusa Tenggara Timur</label>
+                </item>
+                <item>
+                    <code>17</code>
+                    <label>Timor Timur</label>
+                </item>
+                <item>
+                    <code>18</code>
+                    <label>Kalimantan Barat</label>
+                </item>
+                <item>
+                    <code>19</code>
+                    <label>Kalimantan Tengah</label>
+                </item>
+                <item>
+                    <code>20</code>
+                    <label>Kalimantan Selatan</label>
+                </item>
+                <item>
+                    <code>21</code>
+                    <label>Kalimantan Timur</label>
+                </item>
+                <item>
+                    <code>22</code>
+                    <label>Sulawesi Utara</label>
+                </item>
+                <item>
+                    <code>23</code>
+                    <label>Sulawesi Tengah</label>
+                </item>
+                <item>
+                    <code>24</code>
+                    <label>Sulawesi Tenggara</label>
+                </item>
+                <item>
+                    <code>25</code>
+                    <label>Sulawesi Selatan</label>
+                </item>
+                <item>
+                    <code>26</code>
+                    <label>Maluku</label>
+                </item>
+                <item>
+                    <code>27</code>
+                    <label>Irian Jaya</label>
                 </item>
             </items>
         </list>
@@ -224,11 +292,76 @@
             <items>
                 <item>
                     <code>1</code>
-                    <label>What A</label>
+                    <label>Tidal</label>
                 </item>
                 <item>
                     <code>2</code>
-                    <label>What B</label>
+                    <label>Beach</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>Swamp and Wetland</label>
+                </item>
+                <item>
+                    <code>4</code>
+                    <label>Meander Belt</label>
+                </item>
+                <item>
+                    <code>5</code>
+                    <label>Fans, plains and valleys</label>
+                </item>
+                <item>
+                    <code>6</code>
+                    <label>Terrace</label>
+                </item>
+                <item>
+                    <code>7</code>
+                    <label>Rolling land, amplitude up to 50 m</label>
+                </item>
+                <item>
+                    <code>8</code>
+                    <label>Hilly land, amplitude 50 - 300m</label>
+                </item>
+                <item>
+                    <code>9</code>
+                    <label>Mountainous, amplitude more than 300m</label>
+                </item>
+            </items>
+        </list>
+        <list name="altitude_list">
+            <label type="item">Altitude</label>
+            <items>
+                <item>
+                    <code>0</code>
+                    <label>0-99m</label>
+                </item>
+                <item>
+                    <code>1</code>
+                    <label>100-199m</label>
+                </item>
+                <item>
+                    <code>2</code>
+                    <label>200-299m</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>300-399m etc.</label>
+                </item>
+                <item>
+                    <code>10</code>
+                    <label>1000-1099m</label>
+                </item>
+                <item>
+                    <code>11</code>
+                    <label>1100-1199m</label>
+                </item>
+                <item>
+                    <code>12</code>
+                    <label>1200-1299m</label>
+                </item>
+                <item>
+                    <code>13</code>
+                    <label>1300-1399m etc.</label>
                 </item>
             </items>
         </list>
@@ -237,37 +370,197 @@
             <items>
                 <item>
                     <code>1</code>
-                    <label>What A</label>
+                    <label>Tidal forest</label>
                 </item>
                 <item>
                     <code>2</code>
-                    <label>What B</label>
+                    <label>Coastal forest</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>Wetland forest (including swamp)</label>
+                </item>
+                <item>
+                    <code>4</code>
+                    <label>Dryland forest below 1000 m</label>
+                </item>
+                <item>
+                    <code>5</code>
+                    <label>Submontane forest 1000-2000 m</label>
+                </item>
+                <item>
+                    <code>6</code>
+                    <label>Montane forst above 2000 m</label>
+                </item>
+                <item>
+                    <code>7</code>
+                    <label>Forest and agroforestry plantations</label>
+                </item>
+                <item>
+                    <code>8</code>
+                    <label>Forest fallow</label>
+                </item>
+                <item>
+                    <code>9</code>
+                    <label>Bushland</label>
+                </item>
+                <item>
+                    <code>10</code>
+                    <label>Grassland dry</label>
+                </item>
+                <item>
+                    <code>11</code>
+                    <label>Grassland wet</label>
+                </item>
+                <item>
+                    <code>12</code>
+                    <label>Tree crops</label>
+                </item>
+                <item>
+                    <code>13</code>
+                    <label>Agriculture</label>
+                </item>
+                <item>
+                    <code>14</code>
+                    <label>Unvegetated</label>
+                </item>
+                <item>
+                    <code>15</code>
+                    <label>Water</label>
+                </item>
+                <item>
+                    <code>16</code>
+                    <label>Settlement, town</label>
                 </item>
             </items>
         </list>
         <list name="forest_type_list">
-            <label type="item">Land System</label>
+            <label type="item">Forest Type</label>
             <items>
                 <item>
                     <code>1</code>
-                    <label>What A</label>
+                    <label>Mangrove Forest</label>
                 </item>
                 <item>
                     <code>2</code>
-                    <label>What B</label>
+                    <label>Nipah Forest</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>Palm Forest</label>
+                </item>
+                <item>
+                    <code>4</code>
+                    <label>Coastal forest</label>
+                </item>
+                <item>
+                    <code>5</code>
+                    <label>Swamp forest, seasonally inundated</label>
+                </item>
+                <item>
+                    <code>6</code>
+                    <label>Wetland forest, permanently inundated</label>
+                </item>
+                <item>
+                    <code>7</code>
+                    <label>Peat swamp forest</label>
+                </item>
+                <item>
+                    <code>8</code>
+                    <label>Moist dryland forest</label>
+                </item>
+                <item>
+                    <code>9</code>
+                    <label>Savanna forest</label>
+                </item>
+                <item>
+                    <code>10</code>
+                    <label>Pine forest</label>
+                </item>
+                <item>
+                    <code>11</code>
+                    <label>Heath forest</label>
+                </item>
+                <item>
+                    <code>12</code>
+                    <label>Bamboo forest</label>
+                </item>
+                <item>
+                    <code>13</code>
+                    <label>Submontane and montane broadleaved forest</label>
+                </item>
+                <item>
+                    <code>14</code>
+                    <label>Productive forest plantation</label>
+                </item>
+                <item>
+                    <code>15</code>
+                    <label>Protective forest plantation</label>
+                </item>
+                <item>
+                    <code>16</code>
+                    <label>Agro-forestry plantation</label>
+                </item>
+                <item>
+                    <code>17</code>
+                    <label>Tambak fish ponds</label>
                 </item>
             </items>
         </list>
         <list name="stand_condition_list">
-            <label type="item">Land System</label>
+            <label type="item">Stand Condition</label>
             <items>
                 <item>
                     <code>1</code>
-                    <label>What A</label>
+                    <label>Not logged, high volume</label>
                 </item>
                 <item>
                     <code>2</code>
-                    <label>What B</label>
+                    <label>Not logged, medium volume</label>
+                </item>
+                <item>
+                    <code>3</code>
+                    <label>Not logged, low volume</label>
+                </item>
+                <item>
+                    <code>4</code>
+                    <label>Logged lightly</label>
+                </item>
+                <item>
+                    <code>5</code>
+                    <label>Logged heavily</label>
+                </item>
+                <item>
+                    <code>6</code>
+                    <label>Cleared for forest plantations</label>
+                </item>
+                <item>
+                    <code>7</code>
+                    <label>Cleared for permanent agriculture</label>
+                </item>
+                <item>
+                    <code>8</code>
+                    <label>Cleared for shifting cultivation</label>
+                </item>
+                <item>
+                    <code>9</code>
+                    <label>Cleared with shifting, cultivated crops</label>
+                </item>
+                <item>
+                    <code>10</code>
+                    <label>Secondary growth, high to medium</label>
+                </item>
+                <item>
+                    <code>11</code>
+                    <label>Secondary growth, low</label>
+                </item>
+                <item>
+                    <code>12</code>
+                    <label>Degraded</label>
+                </item>
+                <item>
+                    <code>13</code>
+                    <label>Destroyed by wild fire</label>
                 </item>
             </items>
         </list>
@@ -1324,7 +1617,8 @@
             </entity>
             <!-- permanent_plot_b -->
             <entity name="measurement_of_felled_sample_tree" ui:tab="sample_tree">
-                <entity name="key_generation"><!-- maybe we must restructure this -->
+                <entity name="key_generation">
+                    <!-- maybe we must restructure this -->
                     <coordinate name="vehicle_location" required="true">
                         <label>Vehicle location</label>
                         <distance max="100000" to="lookup('sampling_design', 'plot_centre', id, 1)"
@@ -1335,9 +1629,9 @@
                     <number name="inventory_year" type="integer" required="true">
                         <label>Inventory Year</label>
                     </number>
-                    <number name="tree_number" type="integer" maxCount="3"></number>
+                    <number name="tree_number" type="integer" maxCount="3"/>
                 </entity>
-                
+
                 <entity name="data_location">
                     <code name="province" required="true" list="province_list">
                         <label>Province</label>
@@ -1389,9 +1683,9 @@
                     </number>
                     <code name="month" list="month" required="true">
                         <label>Month</label>
-                    </code>                    
+                    </code>
                 </entity>
-                
+
                 <entity name="form_b">
                     <entity name="end_of_buttress">
                         <number name="diameter" type="real">
@@ -1429,7 +1723,7 @@
                         </number>
                         <number name="length_1" type="integer" maxCount="2">
                             <label>Length</label>
-                        </number>                
+                        </number>
                         <number name="grade_2" type="integer">
                             <label>Grade</label>
                         </number>
@@ -1446,7 +1740,8 @@
                             <label>Grade</label>
                         </number>
                     </entity>
-                </entity><!-- form b -->
+                </entity>
+                <!-- form b -->
                 <entity name="form_c">
                     <number name="diameter_2m">
                         <label>Diameter 2M</label>
@@ -1484,7 +1779,7 @@
                     <number name="zbt_12m">
                         <label>2 BT 12M</label>
                     </number>
-                    
+
                     <number name="diameter_14m">
                         <label>Diameter 14M</label>
                     </number>
@@ -1521,7 +1816,7 @@
                     <number name="zbt_24m">
                         <label>2 BT 24M</label>
                     </number>
-                    
+
                     <number name="diameter_26m">
                         <label>Diameter 26M</label>
                     </number>
@@ -1559,98 +1854,98 @@
                         <label>2 BT 36M</label>
                     </number>
                 </entity>
-                
+
                 <entity name="form_d">
                     <number name="diameter_1">
-                        <label>Diameter  [1]</label>
+                        <label>Diameter [1]</label>
                     </number>
                     <number name="diameter_2">
-                        <label>Diameter  [2]</label>
+                        <label>Diameter [2]</label>
                     </number>
                     <number name="diameter_3">
-                        <label>Diameter  [3]</label>
+                        <label>Diameter [3]</label>
                     </number>
                     <number name="diameter_4">
-                        <label>Diameter  [4]</label>
+                        <label>Diameter [4]</label>
                     </number>
                     <number name="diameter_5">
-                        <label>Diameter  [5]</label>
+                        <label>Diameter [5]</label>
                     </number>
                     <number name="diameter_6">
-                        <label>Diameter  [6]</label>
+                        <label>Diameter [6]</label>
                     </number>
                     <number name="diameter_7">
-                        <label>Diameter  [7]</label>
+                        <label>Diameter [7]</label>
                     </number>
                     <number name="diameter_8">
-                        <label>Diameter  [8]</label>
+                        <label>Diameter [8]</label>
                     </number>
                     <number name="diameter_9">
-                        <label>Diameter  [9]</label>
+                        <label>Diameter [9]</label>
                     </number>
                     <number name="diameter_10">
-                        <label>Diameter  [10]</label>
+                        <label>Diameter [10]</label>
                     </number>
                     <number name="diameter_11">
-                        <label>Diameter  [11]</label>
+                        <label>Diameter [11]</label>
                     </number>
                     <number name="diameter_12">
-                        <label>Diameter  [12]</label>
+                        <label>Diameter [12]</label>
                     </number>
                     <number name="diameter_13">
-                        <label>Diameter  [13]</label>
+                        <label>Diameter [13]</label>
                     </number>
                     <number name="diameter_14">
-                        <label>Diameter  [14]</label>
+                        <label>Diameter [14]</label>
                     </number>
                     <number name="diameter_15">
-                        <label>Diameter  [15]</label>
+                        <label>Diameter [15]</label>
                     </number>
                     <number name="diameter_16">
-                        <label>Diameter  [16]</label>
+                        <label>Diameter [16]</label>
                     </number>
                     <number name="diameter_17">
-                        <label>Diameter  [17]</label>
+                        <label>Diameter [17]</label>
                     </number>
                     <number name="diameter_18">
-                        <label>Diameter  [18]</label>
+                        <label>Diameter [18]</label>
                     </number>
                     <number name="diameter_19">
-                        <label>Diameter  [19]</label>
+                        <label>Diameter [19]</label>
                     </number>
                     <number name="diameter_20">
-                        <label>Diameter  [20]</label>
+                        <label>Diameter [20]</label>
                     </number>
                     <number name="diameter_21">
-                        <label>Diameter  [21]</label>
+                        <label>Diameter [21]</label>
                     </number>
                     <number name="diameter_22">
-                        <label>Diameter  [22]</label>
+                        <label>Diameter [22]</label>
                     </number>
                     <number name="diameter_23">
-                        <label>Diameter  [23]</label>
+                        <label>Diameter [23]</label>
                     </number>
                     <number name="diameter_24">
-                        <label>Diameter  [24]</label>
+                        <label>Diameter [24]</label>
                     </number>
                     <number name="diameter_25">
-                        <label>Diameter  [25]</label>
+                        <label>Diameter [25]</label>
                     </number>
                     <number name="diameter_26">
-                        <label>Diameter  [26]</label>
+                        <label>Diameter [26]</label>
                     </number>
                     <number name="diameter_27">
-                        <label>Diameter  [27]</label>
+                        <label>Diameter [27]</label>
                     </number>
                     <number name="diameter_28">
-                        <label>Diameter  [28]</label>
+                        <label>Diameter [28]</label>
                     </number>
                     <number name="diameter_29">
-                        <label>Diameter  [29]</label>
+                        <label>Diameter [29]</label>
                     </number>
                     <number name="diameter_30">
-                        <label>Diameter  [30]</label>
-                    </number>                    
+                        <label>Diameter [30]</label>
+                    </number>
                 </entity>
             </entity>
             <!-- measurement_of_felled_sample_tree -->

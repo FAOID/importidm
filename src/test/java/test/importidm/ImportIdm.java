@@ -1,7 +1,5 @@
 package test.importidm;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -10,7 +8,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.openforis.collect.model.CollectSurvey;
-import org.openforis.collect.model.CollectSurveyContext;
 import org.openforis.collect.persistence.RecordDao;
 import org.openforis.collect.persistence.SurveyDao;
 import org.openforis.collect.persistence.SurveyImportException;
@@ -51,8 +48,7 @@ public class ImportIdm {
 			InvalidIdmlException {
 		URL idm = ClassLoader.getSystemResource("candidate.idnfi.idm.xml");
 		InputStream is = idm.openStream();
-		CollectSurveyContext surveyContext = new CollectSurveyContext(expressionFactory, validator);
-		CollectIdmlBindingContext idmlBindingContext = new CollectIdmlBindingContext(surveyContext);
+		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
 		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
 		survey.setName("idnfi");
