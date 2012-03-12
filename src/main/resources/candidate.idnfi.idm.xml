@@ -7,96 +7,96 @@
        Basis Data Kehutanan Nasional Indonesia 
     </description>
 	<configuration>
-		<flex xmlns="http://www.openforis.org/collect/3.0/ui">
-			<tabs>
-				<tab name="cluster">
-					<label>Cluster</label>
-					<tabs>
-						<tab name="nf">
-							<label>Natural Forest</label>
-							<tabs>
-								<tab name="nf_detail">
-									<label>Details</label>
-								</tab>
-								<tab name="nf_tp">
-									<label>Trees, Poles</label>
-								</tab>
-								<tab name="nf_ssr">
-									<label>Seedlings, Saplings, Rattan</label>
-								</tab>
-							</tabs>
-						</tab>
-						<tab name="pmp">
-							<label>Plantation, Mangrove and Pine</label>
-							<tabs>
-								<tab name="pmp_detail">
-									<label>Details</label>
-								</tab>
-								<tab name="pmp_tp">
-									<label>Trees, Poles</label>
-								</tab>
-								<tab name="pmp_ssr">
-									<label>Seedlings, Saplings, Rattan</label>
-								</tab>
-							</tabs>
-						</tab>
-						<tab name="bamboo">
-							<label>Bamboo</label>
-							<tab name="bamboo_detail">
+		<flex xmlns="http://www.openforis.org/collect/3.0/ui">						
+			<tabDefinition rootEntity="cluster">				
+				<tabs>
+					<tab name="cluster">
+						<label>Cluster</label>
+					</tab>
+					<tab name="nf">
+						<label>Natural Forest</label>
+						<tabs>
+							<tab name="nf_detail">
 								<label>Details</label>
 							</tab>
-							<tab name="bamboo_enum">
-								<label>Enumeration</label>
+							<tab name="nf_tp">
+								<label>Trees, Poles</label>
 							</tab>
-						</tab>
-						<tab name="sagu">
-							<label>Sagu</label>
-							<tab name="sagu_detail">
+							<tab name="nf_ssr">
+								<label>Seedlings, Saplings, Rattan</label>
+							</tab>
+						</tabs>
+					</tab>
+					<tab name="pmp">
+						<label>Plantation, Mangrove and Pine</label>
+						<tabs>
+							<tab name="pmp_detail">
 								<label>Details</label>
 							</tab>
-							<tab name="sagu_enum">
-								<label>Enumeration</label>
+							<tab name="pmp_tp">
+								<label>Trees, Poles</label>
 							</tab>
+							<tab name="pmp_ssr">
+								<label>Seedlings, Saplings, Rattan</label>
+							</tab>
+						</tabs>
+					</tab>
+					<tab name="bamboo">
+						<label>Bamboo</label>
+						<tab name="bamboo_detail">
+							<label>Details</label>
 						</tab>
-						<tab name="nipa">
-							<label>Nipa</label>
-							<tab name="nipa_detail">
-								<label>Details</label>
-							</tab>
-							<tab name="nipa_enum">
-								<label>Enumeration</label>
-							</tab>
+						<tab name="bamboo_enum">
+							<label>Enumeration</label>
 						</tab>
-						<tab name="plot_a">
-							<label>Permanent Plot A</label>
-							<tab name="plota_detail">
-								<label>Details</label>
-							</tab>
-							<tab name="plota_enum">
-								<label>Enumeration</label>
-							</tab>
+					</tab>
+					<tab name="sagu">
+						<label>Sagu</label>
+						<tab name="sagu_detail">
+							<label>Details</label>
 						</tab>
-						<tab name="plot_b">
-							<label>Permanent Plot B</label>
-							<tab name="plotb_detail">
-								<label>Details</label>
-							</tab>
-							<tab name="plotb_enum">
-								<label>Enumeration</label>
-							</tab>
+						<tab name="sagu_enum">
+							<label>Enumeration</label>
 						</tab>
-						<tab name="felled_tree">
-							<label>Felled Tree</label>
-							<tab name="felled_detail">
-								<label>Details</label>
-							</tab>
-							<tab name="felled_enum">
-								<label>Enumeration</label>
-							</tab>
+					</tab>
+					<tab name="nipa">
+						<label>Nipa</label>
+						<tab name="nipa_detail">
+							<label>Details</label>
 						</tab>
-					</tabs>
-				</tab>
-			</tabs>
+						<tab name="nipa_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+					<tab name="plot_a">
+						<label>Permanent Plot A</label>
+						<tab name="plota_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="plota_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+					<tab name="plot_b">
+						<label>Permanent Plot B</label>
+						<tab name="plotb_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="plotb_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+					<tab name="felled_tree">
+						<label>Felled Tree</label>
+						<tab name="felled_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="felled_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+				</tabs>
+			</tabDefinition>
 		</flex>
 	</configuration>
 	<versioning>
@@ -925,110 +925,20 @@
 			<abbreviation>%</abbreviation>
 		</unit>
 	</units>
-    <spatialReferenceSystems>
-        <spatialReferenceSystem srid="EPSG:21035">
-            <label xml:lang="en">35S</label>
-            <description xml:lang="en">Arc 1960 / UTM zone 35S</description>
-            <wkt><![CDATA[
-            PROJCS["Arc 1960 / UTM zone 35S",
-                GEOGCS["Arc 1960",
-                    DATUM["Arc_1960",
-                        SPHEROID["Clarke 1880 (RGS)",6378249.145,293.465,
-                            AUTHORITY["EPSG","7012"]],
-                        TOWGS84[-160.0, -6.0, -302.0, 0.0, 0.0, 0.0, 0.0],
-                        AUTHORITY["EPSG","6210"]],
-                    PRIMEM["Greenwich",0,
-                        AUTHORITY["EPSG","8901"]],
-                    UNIT["degree",0.01745329251994328,
-                        AUTHORITY["EPSG","9122"]],
-                    AUTHORITY["EPSG","4210"]],
-                UNIT["metre",1,
-                    AUTHORITY["EPSG","9001"]],
-                PROJECTION["Transverse_Mercator"],
-                PARAMETER["latitude_of_origin",0],
-                PARAMETER["central_meridian",27],
-                PARAMETER["scale_factor",0.9996],
-                PARAMETER["false_easting",500000],
-                PARAMETER["false_northing",10000000],
-                AUTHORITY["EPSG","21035"],
-                AXIS["Easting",EAST],
-                AXIS["Northing",NORTH]]            
-        ]]></wkt>
-        </spatialReferenceSystem>
-        <spatialReferenceSystem srid="EPSG:21036">
-            <label xml:lang="en">36S</label>
-            <description xml:lang="en">Arc 1960 / UTM zone 36S</description>
-            <wkt><![CDATA[
-            PROJCS["Arc 1960 / UTM zone 36S",
-                GEOGCS["Arc 1960",
-                    DATUM["Arc_1960",
-                        SPHEROID["Clarke 1880 (RGS)",6378249.145,293.465,
-                            AUTHORITY["EPSG","7012"]],
-                        TOWGS84[-160.0, -6.0, -302.0, 0.0, 0.0, 0.0, 0.0], 
-                        AUTHORITY["EPSG","6210"]],
-                    PRIMEM["Greenwich",0,
-                        AUTHORITY["EPSG","8901"]],
-                    UNIT["degree",0.01745329251994328,
-                        AUTHORITY["EPSG","9122"]],
-                    AUTHORITY["EPSG","4210"]],
-                UNIT["metre",1,
-                    AUTHORITY["EPSG","9001"]],
-                PROJECTION["Transverse_Mercator"],
-                PARAMETER["latitude_of_origin",0],
-                PARAMETER["central_meridian",33],
-                PARAMETER["scale_factor",0.9996],
-                PARAMETER["false_easting",500000],
-                PARAMETER["false_northing",10000000],
-                AUTHORITY["EPSG","21036"],
-                AXIS["Easting",EAST],
-                AXIS["Northing",NORTH]]
-        ]]></wkt>
-        </spatialReferenceSystem>
-        <spatialReferenceSystem srid="EPSG:21037">
-            <label xml:lang="en">37S</label>
-            <description xml:lang="en">Arc 1960 / UTM zone 37S</description>
-            <wkt><![CDATA[
-            PROJCS["Arc 1960 / UTM zone 37S",
-                GEOGCS["Arc 1960",
-                    DATUM["Arc_1960",
-                        SPHEROID["Clarke 1880 (RGS)",6378249.145,293.465,
-                            AUTHORITY["EPSG","7012"]],
-                        TOWGS84[-160.0, -6.0, -302.0, 0.0, 0.0, 0.0, 0.0], 
-                        AUTHORITY["EPSG","6210"]],
-                    PRIMEM["Greenwich",0,
-                        AUTHORITY["EPSG","8901"]],
-                    UNIT["degree",0.01745329251994328,
-                        AUTHORITY["EPSG","9122"]],
-                    AUTHORITY["EPSG","4210"]],
-                UNIT["metre",1,
-                    AUTHORITY["EPSG","9001"]],
-                PROJECTION["Transverse_Mercator"],
-                PARAMETER["latitude_of_origin",0],
-                PARAMETER["central_meridian",39],
-                PARAMETER["scale_factor",0.9996],
-                PARAMETER["false_easting",500000],
-                PARAMETER["false_northing",10000000],
-                AUTHORITY["EPSG","21037"],
-                AXIS["Easting",EAST],
-                AXIS["Northing",NORTH]]
-        ]]></wkt>
-        </spatialReferenceSystem>
-    </spatialReferenceSystems>
-	
 	<schema>
 		<entity name="cluster" ui:tab="cluster">
 			<label type="instance">Cluster</label>
-			<number name="utm_zone" required="true" key="true">
+			<number name="utm_zone" type="integer" required="true" key="true">
 				<label>UTM zone</label>
 				<description>Valid UTM Zone between 46 and 54</description>
 				<compare flag="error" gte="46" lte="54" />
 			</number>
-			<number name="easting" required="true" key="true">
+			<number name="easting" type="integer" required="true" key="true">
 				<label>W-E</label>
 				<description>Valid UTM easting between 166 and 834</description>
 				<compare flag="error" gte="166" lte="834" />
 			</number>
-			<number name="northing" required="true" key="true">
+			<number name="northing" type="integer" required="true" key="true">
 				<label>S-N</label>
 				<description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
 				<check expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)" flag="error">
@@ -1037,7 +947,7 @@
 					</message>
 				</check>
 			</number>
-			<entity name="natural_forest" multiple="true" ui:tab="nf">
+			<entity name="natural_forest" multiple="true" ui:tab="nf" ui:layout="form">
 				<label type="heading">Natural Forest</label>
 				<number name="tract_no" type="integer" required="true" key="true" ui:tab="nf_detail">
 					<label>Tract no.</label>
@@ -1052,11 +962,11 @@
 					<label>Sector</label>
 					<precision unit="deg" decimalDigits="0" />
 				</number>
-				<number name="segment_dist" type="real" relevant="not(sector)" ui:tab="nf_detail">
+				<number name="segment_dist" type="real" relevant="sector=''" ui:tab="nf_detail">
 					<label>Segment distance</label>
 					<precision unit="m" decimalDigits="2" />
 				</number>
-				<number name="part" type="integer" required="true" relevant="sector or segment_dist" key="true" ui:tab="nf_detail">
+				<number name="part" type="integer" required="true" relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
 					<label>Part</label> <!-- TODO -->
 				</number>
 				<code name="permanent" list="binary_value" required="false" ui:tab="nf_detail">
@@ -1136,7 +1046,7 @@
 					<compare gte="1900" lte="2050" flag="error" />
 				</number>
 				<!-- data_location -->
-				<entity name="tree" ui:tab="nf_tp">
+				<entity name="tree" multiple="true" ui:tab="nf_tp">
 					<label type="heading">Trees and Poles</label>
 					<!--<number name="consec_number" type="integer"> <label>Consecutive Number (auto filled in FoxPro)</label> </number> <number name="control" type="integer"> <label>Record Type (foxpro:02)</label> 
 						</number> -->
@@ -1154,6 +1064,7 @@
 					<!-- </code> -->
 					<!-- TODO: Group under "Trees of &gt;=20cm -->
 					<entity name="lg_trees" relevant="diameter &gt;= 20" multiple="false">
+						<label>Large trees</label>
 						<number name="buttress_height" type="real">
 							<label>Buttress height</label>
 							<precision decimalDigits="2" unit="cm" />
@@ -1172,6 +1083,7 @@
 						<!-- </code> -->
 					</entity>
 					<entity name="bole_height" multiple="false">
+						<label>Bole height</label>
 						<number name="horizontal_distance" type="real">
 							<label>Horizontal distance</label>
 							<precision decimalDigits="2" unit="m" />
@@ -1191,6 +1103,7 @@
 						</number>
 					</entity>
 					<entity name="buttress" multiple="false">
+						<label>Buttress</label>
 						<number name="horizontal_distance" type="real">
 							<label>Horizontal distance</label>
 							<precision decimalDigits="2" unit="m" />
@@ -1207,6 +1120,7 @@
 						</number>
 					</entity>
 					<entity name="dab">
+						<label>DAB</label>
 						<description>Diameter 0.2m above buttress</description>
 						<number name="full_bars" type="real">
 							<label>Full bars</label>
@@ -1218,6 +1132,7 @@
 					</entity>
 				</entity>
 				<entity name="ssr" ui:tab="nf_ssr">
+					<label>Seedlings, Saplings, Rattan</label>
 					<text name="species_name">
 						<label>Species name</label>
 					</text>
@@ -1234,12 +1149,14 @@
 						<default value="0" />
 						<compare gte="0" flag="error" />
 					</number>
-					<number name="sm_rattan" type="real">
-						<label>Rattan &lt;= 2.9m</label>
+					<number name="sm_rattan" type="integer">
+						<label>Small rattan</label>
+						<description>Rattan &lt;= 2.9m</description>
 						<default value="0" />
 						<compare gte="0" flag="error" />
 					</number>
 					<entity name="lg_rattan">
+						<label>Large rattan</label>
 						<description>Rattan &gt;=3m long</description>
 						<number name="stems" type="integer">
 							<label>Stems</label>
@@ -1262,7 +1179,7 @@
 							<compare gte="0" flag="error" />
 						</number>
 						<number name="avg_length" type="real">
-							<label>L average</label>
+							<label>Avg. length</label>
 							<precision decimalDigits="0" unit="m" />
 							<compare gte="0" flag="error" />
 						</number>
