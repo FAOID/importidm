@@ -186,51 +186,6 @@
 				</item>
 			</items>
 		</list>
-		<list name="flower_or_fruit">   <!-- TODO: Find definitions -->
-			<label type="item">Flower or Fruit</label>
-			<items>
-				<item>
-					<code>0</code>
-					<label>0</label>
-				</item>
-				<item>
-					<code>1</code>
-					<label>1</label>
-				</item>
-				<item>
-					<code>2</code>
-					<label>2</label>
-				</item>
-				<item>
-					<code>3</code>
-					<label>3</label>
-				</item>
-				<item>
-					<code>4</code>
-					<label>4</label>
-				</item>
-				<item>
-					<code>5</code>
-					<label>5</label>
-				</item>
-				<item>
-					<code>6</code>
-					<label>6</label>
-				</item>
-				<item>
-					<code>7</code>
-					<label>7</label>
-				</item>
-				<item>
-					<code>8</code>
-					<label>8</label>
-				</item>
-				<item>
-					<code>9</code>
-					<label>9</label>
-				</item>
-			</items>
-		</list>
 		<list name="province">
 			<label type="item">Province</label>
 			<items>
@@ -644,11 +599,23 @@
 			</items>
 		</list>
 		<list name="forest_class">
-			<label type="item">Forest Type</label>
+			<label type="item">Forest Class</label>
+			<hierarchy>
+				<level name="forest_type">
+					<label>Forest Type</label>
+				</level>
+				<level name="stand_condition">
+					<label>Stand Condition</label>
+				</level>
+			</hierarchy>
 			<items>
 				<item>
 					<code>1</code>
 					<label>Mangrove Forest</label>
+					<item>
+						<code>1</code>
+						<label>Stand Type 1</label>
+					</item>
 				</item>
 				<item>
 					<code>2</code>
@@ -884,16 +851,6 @@
 				</item>
 			</items>
 		</list>
-		<list name="binary_value">
-			<label type="item">Yes/No Value</label>
-			<description>List of values where "1" is true and no value false</description>
-			<items>
-				<item>
-					<code>1</code>
-					<label>Yes</label>
-				</item>
-			</items>
-		</list>
 	</codeLists>
 	<units>
 		<unit name="deg" dimension="angle">
@@ -946,14 +903,16 @@
 				</check>
 			</number>
 			<entity name="natural_forest" multiple="true" ui:tab="nf" ui:layout="form">
-				<label type="heading">Natural Forest</label>
+				<label type="number">1</label>
+				<label type="heading">Enumeration, Natural Forest</label>
 				<number name="tract_no" type="integer" required="true" key="true" ui:tab="nf_detail">
-					<label>Tract no.</label>
+					<label type="number">3</label>
+					<label>Tract</label>
 					<compare flag="error" gte="1" lte="15" />
-					<!-- TODO min/max value depends on UTM coords? -->
+					<!-- TODO: Min/max value depends on UTM coords? -->
 				</number>
 				<number name="subplot_no" type="integer" required="true" key="true" ui:tab="nf_detail">
-					<label>Subplot no.</label>
+					<label>Subplot</label>
 					<compare flag="error" gte="1" lte="8" />
 				</number>
 				<number name="sector" type="real" ui:tab="nf_detail">
@@ -965,14 +924,20 @@
 					<precision unit="m" decimalDigits="2" />
 				</number>
 				<number name="part" type="integer" required="true" relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
-					<label>Part</label> <!-- TODO -->
+					<label>Part</label> <!-- TODO: what is the code about? -->
 				</number>
-				<code name="permanent" list="binary_value" required="false" ui:tab="nf_detail">
+				<number name="permanent" type="integer" required="false" ui:tab="nf_detail">
 					<label>Permanent</label>
-				</code>
-				<code name="control" list="binary_value" required="false" key="true" ui:tab="nf_detail">
+					<compare gte="1" lte="1" flag="error">
+						<message>This field must be either 1 or blank</message>
+					</compare>
+				</number>
+				<number name="control" type="integer" required="false" key="true" ui:tab="nf_detail">
 					<label>Control</label>
-				</code>
+					<compare gte="1" lte="1" flag="error">
+						<message>This field must be either 1 or blank</message>
+					</compare>
+				</number>
 				<code name="province" required="true" list="province" ui:tab="nf_detail">
 					<label>Province</label>
 				</code>
@@ -992,7 +957,7 @@
 					<label>Stand condition</label>
 				</code>
 				<number name="logging_year" type="integer" required="false" ui:tab="nf_detail">
-					<!-- <label type="number">18</label> -->
+					<label type="number">18</label>
 					<label>Logging year</label>
 					<compare gte="1900" lte="2050" flag="error" />
 				</number>
@@ -1023,18 +988,19 @@
 						<compare flag="error" gte="0" />
 					</number>
 					<number name="sm_rattan" type="integer" required="false">
-						<label>Rattan (&lt;2.9m)</label>
+						<label>Rattan (&lt;=2.9m)</label>
 						<default value="0" />
 						<compare flag="error" gte="0" />
 					</number>
 					<number name="lg_rattan" type="integer" required="false">
-						<label>Rattan (&gt;3m)</label>
+						<label>Rattan (&gt;=3m)</label>
 						<default value="0" />
 						<compare flag="error" gte="0" />
 					</number>
 				</entity>
 				<number name="crew_no" type="integer" required="false" ui:tab="nf_detail">
 					<label>Crew no.</label>
+					<compare flag="error" gte="0" />
 				</number>
 				<code name="month" list="month" required="true" ui:tab="nf_detail">
 					<label>Month</label>
@@ -1043,8 +1009,7 @@
 					<label>Year</label>
 					<compare gte="1900" lte="2050" flag="error" />
 				</number>
-				<!-- data_location -->
-				<entity name="tree" multiple="true" ui:tab="nf_tp">
+				<entity name="tp" multiple="true" ui:tab="nf_tp">
 					<label type="heading">Trees and Poles</label>
 					<text name="species_name">
 						<label>Name of Species</label>
@@ -1058,16 +1023,18 @@
 					<!-- <code name="damage" list="damage"> -->
 					<!-- <label>Damage</label> -->
 					<!-- </code> -->
-					<!-- TODO: Group under "Trees of &gt;=20cm -->
-					<entity name="lg_trees" relevant="diameter &gt;= 20" multiple="false">
+					<entity name="lg_trees" multiple="false" relevant="diameter &gt;= 20">
 						<label>Large trees</label>
+						<description>Trees with diameter &gt;=20cm</description>
 						<number name="buttress_height" type="real">
 							<label>Buttress height</label>
 							<precision decimalDigits="2" unit="cm" />
+							<compare gt="0" flag="error"/>  
 						</number>
 						<number name="bole_height" type="real">
 							<label>Bole height</label>
 							<precision decimalDigits="1" unit="cm" />
+							<compare gt="0" flag="error"/>
 						</number>
 						<!-- TODO: Add grade and infestation codelist -->
 						<!-- <code name="grade" list="grade"> -->
@@ -1083,14 +1050,17 @@
 						<number name="horizontal_distance" type="real">
 							<label>Horizontal distance</label>
 							<precision decimalDigits="2" unit="m" />
+							<compare gt="0" flag="error"/>
 						</number>
 						<number name="base_height" type="real">
 							<label>Height of base</label>
 							<precision decimalDigits="1" unit="m" />
+							<compare gt="0" flag="error"/>
 						</number>
 						<number name="percent_base" type="real">
 							<label>Percent base</label>
 							<precision decimalDigits="0" unit="percent" />
+							<compare gte="0" lte="100" flag="error" />
 						</number>
 						<number name="percent_crown_point" type="real">
 							<label>Percent crown point</label>
@@ -1115,7 +1085,7 @@
 							<compare gte="0" lte="100" flag="error" />
 						</number>
 					</entity>
-					<entity name="dab">
+					<entity name="dab" multiple="false">
 						<label>DAB</label>
 						<description>Diameter 0.2m above buttress</description>
 						<number name="full_bars" type="real">
@@ -1127,7 +1097,7 @@
 						</number>
 					</entity>
 				</entity>
-				<entity name="ssr" ui:tab="nf_ssr">
+				<entity name="ssr" multiple="true" ui:tab="nf_ssr">
 					<label>Seedlings, Saplings, Rattan</label>
 					<text name="species_name">
 						<label>Species name</label>
@@ -1185,6 +1155,1019 @@
 				<!--seedling_saplings_rattan -->
 			</entity>
 			<!--natural forest -->
+			<entity name="pmp" multiple="false" ui:tab="pmp">
+				<label type="number">2</label>
+				<entity name="data_location">
+					<number name="record_type" type="integer">
+						<label>Record Type (foxpro:01)</label>
+					</number>
+					<code name="province" required="true" list="province">
+						<label>Province</label>
+					</code>
+					<code name="land_system" required="true" list="land_system">
+						<label>Land System</label>
+					</code>
+					<code name="altitude" required="true" list="altitude">
+						<label>Altitude</label>
+					</code>
+					<code name="land_category" required="true" list="land_category">
+						<label>Land Category</label>
+					</code>
+					<code name="forest_type" required="true" list="forest_type">
+						<label>Forest Type</label>
+					</code>
+					<code name="stand_condition" required="true" list="stand_condition">
+						<label>Stand Condition</label>
+					</code>
+					<number name="year_of_logging" required="true" type="integer">
+						<label>Year of Logging</label>
+					</number>
+					<code name="terrain" required="true" list="terrain">
+						<label>Terrain</label>
+					</code>
+					<code name="slope" required="true" list="slope">
+						<label>Slope</label>
+					</code>
+					<code name="aspect" required="true" list="aspect">
+						<label>Aspect</label>
+					</code>
+					<number name="sector_degree" type="real">
+						<label>Sector Degree</label>
+					</number>
+					<number name="distance_to_segment" type="real">
+						<label>Distance to Segment (empty in the foxpro)</label>
+					</number>
+					<number name="crew_number" type="integer">
+						<label>Crew Number</label>
+					</number>
+					<code name="month" list="month" required="true">
+						<label>Month</label>
+					</code>
+				</entity>
+				<entity name="trees_and_poles">
+					<number name="consec_number" type="integer">
+						<label>Consecutive Number (auto filled in FoxPro)</label>
+					</number>
+					<number name="control" type="integer">
+						<label>Record Type (foxpro:02)</label>
+					</number>
+					<text name="name_of_species">
+						<label>Name of Species</label>
+					</text>
+					<text name="species_code">
+						<label>Species Code</label>
+					</text>
+					<number name="dbr_or_ab" type="real">
+						<label>DBR or AB</label>
+					</number>
+					<number name="damage" type="integer">
+						<label>Damage</label>
+					</number>
+
+					<entity name="tree_more_than_20cm">
+						<number name="butress_height" type="real">
+							<label>Butress Height(foxpro:calculate)</label>
+						</number>
+						<number name="bole_height" type="real">
+							<label>Bole height(foxpro:calculated)</label>
+						</number>
+						<number name="grade" type="integer">
+							<label>Grade</label>
+						</number>
+						<number name="infestation" type="integer">
+							<label>Infestation</label>
+						</number>
+					</entity>
+
+					<entity name="bole_height">
+						<number name="horizontal_distance" type="real">
+							<label>Horizontal Distance</label>
+						</number>
+						<number name="height_of_base" type="real">
+							<label>Height of Base</label>
+						</number>
+						<number name="percent_base" type="real">
+							<label>Percent base</label>
+						</number>
+						<number name="per_crown_point" type="real">
+							<label>Per. Crown Point</label>
+						</number>
+					</entity>
+
+					<entity name="buttress_and_dab">
+						<number name="horizontal_distance" type="real">
+							<label>Horizontal Distance</label>
+						</number>
+						<number name="percent_base" type="real">
+							<label>Percent base</label>
+						</number>
+						<number name="percent_buttress" type="real">
+							<label>Percent buttress</label>
+						</number>
+						<number name="full_bars" type="real">
+							<label>Full bars</label>
+						</number>
+						<number name="quarter_bars" type="real">
+							<label>1/4 bars</label>
+						</number>
+					</entity>
+				</entity>
+				<entity name="seedling_saplings_rattan">
+					<number name="consec_number" type="integer">
+						<label>Consecutive Number (auto filled in FoxPro)</label>
+					</number>
+					<text name="name_of_species">
+						<label>Name of species</label>
+					</text>
+					<number name="count">
+						<label>Count (foxpro:just label, noentry in foxpro)</label>
+					</number>
+					<number name="record_type" type="integer">
+						<label>Record Type (foxpro:4)</label>
+					</number>
+					<text name="species_code">
+						<label>Species Code (foxpro:just label, noentry in foxpro)</label>
+					</text>
+					<number name="seedlings" type="integer">
+						<label>Seedlings</label>
+					</number>
+					<number name="saplings" type="integer">
+						<label>Saplings</label>
+					</number>
+					<number name="rattan_less_than_29m" type="real">
+						<label>Rattan &lt;= 2.9m</label>
+					</number>
+					<entity name="rattan_greater_than_3m">
+						<number name="stems" type="real">
+							<label>Stems</label>
+						</number>
+						<number name="diameter_max" type="real">
+							<label>Diameter Maximum</label>
+						</number>
+						<number name="diameter_min" type="real">
+							<label>Diameter Minimum</label>
+						</number>
+						<number name="d_average" type="real">
+							<label>D average</label>
+						</number>
+						<number name="l_average" type="real">
+							<label>L average</label>
+						</number>
+					</entity>
+				</entity>
+			</entity>
+			<!--enumeration_plantation_mangrove_and_pine -->
+
+			<entity name="enumeration_bamboo" ui:tab="bamboo">
+				<number name="consec_number" type="integer">
+					<label>Consecutive Number (auto filled in FoxPro)</label>
+				</number>
+				<number name="record_type" type="integer">
+					<label>Record Type (foxpro:10)</label>
+				</number>
+				<text name="name_of_species">
+					<label>Name of species</label>
+				</text>
+				<text name="species_code">
+					<label>Species Code</label>
+				</text>
+
+				<entity name="number_of_bamboo_culms">
+					<number name="one_year" type="integer">
+						<label>1 - Year</label>
+					</number>
+					<number name="two_year" type="integer">
+						<label>2 - Year</label>
+					</number>
+					<number name="total" type="integer">
+						<label>Total</label>
+					</number>
+					<number name="live_stumps" type="integer">
+						<label>Live Stumps</label>
+					</number>
+				</entity>
+				<entity name="one_year_old">
+					<entity name="low_part">
+						<number name="dbh" type="real">
+							<label>DBH</label>
+						</number>
+						<number name="length">
+							<label>Length</label>
+						</number>
+						<number name="weight">
+							<label>Weight</label>
+						</number>
+					</entity>
+					<entity name="top">
+						<number name="length">
+							<label>Length</label>
+						</number>
+						<number name="weight">
+							<label>Weight</label>
+						</number>
+					</entity>
+				</entity>
+
+				<entity name="two_year_old">
+					<entity name="low_part">
+						<number name="dbh" type="real">
+							<label>D B H</label>
+						</number>
+						<number name="length">
+							<label>Length</label>
+						</number>
+						<number name="weight">
+							<label>Weight</label>
+						</number>
+					</entity>
+					<entity name="top">
+						<number name="length">
+							<label>Length</label>
+						</number>
+						<number name="weight">
+							<label>Weight</label>
+						</number>
+					</entity>
+				</entity>
+
+				<entity name="more_than_three_year_old">
+					<entity name="low_part">
+						<number name="dbh" type="real">
+							<label>DBH</label>
+						</number>
+						<number name="length">
+							<label>Length</label>
+						</number>
+						<number name="weight">
+							<label>Weight</label>
+						</number>
+					</entity>
+					<entity name="top">
+						<number name="length">
+							<label>Length</label>
+						</number>
+						<number name="weight">
+							<label>Weight</label>
+						</number>
+					</entity>
+				</entity>
+			</entity>
+			<!--enumeration_bamboo -->
+			<entity name="sagu" multiple="true" ui:tab="sagu">
+				<label type="number">3A</label>
+				<label>Sagu Enumeration, TSP</label>
+				<text name="species_or_variety">
+					<label>Species/Variety</label>
+				</text>
+				<number name="record_type" type="integer">
+					<label>Record Type (foxpro:15)</label>
+				</number>
+				<text name="species_code">
+					<label>Species Code</label>
+				</text>
+				<number name="cons_culm_number" type="integer">
+					<label>Cons Culm Number</label>
+				</number>
+				<number name="clump_diameter" type="real">
+					<label>Clump Diameter</label>
+				</number>
+				<entity name="bole_height">
+					<number name="horizontal_distance" type="real">
+						<label>Horizontal Distance</label>
+					</number>
+					<number name="height_of_base" type="real">
+						<label>Height of Base</label>
+					</number>
+					<number name="percent_base" type="real">
+						<label>Percent Base</label>
+					</number>
+					<number name="percent_crown_point" type="real">
+						<label>Percent Crown Point</label>
+					</number>
+				</entity>
+				<entity name="m1_m2_m3_stems">
+					<number name="number_of_stems_in_clump" type="integer">
+						<label>Number of Stems in Clump</label>
+					</number>
+					<number name="stems_consec_no_clump" type="integer">
+						<label>Stems Consecutive No/Clump</label>
+					</number>
+					<number name="damage" type="integer">
+						<label>Damage</label>
+					</number>
+					<number name="dbh" type="real">
+						<label>D B H</label>
+					</number>
+					<number name="bole_height" type="real">
+						<label>Bole Height</label>
+					</number>
+					<number name="maturity_class" type="integer">
+						<label>Maturity Class</label>
+					</number>
+				</entity>
+				<entity name="count_for_young_or_overmature_stemps">
+					<number name="no_seedlings_in_sub_plot" type="integer">
+						<label>No Seedlings in Sub Plot</label>
+					</number>
+					<number name="no_seedlings_in_clump" type="integer">
+						<label>No Seedlings in Clump</label>
+					</number>
+					<number name="m4_stems_in_clump" type="integer">
+						<label>M4 Stems in Clump</label>
+					</number>
+				</entity>
+			</entity>
+			<!-- nipa-->
+			<entity name="nipa" multiple="true" ui:tab="nipa">
+				<label type="number">3B</label>
+				<label>Nipa Enumeration, TSP</label>
+				<entity name="data_location">
+					<!--   form A, mostly copied from enumeration natural forest, there are some fields differences though -->
+					<number name="record_type" type="integer">
+						<label>Record Type (foxpro:16)</label>
+					</number>
+					<code name="province" required="true" list="province">
+						<label>Province</label>
+					</code>
+					<code name="land_system" required="true" list="land_system">
+						<label>Land System</label>
+					</code>
+					<number name="altitude" required="true" type="integer">
+						<label>Altitude</label>
+					</number>
+					<code name="land_category" required="true" list="land_category">
+						<label>Land Category</label>
+					</code>
+					<code name="forest_type" required="true" list="forest_type">
+						<label>Forest Type</label>
+					</code>
+					<code name="stand_condition" required="true" list="stand_condition">
+						<label>Stand Condition Cut/Uncut (choice : c/u)</label>
+					</code>
+					<number name="year_of_cutting" required="true" type="integer">
+						<label>Year of Cutting</label>
+					</number>
+					<code name="terrain" required="true" list="terrain">
+						<label>Terrain</label>
+					</code>
+					<code name="slope" required="true" list="slope">
+						<label>Slope</label>
+					</code>
+					<code name="aspect" required="true" list="aspect">
+						<label>Aspect</label>
+					</code>
+				</entity>
+				<!--  data_location -->
+				<entity name="partition">
+					<number name="sector_degree" type="real">
+						<label>Sector Degree</label>
+					</number>
+					<number name="distance_to_segment" type="real">
+						<label>Distance to Segment (empty in the foxpro)</label>
+					</number>
+					<number name="large_small_part" type="integer">
+						<label>Large / Small Part</label>
+					</number>
+				</entity>
+				<entity name="number_of_records">
+					<number name="m1" type="integer">
+						<label>M1</label>
+					</number>
+					<number name="m2" type="integer">
+						<label>M2</label>
+					</number>
+					<number name="no_of_seedlings" type="integer">
+						<label>Number of Seedlings</label>
+					</number>
+				</entity>
+				<number name="crew_number" type="integer">
+					<label>Crew Number</label>
+				</number>
+				<code name="month" list="month" required="true">
+					<label>Month</label>
+				</code>
+
+				<entity name="data_measure">
+					<text name="name_of_species">
+						<label>Name of Species</label>
+					</text>
+
+					<number name="record_type" type="integer">
+						<label>Record Type (foxpro:17)</label>
+					</number>
+					<number name="consec_number" type="integer">
+						<label>Consecutive Number (auto filled in FoxPro)</label>
+					</number>
+					<text name="species_code">
+						<label>Species Code</label>
+					</text>
+
+					<entity name="number_of_leaves">
+						<number name="total_number_of_leaves" type="integer">
+							<label>Total Number of Leaves</label>
+						</number>
+						<number name="no_of_cull_leaves" type="integer">
+							<label>No. of Cull Leaves</label>
+						</number>
+						<number name="no_of_utilizable_leaves" type="integer">
+							<label>No. of Utilizable Leaves</label>
+						</number>
+					</entity>
+					<number name="height_of_news_nipa" type="real">
+						<label>Height of N-E-W-S Nipa</label>
+					</number>
+					<number name="height_of_tallest_nipa" type="real">
+						<label>Height of Tallest Nipa</label>
+					</number>
+					<number name="maturity" type="integer">
+						<label>Maturity</label>
+					</number>
+					<code name="leaves_cut_or_uncut" list="leaf_state">
+						<label>Leaves Cut/Uncut</label>
+					</code>
+					<code name="flower_or_fruit" list="flower_or_fruit">
+						<label>Flower or Fruit</label>
+					</code>
+					<code name="open_or_closed" list="open_or_closed">
+						<label>Open or Closed</label>
+					</code>
+					<number name="horizontal_distance" type="real">
+						<label>Horizontal Distance</label>
+					</number>
+					<number name="percent_base" type="real">
+						<label>Percent Base</label>
+					</number>
+					<number name="percent_top" type="real">
+						<label>Percent Top</label>
+					</number>
+					<number name="length_news_plant" type="real">
+						<label>Length News Plant</label>
+					</number>
+					<number name="no_of_util_leaf" type="integer">
+						<label>Number of Utility Leaf</label>
+					</number>
+					<number name="total_no_of_leaf" type="integer">
+						<label>Total Number of Leaf</label>
+					</number>
+				</entity>
+			</entity>
+			<!-- enumeration_nipa -->
+			<entity name="permanent_plot_a" ui:tab="plot_a">
+				<entity name="partition">
+					<number name="squares" type="integer">
+						<label>Squares</label>
+					</number>
+				</entity>
+				<number name="tress_and_poles_record" type="integer">
+					<label>Trees and Poles Record</label>
+				</number>
+				<number name="crew_number" type="integer">
+					<label>Crew Number</label>
+				</number>
+				<code name="month" list="month" required="true">
+					<label>Month</label>
+				</code>
+
+				<text name="name_of_species">
+					<label>Name of Species</label>
+				</text>
+
+				<number name="record_type" type="integer">
+					<label>Record Type (foxpro:06)</label>
+				</number>
+				<number name="consec_number" type="integer">
+					<label>Consecutive Number (auto filled in FoxPro)</label>
+				</number>
+				<text name="species_code">
+					<label>Species Code</label>
+				</text>
+				<number name="dba_or_ab" type="real">
+					<label>DBA or AB</label>
+				</number>
+				<number name="damage" type="integer">
+					<label>Damage</label>
+				</number>
+				<number name="azimuth_to_tree" type="real">
+					<label>Azimuth to Tree</label>
+				</number>
+				<number name="horizontal_distance" type="real">
+					<label>Horizontal Distance</label>
+				</number>
+
+				<entity name="bole_and_tree_height">
+					<number name="horizontal_distance" type="real">
+						<label>Horizontal Distance</label>
+					</number>
+					<number name="height_of_base" type="real">
+						<label>Height of Base</label>
+					</number>
+					<number name="percent_base" type="real">
+						<label>Percent Base</label>
+					</number>
+					<number name="percent_crown_point" type="real">
+						<label>Percent Crown Point</label>
+					</number>
+					<number name="percent_top_of_tree" type="real">
+						<label>Percent Top of Tree</label>
+					</number>
+				</entity>
+				<entity name="trees_higher_than_20cm">
+					<number name="butress_height" type="real">
+						<label>Butress Height</label>
+					</number>
+					<number name="d_2point2m_ab" type="real">
+						<label>D 2.2M AB</label>
+					</number>
+					<number name="bole_height" type="real">
+						<label>Bole Height</label>
+					</number>
+					<number name="tree_height" type="real">
+						<label>Tree Height</label>
+					</number>
+					<number name="grade" type="integer">
+						<label>Grade</label>
+					</number>
+					<number name="infestation" type="integer">
+						<label>Infestation</label>
+					</number>
+					<number name="tree_class" type="integer">
+						<label>Tree Class</label>
+					</number>
+					<number name="crown_class" type="integer">
+						<label>Crown Class</label>
+					</number>
+					<number name="crown_position" type="integer">
+						<label>Crown Position</label>
+					</number>
+				</entity>
+				<entity name="buttress_and_diameter_above_buttress">
+					<number name="horizontal_distance" type="real">
+						<label>Horizontal Distance</label>
+					</number>
+					<number name="percent_base" type="real">
+						<label>Percent Base</label>
+					</number>
+					<number name="percent_buttress" type="real">
+						<label>Percent Buttress</label>
+					</number>
+					<number name="full_bars_d2_ab" type="real">
+						<label>Full Bars D 02 AB</label>
+					</number>
+					<number name="quarter_bars_d2_ab" type="real">
+						<label>1/4 bars D 02 AB</label>
+					</number>
+					<number name="percent_2point2m_ab" type="real">
+						<label>Percent 2.2M AB</label>
+					</number>
+					<number name="full_bars_d_2point2m_ab">
+						<label>Full Bars D 2.2 AB</label>
+					</number>
+					<number name="quarter_bars_d_2point2m_ab" type="real">
+						<label>1/4 Bars D 2.2 AB</label>
+					</number>
+				</entity>
+			</entity>
+			<!--permanent_plot_a -->
+
+			<entity name="permanent_plot_b" ui:tab="plot_b">
+				<entity name="partition">
+					<number name="sector_degrees" type="real">
+						<label>Sector Degrees</label>
+					</number>
+					<number name="distance_to_segment" type="real">
+						<label>Distance to Segment (empty in the foxpro)</label>
+					</number>
+				</entity>
+				<number name="record_type" type="integer">
+					<label>Record Type (foxpro:07)</label>
+				</number>
+				<entity name="number_of_records">
+					<number name="seedlings" type="integer">
+						<label>Seedlings</label>
+					</number>
+					<number name="saplings" type="integer">
+						<label>Saplings</label>
+					</number>
+					<number name="rattan_less_than2point9m">
+						<label>Rattan [-2.9m]</label>
+					</number>
+					<number name="rattan_more_than3point0m">
+						<label>Rattan [+3.0m]</label>
+					</number>
+					<number name="bamboo" type="real">
+						<label>Bamboo</label>
+					</number>
+					<number name="depth_of_peat_layer" type="real">
+						<label>Depth of Peat Layer</label>
+					</number>
+					<number name="depth_of_litter" type="real">
+						<label>Depth of Litter</label>
+					</number>
+				</entity>
+				<entity name="a_horizon">
+					<number name="depth" type="real">
+						<label>Depth</label>
+					</number>
+					<number name="stones" type="real">
+						<label>Stones</label>
+					</number>
+					<number name="colour" type="integer">
+						<label>Colour</label>
+					</number>
+					<number name="water_regime" type="integer">
+						<label>Water Regime</label>
+					</number>
+					<number name="texture" type="integer">
+						<label>Texture</label>
+					</number>
+				</entity>
+				<entity name="b_horizon">
+					<number name="depth" type="real">
+						<label>Depth</label>
+					</number>
+					<number name="stones" type="real">
+						<label>Stones</label>
+					</number>
+					<number name="colour" type="integer">
+						<label>Colour</label>
+					</number>
+					<number name="water_regime" type="integer">
+						<label>Water Regime</label>
+					</number>
+					<number name="texture" type="integer">
+						<label>Texture</label>
+					</number>
+				</entity>
+				<number name="c_horizon" type="integer">
+					<label>C Horizon</label>
+				</number>
+				<number name="crew_number" type="integer">
+					<label>Crew Number</label>
+				</number>
+				<code name="month" list="month" required="true">
+					<label>Month</label>
+				</code>
+
+				<entity name="data_measure">
+					<text name="name_of_species">
+						<label>Name of Species</label>
+					</text>
+
+					<entity name="number_of_culms_or_clump">
+						<number name="one_year" type="integer">
+							<label>1 - Year</label>
+						</number>
+						<number name="two_year" type="integer">
+							<label>2 - Year</label>
+						</number>
+						<number name="total" type="integer">
+							<label>Total</label>
+						</number>
+						<number name="live_stumps" type="integer">
+							<label>Live Stumps</label>
+						</number>
+					</entity>
+					<number name="azimuth_to_bamboo" type="integer">
+						<label>Azimuth to Bamboo</label>
+					</number>
+					<number name="horizontal_distance_to_bamboo" type="real">
+						<label>Horizontal Distance to Bamboo</label>
+					</number>
+				</entity>
+
+			</entity>
+			<!-- permanent_plot_b -->
+			<entity name="measurement_of_felled_sample_tree" ui:tab="felled_tree">
+				<entity name="key_generation">
+					<!--  maybe we must restructure this -->
+					<coordinate name="vehicle_location" required="true">
+						<label>Vehicle location</label>
+						<distance max="100000" to="lookup('sampling_design', 'plot_centre', id, 1)" flag="error" />
+						<distance max="50000" to="lookup('sampling_design', 'plot_centre', id, 1)" flag="warn" />
+					</coordinate>
+					<number name="inventory_year" type="integer" required="true">
+						<label>Inventory Year</label>
+					</number>
+					<number name="tree_number" type="integer" maxCount="3" />
+				</entity>
+
+				<entity name="data_location">
+					<code name="province" required="true" list="province">
+						<label>Province</label>
+					</code>
+					<code name="land_system" required="true" list="land_system">
+						<label>Land System</label>
+					</code>
+					<number name="altitude" required="true" type="integer">
+						<label>Altitude</label>
+					</number>
+					<code name="land_category" required="true" list="land_category">
+						<label>Land Category</label>
+					</code>
+					<code name="forest_type" required="true" list="forest_type">
+						<label>Forest Type</label>
+					</code>
+					<code name="stand_condition" required="true" list="stand_condition">
+						<label>Stand Condition</label>
+					</code>
+					<number name="tree_class" type="integer">
+						<label>Tree Class</label>
+					</number>
+					<number name="crown_class" type="integer">
+						<label>Crown Class</label>
+					</number>
+					<number name="crown_position" type="integer">
+						<label>Crown Position</label>
+					</number>
+					<number name="record_type" type="integer">
+						<label>Record Type (foxpro:11)</label>
+					</number>
+					<number name="year_of_logging" required="true" type="integer">
+						<label>Year of Logging</label>
+					</number>
+					<code name="terrain" required="true" list="terrain">
+						<label>Terrain</label>
+					</code>
+					<code name="slope" required="true" list="slope">
+						<label>Slope</label>
+					</code>
+					<code name="aspect" required="true" list="aspect">
+						<label>Aspect</label>
+					</code>
+					<text name="tree_species">
+						<label>Tree Species</label>
+					</text>
+					<number name="crew_number" type="integer">
+						<label>Crew Number</label>
+					</number>
+					<code name="month" list="month" required="true">
+						<label>Month</label>
+					</code>
+				</entity>
+
+				<entity name="form_b">
+					<entity name="end_of_buttress">
+						<number name="diameter" type="real">
+							<label>Diameter</label>
+						</number>
+						<number name="zbt" type="real">
+							<label>ZBT</label>
+						</number>
+						<number name="height_buttress">
+							<label>Height of Buttress</label>
+						</number>
+					</entity>
+					<entity name="breast_height">
+						<number name="diameter" type="real">
+							<label>Diameter</label>
+						</number>
+						<number name="zbt" type="real">
+							<label>ZBT</label>
+						</number>
+					</entity>
+					<entity name="crown_point">
+						<number name="length" type="real">
+							<label>Length</label>
+						</number>
+						<number name="diameter" type="real">
+							<label>Diameter</label>
+						</number>
+						<number name="zbt" type="real">
+							<label>ZBT</label>
+						</number>
+					</entity>
+					<entity name="quality">
+						<number name="grade_1" type="integer">
+							<label>Grade</label>
+						</number>
+						<number name="length_1" type="integer" maxCount="2">
+							<label>Length</label>
+						</number>
+						<number name="grade_2" type="integer">
+							<label>Grade</label>
+						</number>
+						<number name="length_2" type="integer" maxCount="2">
+							<label>Length</label>
+						</number>
+						<number name="grade_3" type="integer">
+							<label>Grade</label>
+						</number>
+						<number name="length_3" type="integer" maxCount="2">
+							<label>Length</label>
+						</number>
+						<number name="grade_4" type="integer">
+							<label>Grade</label>
+						</number>
+					</entity>
+				</entity>
+				<!--  form b -->
+				<entity name="form_c">
+					<number name="diameter_2m">
+						<label>Diameter 2M</label>
+					</number>
+					<number name="zbt_2m">
+						<label>2 BT</label>
+					</number>
+					<number name="diameter_4m">
+						<label>Diameter 4M</label>
+					</number>
+					<number name="zbt_4m">
+						<label>2 BT 2M</label>
+					</number>
+					<number name="diameter_6m">
+						<label>Diameter 6M</label>
+					</number>
+					<number name="zbt_6m">
+						<label>2 BT 6M</label>
+					</number>
+					<number name="diameter_8m">
+						<label>Diameter 8M</label>
+					</number>
+					<number name="zbt_8m">
+						<label>2 BT 8M</label>
+					</number>
+					<number name="diameter_10m">
+						<label>Diameter 10M</label>
+					</number>
+					<number name="zbt_10m">
+						<label>2 BT 10M</label>
+					</number>
+					<number name="diameter_12m">
+						<label>Diameter 12M</label>
+					</number>
+					<number name="zbt_12m">
+						<label>2 BT 12M</label>
+					</number>
+
+					<number name="diameter_14m">
+						<label>Diameter 14M</label>
+					</number>
+					<number name="zbt_14m">
+						<label>2 BT 14M</label>
+					</number>
+					<number name="diameter_16m">
+						<label>Diameter 16M</label>
+					</number>
+					<number name="zbt_16m">
+						<label>2 BT 16M</label>
+					</number>
+					<number name="diameter_18m">
+						<label>Diameter 18M</label>
+					</number>
+					<number name="zbt_18m">
+						<label>2 BT 18M</label>
+					</number>
+					<number name="diameter_20m">
+						<label>Diameter 20M</label>
+					</number>
+					<number name="zbt_20m">
+						<label>2 BT 20M</label>
+					</number>
+					<number name="diameter_22m">
+						<label>Diameter 22M</label>
+					</number>
+					<number name="zbt_22m">
+						<label>2 BT 22M</label>
+					</number>
+					<number name="diameter_24m">
+						<label>Diameter 24M</label>
+					</number>
+					<number name="zbt_24m">
+						<label>2 BT 24M</label>
+					</number>
+
+					<number name="diameter_26m">
+						<label>Diameter 26M</label>
+					</number>
+					<number name="zbt_26m">
+						<label>2 BT 26M</label>
+					</number>
+					<number name="diameter_28m">
+						<label>Diameter 28M</label>
+					</number>
+					<number name="zbt_28m">
+						<label>2 BT 28M</label>
+					</number>
+					<number name="diameter_30m">
+						<label>Diameter 30M</label>
+					</number>
+					<number name="zbt_30m">
+						<label>2 BT 30M</label>
+					</number>
+					<number name="diameter_32m">
+						<label>Diameter 32M</label>
+					</number>
+					<number name="zbt_32m">
+						<label>2 BT 32M</label>
+					</number>
+					<number name="diameter_34m">
+						<label>Diameter 34M</label>
+					</number>
+					<number name="zbt_34m">
+						<label>2 BT 34M</label>
+					</number>
+					<number name="diameter_36m">
+						<label>Diameter 36M</label>
+					</number>
+					<number name="zbt_36m">
+						<label>2 BT 36M</label>
+					</number>
+				</entity>
+
+				<entity name="form_d">
+					<number name="diameter_1">
+						<label>Diameter [1]</label>
+					</number>
+					<number name="diameter_2">
+						<label>Diameter [2]</label>
+					</number>
+					<number name="diameter_3">
+						<label>Diameter [3]</label>
+					</number>
+					<number name="diameter_4">
+						<label>Diameter [4]</label>
+					</number>
+					<number name="diameter_5">
+						<label>Diameter [5]</label>
+					</number>
+					<number name="diameter_6">
+						<label>Diameter [6]</label>
+					</number>
+					<number name="diameter_7">
+						<label>Diameter [7]</label>
+					</number>
+					<number name="diameter_8">
+						<label>Diameter [8]</label>
+					</number>
+					<number name="diameter_9">
+						<label>Diameter [9]</label>
+					</number>
+					<number name="diameter_10">
+						<label>Diameter [10]</label>
+					</number>
+					<number name="diameter_11">
+						<label>Diameter [11]</label>
+					</number>
+					<number name="diameter_12">
+						<label>Diameter [12]</label>
+					</number>
+					<number name="diameter_13">
+						<label>Diameter [13]</label>
+					</number>
+					<number name="diameter_14">
+						<label>Diameter [14]</label>
+					</number>
+					<number name="diameter_15">
+						<label>Diameter [15]</label>
+					</number>
+					<number name="diameter_16">
+						<label>Diameter [16]</label>
+					</number>
+					<number name="diameter_17">
+						<label>Diameter [17]</label>
+					</number>
+					<number name="diameter_18">
+						<label>Diameter [18]</label>
+					</number>
+					<number name="diameter_19">
+						<label>Diameter [19]</label>
+					</number>
+					<number name="diameter_20">
+						<label>Diameter [20]</label>
+					</number>
+					<number name="diameter_21">
+						<label>Diameter [21]</label>
+					</number>
+					<number name="diameter_22">
+						<label>Diameter [22]</label>
+					</number>
+					<number name="diameter_23">
+						<label>Diameter [23]</label>
+					</number>
+					<number name="diameter_24">
+						<label>Diameter [24]</label>
+					</number>
+					<number name="diameter_25">
+						<label>Diameter [25]</label>
+					</number>
+					<number name="diameter_26">
+						<label>Diameter [26]</label>
+					</number>
+					<number name="diameter_27">
+						<label>Diameter [27]</label>
+					</number>
+					<number name="diameter_28">
+						<label>Diameter [28]</label>
+					</number>
+					<number name="diameter_29">
+						<label>Diameter [29]</label>
+					</number>
+					<number name="diameter_30">
+						<label>Diameter [30]</label>
+					</number>
+				</entity>
+			</entity>
+			<!-- measurement_of_felled_sample_tree -->
 		</entity>
 		<!-- cluster -->
 	</schema>
