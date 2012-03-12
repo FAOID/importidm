@@ -46,7 +46,7 @@ public class ImportIdm {
 
 	private Survey importModel() throws IOException, SurveyImportException,
 			InvalidIdmlException {
-		URL idm = ClassLoader.getSystemResource("candidate.idnfi.idm.xml");
+		URL idm = ClassLoader.getSystemResource("idnfi.idm.xml");
 		InputStream is = idm.openStream();
 		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
