@@ -909,6 +909,7 @@
 						9999</message>
 				</check>
 			</number>
+			
 			<entity name="natural_forest" multiple="true" ui:tab="nf" ui:layout="form">
 				<label type="number">1</label>
 				<label type="heading">Enumeration, Natural Forest</label>
@@ -964,7 +965,7 @@
 					<label>Forest type</label>
 				</code>
 				<code name="stand_condition" required="true" list="forest_class"
-					parent="forest_type" ui:tab="nf_detail">
+					parent="forest_class" ui:tab="nf_detail">
 					<label>Stand condition</label>
 				</code>
 				<number name="logging_year" type="integer" required="false" ui:tab="nf_detail">
@@ -1174,7 +1175,7 @@
 
 			<entity name="pmp" multiple="true" ui:tab="pmp" ui:layout="form">
 				<label type="number">1</label>
-				<label type="heading">Enumeration, Natural Forest</label>
+				<label type="heading">Enumeration, Forest Plantations and Pine Forest</label>
 				<number name="tract_no" type="integer" required="true" key="true"
 					ui:tab="pmp_detail">
 					<label type="number">3</label>
@@ -1229,7 +1230,7 @@
 					<label>Forest type</label>
 				</code>
 				<code name="stand_condition" required="true" list="forest_class"
-					parent="forest_type" ui:tab="pmp_detail">
+					parent="forest_class" ui:tab="pmp_detail">
 					<label>Stand condition</label>
 				</code>
 				<number name="logging_year" type="integer" required="false" ui:tab="pmp_detail">
@@ -1340,7 +1341,7 @@
 							<compare gte="0" lte="100" flag="error"/>
 						</number>
 						<number name="percent_top_of_tree" type="real">
-							<label>Percent crown point</label>
+							<label>Percent top of tree</label>
 							<precision decimalDigits="0" unit="percent"/>
 							<compare gte="0" lte="100" flag="error"/>
 						</number>
@@ -1436,15 +1437,46 @@
 				<!-- ssr -->
 			</entity>
 			<!-- plantation, mangrove and pine -->
-
-
+			
 			<entity name="bamboo" ui:tab="bamboo">
-				<number name="consec_number" type="integer">
-					<label>Consecutive Number (auto filled in FoxPro)</label>
+				<number name="tract_no" type="integer" required="true" key="true" ui:tab="nf_detail">
+					<label type="number">3</label>
+					<label>Tract</label>
+					<compare flag="error" gte="1" lte="15"/>
+					<!-- TODO: Min/max value depends on UTM coords? -->
 				</number>
-				<number name="record_type" type="integer">
-					<label>Record Type (foxpro:10)</label>
+				<number name="subplot_no" type="integer" required="true" key="true"
+					ui:tab="nf_detail">
+					<label>Subplot</label>
+					<compare flag="error" gte="1" lte="8"/>
 				</number>
+				<number name="sector" type="real" ui:tab="nf_detail">
+					<label>Sector</label>
+					<precision unit="deg" decimalDigits="0"/>
+				</number>
+				<number name="segment_dist" type="real" relevant="sector=''" ui:tab="nf_detail">
+					<label>Segment distance</label>
+					<precision unit="m" decimalDigits="2"/>
+				</number>
+				<number name="part" type="integer" required="true"
+					relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
+					<label>Part</label>
+					<!-- TODO: what is the code about? -->
+				</number>
+				<number name="permanent" type="integer" required="false" ui:tab="nf_detail">
+					<label>Permanent</label>
+					<compare gte="1" lte="1" flag="error">
+						<message>This field must be either 1 or blank</message>
+					</compare>
+				</number>
+				<number name="control" type="integer" required="false" key="true" ui:tab="nf_detail">
+					<label>Control</label>
+					<compare gte="1" lte="1" flag="error">
+						<message>This field must be either 1 or blank</message>
+					</compare>
+				</number>
+				
+				
 				<text name="name_of_species">
 					<label>Name of species</label>
 				</text>
@@ -1618,7 +1650,7 @@
 					<code name="land_category" required="true" list="land_category">
 						<label>Land Category</label>
 					</code>
-					<code name="forest_type" required="true" list="forest_type">
+					<code name="forest_type" required="true" list="forest_class">
 						<label>Forest Type</label>
 					</code>
 					<code name="stand_condition" required="true" list="stand_condition">
@@ -1705,9 +1737,9 @@
 					<code name="leaves_cut_or_uncut" list="leaf_state">
 						<label>Leaves Cut/Uncut</label>
 					</code>
-					<code name="flower_or_fruit" list="flower_or_fruit">
+					<number name="flower_or_fruit" type="integer">
 						<label>Flower or Fruit</label>
-					</code>
+					</number>
 					<code name="open_or_closed" list="open_or_closed">
 						<label>Open or Closed</label>
 					</code>
@@ -1986,7 +2018,7 @@
 					<code name="land_category" required="true" list="land_category">
 						<label>Land Category</label>
 					</code>
-					<code name="forest_type" required="true" list="forest_type">
+					<code name="forest_type" required="true" list="forest_class">
 						<label>Forest Type</label>
 					</code>
 					<code name="stand_condition" required="true" list="stand_condition">
