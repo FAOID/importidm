@@ -905,8 +905,8 @@
 				<check
 					expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)"
 					flag="error">
-					<message>The northing value must be between 0 and 750 or between 8670 and
-						9999</message>
+					<message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</message>
+					<message xml:lang="id"></message>
 				</check>
 			</number>
 			
@@ -1989,338 +1989,338 @@
 
 			</entity>
 			<!-- permanent_plot_b -->
-			<entity name="measurement_of_felled_sample_tree" ui:tab="felled_tree">
-				<entity name="key_generation">
-					<!--  maybe we must restructure this -->
-					<coordinate name="vehicle_location" required="true">
-						<label>Vehicle location</label>
-						<distance max="100000" to="lookup('sampling_design', 'plot_centre', id, 1)"
-							flag="error"/>
-						<distance max="50000" to="lookup('sampling_design', 'plot_centre', id, 1)"
-							flag="warn"/>
-					</coordinate>
-					<number name="inventory_year" type="integer" required="true">
-						<label>Inventory Year</label>
-					</number>
-					<number name="tree_number" type="integer" maxCount="3"/>
-				</entity>
+<!-- 			<entity name="measurement_of_felled_sample_tree" ui:tab="felled_tree"> -->
+<!-- 				<entity name="key_generation"> -->
+<!-- 					 maybe we must restructure this -->
+<!-- 					<coordinate name="vehicle_location" required="true"> -->
+<!-- 						<label>Vehicle location</label> -->
+<!-- 						<distance max="100000" to="lookup('sampling_design', 'plot_centre', id, 1)" -->
+<!-- 							flag="error"/> -->
+<!-- 						<distance max="50000" to="lookup('sampling_design', 'plot_centre', id, 1)" -->
+<!-- 							flag="warn"/> -->
+<!-- 					</coordinate> -->
+<!-- 					<number name="inventory_year" type="integer" required="true"> -->
+<!-- 						<label>Inventory Year</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="tree_number" type="integer" maxCount="3"/> -->
+<!-- 				</entity> -->
 
-				<entity name="data_location">
-					<code name="province" required="true" list="province">
-						<label>Province</label>
-					</code>
-					<code name="land_system" required="true" list="land_system">
-						<label>Land System</label>
-					</code>
-					<number name="altitude" required="true" type="integer">
-						<label>Altitude</label>
-					</number>
-					<code name="land_category" required="true" list="land_category">
-						<label>Land Category</label>
-					</code>
-					<code name="forest_type" required="true" list="forest_class">
-						<label>Forest Type</label>
-					</code>
-					<code name="stand_condition" required="true" list="stand_condition">
-						<label>Stand Condition</label>
-					</code>
-					<number name="tree_class" type="integer">
-						<label>Tree Class</label>
-					</number>
-					<number name="crown_class" type="integer">
-						<label>Crown Class</label>
-					</number>
-					<number name="crown_position" type="integer">
-						<label>Crown Position</label>
-					</number>
-					<number name="record_type" type="integer">
-						<label>Record Type (foxpro:11)</label>
-					</number>
-					<number name="year_of_logging" required="true" type="integer">
-						<label>Year of Logging</label>
-					</number>
-					<code name="terrain" required="true" list="terrain">
-						<label>Terrain</label>
-					</code>
-					<code name="slope" required="true" list="slope">
-						<label>Slope</label>
-					</code>
-					<code name="aspect" required="true" list="aspect">
-						<label>Aspect</label>
-					</code>
-					<text name="tree_species">
-						<label>Tree Species</label>
-					</text>
-					<number name="crew_number" type="integer">
-						<label>Crew Number</label>
-					</number>
-					<code name="month" list="month" required="true">
-						<label>Month</label>
-					</code>
-				</entity>
+<!-- 				<entity name="data_location"> -->
+<!-- 					<code name="province" required="true" list="province"> -->
+<!-- 						<label>Province</label> -->
+<!-- 					</code> -->
+<!-- 					<code name="land_system" required="true" list="land_system"> -->
+<!-- 						<label>Land System</label> -->
+<!-- 					</code> -->
+<!-- 					<number name="altitude" required="true" type="integer"> -->
+<!-- 						<label>Altitude</label> -->
+<!-- 					</number> -->
+<!-- 					<code name="land_category" required="true" list="land_category"> -->
+<!-- 						<label>Land Category</label> -->
+<!-- 					</code> -->
+<!-- 					<code name="forest_type" required="true" list="forest_class"> -->
+<!-- 						<label>Forest Type</label> -->
+<!-- 					</code> -->
+<!-- 					<code name="stand_condition" required="true" list="stand_condition"> -->
+<!-- 						<label>Stand Condition</label> -->
+<!-- 					</code> -->
+<!-- 					<number name="tree_class" type="integer"> -->
+<!-- 						<label>Tree Class</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="crown_class" type="integer"> -->
+<!-- 						<label>Crown Class</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="crown_position" type="integer"> -->
+<!-- 						<label>Crown Position</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="record_type" type="integer"> -->
+<!-- 						<label>Record Type (foxpro:11)</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="year_of_logging" required="true" type="integer"> -->
+<!-- 						<label>Year of Logging</label> -->
+<!-- 					</number> -->
+<!-- 					<code name="terrain" required="true" list="terrain"> -->
+<!-- 						<label>Terrain</label> -->
+<!-- 					</code> -->
+<!-- 					<code name="slope" required="true" list="slope"> -->
+<!-- 						<label>Slope</label> -->
+<!-- 					</code> -->
+<!-- 					<code name="aspect" required="true" list="aspect"> -->
+<!-- 						<label>Aspect</label> -->
+<!-- 					</code> -->
+<!-- 					<text name="tree_species"> -->
+<!-- 						<label>Tree Species</label> -->
+<!-- 					</text> -->
+<!-- 					<number name="crew_number" type="integer"> -->
+<!-- 						<label>Crew Number</label> -->
+<!-- 					</number> -->
+<!-- 					<code name="month" list="month" required="true"> -->
+<!-- 						<label>Month</label> -->
+<!-- 					</code> -->
+<!-- 				</entity> -->
 
-				<entity name="form_b">
-					<entity name="end_of_buttress">
-						<number name="diameter" type="real">
-							<label>Diameter</label>
-						</number>
-						<number name="zbt" type="real">
-							<label>ZBT</label>
-						</number>
-						<number name="height_buttress">
-							<label>Height of Buttress</label>
-						</number>
-					</entity>
-					<entity name="breast_height">
-						<number name="diameter" type="real">
-							<label>Diameter</label>
-						</number>
-						<number name="zbt" type="real">
-							<label>ZBT</label>
-						</number>
-					</entity>
-					<entity name="crown_point">
-						<number name="length" type="real">
-							<label>Length</label>
-						</number>
-						<number name="diameter" type="real">
-							<label>Diameter</label>
-						</number>
-						<number name="zbt" type="real">
-							<label>ZBT</label>
-						</number>
-					</entity>
-					<entity name="quality">
-						<number name="grade_1" type="integer">
-							<label>Grade</label>
-						</number>
-						<number name="length_1" type="integer" maxCount="2">
-							<label>Length</label>
-						</number>
-						<number name="grade_2" type="integer">
-							<label>Grade</label>
-						</number>
-						<number name="length_2" type="integer" maxCount="2">
-							<label>Length</label>
-						</number>
-						<number name="grade_3" type="integer">
-							<label>Grade</label>
-						</number>
-						<number name="length_3" type="integer" maxCount="2">
-							<label>Length</label>
-						</number>
-						<number name="grade_4" type="integer">
-							<label>Grade</label>
-						</number>
-					</entity>
-				</entity>
-				<!--  form b -->
-				<entity name="form_c">
-					<number name="diameter_2m">
-						<label>Diameter 2M</label>
-					</number>
-					<number name="zbt_2m">
-						<label>2 BT</label>
-					</number>
-					<number name="diameter_4m">
-						<label>Diameter 4M</label>
-					</number>
-					<number name="zbt_4m">
-						<label>2 BT 2M</label>
-					</number>
-					<number name="diameter_6m">
-						<label>Diameter 6M</label>
-					</number>
-					<number name="zbt_6m">
-						<label>2 BT 6M</label>
-					</number>
-					<number name="diameter_8m">
-						<label>Diameter 8M</label>
-					</number>
-					<number name="zbt_8m">
-						<label>2 BT 8M</label>
-					</number>
-					<number name="diameter_10m">
-						<label>Diameter 10M</label>
-					</number>
-					<number name="zbt_10m">
-						<label>2 BT 10M</label>
-					</number>
-					<number name="diameter_12m">
-						<label>Diameter 12M</label>
-					</number>
-					<number name="zbt_12m">
-						<label>2 BT 12M</label>
-					</number>
+<!-- 				<entity name="form_b"> -->
+<!-- 					<entity name="end_of_buttress"> -->
+<!-- 						<number name="diameter" type="real"> -->
+<!-- 							<label>Diameter</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="zbt" type="real"> -->
+<!-- 							<label>ZBT</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="height_buttress"> -->
+<!-- 							<label>Height of Buttress</label> -->
+<!-- 						</number> -->
+<!-- 					</entity> -->
+<!-- 					<entity name="breast_height"> -->
+<!-- 						<number name="diameter" type="real"> -->
+<!-- 							<label>Diameter</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="zbt" type="real"> -->
+<!-- 							<label>ZBT</label> -->
+<!-- 						</number> -->
+<!-- 					</entity> -->
+<!-- 					<entity name="crown_point"> -->
+<!-- 						<number name="length" type="real"> -->
+<!-- 							<label>Length</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="diameter" type="real"> -->
+<!-- 							<label>Diameter</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="zbt" type="real"> -->
+<!-- 							<label>ZBT</label> -->
+<!-- 						</number> -->
+<!-- 					</entity> -->
+<!-- 					<entity name="quality"> -->
+<!-- 						<number name="grade_1" type="integer"> -->
+<!-- 							<label>Grade</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="length_1" type="integer" maxCount="2"> -->
+<!-- 							<label>Length</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="grade_2" type="integer"> -->
+<!-- 							<label>Grade</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="length_2" type="integer" maxCount="2"> -->
+<!-- 							<label>Length</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="grade_3" type="integer"> -->
+<!-- 							<label>Grade</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="length_3" type="integer" maxCount="2"> -->
+<!-- 							<label>Length</label> -->
+<!-- 						</number> -->
+<!-- 						<number name="grade_4" type="integer"> -->
+<!-- 							<label>Grade</label> -->
+<!-- 						</number> -->
+<!-- 					</entity> -->
+<!-- 				</entity> -->
+<!-- 				 form b -->
+<!-- 				<entity name="form_c"> -->
+<!-- 					<number name="diameter_2m"> -->
+<!-- 						<label>Diameter 2M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_2m"> -->
+<!-- 						<label>2 BT</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_4m"> -->
+<!-- 						<label>Diameter 4M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_4m"> -->
+<!-- 						<label>2 BT 2M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_6m"> -->
+<!-- 						<label>Diameter 6M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_6m"> -->
+<!-- 						<label>2 BT 6M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_8m"> -->
+<!-- 						<label>Diameter 8M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_8m"> -->
+<!-- 						<label>2 BT 8M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_10m"> -->
+<!-- 						<label>Diameter 10M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_10m"> -->
+<!-- 						<label>2 BT 10M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_12m"> -->
+<!-- 						<label>Diameter 12M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_12m"> -->
+<!-- 						<label>2 BT 12M</label> -->
+<!-- 					</number> -->
 
-					<number name="diameter_14m">
-						<label>Diameter 14M</label>
-					</number>
-					<number name="zbt_14m">
-						<label>2 BT 14M</label>
-					</number>
-					<number name="diameter_16m">
-						<label>Diameter 16M</label>
-					</number>
-					<number name="zbt_16m">
-						<label>2 BT 16M</label>
-					</number>
-					<number name="diameter_18m">
-						<label>Diameter 18M</label>
-					</number>
-					<number name="zbt_18m">
-						<label>2 BT 18M</label>
-					</number>
-					<number name="diameter_20m">
-						<label>Diameter 20M</label>
-					</number>
-					<number name="zbt_20m">
-						<label>2 BT 20M</label>
-					</number>
-					<number name="diameter_22m">
-						<label>Diameter 22M</label>
-					</number>
-					<number name="zbt_22m">
-						<label>2 BT 22M</label>
-					</number>
-					<number name="diameter_24m">
-						<label>Diameter 24M</label>
-					</number>
-					<number name="zbt_24m">
-						<label>2 BT 24M</label>
-					</number>
+<!-- 					<number name="diameter_14m"> -->
+<!-- 						<label>Diameter 14M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_14m"> -->
+<!-- 						<label>2 BT 14M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_16m"> -->
+<!-- 						<label>Diameter 16M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_16m"> -->
+<!-- 						<label>2 BT 16M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_18m"> -->
+<!-- 						<label>Diameter 18M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_18m"> -->
+<!-- 						<label>2 BT 18M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_20m"> -->
+<!-- 						<label>Diameter 20M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_20m"> -->
+<!-- 						<label>2 BT 20M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_22m"> -->
+<!-- 						<label>Diameter 22M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_22m"> -->
+<!-- 						<label>2 BT 22M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_24m"> -->
+<!-- 						<label>Diameter 24M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_24m"> -->
+<!-- 						<label>2 BT 24M</label> -->
+<!-- 					</number> -->
 
-					<number name="diameter_26m">
-						<label>Diameter 26M</label>
-					</number>
-					<number name="zbt_26m">
-						<label>2 BT 26M</label>
-					</number>
-					<number name="diameter_28m">
-						<label>Diameter 28M</label>
-					</number>
-					<number name="zbt_28m">
-						<label>2 BT 28M</label>
-					</number>
-					<number name="diameter_30m">
-						<label>Diameter 30M</label>
-					</number>
-					<number name="zbt_30m">
-						<label>2 BT 30M</label>
-					</number>
-					<number name="diameter_32m">
-						<label>Diameter 32M</label>
-					</number>
-					<number name="zbt_32m">
-						<label>2 BT 32M</label>
-					</number>
-					<number name="diameter_34m">
-						<label>Diameter 34M</label>
-					</number>
-					<number name="zbt_34m">
-						<label>2 BT 34M</label>
-					</number>
-					<number name="diameter_36m">
-						<label>Diameter 36M</label>
-					</number>
-					<number name="zbt_36m">
-						<label>2 BT 36M</label>
-					</number>
-				</entity>
+<!-- 					<number name="diameter_26m"> -->
+<!-- 						<label>Diameter 26M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_26m"> -->
+<!-- 						<label>2 BT 26M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_28m"> -->
+<!-- 						<label>Diameter 28M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_28m"> -->
+<!-- 						<label>2 BT 28M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_30m"> -->
+<!-- 						<label>Diameter 30M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_30m"> -->
+<!-- 						<label>2 BT 30M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_32m"> -->
+<!-- 						<label>Diameter 32M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_32m"> -->
+<!-- 						<label>2 BT 32M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_34m"> -->
+<!-- 						<label>Diameter 34M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_34m"> -->
+<!-- 						<label>2 BT 34M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_36m"> -->
+<!-- 						<label>Diameter 36M</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="zbt_36m"> -->
+<!-- 						<label>2 BT 36M</label> -->
+<!-- 					</number> -->
+<!-- 				</entity> -->
 
-				<entity name="form_d">
-					<number name="diameter_1">
-						<label>Diameter [1]</label>
-					</number>
-					<number name="diameter_2">
-						<label>Diameter [2]</label>
-					</number>
-					<number name="diameter_3">
-						<label>Diameter [3]</label>
-					</number>
-					<number name="diameter_4">
-						<label>Diameter [4]</label>
-					</number>
-					<number name="diameter_5">
-						<label>Diameter [5]</label>
-					</number>
-					<number name="diameter_6">
-						<label>Diameter [6]</label>
-					</number>
-					<number name="diameter_7">
-						<label>Diameter [7]</label>
-					</number>
-					<number name="diameter_8">
-						<label>Diameter [8]</label>
-					</number>
-					<number name="diameter_9">
-						<label>Diameter [9]</label>
-					</number>
-					<number name="diameter_10">
-						<label>Diameter [10]</label>
-					</number>
-					<number name="diameter_11">
-						<label>Diameter [11]</label>
-					</number>
-					<number name="diameter_12">
-						<label>Diameter [12]</label>
-					</number>
-					<number name="diameter_13">
-						<label>Diameter [13]</label>
-					</number>
-					<number name="diameter_14">
-						<label>Diameter [14]</label>
-					</number>
-					<number name="diameter_15">
-						<label>Diameter [15]</label>
-					</number>
-					<number name="diameter_16">
-						<label>Diameter [16]</label>
-					</number>
-					<number name="diameter_17">
-						<label>Diameter [17]</label>
-					</number>
-					<number name="diameter_18">
-						<label>Diameter [18]</label>
-					</number>
-					<number name="diameter_19">
-						<label>Diameter [19]</label>
-					</number>
-					<number name="diameter_20">
-						<label>Diameter [20]</label>
-					</number>
-					<number name="diameter_21">
-						<label>Diameter [21]</label>
-					</number>
-					<number name="diameter_22">
-						<label>Diameter [22]</label>
-					</number>
-					<number name="diameter_23">
-						<label>Diameter [23]</label>
-					</number>
-					<number name="diameter_24">
-						<label>Diameter [24]</label>
-					</number>
-					<number name="diameter_25">
-						<label>Diameter [25]</label>
-					</number>
-					<number name="diameter_26">
-						<label>Diameter [26]</label>
-					</number>
-					<number name="diameter_27">
-						<label>Diameter [27]</label>
-					</number>
-					<number name="diameter_28">
-						<label>Diameter [28]</label>
-					</number>
-					<number name="diameter_29">
-						<label>Diameter [29]</label>
-					</number>
-					<number name="diameter_30">
-						<label>Diameter [30]</label>
-					</number>
-				</entity>
-			</entity>
+<!-- 				<entity name="form_d"> -->
+<!-- 					<number name="diameter_1"> -->
+<!-- 						<label>Diameter [1]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_2"> -->
+<!-- 						<label>Diameter [2]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_3"> -->
+<!-- 						<label>Diameter [3]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_4"> -->
+<!-- 						<label>Diameter [4]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_5"> -->
+<!-- 						<label>Diameter [5]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_6"> -->
+<!-- 						<label>Diameter [6]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_7"> -->
+<!-- 						<label>Diameter [7]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_8"> -->
+<!-- 						<label>Diameter [8]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_9"> -->
+<!-- 						<label>Diameter [9]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_10"> -->
+<!-- 						<label>Diameter [10]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_11"> -->
+<!-- 						<label>Diameter [11]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_12"> -->
+<!-- 						<label>Diameter [12]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_13"> -->
+<!-- 						<label>Diameter [13]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_14"> -->
+<!-- 						<label>Diameter [14]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_15"> -->
+<!-- 						<label>Diameter [15]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_16"> -->
+<!-- 						<label>Diameter [16]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_17"> -->
+<!-- 						<label>Diameter [17]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_18"> -->
+<!-- 						<label>Diameter [18]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_19"> -->
+<!-- 						<label>Diameter [19]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_20"> -->
+<!-- 						<label>Diameter [20]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_21"> -->
+<!-- 						<label>Diameter [21]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_22"> -->
+<!-- 						<label>Diameter [22]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_23"> -->
+<!-- 						<label>Diameter [23]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_24"> -->
+<!-- 						<label>Diameter [24]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_25"> -->
+<!-- 						<label>Diameter [25]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_26"> -->
+<!-- 						<label>Diameter [26]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_27"> -->
+<!-- 						<label>Diameter [27]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_28"> -->
+<!-- 						<label>Diameter [28]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_29"> -->
+<!-- 						<label>Diameter [29]</label> -->
+<!-- 					</number> -->
+<!-- 					<number name="diameter_30"> -->
+<!-- 						<label>Diameter [30]</label> -->
+<!-- 					</number> -->
+<!-- 				</entity> -->
+<!-- 			</entity> -->
 			<!-- measurement_of_felled_sample_tree -->
 		</entity>
 		<!-- cluster -->
