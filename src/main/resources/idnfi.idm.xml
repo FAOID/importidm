@@ -889,7 +889,7 @@
 	<schema>
 		<entity name="cluster" ui:tab="cluster">
 			<label type="instance">Cluster</label>
-			<number name="utm_zone" type="integer" required="true">
+			<number name="utm_zone" type="integer" required="true" key="true">
 				<label>UTM zone</label>
 				<description>Valid UTM Zone between 46 and 54</description>
 				<compare flag="error" gte="46" lte="54"/>
@@ -911,10 +911,10 @@
 			</number>
 			
 			<entity name="natural_forest" multiple="true" ui:tab="nf" ui:layout="form">
-				<label type="number">1</label>
+<!-- 				<label type="number">1</label> -->
 				<label type="heading">Enumeration, Natural Forest</label>
 				<number name="tract_no" type="integer" required="true" key="true" ui:tab="nf_detail">
-					<label type="number">3</label>
+<!-- 					<label type="number">3</label> -->
 					<label>Tract</label>
 					<compare flag="error" gte="1" lte="15"/>
 					<!-- TODO: Min/max value depends on UTM coords? -->
@@ -964,12 +964,12 @@
 				<code name="forest_type" required="true" list="forest_class" ui:tab="nf_detail">
 					<label>Forest type</label>
 				</code>
-				<code name="stand_condition" required="true" list="forest_class"
-					parent="forest_class" ui:tab="nf_detail">
-					<label>Stand condition</label>
-				</code>
+<!-- 				<code name="stand_condition" required="true" list="forest_class" -->
+<!-- 					parent="forest_class" ui:tab="nf_detail"> -->
+<!-- 					<label>Stand condition</label> -->
+<!-- 				</code> -->
 				<number name="logging_year" type="integer" required="false" ui:tab="nf_detail">
-					<label type="number">18</label>
+<!-- 					<label type="number">18</label> -->
 					<label>Logging year</label>
 					<compare gte="1900" lte="2050" flag="error"/>
 				</number>
@@ -1174,11 +1174,11 @@
 			<!-- natural forest -->
 
 			<entity name="pmp" multiple="true" ui:tab="pmp" ui:layout="form">
-				<label type="number">1</label>
+<!-- 				<label type="number">1</label> -->
 				<label type="heading">Enumeration, Forest Plantations and Pine Forest</label>
 				<number name="tract_no" type="integer" required="true" key="true"
 					ui:tab="pmp_detail">
-					<label type="number">3</label>
+<!-- 					<label type="number">3</label> -->
 					<label>Tract</label>
 					<compare flag="error" gte="1" lte="15"/>
 					<!-- TODO: Min/max value depends on UTM coords? -->
@@ -1234,7 +1234,7 @@
 					<label>Stand condition</label>
 				</code>
 				<number name="logging_year" type="integer" required="false" ui:tab="pmp_detail">
-					<label type="number">18</label>
+<!-- 					<label type="number">18</label> -->
 					<label>Logging year</label>
 					<compare gte="1900" lte="2050" flag="error"/>
 				</number>
@@ -1440,7 +1440,7 @@
 			
 			<entity name="bamboo" ui:tab="bamboo">
 				<number name="tract_no" type="integer" required="true" key="true" ui:tab="nf_detail">
-					<label type="number">3</label>
+<!-- 					<label type="number">3</label> -->
 					<label>Tract</label>
 					<compare flag="error" gte="1" lte="15"/>
 					<!-- TODO: Min/max value depends on UTM coords? -->
@@ -1566,7 +1566,7 @@
 			</entity>
 			<!--enumeration_bamboo -->
 			<entity name="sagu" multiple="true" ui:tab="sagu">
-				<label type="number">3A</label>
+<!-- 				<label type="number">3A</label> -->
 				<label>Sagu Enumeration, TSP</label>
 				<text name="species_or_variety">
 					<label>Species/Variety</label>
@@ -1631,7 +1631,7 @@
 			</entity>
 			<!-- nipa-->
 			<entity name="nipa" multiple="true" ui:tab="nipa">
-				<label type="number">3B</label>
+<!-- 				<label type="number">3B</label> -->
 				<label>Nipa Enumeration, TSP</label>
 				<entity name="data_location">
 					<!--   form A, mostly copied from enumeration natural forest, there are some fields differences though -->
