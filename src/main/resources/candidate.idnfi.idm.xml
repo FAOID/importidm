@@ -1,0 +1,1195 @@
+<survey xmlns="http://www.openforis.org/idml/3.0" xmlns:ui="http://www.openforis.org/collect/3.0/ui" xmlns:collect="http://www.openforis.org/collect/3.0/collect" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/openforis/idm/reengineering/idm-api/src/main/resources/idml3.xsd">
+	<!--http://www.openforis.org/idml/3.0 ../../../../idm-api/src/main/resources/idml3.xsd -->
+	<project>Indonesia NFI</project>
+	<cycle>1</cycle>
+	<description>
+       Basis Data Kehutanan Nasional Indonesia 
+    </description>
+	<configuration>
+		<flex xmlns="http://www.openforis.org/collect/3.0/ui">						
+			<tabDefinition rootEntity="cluster">				
+				<tabs>
+					<tab name="cluster">
+						<label>Cluster</label>
+					</tab>
+					<tab name="nf">
+						<label>Natural Forest</label>
+						<tabs>
+							<tab name="nf_detail">
+								<label>Details</label>
+							</tab>
+							<tab name="nf_tp">
+								<label>Trees, Poles</label>
+							</tab>
+							<tab name="nf_ssr">
+								<label>Seedlings, Saplings, Rattan</label>
+							</tab>
+						</tabs>
+					</tab>
+					<tab name="pmp">
+						<label>Plantation, Mangrove and Pine</label>
+						<tabs>
+							<tab name="pmp_detail">
+								<label>Details</label>
+							</tab>
+							<tab name="pmp_tp">
+								<label>Trees, Poles</label>
+							</tab>
+							<tab name="pmp_ssr">
+								<label>Seedlings, Saplings, Rattan</label>
+							</tab>
+						</tabs>
+					</tab>
+					<tab name="bamboo">
+						<label>Bamboo</label>
+						<tab name="bamboo_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="bamboo_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+					<tab name="sagu">
+						<label>Sagu</label>
+						<tab name="sagu_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="sagu_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+					<tab name="nipa">
+						<label>Nipa</label>
+						<tab name="nipa_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="nipa_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+					<tab name="plot_a">
+						<label>Permanent Plot A</label>
+						<tab name="plota_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="plota_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+					<tab name="plot_b">
+						<label>Permanent Plot B</label>
+						<tab name="plotb_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="plotb_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+					<tab name="felled_tree">
+						<label>Felled Tree</label>
+						<tab name="felled_detail">
+							<label>Details</label>
+						</tab>
+						<tab name="felled_enum">
+							<label>Enumeration</label>
+						</tab>
+					</tab>
+				</tabs>
+			</tabDefinition>
+		</flex>
+	</configuration>
+	<versioning>
+		<version name="1.0">
+			<label>Ministry of Forestry Data</label>
+			<description>Single data structure and forms used by Indonesia MOFOR</description>
+			<date>1990-01-01</date>
+		</version>
+	</versioning>
+	<codeLists>
+		<list name="open_or_closed">
+			<label type="item">Open or Closed</label>
+			<items>
+				<item>
+					<code>O</code>
+					<label>Open</label>
+				</item>
+				<item>
+					<code>C</code>
+					<label>Closed</label>
+				</item>
+			</items>
+		</list>
+		<list name="month">
+			<label type="list">Months</label>
+			<items>
+				<item>
+					<code>1</code>
+					<label>January</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>February</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>March</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>April</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>May</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>June</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>July</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>August</label>
+				</item>
+				<item>
+					<code>9</code>
+					<label>September</label>
+				</item>
+				<item>
+					<code>10</code>
+					<label>October</label>
+				</item>
+				<item>
+					<code>11</code>
+					<label>November</label>
+				</item>
+				<item>
+					<code>12</code>
+					<label>December</label>
+				</item>
+			</items>
+		</list>
+		<list name="leaf_state">
+			<label type="item">Leaves Cut/Uncut</label>
+			<items>
+				<item>
+					<code>C</code>
+					<label>Cut</label>
+				</item>
+				<item>
+					<code>U</code>
+					<label>Uncut</label>
+				</item>
+			</items>
+		</list>
+		<list name="flower_or_fruit">   <!-- TODO: Find definitions -->
+			<label type="item">Flower or Fruit</label>
+			<items>
+				<item>
+					<code>0</code>
+					<label>0</label>
+				</item>
+				<item>
+					<code>1</code>
+					<label>1</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>2</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>3</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>4</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>5</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>6</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>7</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>8</label>
+				</item>
+				<item>
+					<code>9</code>
+					<label>9</label>
+				</item>
+			</items>
+		</list>
+		<list name="province">
+			<label type="item">Province</label>
+			<items>
+				<item>
+					<code>1</code>
+					<label>Daerah Istimewa Aceh</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>Sumatera Utara</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>Sumatera Barat</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>Riau</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>Jambi</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>Sumatera Selatan</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>Lampung</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>Bengkulu</label>
+				</item>
+				<item>
+					<code>14</code>
+					<label>Bali</label>
+				</item>
+				<item>
+					<code>15</code>
+					<label>Nusa Tenggara Barat</label>
+				</item>
+				<item>
+					<code>16</code>
+					<label>Nusa Tenggara Timur</label>
+				</item>
+				<item>
+					<code>17</code>
+					<label>Timor Timur</label>
+				</item>
+				<item>
+					<code>18</code>
+					<label>Kalimantan Barat</label>
+				</item>
+				<item>
+					<code>19</code>
+					<label>Kalimantan Tengah</label>
+				</item>
+				<item>
+					<code>20</code>
+					<label>Kalimantan Selatan</label>
+				</item>
+				<item>
+					<code>21</code>
+					<label>Kalimantan Timur</label>
+				</item>
+				<item>
+					<code>22</code>
+					<label>Sulawesi Utara</label>
+				</item>
+				<item>
+					<code>23</code>
+					<label>Sulawesi Tengah</label>
+				</item>
+				<item>
+					<code>24</code>
+					<label>Sulawesi Tenggara</label>
+				</item>
+				<item>
+					<code>25</code>
+					<label>Sulawesi Selatan</label>
+				</item>
+				<item>
+					<code>26</code>
+					<label>Maluku</label>
+				</item>
+				<item>
+					<code>27</code>
+					<label>Irian Jaya</label>
+				</item>
+			</items>
+		</list>
+		<list name="land_system">
+			<label type="item">Land System</label>
+			<items>
+				<item>
+					<code>1</code>
+					<label>Tidal</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>Beach</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>Swamp and Wetland</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>Meander Belt</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>Fans, plains and valleys</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>Terrace</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>Rolling land, amplitude up to 50 m</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>Hilly land, amplitude 50 - 300m</label>
+				</item>
+				<item>
+					<code>9</code>
+					<label>Mountainous, amplitude more than 300m</label>
+				</item>
+			</items>
+		</list>
+		<list name="altitude">
+			<label type="item">Altitude</label>
+			<items>
+				<item>
+					<code>0</code>
+					<label>0-99m</label>
+				</item>
+				<item>
+					<code>1</code>
+					<label>100-199m</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>200-299m</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>300-399m</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>400-499m</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>500-599m</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>600-699m</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>700-799m</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>800-899m</label>
+				</item>
+				<item>
+					<code>9</code>
+					<label>900-999m</label>
+				</item>
+				<item>
+					<code>10</code>
+					<label>1000-1099m</label>
+				</item>
+				<item>
+					<code>11</code>
+					<label>1100-1199m</label>
+				</item>
+				<item>
+					<code>12</code>
+					<label>1200-1299m</label>
+				</item>
+				<item>
+					<code>13</code>
+					<label>1300-1399m</label>
+				</item>
+				<item>
+					<code>14</code>
+					<label>1400-1499m</label>
+				</item>
+				<item>
+					<code>15</code>
+					<label>1500-1599m</label>
+				</item>
+				<item>
+					<code>16</code>
+					<label>1600-1699m</label>
+				</item>
+				<item>
+					<code>17</code>
+					<label>1700-1799m</label>
+				</item>
+				<item>
+					<code>18</code>
+					<label>1800-1899m</label>
+				</item>
+				<item>
+					<code>19</code>
+					<label>1900-1999m</label>
+				</item>
+				<item>
+					<code>20</code>
+					<label>2000-2099m</label>
+				</item>
+				<item>
+					<code>21</code>
+					<label>2100-2199m</label>
+				</item>
+				<item>
+					<code>22</code>
+					<label>2200-2299m</label>
+				</item>
+				<item>
+					<code>23</code>
+					<label>2300-2399m</label>
+				</item>
+				<item>
+					<code>24</code>
+					<label>2400-2499m</label>
+				</item>
+				<item>
+					<code>25</code>
+					<label>2500-2599m</label>
+				</item>
+				<item>
+					<code>26</code>
+					<label>2600-2699m</label>
+				</item>
+				<item>
+					<code>27</code>
+					<label>2700-2799m</label>
+				</item>
+				<item>
+					<code>28</code>
+					<label>2800-2899m</label>
+				</item>
+				<item>
+					<code>29</code>
+					<label>2900-2999m</label>
+				</item>
+				<item>
+					<code>30</code>
+					<label>3000-3099m</label>
+				</item>
+				<item>
+					<code>31</code>
+					<label>3100-3199m</label>
+				</item>
+				<item>
+					<code>32</code>
+					<label>3200-3299m</label>
+				</item>
+				<item>
+					<code>33</code>
+					<label>3300-3399m</label>
+				</item>
+				<item>
+					<code>34</code>
+					<label>3400-3499m</label>
+				</item>
+				<item>
+					<code>35</code>
+					<label>3500-3599m</label>
+				</item>
+				<item>
+					<code>36</code>
+					<label>3600-3699m</label>
+				</item>
+				<item>
+					<code>37</code>
+					<label>3700-3799m</label>
+				</item>
+				<item>
+					<code>38</code>
+					<label>3800-3899m</label>
+				</item>
+				<item>
+					<code>39</code>
+					<label>3900-3999m</label>
+				</item>
+				<item>
+					<code>40</code>
+					<label>4000-4099m</label>
+				</item>
+				<item>
+					<code>41</code>
+					<label>4100-4199m</label>
+				</item>
+				<item>
+					<code>42</code>
+					<label>4200-4299m</label>
+				</item>
+				<item>
+					<code>43</code>
+					<label>4300-4399m</label>
+				</item>
+				<item>
+					<code>44</code>
+					<label>4400-4499m</label>
+				</item>
+				<item>
+					<code>45</code>
+					<label>4500-4599m</label>
+				</item>
+				<item>
+					<code>46</code>
+					<label>4600-4699m</label>
+				</item>
+				<item>
+					<code>47</code>
+					<label>4700-4799m</label>
+				</item>
+				<item>
+					<code>48</code>
+					<label>4800-4899m</label>
+				</item>
+				<item>
+					<code>49</code>
+					<label>4900-4999m</label>
+				</item>
+				<item>
+					<code>50</code>
+					<label>5000-5099m</label>
+				</item>
+			</items>
+		</list>
+		<list name="land_category">
+			<label type="item">Land System</label>
+			<items>
+				<item>
+					<code>1</code>
+					<label>Tidal forest</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>Coastal forest</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>Wetland forest (including swamp)</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>Dryland forest below 1000 m</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>Submontane forest 1000-2000 m</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>Montane forest above 2000 m</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>Forest and agroforestry plantations</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>Forest fallow</label>
+				</item>
+				<item>
+					<code>9</code>
+					<label>Bushland</label>
+				</item>
+				<item>
+					<code>10</code>
+					<label>Grassland dry</label>
+				</item>
+				<item>
+					<code>11</code>
+					<label>Grassland wet</label>
+				</item>
+				<item>
+					<code>12</code>
+					<label>Tree crops</label>
+				</item>
+				<item>
+					<code>13</code>
+					<label>Agriculture</label>
+				</item>
+				<item>
+					<code>14</code>
+					<label>Unvegetated</label>
+				</item>
+				<item>
+					<code>15</code>
+					<label>Water</label>
+				</item>
+				<item>
+					<code>16</code>
+					<label>Settlement, town</label>
+				</item>
+			</items>
+		</list>
+		<list name="forest_class">
+			<label type="item">Forest Type</label>
+			<items>
+				<item>
+					<code>1</code>
+					<label>Mangrove Forest</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>Nipah Forest</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>Palm Forest</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>Coastal forest</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>Swamp forest, seasonally inundated</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>Wetland forest, permanently inundated</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>Peat swamp forest</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>Moist dryland forest</label>
+				</item>
+				<item>
+					<code>9</code>
+					<label>Savanna forest</label>
+				</item>
+				<item>
+					<code>10</code>
+					<label>Pine forest</label>
+				</item>
+				<item>
+					<code>11</code>
+					<label>Heath forest</label>
+				</item>
+				<item>
+					<code>12</code>
+					<label>Bamboo forest</label>
+				</item>
+				<item>
+					<code>13</code>
+					<label>Submontane and montane broadleaved forest</label>
+				</item>
+				<item>
+					<code>14</code>
+					<label>Productive forest plantation</label>
+				</item>
+				<item>
+					<code>15</code>
+					<label>Protective forest plantation</label>
+				</item>
+				<item>
+					<code>16</code>
+					<label>Agro-forestry plantation</label>
+				</item>
+				<item>
+					<code>17</code>
+					<label>Tambak fish ponds</label>
+				</item>
+			</items>
+		</list>
+		<list name="stand_condition">
+			<label type="item">Stand Condition</label>
+			<items>
+				<item>
+					<code>1</code>
+					<label>Not logged, high volume</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>Not logged, medium volume</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>Not logged, low volume</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>Logged lightly</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>Logged heavily</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>Cleared for forest plantations</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>Cleared for permanent agriculture</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>Cleared for shifting cultivation</label>
+				</item>
+				<item>
+					<code>9</code>
+					<label>Cleared with shifting, cultivated crops</label>
+				</item>
+				<item>
+					<code>10</code>
+					<label>Secondary growth, high to medium</label>
+				</item>
+				<item>
+					<code>11</code>
+					<label>Secondary growth, low</label>
+				</item>
+				<item>
+					<code>12</code>
+					<label>Degraded</label>
+				</item>
+				<item>
+					<code>13</code>
+					<label>Destroyed by wild fire</label>
+				</item>
+			</items>
+		</list>
+		<list name="terrain">
+			<label type="item">Land System</label>
+			<items>
+				<item>
+					<code>0</code>
+					<label>Flat and undulating (0-10%)</label>
+				</item>
+				<item>
+					<code>1</code>
+					<label>Lowland gully</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>Lower slope or mould</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>Mid slope</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>Uper slope</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>Slope gully</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>Hill top</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>Ridge</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>Rock slide</label>
+				</item>
+			</items>
+		</list>
+		<list name="slope">
+			<label type="item">Slope</label>
+			<items>
+				<item>
+					<code>0</code>
+					<label>0-10% step 10</label>
+				</item>
+				<item>
+					<code>1</code>
+					<label>11-25% step 15 limit for caterpillar</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>26-45% step 20 TGHK limit</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>46-70 % step 25 limit for cable</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>71-100% step 30 limit for enumeration</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>101+%</label>
+				</item>
+			</items>
+		</list>
+		<list name="aspect">
+			<label type="item">Aspect</label>
+			<items>
+				<item>
+					<code>0</code>
+					<label>Flat and undulating (0-10%)</label>
+				</item>
+				<item>
+					<code>1</code>
+					<label>N 338-22 degrees</label>
+				</item>
+				<item>
+					<code>2</code>
+					<label>NE 23-67 degrees</label>
+				</item>
+				<item>
+					<code>3</code>
+					<label>E 68-112 degrees</label>
+				</item>
+				<item>
+					<code>4</code>
+					<label>SE 113-157 degrees</label>
+				</item>
+				<item>
+					<code>5</code>
+					<label>S 158-202 degrees</label>
+				</item>
+				<item>
+					<code>6</code>
+					<label>SW 203-247 degrees</label>
+				</item>
+				<item>
+					<code>7</code>
+					<label>W 248-292 degrees</label>
+				</item>
+				<item>
+					<code>8</code>
+					<label>NW 293-337 degrees</label>
+				</item>
+			</items>
+		</list>
+		<list name="binary_value">
+			<label type="item">Yes/No Value</label>
+			<description>List of values where "1" is true and no value false</description>
+			<items>
+				<item>
+					<code>1</code>
+					<label>Yes</label>
+				</item>
+			</items>
+		</list>
+	</codeLists>
+	<units>
+		<unit name="deg" dimension="angle">
+			<label>degrees</label>
+			<abbreviation>deg</abbreviation>
+		</unit>
+		<unit name="m" dimension="length" conversionFactor="1.0">
+			<label>metres</label>
+			<abbreviation>m</abbreviation>
+		</unit>
+		<unit name="cm" dimension="length" conversionFactor="0.01">
+			<label>centimetres</label>
+			<abbreviation>cm</abbreviation>
+		</unit>
+		<unit name="km" dimension="length" conversionFactor="1000">
+			<label>kilometre</label>
+			<abbreviation>km</abbreviation>
+		</unit>
+		<unit name="ac" dimension="area" conversionFactor="2.47105381">
+			<label>acres</label>
+			<abbreviation>ac</abbreviation>
+		</unit>
+		<unit name="ha" dimension="area" conversionFactor="1.0">
+			<label>hectares</label>
+			<abbreviation>ha</abbreviation>
+		</unit>
+		<unit name="percent" dimension="ratio" conversionFactor="0.01">
+			<label>percent</label>
+			<abbreviation>%</abbreviation>
+		</unit>
+	</units>
+	<schema>
+		<entity name="cluster" ui:tab="cluster">
+			<label type="instance">Cluster</label>
+			<number name="utm_zone" type="integer" required="true" key="true">
+				<label>UTM zone</label>
+				<description>Valid UTM Zone between 46 and 54</description>
+				<compare flag="error" gte="46" lte="54" />
+			</number>
+			<number name="easting" type="integer" required="true" key="true">
+				<label>W-E</label>
+				<description>Valid UTM easting between 166 and 834</description>
+				<compare flag="error" gte="166" lte="834" />
+			</number>
+			<number name="northing" type="integer" required="true" key="true">
+				<label>S-N</label>
+				<description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
+				<check expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)" flag="error">
+					<message>The northing value must be between 0 and 750 or between
+						8670 and 9999
+					</message>
+				</check>
+			</number>
+			<entity name="natural_forest" multiple="true" ui:tab="nf" ui:layout="form">
+				<label type="heading">Natural Forest</label>
+				<number name="tract_no" type="integer" required="true" key="true" ui:tab="nf_detail">
+					<label>Tract no.</label>
+					<compare flag="error" gte="1" lte="15" />
+					<!-- TODO min/max value depends on UTM coords? -->
+				</number>
+				<number name="subplot_no" type="integer" required="true" key="true" ui:tab="nf_detail">
+					<label>Subplot no.</label>
+					<compare flag="error" gte="1" lte="8" />
+				</number>
+				<number name="sector" type="real" ui:tab="nf_detail">
+					<label>Sector</label>
+					<precision unit="deg" decimalDigits="0" />
+				</number>
+				<number name="segment_dist" type="real" relevant="sector=''" ui:tab="nf_detail">
+					<label>Segment distance</label>
+					<precision unit="m" decimalDigits="2" />
+				</number>
+				<number name="part" type="integer" required="true" relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
+					<label>Part</label> <!-- TODO -->
+				</number>
+				<code name="permanent" list="binary_value" required="false" ui:tab="nf_detail">
+					<label>Permanent</label>
+				</code>
+				<code name="control" list="binary_value" required="false" key="true" ui:tab="nf_detail">
+					<label>Control</label>
+				</code>
+				<code name="province" required="true" list="province" ui:tab="nf_detail">
+					<label>Province</label>
+				</code>
+				<code name="land_system" required="true" list="land_system" ui:tab="nf_detail">
+					<label>Land system</label>
+				</code>
+				<code name="altitude" required="true" list="altitude" ui:tab="nf_detail">
+					<label>Altitude</label>
+				</code>
+				<code name="land_category" required="true" list="land_category" ui:tab="nf_detail">
+					<label>Land category</label>
+				</code>
+				<code name="forest_type" required="true" list="forest_class" ui:tab="nf_detail">
+					<label>Forest type</label>
+				</code>
+				<code name="stand_condition" required="true" list="forest_class" parent="forest_type" ui:tab="nf_detail">
+					<label>Stand condition</label>
+				</code>
+				<number name="logging_year" type="integer" required="false" ui:tab="nf_detail">
+					<!-- <label type="number">18</label> -->
+					<label>Logging year</label>
+					<compare gte="1900" lte="2050" flag="error" />
+				</number>
+				<code name="terrain" required="true" list="terrain" ui:tab="nf_detail">
+					<label>Terrain</label>
+				</code>
+				<code name="slope" required="true" list="slope" ui:tab="nf_detail">
+					<label>Slope</label>
+				</code>
+				<code name="aspect" required="true" list="aspect" ui:tab="nf_detail">
+					<label>Aspect</label>
+				</code>
+				<entity name="record_count" multiple="false" ui:tab="nf_detail">
+					<label>Number of Records</label>
+					<number name="trees_poles" type="integer" required="false">
+						<label>Trees and poles</label>
+						<default value="0" />
+						<compare flag="error" gte="0" />
+					</number>
+					<number name="seedlings" type="integer" required="false">
+						<label>Seedlings</label>
+						<default value="0" />
+						<compare flag="error" gte="0" />
+					</number>
+					<number name="saplings" type="integer" required="false">
+						<label>Saplings</label>
+						<default value="0" />
+						<compare flag="error" gte="0" />
+					</number>
+					<number name="sm_rattan" type="integer" required="false">
+						<label>Rattan (&lt;2.9m)</label>
+						<default value="0" />
+						<compare flag="error" gte="0" />
+					</number>
+					<number name="lg_rattan" type="integer" required="false">
+						<label>Rattan (&gt;3m)</label>
+						<default value="0" />
+						<compare flag="error" gte="0" />
+					</number>
+				</entity>
+				<number name="crew_no" type="integer" required="false" ui:tab="nf_detail">
+					<label>Crew no.</label>
+				</number>
+				<code name="month" list="month" required="true" ui:tab="nf_detail">
+					<label>Month</label>
+				</code>
+				<number name="year" type="integer" required="true" ui:tab="nf_detail">
+					<label>Year</label>
+					<compare gte="1900" lte="2050" flag="error" />
+				</number>
+				<!-- data_location -->
+				<entity name="tree" multiple="true" ui:tab="nf_tp">
+					<label type="heading">Trees and Poles</label>
+					<!--<number name="consec_number" type="integer"> <label>Consecutive Number (auto filled in FoxPro)</label> </number> <number name="control" type="integer"> <label>Record Type (foxpro:02)</label> 
+						</number> -->
+					<text name="species_name">
+						<label>Name of Species</label>
+					</text>
+					<number name="diameter" type="real">
+						<label>Diameter</label>
+						<description>DBH or diameter 0.2m AB</description> <!-- TODO: Description -->
+						<precision decimalDigits="1" unit="cm" />
+					</number>
+					<!-- TODO: Add damage codelist -->
+					<!-- <code name="damage" list="damage"> -->
+					<!-- <label>Damage</label> -->
+					<!-- </code> -->
+					<!-- TODO: Group under "Trees of &gt;=20cm -->
+					<entity name="lg_trees" relevant="diameter &gt;= 20" multiple="false">
+						<label>Large trees</label>
+						<number name="buttress_height" type="real">
+							<label>Buttress height</label>
+							<precision decimalDigits="2" unit="cm" />
+						</number>
+						<number name="bole_height" type="real">
+							<label>Bole height</label>
+							<precision decimalDigits="1" unit="cm" />
+						</number>
+						<!-- TODO: Add grade and infestation codelist -->
+						<!-- <code name="grade" list="grade"> -->
+						<!-- <label>Grade</label> -->
+						<!-- </code> -->
+						<!-- <code name="infestation" list="infestation" multiple="true" maxCount="2"> -->
+						<!-- <label>Infestation</label> -->
+						<!-- <default value="0"/> -->
+						<!-- </code> -->
+					</entity>
+					<entity name="bole_height" multiple="false">
+						<label>Bole height</label>
+						<number name="horizontal_distance" type="real">
+							<label>Horizontal distance</label>
+							<precision decimalDigits="2" unit="m" />
+						</number>
+						<number name="base_height" type="real">
+							<label>Height of base</label>
+							<precision decimalDigits="1" unit="m" />
+						</number>
+						<number name="percent_base" type="real">
+							<label>Percent base</label>
+							<precision decimalDigits="0" unit="percent" />
+						</number>
+						<number name="percent_crown_point" type="real">
+							<label>Percent crown point</label>
+							<precision decimalDigits="0" unit="percent" />
+							<compare gte="0" lte="100" flag="error" />
+						</number>
+					</entity>
+					<entity name="buttress" multiple="false">
+						<label>Buttress</label>
+						<number name="horizontal_distance" type="real">
+							<label>Horizontal distance</label>
+							<precision decimalDigits="2" unit="m" />
+						</number>
+						<number name="percent_base" type="real">
+							<label>Percent base</label>
+							<precision decimalDigits="0" unit="percent" />
+							<compare gte="0" lte="100" flag="error" />
+						</number>
+						<number name="percent_buttress" type="real">
+							<label>Percent buttress</label>
+							<precision decimalDigits="0" unit="percent" />
+							<compare gte="0" lte="100" flag="error" />
+						</number>
+					</entity>
+					<entity name="dab">
+						<label>DAB</label>
+						<description>Diameter 0.2m above buttress</description>
+						<number name="full_bars" type="real">
+							<label>Full bars</label>
+						</number>
+						<number name="quarter_bars" type="real">
+							<label>1/4 bars</label>
+							<precision decimalDigits="1" unit="percent" />
+						</number>
+					</entity>
+				</entity>
+				<entity name="ssr" ui:tab="nf_ssr">
+					<label>Seedlings, Saplings, Rattan</label>
+					<text name="species_name">
+						<label>Species name</label>
+					</text>
+					<!-- <taxon name="species" taxonomy="idnfi" highestRank="family" required="true"> -->
+					<!-- <label>Species</label> -->
+					<!-- </taxon> -->
+					<number name="seedlings" type="integer">
+						<label>Seedlings</label>
+						<default value="0" />
+						<compare gte="0" flag="error" />
+					</number>
+					<number name="saplings" type="integer">
+						<label>Saplings</label>
+						<default value="0" />
+						<compare gte="0" flag="error" />
+					</number>
+					<number name="sm_rattan" type="integer">
+						<label>Small rattan</label>
+						<description>Rattan &lt;= 2.9m</description>
+						<default value="0" />
+						<compare gte="0" flag="error" />
+					</number>
+					<entity name="lg_rattan">
+						<label>Large rattan</label>
+						<description>Rattan &gt;=3m long</description>
+						<number name="stems" type="integer">
+							<label>Stems</label>
+							<default value="0" />
+							<compare gte="0" flag="error" />
+						</number>
+						<number name="max_diameter" type="real">
+							<label>Max. diameter</label>
+							<precision decimalDigits="1" unit="cm" />
+							<compare gte="0" flag="error" />
+						</number>
+						<number name="min_diameter" type="real">
+							<label>Min. diameter</label>
+							<precision decimalDigits="1" unit="cm" />
+							<compare gte="0" flag="error" />
+						</number>
+						<number name="avg_diameter" type="real">
+							<label>Avg. diameter</label>
+							<precision decimalDigits="1" unit="cm" />
+							<compare gte="0" flag="error" />
+						</number>
+						<number name="avg_length" type="real">
+							<label>Avg. length</label>
+							<precision decimalDigits="0" unit="m" />
+							<compare gte="0" flag="error" />
+						</number>
+					</entity>
+					<!-- rattan_greater_than_3m -->
+				</entity>
+				<!--seedling_saplings_rattan -->
+			</entity>
+			<!--natural forest -->
+		</entity>
+		<!-- cluster -->
+	</schema>
+</survey>
