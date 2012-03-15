@@ -72,30 +72,25 @@
 					</tab>
 					<tab name="plot_a">
 						<label>Permanent Plot A</label>
-						<tab name="plota_detail">
-							<label>Details</label>
-						</tab>
-						<tab name="plota_enum">
-							<label>Enumeration</label>
-						</tab>
+						<tabs>
+							<tab name="plota_detail">
+								<label>Details</label>
+							</tab>
+							<tab name="plota_enum">
+								<label>Enumeration</label>
+							</tab>
+						</tabs>
 					</tab>
 					<tab name="plot_b">
 						<label>Permanent Plot B</label>
-						<tab name="plotb_detail">
-							<label>Details</label>
-						</tab>
-						<tab name="plotb_enum">
-							<label>Enumeration</label>
-						</tab>
-					</tab>
-					<tab name="felled_tree">
-						<label>Felled Tree</label>
-						<tab name="felled_detail">
-							<label>Details</label>
-						</tab>
-						<tab name="felled_enum">
-							<label>Enumeration</label>
-						</tab>
+						<tabs>
+							<tab name="plotb_detail">
+								<label>Details</label>
+							</tab>
+							<tab name="plotb_enum">
+								<label>Enumeration</label>
+							</tab>
+						</tabs>
 					</tab>
 				</tabs>
 			</tabDefinition>
@@ -890,19 +885,22 @@
 			<number name="utm_zone" type="integer" required="true" key="true">
 				<label>UTM zone</label>
 				<description>Valid UTM Zone between 46 and 54</description>
-				<compare flag="error" gte="46" lte="54" />
+				<compare flag="error" gte="46" lte="54"/>
 			</number>
 			<number name="easting" type="integer" required="true" key="true">
 				<label>W-E</label>
 				<description>Valid UTM easting between 166 and 834</description>
-				<compare flag="error" gte="166" lte="834" />
+				<compare flag="error" gte="166" lte="834"/>
 			</number>
 			<number name="northing" type="integer" required="true" key="true">
 				<label>S-N</label>
 				<description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
-				<check expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)" flag="error">
-					<message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</message>
-					<message xml:lang="id"></message>
+				<check
+					expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)"
+					flag="error">
+					<message xml:lang="en">The northing value must be between 0 and 750 or between
+						8670 and 9999</message>
+					<message xml:lang="id"/>
 				</check>
 			</number>
 
@@ -912,22 +910,24 @@
 				<number name="tract_no" type="integer" required="true" key="true" ui:tab="nf_detail">
 					<!-- <label type="number">3</label> -->
 					<label>Tract</label>
-					<compare flag="error" gte="1" lte="15" />
+					<compare flag="error" gte="1" lte="15"/>
 					<!-- TODO: Min/max value depends on UTM coords? -->
 				</number>
-				<number name="subplot_no" type="integer" required="true" key="true" ui:tab="nf_detail">
+				<number name="subplot_no" type="integer" required="true" key="true"
+					ui:tab="nf_detail">
 					<label>Subplot</label>
-					<compare flag="error" gte="1" lte="8" />
+					<compare flag="error" gte="1" lte="8"/>
 				</number>
 				<number name="sector" type="real" ui:tab="nf_detail">
 					<label>Sector</label>
-					<precision unit="deg" decimalDigits="0" />
+					<precision unit="deg" decimalDigits="0"/>
 				</number>
 				<number name="segment_dist" type="real" relevant="sector=''" ui:tab="nf_detail">
 					<label>Segment distance</label>
-					<precision unit="m" decimalDigits="2" />
+					<precision unit="m" decimalDigits="2"/>
 				</number>
-				<number name="part" type="integer" required="true" relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
+				<number name="part" type="integer" required="true"
+					relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
 					<label>Part</label>
 					<!-- TODO: what is the code about? -->
 				</number>
@@ -965,7 +965,7 @@
 				<number name="logging_year" type="integer" required="false" ui:tab="nf_detail">
 					<!-- <label type="number">18</label> -->
 					<label>Logging year</label>
-					<compare gte="1900" lte="2050" flag="error" />
+					<compare gte="1900" lte="2050" flag="error"/>
 				</number>
 				<code name="terrain" required="true" list="terrain" ui:tab="nf_detail">
 					<label>Terrain</label>
@@ -980,40 +980,40 @@
 					<label>Number of Records</label>
 					<number name="trees_poles" type="integer" required="false">
 						<label>Trees and poles</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 					<number name="seedlings" type="integer" required="false">
 						<label>Seedlings</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 					<number name="saplings" type="integer" required="false">
 						<label>Saplings</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 					<number name="sm_rattan" type="integer" required="false">
 						<label>Rattan (&lt;=2.9m)</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 					<number name="lg_rattan" type="integer" required="false">
 						<label>Rattan (&gt;=3m)</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 				</entity>
 				<number name="crew_no" type="integer" required="false" ui:tab="nf_detail">
 					<label>Crew no.</label>
-					<compare flag="error" gte="0" />
+					<compare flag="error" gte="0"/>
 				</number>
 				<code name="month" list="month" required="true" ui:tab="nf_detail">
 					<label>Month</label>
 				</code>
 				<number name="year" type="integer" required="true" ui:tab="nf_detail">
 					<label>Year</label>
-					<compare gte="1900" lte="2050" flag="error" />
+					<compare gte="1900" lte="2050" flag="error"/>
 				</number>
 				<entity name="tp" multiple="true" ui:tab="nf_tp">
 					<label type="heading">Trees and Poles</label>
@@ -1024,7 +1024,7 @@
 						<label>Diameter</label>
 						<description>DBH or diameter 0.2m AB</description>
 						<!-- TODO: Description -->
-						<precision decimalDigits="1" unit="cm" />
+						<precision decimalDigits="1" unit="cm"/>
 					</number>
 					<!-- TODO: Add damage codelist -->
 					<!-- <code name="damage" list="damage"> -->
@@ -1035,13 +1035,13 @@
 						<description>Trees with diameter &gt;=20cm</description>
 						<number name="buttress_height" type="real">
 							<label>Buttress height</label>
-							<precision decimalDigits="2" unit="cm" />
-							<compare gt="0" flag="error" />
+							<precision decimalDigits="2" unit="cm"/>
+							<compare gt="0" flag="error"/>
 						</number>
 						<number name="bole_height" type="real">
 							<label>Bole height</label>
-							<precision decimalDigits="1" unit="cm" />
-							<compare gt="0" flag="error" />
+							<precision decimalDigits="1" unit="cm"/>
+							<compare gt="0" flag="error"/>
 						</number>
 						<!-- TODO: Add grade and infestation codelist -->
 						<!-- <code name="grade" list="grade"> -->
@@ -1056,40 +1056,40 @@
 						<label>Bole height</label>
 						<number name="horizontal_distance" type="real">
 							<label>Horizontal distance</label>
-							<precision decimalDigits="2" unit="m" />
-							<compare gt="0" flag="error" />
+							<precision decimalDigits="2" unit="m"/>
+							<compare gt="0" flag="error"/>
 						</number>
 						<number name="base_height" type="real">
 							<label>Height of base</label>
-							<precision decimalDigits="1" unit="m" />
-							<compare gt="0" flag="error" />
+							<precision decimalDigits="1" unit="m"/>
+							<compare gt="0" flag="error"/>
 						</number>
 						<number name="percent_base" type="real">
 							<label>Percent base</label>
-							<precision decimalDigits="0" unit="percent" />
-							<compare gte="0" lte="100" flag="error" />
+							<precision decimalDigits="0" unit="percent"/>
+							<compare gte="0" lte="100" flag="error"/>
 						</number>
 						<number name="percent_crown_point" type="real">
 							<label>Percent crown point</label>
-							<precision decimalDigits="0" unit="percent" />
-							<compare gte="0" lte="100" flag="error" />
+							<precision decimalDigits="0" unit="percent"/>
+							<compare gte="0" lte="100" flag="error"/>
 						</number>
 					</entity>
 					<entity name="buttress" multiple="false">
 						<label>Buttress</label>
 						<number name="horizontal_distance" type="real">
 							<label>Horizontal distance</label>
-							<precision decimalDigits="2" unit="m" />
+							<precision decimalDigits="2" unit="m"/>
 						</number>
 						<number name="percent_base" type="real">
 							<label>Percent base</label>
-							<precision decimalDigits="0" unit="percent" />
-							<compare gte="0" lte="100" flag="error" />
+							<precision decimalDigits="0" unit="percent"/>
+							<compare gte="0" lte="100" flag="error"/>
 						</number>
 						<number name="percent_buttress" type="real">
 							<label>Percent buttress</label>
-							<precision decimalDigits="0" unit="percent" />
-							<compare gte="0" lte="100" flag="error" />
+							<precision decimalDigits="0" unit="percent"/>
+							<compare gte="0" lte="100" flag="error"/>
 						</number>
 					</entity>
 					<entity name="dab" multiple="false">
@@ -1100,7 +1100,7 @@
 						</number>
 						<number name="quarter_bars" type="real">
 							<label>1/4 bars</label>
-							<precision decimalDigits="1" unit="percent" />
+							<precision decimalDigits="1" unit="percent"/>
 						</number>
 					</entity>
 				</entity>
@@ -1111,84 +1111,87 @@
 					</text>
 					<number name="count" type="integer" required="true">
 						<label>Count</label>
-						<compare gte="0" flag="error" />
+						<compare gte="0" flag="error"/>
 					</number>
 					<!-- <taxon name="species" taxonomy="idnfi" highestRank="family" required="true"> -->
 					<!-- <label>Species</label> -->
 					<!-- </taxon> -->
 					<number name="seedlings" type="integer">
 						<label>Seedlings</label>
-						<default value="0" />
-						<compare gte="0" flag="error" />
+						<default value="0"/>
+						<compare gte="0" flag="error"/>
 					</number>
 					<number name="saplings" type="integer">
 						<label>Saplings</label>
-						<default value="0" />
-						<compare gte="0" flag="error" />
+						<default value="0"/>
+						<compare gte="0" flag="error"/>
 					</number>
 					<number name="sm_rattan" type="integer">
 						<label>Small rattan</label>
 						<description>Rattan &lt;= 2.9m</description>
-						<default value="0" />
-						<compare gte="0" flag="error" />
+						<default value="0"/>
+						<compare gte="0" flag="error"/>
 					</number>
 					<entity name="lg_rattan">
 						<label>Large rattan</label>
 						<description>Rattan &gt;=3m long</description>
 						<number name="stems" type="integer">
 							<label>Stems</label>
-							<default value="0" />
-							<compare gte="0" flag="error" />
+							<default value="0"/>
+							<compare gte="0" flag="error"/>
 						</number>
 						<number name="max_diameter" type="real">
 							<label>Max. diameter</label>
-							<precision decimalDigits="1" unit="cm" />
-							<compare gte="0" flag="error" />
+							<precision decimalDigits="1" unit="cm"/>
+							<compare gte="0" flag="error"/>
 						</number>
 						<number name="min_diameter" type="real">
 							<label>Min. diameter</label>
-							<precision decimalDigits="1" unit="cm" />
-							<compare gte="0" flag="error" />
+							<precision decimalDigits="1" unit="cm"/>
+							<compare gte="0" flag="error"/>
 						</number>
 						<number name="avg_diameter" type="real">
 							<label>Avg. diameter</label>
-							<precision decimalDigits="1" unit="cm" />
-							<compare gte="0" flag="error" />
+							<precision decimalDigits="1" unit="cm"/>
+							<compare gte="0" flag="error"/>
 						</number>
 						<number name="avg_length" type="real">
 							<label>Avg. length</label>
-							<precision decimalDigits="0" unit="m" />
-							<compare gte="0" flag="error" />
+							<precision decimalDigits="0" unit="m"/>
+							<compare gte="0" flag="error"/>
 						</number>
 					</entity>
 					<!-- lg_rattan -->
 				</entity>
 				<!-- ssr -->
 			</entity>
-			<!-- natural forest -->
+			
 
 			<entity name="pmp" multiple="true" ui:tab="pmp" ui:layout="form">
 				<!-- <label type="number">1</label> -->
 				<label type="heading">Enumeration, Forest Plantations and Pine Forest</label>
-				<number name="tract_no" type="integer" required="true" key="true" ui:tab="pmp_detail">
+				<number name="tract_no" type="integer" required="true" key="true"
+					ui:tab="pmp_detail">
 					<!-- <label type="number">3</label> -->
 					<label>Tract</label>
-					<compare flag="error" gte="1" lte="15" />
+					<compare flag="error" gte="1" lte="15"/>
 					<!-- TODO: Min/max value depends on UTM coords? -->
 				</number>
-				<number name="subplot_no" type="integer" required="true" key="true" ui:tab="pmp_detail">
+				<number name="subplot_no" type="integer" required="true" key="true"
+					ui:tab="pmp_detail">
 					<label>Subplot</label>
-					<compare flag="error" gte="1" lte="8" />
+					<compare flag="error" gte="1" lte="8"/>
 				</number>
 				<number name="sector" type="real" ui:tab="pmp_detail">
 					<label>Sector</label>
-					<precision unit="deg" decimalDigits="0" />
+					<precision unit="deg" decimalDigits="0"/>
 				</number>
 				<number name="segment_dist" type="real" relevant="sector=''" ui:tab="pmp_detail">
 					<label>Segment distance</label>
-					<precision unit="m" decimalDigits="2" />
+					<precision unit="m" decimalDigits="2"/>
 				</number>
-				<number name="part" type="integer" required="true" relevant="sector!='' or segment_dist!=''" key="true" ui:tab="pmp_detail">
+				<number name="part" type="integer" required="true"
+					relevant="sector!='' or segment_dist!=''" key="true" ui:tab="pmp_detail">
 					<label>Part</label>
 					<!-- TODO: what is the code about? -->
 				</number>
@@ -1198,7 +1201,8 @@
 						<message>This field must be either 1 or blank</message>
 					</compare>
 				</number>
-				<number name="control" type="integer" required="false" key="true" ui:tab="pmp_detail">
+				<number name="control" type="integer" required="false" key="true"
+					ui:tab="pmp_detail">
 					<label>Control</label>
 					<compare gte="1" lte="1" flag="error">
 						<message>This field must be either 1 or blank</message>
@@ -1219,13 +1223,14 @@
 				<code name="forest_type" required="true" list="forest_class" ui:tab="pmp_detail">
 					<label>Forest type</label>
 				</code>
-				<code name="stand_condition" required="true" list="forest_class" parent="forest_class" ui:tab="pmp_detail">
+				<code name="stand_condition" required="true" list="forest_class"
+					parent="forest_class" ui:tab="pmp_detail">
 					<label>Stand condition</label>
 				</code>
 				<number name="logging_year" type="integer" required="false" ui:tab="pmp_detail">
 					<!-- <label type="number">18</label> -->
 					<label>Logging year</label>
-					<compare gte="1900" lte="2050" flag="error" />
+					<compare gte="1900" lte="2050" flag="error"/>
 				</number>
 				<code name="terrain" required="true" list="terrain" ui:tab="pmp_detail">
 					<label>Terrain</label>
@@ -1240,40 +1245,40 @@
 					<label>Number of Records</label>
 					<number name="trees_poles" type="integer" required="false">
 						<label>Trees and poles</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 					<number name="seedlings" type="integer" required="false">
 						<label>Seedlings</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 					<number name="saplings" type="integer" required="false">
 						<label>Saplings</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 					<number name="sm_rattan" type="integer" required="false">
 						<label>Rattan (&lt;=2.9m)</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 					<number name="lg_rattan" type="integer" required="false">
 						<label>Rattan (&gt;=3m)</label>
-						<default value="0" />
-						<compare flag="error" gte="0" />
+						<default value="0"/>
+						<compare flag="error" gte="0"/>
 					</number>
 				</entity>
 				<number name="crew_no" type="integer" required="false" ui:tab="pmp_detail">
 					<label>Crew no.</label>
-					<compare flag="error" gte="0" />
+					<compare flag="error" gte="0"/>
 				</number>
 				<code name="month" list="month" required="true" ui:tab="pmp_detail">
 					<label>Month</label>
 				</code>
 				<number name="year" type="integer" required="true" ui:tab="pmp_detail">
 					<label>Year</label>
-					<compare gte="1900" lte="2050" flag="error" />
+					<compare gte="1900" lte="2050" flag="error"/>
 				</number>
 				<entity name="tp" multiple="true" ui:tab="pmp_tp">
 					<label type="heading">Trees and Poles</label>
@@ -1284,7 +1289,7 @@
 						<label>Diameter</label>
 						<description>DBH or diameter 0.2m AB</description>
 						<!-- TODO: Description -->
-						<precision decimalDigits="1" unit="cm" />
+						<precision decimalDigits="1" unit="cm"/>
 					</number>
 					<!-- TODO: Add damage codelist -->
 					<!-- <code name="damage" list="damage"> -->
@@ -1295,13 +1300,13 @@
 						<description>Trees with diameter &gt;=10cm</description>
 						<number name="buttress_height" type="real">
 							<label>Buttress height</label>
-							<precision decimalDigits="2" unit="cm" />
-							<compare gt="0" flag="error" />
+							<precision decimalDigits="2" unit="cm"/>
+							<compare gt="0" flag="error"/>
 						</number>
 						<number name="bole_height" type="real">
 							<label>Bole height</label>
-							<precision decimalDigits="1" unit="cm" />
-							<compare gt="0" flag="error" />
+							<precision decimalDigits="1" unit="cm"/>
+							<compare gt="0" flag="error"/>
 						</number>
 						<!-- TODO: Add grade and infestation codelist -->
 						<!-- <code name="grade" list="grade"> -->
@@ -1316,40 +1321,40 @@
 						<label>Bole height</label>
 						<number name="horizontal_distance" type="real">
 							<label>Horizontal distance</label>
-							<precision decimalDigits="2" unit="m" />
-							<compare gt="0" flag="error" />
+							<precision decimalDigits="2" unit="m"/>
+							<compare gt="0" flag="error"/>
 						</number>
 						<number name="base_height" type="real">
 							<label>Height of base</label>
-							<precision decimalDigits="1" unit="m" />
-							<compare gt="0" flag="error" />
+							<precision decimalDigits="1" unit="m"/>
+							<compare gt="0" flag="error"/>
 						</number>
 						<number name="percent_base" type="real">
 							<label>Percent base</label>
-							<precision decimalDigits="0" unit="percent" />
-							<compare gte="0" lte="100" flag="error" />
+							<precision decimalDigits="0" unit="percent"/>
+							<compare gte="0" lte="100" flag="error"/>
 						</number>
 						<number name="percent_top_of_tree" type="real">
 							<label>Percent top of tree</label>
-							<precision decimalDigits="0" unit="percent" />
-							<compare gte="0" lte="100" flag="error" />
+							<precision decimalDigits="0" unit="percent"/>
+							<compare gte="0" lte="100" flag="error"/>
 						</number>
 					</entity>
 					<entity name="buttress" multiple="false">
 						<label>Buttress</label>
 						<number name="horizontal_distance" type="real">
 							<label>Horizontal distance</label>
-							<precision decimalDigits="2" unit="m" />
+							<precision decimalDigits="2" unit="m"/>
 						</number>
 						<number name="percent_base" type="real">
 							<label>Percent base</label>
-							<precision decimalDigits="0" unit="percent" />
-							<compare gte="0" lte="100" flag="error" />
+							<precision decimalDigits="0" unit="percent"/>
+							<compare gte="0" lte="100" flag="error"/>
 						</number>
 						<number name="percent_buttress" type="real">
 							<label>Percent buttress</label>
-							<precision decimalDigits="0" unit="percent" />
-							<compare gte="0" lte="100" flag="error" />
+							<precision decimalDigits="0" unit="percent"/>
+							<compare gte="0" lte="100" flag="error"/>
 						</number>
 					</entity>
 					<entity name="dab" multiple="false">
@@ -1360,7 +1365,7 @@
 						</number>
 						<number name="quarter_bars" type="real">
 							<label>1/4 bars</label>
-							<precision decimalDigits="1" unit="percent" />
+							<precision decimalDigits="1" unit="percent"/>
 						</number>
 					</entity>
 				</entity>
@@ -1371,83 +1376,86 @@
 					</text>
 					<number name="count" type="integer" required="true">
 						<label>Count</label>
-						<compare gte="0" flag="error" />
+						<compare gte="0" flag="error"/>
 					</number>
 					<!-- <taxon name="species" taxonomy="idnfi" highestRank="family" required="true"> -->
 					<!-- <label>Species</label> -->
 					<!-- </taxon> -->
 					<number name="seedlings" type="integer">
 						<label>Seedlings</label>
-						<default value="0" />
-						<compare gte="0" flag="error" />
+						<default value="0"/>
+						<compare gte="0" flag="error"/>
 					</number>
 					<number name="saplings" type="integer">
 						<label>Saplings</label>
-						<default value="0" />
-						<compare gte="0" flag="error" />
+						<default value="0"/>
+						<compare gte="0" flag="error"/>
 					</number>
 					<number name="sm_rattan" type="integer">
 						<label>Small rattan</label>
 						<description>Rattan &lt;= 2.9m</description>
-						<default value="0" />
-						<compare gte="0" flag="error" />
+						<default value="0"/>
+						<compare gte="0" flag="error"/>
 					</number>
 					<entity name="lg_rattan">
 						<label>Large rattan</label>
 						<description>Rattan &gt;=3m long</description>
 						<number name="stems" type="integer">
 							<label>Stems</label>
-							<default value="0" />
-							<compare gte="0" flag="error" />
+							<default value="0"/>
+							<compare gte="0" flag="error"/>
 						</number>
 						<number name="max_diameter" type="real">
 							<label>Max. diameter</label>
-							<precision decimalDigits="1" unit="cm" />
-							<compare gte="0" flag="error" />
+							<precision decimalDigits="1" unit="cm"/>
+							<compare gte="0" flag="error"/>
 						</number>
 						<number name="min_diameter" type="real">
 							<label>Min. diameter</label>
-							<precision decimalDigits="1" unit="cm" />
-							<compare gte="0" flag="error" />
+							<precision decimalDigits="1" unit="cm"/>
+							<compare gte="0" flag="error"/>
 						</number>
 						<number name="avg_diameter" type="real">
 							<label>Avg. diameter</label>
-							<precision decimalDigits="1" unit="cm" />
-							<compare gte="0" flag="error" />
+							<precision decimalDigits="1" unit="cm"/>
+							<compare gte="0" flag="error"/>
 						</number>
 						<number name="avg_length" type="real">
 							<label>Avg. length</label>
-							<precision decimalDigits="0" unit="m" />
-							<compare gte="0" flag="error" />
+							<precision decimalDigits="0" unit="m"/>
+							<compare gte="0" flag="error"/>
 						</number>
 					</entity>
 					<!-- lg_rattan -->
 				</entity>
 				<!-- ssr -->
 			</entity>
-			<!-- plantation, mangrove and pine -->
+		
 
 			<entity name="bamboo" ui:tab="bamboo" multiple="true" ui:layout="form">
 				<label>Bamboo</label>
-				<number name="tract_no" type="integer" required="true" key="true" ui:tab="bamboo_detail">
+				<number name="tract_no" type="integer" required="true" key="true"
+					ui:tab="bamboo_detail">
 					<!-- <label type="number">3</label> -->
 					<label>Tract</label>
-					<compare flag="error" gte="1" lte="15" />
+					<compare flag="error" gte="1" lte="15"/>
 					<!-- TODO: Min/max value depends on UTM coords? -->
 				</number>
-				<number name="subplot_no" type="integer" required="true" key="true" ui:tab="bamboo_detail">
+				<number name="subplot_no" type="integer" required="true" key="true"
+					ui:tab="bamboo_detail">
 					<label>Subplot</label>
-					<compare flag="error" gte="1" lte="8" />
+					<compare flag="error" gte="1" lte="8"/>
 				</number>
 				<number name="sector" type="real" ui:tab="bamboo_detail">
 					<label>Sector</label>
-					<precision unit="deg" decimalDigits="0" />
+					<precision unit="deg" decimalDigits="0"/>
 				</number>
 				<number name="segment_dist" type="real" relevant="sector=''" ui:tab="bamboo_detail">
 					<label>Segment distance</label>
-					<precision unit="m" decimalDigits="2" />
+					<precision unit="m" decimalDigits="2"/>
 				</number>
-				<number name="part" type="integer" required="true" relevant="sector!='' or segment_dist!=''" key="true" ui:tab="bamboo_detail">
+				<number name="part" type="integer" required="true"
+					relevant="sector!='' or segment_dist!=''" key="true" ui:tab="bamboo_detail">
 					<label>Part</label>
 					<!-- TODO: what is the code about? -->
 				</number>
@@ -1457,7 +1465,8 @@
 						<message>This field must be either 1 or blank</message>
 					</compare>
 				</number>
-				<number name="control" type="integer" required="false" key="true" ui:tab="bamboo_detail">
+				<number name="control" type="integer" required="false" key="true"
+					ui:tab="bamboo_detail">
 					<label>Control</label>
 					<compare gte="1" lte="1" flag="error">
 						<message>This field must be either 1 or blank</message>
@@ -1466,13 +1475,13 @@
 
 
 				<entity name="bamboo_enumeration" multiple="true" ui:tab="bamboo_enum">
-				<label type="heading">Bamboo Enumeration</label>
+					<label type="heading">Bamboo Enumeration</label>
 					<text name="name_of_species" required="true">
 						<label>Name of species</label>
 					</text>
 					<entity name="number_of_bamboo_culms">
 						<label>Number of culmns</label>
-						<number name="one_year" type="integer">							
+						<number name="one_year" type="integer">
 							<label>1 - Year</label>
 							<compare flag="error" gt="0"/>
 						</number>
@@ -1493,7 +1502,7 @@
 						<label>1-year old</label>
 						<entity name="low_part">
 							<label>Low part</label>
-							<number name="dbh" type="real">								
+							<number name="dbh" type="real">
 								<label>DBH</label>
 								<compare flag="error" gt="0"/>
 							</number>
@@ -1518,7 +1527,7 @@
 					</entity>
 
 					<entity name="two_year_old">
-					<label>2-year old</label>
+						<label>2-year old</label>
 						<entity name="low_part">
 							<label>Low part</label>
 							<number name="dbh" type="real">
@@ -1536,7 +1545,7 @@
 						</entity>
 						<entity name="top">
 							<label>Top</label>
-							<number name="length" type="real">							
+							<number name="length" type="real">
 								<label>Length</label>
 								<compare flag="error" gt="0"/>
 							</number>
@@ -1576,9 +1585,9 @@
 					</entity>
 				</entity>
 			</entity>
-			<!--bamboo -->
-			
-			<entity name="sagu" multiple="true" ui:tab="sagu">
+		
+
+			<entity name="sagu" multiple="true" ui:tab="sagu" ui:layout="form">
 				<!-- <label type="number">3A</label> -->
 				<label>Sagu Enumeration, TSP</label>
 				<text name="species_or_variety">
@@ -1642,8 +1651,7 @@
 					</number>
 				</entity>
 			</entity>
-			<!-- nipa -->
-			<entity name="nipa" multiple="true" ui:tab="nipa">
+			<entity name="nipa" multiple="true" ui:tab="nipa" ui:layout="form">
 				<!-- <label type="number">3B</label> -->
 				<label>Nipa Enumeration, TSP</label>
 				<entity name="data_location">
@@ -1777,124 +1785,208 @@
 				</entity>
 			</entity>
 
-			<entity name="permanent_plot_a" ui:tab="plot_a">
-				<entity name="partition">
+			<entity name="permanent_plot_a" ui:tab="plot_a" ui:layout="form" multiple="true">
+				<label type="number">4</label>
+				<label type="instance">Permanent Plot, A</label>
+				<number name="hectare_plot" type="real">
+					<label>Hectare Plot</label>
+					<compare flag="error" gt="0"/>
+				</number>
+				<number name="record_unit" type="integer">
+					<label>Record Unit</label>
+					<compare flag="error" gt="0"/>
+				</number>
+				<number name="sector" type="real" ui:tab="plota_detail">
+					<label>Sector</label>
+					<precision unit="deg" decimalDigits="0"/>					
+				</number>				
+				<number name="segment_dist" type="real" relevant="sector=''" ui:tab="plota_detail">
+					<label>Segment distance</label>
+					<precision unit="m" decimalDigits="2"/>
+				</number>
+				<number name="part" type="integer" required="true"
+					relevant="sector!='' or segment_dist!=''" key="true" ui:tab="plota_detail">
+					<label>Part</label>
+					<!-- TODO: what is the code about? -->
+				</number>
+				<number name="square_5x3" type="real">
+					<label>5x3m squares</label>
+					<compare flag="error" gt="0"/>
+				</number>				
+				<number name="control" type="integer" required="false" key="true"
+					ui:tab="plota_detail">
+					<label>Control</label>
+					<compare gte="1" lte="1" flag="error">
+						<message>This field must be either 1 or blank</message>
+					</compare>
+				</number>
+				<code name="province" required="true" list="province" ui:tab="plota_detail">
+					<label>Province</label>
+				</code>
+				<code name="land_system" required="true" list="land_system" ui:tab="plota_detail">
+					<label>Land system</label>
+				</code>
+				<code name="altitude" required="true" list="altitude" ui:tab="plota_detail">
+					<label>Altitude</label>
+				</code>
+				<code name="land_category" required="true" list="land_category"
+					ui:tab="plota_detail">
+					<label>Land category</label>
+				</code>
+				<code name="forest_type" required="true" list="forest_class" ui:tab="plota_detail">
+					<label>Forest type</label>
+				</code>
+				<!-- <code name="stand_condition" required="true" list="forest_class" -->
+				<!-- parent="forest_class" ui:tab="plota_detail"> -->
+				<!-- <label>Stand condition</label> -->
+				<!-- </code> -->
+				<number name="logging_year" type="integer" required="false" ui:tab="plota_detail">
+					<!-- <label type="number">18</label> -->
+					<label>Logging year</label>
+					<compare gte="1900" lte="2050" flag="error"/>
+				</number>
+				<code name="terrain" required="true" list="terrain" ui:tab="plota_detail">
+					<label>Terrain</label>
+				</code>
+				<code name="slope" required="true" list="slope" ui:tab="plota_detail">
+					<label>Slope</label>
+				</code>
+				<code name="aspect" required="true" list="aspect" ui:tab="plota_detail">
+					<label>Aspect</label>
+				</code>
+				<number name="tp_recorded" type="integer" ui:tab="plota_detail" required="true">
+					<label>Trees and poles recorded</label>					
+				</number>
+				<number name="crew_no" type="integer" required="false" ui:tab="plota_detail">
+					<label>Crew no.</label>
+					<compare flag="error" gte="0"/>
+				</number>
+				<code name="month" list="month" required="true" ui:tab="plota_detail">
+					<label>Month</label>
+				</code>
+				<number name="year" type="integer" required="true" ui:tab="plota_detail">
+					<label>Year</label>
+					<compare gte="1900" lte="2050" flag="error"/>
+				</number>
+
+				<entity name="plota_enum" ui:tab="plota_enum" multiple="true" ui:layout="form">
+					<label>Plot A Enumeration</label>
+					<text name="name_of_species" required="true">
+						<label>Name of Species</label>
+					</text>					
 					<number name="squares" type="integer">
 						<label>Squares</label>
 					</number>
-				</entity>
-				<number name="tress_and_poles_record" type="integer">
-					<label>Trees and Poles Record</label>
-				</number>
-				<number name="crew_number" type="integer">
-					<label>Crew Number</label>
-				</number>
-				<code name="month" list="month" required="true">
-					<label>Month</label>
-				</code>
 
-				<text name="name_of_species">
-					<label>Name of Species</label>
-				</text>
+					<number name="tress_and_poles_record" type="integer">
+						<label>Trees and Poles Record</label>
+					</number>
+					<number name="crew_number" type="integer">
+						<label>Crew Number</label>
+					</number>
+					<code name="month" list="month" required="true">
+						<label>Month</label>
+					</code>
 
-				<number name="record_type" type="integer">
-					<label>Record Type (foxpro:06)</label>
-				</number>
-				<number name="consec_number" type="integer">
-					<label>Consecutive Number (auto filled in FoxPro)</label>
-				</number>
-				<text name="species_code">
-					<label>Species Code</label>
-				</text>
-				<number name="dba_or_ab" type="real">
-					<label>DBA or AB</label>
-				</number>
-				<number name="damage" type="integer">
-					<label>Damage</label>
-				</number>
-				<number name="azimuth_to_tree" type="real">
-					<label>Azimuth to Tree</label>
-				</number>
-				<number name="horizontal_distance" type="real">
-					<label>Horizontal Distance</label>
-				</number>
-
-				<entity name="bole_and_tree_height">
+					
+					<number name="record_type" type="integer">
+						<label>Record Type (foxpro:06)</label>
+					</number>
+					<number name="consec_number" type="integer">
+						<label>Consecutive Number (auto filled in FoxPro)</label>
+					</number>
+					<text name="species_code">
+						<label>Species Code</label>
+					</text>
+					<number name="dba_or_ab" type="real">
+						<label>DBA or AB</label>
+					</number>
+					<number name="damage" type="integer">
+						<label>Damage</label>
+					</number>
+					<number name="azimuth_to_tree" type="real">
+						<label>Azimuth to Tree</label>
+					</number>
 					<number name="horizontal_distance" type="real">
 						<label>Horizontal Distance</label>
 					</number>
-					<number name="height_of_base" type="real">
-						<label>Height of Base</label>
-					</number>
-					<number name="percent_base" type="real">
-						<label>Percent Base</label>
-					</number>
-					<number name="percent_crown_point" type="real">
-						<label>Percent Crown Point</label>
-					</number>
-					<number name="percent_top_of_tree" type="real">
-						<label>Percent Top of Tree</label>
-					</number>
-				</entity>
-				<entity name="trees_higher_than_20cm">
-					<number name="butress_height" type="real">
-						<label>Butress Height</label>
-					</number>
-					<number name="d_2point2m_ab" type="real">
-						<label>D 2.2M AB</label>
-					</number>
-					<number name="bole_height" type="real">
-						<label>Bole Height</label>
-					</number>
-					<number name="tree_height" type="real">
-						<label>Tree Height</label>
-					</number>
-					<number name="grade" type="integer">
-						<label>Grade</label>
-					</number>
-					<number name="infestation" type="integer">
-						<label>Infestation</label>
-					</number>
-					<number name="tree_class" type="integer">
-						<label>Tree Class</label>
-					</number>
-					<number name="crown_class" type="integer">
-						<label>Crown Class</label>
-					</number>
-					<number name="crown_position" type="integer">
-						<label>Crown Position</label>
-					</number>
-				</entity>
-				<entity name="buttress_and_diameter_above_buttress">
-					<number name="horizontal_distance" type="real">
-						<label>Horizontal Distance</label>
-					</number>
-					<number name="percent_base" type="real">
-						<label>Percent Base</label>
-					</number>
-					<number name="percent_buttress" type="real">
-						<label>Percent Buttress</label>
-					</number>
-					<number name="full_bars_d2_ab" type="real">
-						<label>Full Bars D 02 AB</label>
-					</number>
-					<number name="quarter_bars_d2_ab" type="real">
-						<label>1/4 bars D 02 AB</label>
-					</number>
-					<number name="percent_2point2m_ab" type="real">
-						<label>Percent 2.2M AB</label>
-					</number>
-					<number name="full_bars_d_2point2m_ab">
-						<label>Full Bars D 2.2 AB</label>
-					</number>
-					<number name="quarter_bars_d_2point2m_ab" type="real">
-						<label>1/4 Bars D 2.2 AB</label>
-					</number>
+
+					<entity name="bole_and_tree_height">
+						<number name="horizontal_distance" type="real">
+							<label>Horizontal Distance</label>
+						</number>
+						<number name="height_of_base" type="real">
+							<label>Height of Base</label>
+						</number>
+						<number name="percent_base" type="real">
+							<label>Percent Base</label>
+						</number>
+						<number name="percent_crown_point" type="real">
+							<label>Percent Crown Point</label>
+						</number>
+						<number name="percent_top_of_tree" type="real">
+							<label>Percent Top of Tree</label>
+						</number>
+					</entity>
+					<entity name="trees_higher_than_20cm">
+						<number name="butress_height" type="real">
+							<label>Butress Height</label>
+						</number>
+						<number name="d_2point2m_ab" type="real">
+							<label>D 2.2M AB</label>
+						</number>
+						<number name="bole_height" type="real">
+							<label>Bole Height</label>
+						</number>
+						<number name="tree_height" type="real">
+							<label>Tree Height</label>
+						</number>
+						<number name="grade" type="integer">
+							<label>Grade</label>
+						</number>
+						<number name="infestation" type="integer">
+							<label>Infestation</label>
+						</number>
+						<number name="tree_class" type="integer">
+							<label>Tree Class</label>
+						</number>
+						<number name="crown_class" type="integer">
+							<label>Crown Class</label>
+						</number>
+						<number name="crown_position" type="integer">
+							<label>Crown Position</label>
+						</number>
+					</entity>
+					<entity name="buttress_and_diameter_above_buttress">
+						<number name="horizontal_distance" type="real">
+							<label>Horizontal Distance</label>
+						</number>
+						<number name="percent_base" type="real">
+							<label>Percent Base</label>
+						</number>
+						<number name="percent_buttress" type="real">
+							<label>Percent Buttress</label>
+						</number>
+						<number name="full_bars_d2_ab" type="real">
+							<label>Full Bars D 02 AB</label>
+						</number>
+						<number name="quarter_bars_d2_ab" type="real">
+							<label>1/4 bars D 02 AB</label>
+						</number>
+						<number name="percent_2point2m_ab" type="real">
+							<label>Percent 2.2M AB</label>
+						</number>
+						<number name="full_bars_d_2point2m_ab">
+							<label>Full Bars D 2.2 AB</label>
+						</number>
+						<number name="quarter_bars_d_2point2m_ab" type="real">
+							<label>1/4 Bars D 2.2 AB</label>
+						</number>
+					</entity>
 				</entity>
 			</entity>
-			<!--permanent_plot_a -->
 
-			<entity name="permanent_plot_b" ui:tab="plot_b">
+			<entity name="permanent_plot_b" ui:tab="plot_b" ui:layout="form">
 				<entity name="partition">
 					<number name="sector_degrees" type="real">
 						<label>Sector Degrees</label>
@@ -2335,7 +2427,8 @@
 			<!-- </entity> -->
 			<!-- </entity> -->
 			<!-- measurement_of_felled_sample_tree -->
+
+			<!-- cluster -->
 		</entity>
-		<!-- cluster -->
 	</schema>
 </survey>
