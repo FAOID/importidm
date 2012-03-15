@@ -1472,39 +1472,46 @@
 					</text>
 					<entity name="number_of_bamboo_culms">
 						<label>Number of culmns</label>
-						<number name="one_year" type="integer">
+						<number name="one_year" type="integer">							
 							<label>1 - Year</label>
+							<compare flag="error" gt="0"/>
 						</number>
 						<number name="two_year" type="integer">
 							<label>2 - Year</label>
+							<compare flag="error" gt="0"/>
 						</number>
 						<number name="total" type="integer">
 							<label>Total</label>
+							<compare flag="error" gt="0"/>
 						</number>
 						<number name="live_stumps" type="integer">
 							<label>Live Stumps</label>
+							<compare flag="error" gt="0"/>
 						</number>
 					</entity>
 					<entity name="one_year_old">
 						<label>1-year old</label>
 						<entity name="low_part">
 							<label>Low part</label>
-							<number name="dbh" type="real">
+							<number name="dbh" type="real">								
 								<label>DBH</label>
+								<compare flag="error" gt="0"/>
 							</number>
-							<number name="length">
+							<number name="length" type="real">
 								<label>Length</label>
+								<compare flag="error" gt="0"/>
 							</number>
-							<number name="weight">
+							<number name="weight" type="real">
 								<label>Weight</label>
+								<compare flag="error" gt="0"/>
 							</number>
 						</entity>
 						<entity name="top">
 							<label>Top</label>
-							<number name="length">
+							<number name="length" type="real">
 								<label>Length</label>
 							</number>
-							<number name="weight">
+							<number name="weight" type="real">
 								<label>Weight</label>
 							</number>
 						</entity>
@@ -1513,22 +1520,29 @@
 					<entity name="two_year_old">
 					<label>2-year old</label>
 						<entity name="low_part">
+							<label>Low part</label>
 							<number name="dbh" type="real">
 								<label>D B H</label>
+								<compare flag="error" gt="0"/>
 							</number>
-							<number name="length">
+							<number name="length" type="real">
 								<label>Length</label>
+								<compare flag="error" gt="0"/>
 							</number>
-							<number name="weight">
+							<number name="weight" type="real">
 								<label>Weight</label>
+								<compare flag="error" gt="0"/>
 							</number>
 						</entity>
 						<entity name="top">
-							<number name="length">
+							<label>Top</label>
+							<number name="length" type="real">							
 								<label>Length</label>
+								<compare flag="error" gt="0"/>
 							</number>
-							<number name="weight">
+							<number name="weight" type="real">
 								<label>Weight</label>
+								<compare flag="error" gt="0"/>
 							</number>
 						</entity>
 					</entity>
@@ -1538,20 +1552,25 @@
 						<entity name="low_part">
 							<number name="dbh" type="real">
 								<label>DBH</label>
+								<compare flag="error" gt="0"/>
 							</number>
-							<number name="length">
+							<number name="length" type="real">
 								<label>Length</label>
+								<compare flag="error" gt="0"/>
 							</number>
-							<number name="weight">
+							<number name="weight" type="real">
 								<label>Weight</label>
+								<compare flag="error" gt="0"/>
 							</number>
 						</entity>
 						<entity name="top">
-							<number name="length">
+							<number name="length" type="real">
 								<label>Length</label>
+								<compare flag="error" gt="0"/>
 							</number>
-							<number name="weight">
+							<number name="weight" type="real">
 								<label>Weight</label>
+								<compare flag="error" gt="0"/>
 							</number>
 						</entity>
 					</entity>
