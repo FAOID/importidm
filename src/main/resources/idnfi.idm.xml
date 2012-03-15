@@ -1869,77 +1869,40 @@
 					<compare gte="1900" lte="2050" flag="error"/>
 				</number>
 
-				<entity name="plota_enum" ui:tab="plota_enum" multiple="true" ui:layout="form">
+				<entity name="plota_enum" ui:tab="plota_enum" multiple="true" ui:layout="table">
 					<label>Plot A Enumeration</label>
 					<text name="name_of_species" required="true">
-						<label>Name of Species</label>
+						<label>Name of species</label>
 					</text>					
-					<number name="squares" type="integer">
-						<label>Squares</label>
-					</number>
-
-					<number name="tress_and_poles_record" type="integer">
-						<label>Trees and Poles Record</label>
-					</number>
-					<number name="crew_number" type="integer">
-						<label>Crew Number</label>
-					</number>
-					<code name="month" list="month" required="true">
-						<label>Month</label>
-					</code>
-
-					
-					<number name="record_type" type="integer">
-						<label>Record Type (foxpro:06)</label>
-					</number>
-					<number name="consec_number" type="integer">
-						<label>Consecutive Number (auto filled in FoxPro)</label>
-					</number>
-					<text name="species_code">
-						<label>Species Code</label>
-					</text>
-					<number name="dba_or_ab" type="real">
-						<label>DBA or AB</label>
+				
+					<number name="dbb_or_b" type="real">
+						<label>DBB or B 0.2m AB 0.1cm</label>
 					</number>
 					<number name="damage" type="integer">
 						<label>Damage</label>
 					</number>
-					<number name="azimuth_to_tree" type="real">
-						<label>Azimuth to Tree</label>
-					</number>
-					<number name="horizontal_distance" type="real">
-						<label>Horizontal Distance</label>
-					</number>
-
-					<entity name="bole_and_tree_height">
-						<number name="horizontal_distance" type="real">
-							<label>Horizontal Distance</label>
-						</number>
-						<number name="height_of_base" type="real">
-							<label>Height of Base</label>
-						</number>
-						<number name="percent_base" type="real">
-							<label>Percent Base</label>
-						</number>
-						<number name="percent_crown_point" type="real">
-							<label>Percent Crown Point</label>
-						</number>
-						<number name="percent_top_of_tree" type="real">
-							<label>Percent Top of Tree</label>
-						</number>
-					</entity>
+					
 					<entity name="trees_higher_than_20cm">
+						<label>Trees of 20+cm</label>
 						<number name="butress_height" type="real">
-							<label>Butress Height</label>
+							<label>Buttress height 0.01m</label>
+							<precision decimalDigits="2" unit="m"/>
+							<compare flag="error" gt="0"/>							
 						</number>
 						<number name="d_2point2m_ab" type="real">
-							<label>D 2.2M AB</label>
+							<label>D 2.2m AB 0.1cm</label>
+							<precision decimalDigits="1" unit="cm"/>
+							<compare flag="error" gt="0"/>
 						</number>
 						<number name="bole_height" type="real">
-							<label>Bole Height</label>
+							<label>Bole height 0.1m</label>
+							<precision decimalDigits="1" unit="m"/>
+							<compare flag="error" gt="0"/>
 						</number>
 						<number name="tree_height" type="real">
-							<label>Tree Height</label>
+							<label>Tree height</label>
+							<precision decimalDigits="1" unit="m"/>
+							<compare flag="error" gt="0"/>
 						</number>
 						<number name="grade" type="integer">
 							<label>Grade</label>
@@ -1948,40 +1911,93 @@
 							<label>Infestation</label>
 						</number>
 						<number name="tree_class" type="integer">
-							<label>Tree Class</label>
+							<label>Tree class</label>
 						</number>
 						<number name="crown_class" type="integer">
-							<label>Crown Class</label>
+							<label>Crown class</label>
 						</number>
 						<number name="crown_position" type="integer">
-							<label>Crown Position</label>
+							<label>Crown position</label>
 						</number>
 					</entity>
-					<entity name="buttress_and_diameter_above_buttress">
+
+					<entity name="bole_and_tree_height">
+						<label>Bole and tree height</label>
 						<number name="horizontal_distance" type="real">
-							<label>Horizontal Distance</label>
+							<label>Horizontal distance 0.01m</label>
+							<precision decimalDigits="2" unit="m"/>
+							<compare flag="error" gt="0"/>
+						</number>
+						<number name="height_of_base" type="real">
+							<label>Height of base 0.1m</label>
+							<precision decimalDigits="1" unit="m"/>
+							<compare flag="error" gt="0"/>
 						</number>
 						<number name="percent_base" type="real">
-							<label>Percent Base</label>
+							<label>Percent base</label>
+							<precision decimalDigits="2" />
+							<compare flag="error" gt="0"/>
+						</number>
+						<number name="percent_crown_point" type="real">
+							<label>Percent crown point</label>
+							<precision decimalDigits="2" />
+							<compare flag="error" gt="0"/>							
+						</number>
+						<number name="percent_top_of_tree" type="real">
+							<label>Percent top of tree</label>
+							<precision decimalDigits="2" />
+							<compare flag="error" gt="0"/>	
+						</number>
+					</entity>
+					
+					<entity name="buttress_and_diameter_above_buttress">
+						<label>Buttress and diameters above buttress</label>
+						<number name="horizontal_distance" type="real">
+							<label>Horizontal distance  0.01m</label>
+							<precision decimalDigits="2" unit="m" />
+							<compare flag="error" gt="0"/>	
+						</number>
+						<number name="percent_base" type="real">
+							<label>Percent base</label>
+							<precision decimalDigits="2" />
+							<compare flag="error" gt="0"/>	
 						</number>
 						<number name="percent_buttress" type="real">
-							<label>Percent Buttress</label>
+							<label>Percent buttress</label>
+							<precision decimalDigits="2" />
+							<compare flag="error" gt="0"/>	
 						</number>
-						<number name="full_bars_d2_ab" type="real">
-							<label>Full Bars D 02 AB</label>
-						</number>
-						<number name="quarter_bars_d2_ab" type="real">
-							<label>1/4 bars D 02 AB</label>
-						</number>
+						<entity name="d_02_ab">
+							<label>D 0.2 AB</label>
+							<number name="full_bars" type="real">
+								<label>Full bars</label>
+								<precision decimalDigits="2" />
+								<compare flag="error" gt="0"/>									
+							</number>
+							<number name="quarter_bars" type="real">
+								<label>1/4 bars</label>
+								<precision decimalDigits="2" />
+								<compare flag="error" gt="0"/>	
+							</number>
+						</entity>
 						<number name="percent_2point2m_ab" type="real">
-							<label>Percent 2.2M AB</label>
+							<label>Percent 2.2m AB</label>
+							<precision decimalDigits="2" unit="m" />
+							<compare flag="error" gt="0"/>	
 						</number>
-						<number name="full_bars_d_2point2m_ab">
-							<label>Full Bars D 2.2 AB</label>
-						</number>
-						<number name="quarter_bars_d_2point2m_ab" type="real">
-							<label>1/4 Bars D 2.2 AB</label>
-						</number>
+						<entity name="d_22_ab">
+							<label>D 2.2 AB</label>
+							<number name="full_bars">
+								<label>Full bars</label>
+								<precision decimalDigits="2" />
+								<compare flag="error" gt="0"/>	
+							</number>
+							<number name="quarter_bars" type="real">
+								<label>1/4 bars 0.1</label>
+								<precision decimalDigits="2" />
+								<compare flag="error" gt="0"/>	
+							</number>
+						</entity>
 					</entity>
 				</entity>
 			</entity>
