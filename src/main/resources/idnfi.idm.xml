@@ -1,4 +1,6 @@
-<survey xmlns="http://www.openforis.org/idml/3.0" xmlns:ui="http://www.openforis.org/collect/3.0/ui" xmlns:collect="http://www.openforis.org/collect/3.0/collect" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<survey xmlns="http://www.openforis.org/idml/3.0" xmlns:ui="http://www.openforis.org/collect/3.0/ui"
+	xmlns:collect="http://www.openforis.org/collect/3.0/collect"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/openforis/idm/reengineering/idm-api/src/main/resources/idml3.xsd">
 	<!--http://www.openforis.org/idml/3.0 ../../../../idm-api/src/main/resources/idml3.xsd -->
 	<project>Indonesia NFI</project>
@@ -889,20 +891,20 @@
 	<schema>
 		<entity name="cluster" ui:tab="cluster">
 			<label type="instance">Cluster</label>
-			<number name="utm_zone" type="integer" required="true" key="true">				
-				<label>UTM zone</label>				
+			<number name="utm_zone" type="integer" required="true" key="true">
+				<label>UTM zone</label>
 				<description>Valid UTM Zone between 46 and 54</description>
 				<compare flag="error" gte="46" lte="54"/>
 			</number>
 			<number name="easting" type="integer" required="true" key="true">
+				<label type="number">1</label>
 				<label>W-E</label>
-				<label type="instance">1</label>
 				<description>Valid UTM easting between 166 and 834</description>
 				<compare flag="error" gte="166" lte="834"/>
 			</number>
 			<number name="northing" type="integer" required="true" key="true">
+				<label type="number">2</label>
 				<label>S-N</label>
-				<label type="instance">2</label>
 				<description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
 				<check
 					expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)"
@@ -917,54 +919,66 @@
 				<!-- <label type="number">1</label> -->
 				<label type="heading">Enumeration, Natural Forest</label>
 				<number name="tract_no" type="integer" required="true" key="true" ui:tab="nf_detail">
-					<!-- <label type="number">3</label> -->
+					<label type="number">3</label>
 					<label>Tract</label>
 					<compare flag="error" gte="1" lte="15"/>
 					<!-- TODO: Min/max value depends on UTM coords? -->
 				</number>
-				<number name="subplot_no" type="integer" required="true" key="true"
-					ui:tab="nf_detail">
-					<label>Subplot</label>
+				<number name="subplot_no" type="integer" required="true" key="true" ui:tab="nf_detail">
+					<label type="number">4</label>
+					<label>Sub-plot</label>
 					<compare flag="error" gte="1" lte="8"/>
 				</number>
 				<number name="sector" type="real" ui:tab="nf_detail">
-					<label>Sector</label>
+					<label type="number">5</label>
+					<label>Sector degrees</label>
 					<precision unit="deg" decimalDigits="0"/>
 				</number>
 				<number name="segment_dist" type="real" relevant="sector=''" ui:tab="nf_detail">
-					<label>Segment distance</label>
+					<label type="number">6</label>
+					<label>Distance to segment 0.01m</label>
 					<precision unit="m" decimalDigits="2"/>
 				</number>
-				<number name="part" type="integer" required="true"
-					relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
-					<label>Part</label>
-					<!-- TODO: what is the code about? -->
+				<number name="large_part" type="integer" relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
+					<label type="number">7</label>
+					<label>Large part</label>
+				</number>
+				<number name="small_part" type="integer" relevant="sector!='' or segment_dist!=''" key="true" ui:tab="nf_detail">
+					<label type="number">8</label>
+					<label>Small part</label>
 				</number>
 				<number name="permanent" type="integer" required="false" ui:tab="nf_detail">
+					<label type="number">9</label>
 					<label>Permanent</label>
 					<compare gte="1" lte="1" flag="error">
 						<message>This field must be either 1 or blank</message>
 					</compare>
 				</number>
 				<number name="control" type="integer" required="false" key="true" ui:tab="nf_detail">
+					<label type="number">10</label>
 					<label>Control</label>
 					<compare gte="1" lte="1" flag="error">
 						<message>This field must be either 1 or blank</message>
 					</compare>
 				</number>
 				<code name="province" required="true" list="province" ui:tab="nf_detail">
+					<label type="number">12</label>
 					<label>Province</label>
 				</code>
 				<code name="land_system" required="true" list="land_system" ui:tab="nf_detail">
+					<label type="number">13</label>
 					<label>Land system</label>
 				</code>
 				<code name="altitude" required="true" list="altitude" ui:tab="nf_detail">
+					<label type="number">14</label>
 					<label>Altitude</label>
 				</code>
 				<code name="land_category" required="true" list="land_category" ui:tab="nf_detail">
+					<label type="number">15</label>
 					<label>Land category</label>
 				</code>
 				<code name="forest_type" required="true" list="forest_class" ui:tab="nf_detail">
+					<label type="number">16</label>
 					<label>Forest type</label>
 				</code>
 				<!-- <code name="stand_condition" required="true" list="forest_class" -->
@@ -2118,7 +2132,8 @@
 				</number>
 
 				<entity name="plotb_ssr" multiple="true" ui:tab="plotb_ssr" ui:layout="table">
-					<label>R 1m tree seedlings, r 2m tree saplings, r 5m rattan -2.9m, r 10m rattan 3+m</label>
+					<label>R 1m tree seedlings, r 2m tree saplings, r 5m rattan -2.9m, r 10m rattan
+						3+m</label>
 					<text name="name_of_species" required="true">
 						<label>Name of Species</label>
 					</text>
@@ -2201,7 +2216,7 @@
 							<compare flag="error" gt="0"/>
 						</number>
 					</entity>
-					
+
 					<entity name="one_year">
 						<label>1-year old</label>
 						<entity name="low_part">
@@ -2221,9 +2236,9 @@
 								<precision unit="kg" decimalDigits="1"/>
 								<compare flag="error" gt="0"/>
 							</number>
-						</entity>						
+						</entity>
 					</entity>
-					
+
 					<entity name="two_year">
 						<label>2-year old</label>
 						<entity name="low_part">
@@ -2243,9 +2258,9 @@
 								<precision unit="kg" decimalDigits="1"/>
 								<compare flag="error" gt="0"/>
 							</number>
-						</entity>						
+						</entity>
 					</entity>
-					
+
 					<entity name="three_year">
 						<label>3+year old</label>
 						<entity name="low_part">
@@ -2265,7 +2280,7 @@
 								<precision unit="kg" decimalDigits="1"/>
 								<compare flag="error" gt="0"/>
 							</number>
-						</entity>						
+						</entity>
 					</entity>
 				</entity>
 			</entity>
