@@ -585,6 +585,8 @@
         </ns2:list>
         <ns2:list name="forest_class">
             <ns2:label type="item">Forest Class</ns2:label>
+            <ns2:label type="list">Forest Classes</ns2:label>
+            <ns2:codingScheme scope="local"/>
             <ns2:hierarchy>
                 <ns2:level name="forest_type">
                     <ns2:label>Forest Type</ns2:label>
@@ -599,72 +601,799 @@
                     <ns2:label>Mangrove Forest</ns2:label>
                     <ns2:item>
                         <ns2:code>1</ns2:code>
-                        <ns2:label>Stand Type 1</ns2:label>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
                     </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>2</ns2:code>
                     <ns2:label>Nipah Forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, well stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Due to logging, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Due to logging, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item><ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>3</ns2:code>
                     <ns2:label>Palm Forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, well stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Due to logging, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Due to logging, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item><ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>4</ns2:code>
                     <ns2:label>Coastal forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>5</ns2:code>
                     <ns2:label>Swamp forest, seasonally inundated</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>6</ns2:code>
                     <ns2:label>Wetland forest, permanently inundated</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>7</ns2:code>
                     <ns2:label>Peat swamp forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>8</ns2:code>
                     <ns2:label>Moist dryland forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>9</ns2:code>
                     <ns2:label>Savanna forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, well stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Due to logging, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Due to logging, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item><ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>10</ns2:code>
                     <ns2:label>Pine forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, well stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Due to logging, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Due to logging, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item><ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>11</ns2:code>
                     <ns2:label>Heath forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>12</ns2:code>
                     <ns2:label>Bamboo forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, well stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Due to logging, medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Due to logging, poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item><ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>13</ns2:code>
                     <ns2:label>Submontane and montane broadleaved forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>14</ns2:code>
                     <ns2:label>Productive forest plantation</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Well stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Failure</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>15</ns2:code>
                     <ns2:label>Protective forest plantation</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Well stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Failure</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>16</ns2:code>
                     <ns2:label>Agro-forestry plantation</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Well stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Medium stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Poorly stocked</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Failure</ns2:label>
+                    </ns2:item>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>17</ns2:code>
                     <ns2:label>Tambak fish ponds</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Not logged, high volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>2</ns2:code>
+                        <ns2:label>Not logged, medium volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>3</ns2:code>
+                        <ns2:label>Not logged, low volume</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>4</ns2:code>
+                        <ns2:label>Logged lightly</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>5</ns2:code>
+                        <ns2:label>Logged heavily</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>6</ns2:code>
+                        <ns2:label>Cleared for forest plantations</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>7</ns2:code>
+                        <ns2:label>Cleared for permanent agriculture</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>8</ns2:code>
+                        <ns2:label>Cleared for shifting cultivation</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>9</ns2:code>
+                        <ns2:label>Cleared with shift, cult, crops</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>10</ns2:code>
+                        <ns2:label>Secondary growth, high to medium</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>11</ns2:code>
+                        <ns2:label>Secondary growth, low</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>12</ns2:code>
+                        <ns2:label>Degraded</ns2:label>
+                    </ns2:item>
+                    <ns2:item>
+                        <ns2:code>13</ns2:code>
+                        <ns2:label>Destroyed by wild fire</ns2:label>
+                    </ns2:item>
                 </ns2:item>
             </ns2:items>
         </ns2:list>
@@ -921,13 +1650,24 @@
                     <ns2:label>Distance to segment 0.01m</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
+                
+                <ns2:number name="largepart" type="integer" key="true"
                     relevant="sector!='' or segment_dist!=''"
                     required="true" ui:tab="nf_detail">
-                    <ns2:label>Part</ns2:label>
+                    <ns2:label type="number">7</ns2:label>
+                    <ns2:label>Large part</ns2:label>
                 </ns2:number>
+                
+                <ns2:number name="smallpart" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">8</ns2:label>
+                    <ns2:label>Small part</ns2:label>
+                </ns2:number>
+                
                 <ns2:number name="permanent" type="integer"
                     required="false" ui:tab="nf_detail">
+                    <ns2:label type="number">9</ns2:label>
                     <ns2:label>Permanent</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
@@ -935,30 +1675,50 @@
                 </ns2:number>
                 <ns2:number name="control" type="integer" key="true"
                     required="false" ui:tab="nf_detail">
+                    <ns2:label type="number">10</ns2:label>
                     <ns2:label>Control</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
+                <ns2:number name="record_type" type="integer" key="true"
+                    required="false" ui:tab="nf_detail">
+                    <ns2:label type="number">11</ns2:label>
+                    <ns2:label>Record type</ns2:label>
+                    <ns2:default value="1"/>
+                    <ns2:compare lte="1" flag="error">
+                        <ns2:message>This field must be greater than 1</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
                 <ns2:code name="province" list="province"
                     required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">12</ns2:label>
                     <ns2:label>Province</ns2:label>
                 </ns2:code>
                 <ns2:code name="land_system" list="land_system"
                     required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">13</ns2:label>
                     <ns2:label>Land system</ns2:label>
                 </ns2:code>
                 <ns2:code name="altitude" list="altitude"
                     required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">14</ns2:label>
                     <ns2:label>Altitude</ns2:label>
                 </ns2:code>
                 <ns2:code name="land_category" list="land_category"
                     required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">15</ns2:label>
                     <ns2:label>Land category</ns2:label>
                 </ns2:code>
                 <ns2:code name="forest_type" list="forest_class"
                     required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">16</ns2:label>
                     <ns2:label>Forest type</ns2:label>
+                </ns2:code>
+                <ns2:code name="stand_condition" list="forest_class" parent="forest_type"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">17</ns2:label>
+                    <ns2:label>Stand condition</ns2:label>
                 </ns2:code>
                 <ns2:number name="logging_year" type="integer"
                     required="false" ui:tab="nf_detail">
