@@ -1722,41 +1722,50 @@
                 </ns2:code>
                 <ns2:number name="logging_year" type="integer"
                     required="false" ui:tab="nf_detail">
+                    <ns2:label type="number">18</ns2:label>
                     <ns2:label>Logging year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
                 <ns2:code name="terrain" list="terrain" required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">19</ns2:label>
                     <ns2:label>Terrain</ns2:label>
                 </ns2:code>
                 <ns2:code name="slope" list="slope" required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">20</ns2:label>
                     <ns2:label>Slope</ns2:label>
                 </ns2:code>
                 <ns2:code name="aspect" list="aspect" required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">21</ns2:label>
                     <ns2:label>Aspect</ns2:label>
                 </ns2:code>
                 <ns2:entity name="record_count" multiple="false" ui:tab="nf_detail">
                     <ns2:label>Number of Records</ns2:label>
                     <ns2:number name="trees_poles" type="integer" required="false">
+                        <ns2:label type="number">22</ns2:label>
                         <ns2:label>Trees and poles</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
                     <ns2:number name="seedlings" type="integer" required="false">
+                        <ns2:label type="number">23</ns2:label>
                         <ns2:label>Seedlings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
                     <ns2:number name="saplings" type="integer" required="false">
+                        <ns2:label type="number">24</ns2:label>
                         <ns2:label>Saplings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
                     <ns2:number name="sm_rattan" type="integer" required="false">
+                        <ns2:label type="number">25</ns2:label>
                         <ns2:label>Rattan (&lt;=2.9m)</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
                     <ns2:number name="lg_rattan" type="integer" required="false">
+                        <ns2:label type="number">26</ns2:label>
                         <ns2:label>Rattan (&gt;=3m)</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
@@ -1764,13 +1773,16 @@
                 </ns2:entity>
                 <ns2:number name="crew_no" type="integer"
                     required="false" ui:tab="nf_detail">
+                    <ns2:label type="number">27</ns2:label>
                     <ns2:label>Crew no.</ns2:label>
                     <ns2:compare gte="0" flag="error"/>
                 </ns2:number>
                 <ns2:code name="month" list="month" required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">28</ns2:label>
                     <ns2:label>Month</ns2:label>
                 </ns2:code>
                 <ns2:number name="year" type="integer" required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">29</ns2:label>
                     <ns2:label>Year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
@@ -1911,40 +1923,63 @@
                 <ns2:label type="heading">Enumeration, Forest Plantations and Pine Forest</ns2:label>
                 <ns2:number name="tract_no" type="integer" key="true"
                     required="true" ui:tab="pmp_detail">
+                    <ns2:label type="number">3</ns2:label>
                     <ns2:label>Tract</ns2:label>
                     <ns2:compare lte="15" gte="1" flag="error"/>
                 </ns2:number>
                 <ns2:number name="subplot_no" type="integer" key="true"
                     required="true" ui:tab="pmp_detail">
-                    <ns2:label>Subplot</ns2:label>
+                    <ns2:label type="number">4</ns2:label>
+                    <ns2:label>Sub-plot</ns2:label>
                     <ns2:compare lte="8" gte="1" flag="error"/>
                 </ns2:number>
                 <ns2:number name="sector" type="real" ui:tab="pmp_detail">
+                    <ns2:label type="number">5</ns2:label>
                     <ns2:label>Sector</ns2:label>
                     <ns2:precision unit="deg" decimalDigits="0"/>
                 </ns2:number>
                 <ns2:number name="segment_dist" type="real"
                     relevant="sector=''" ui:tab="pmp_detail">
+                    <ns2:label type="number">6</ns2:label>
                     <ns2:label>Segment distance</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
+                <ns2:number name="largepart" type="integer" key="true"
                     relevant="sector!='' or segment_dist!=''"
                     required="true" ui:tab="pmp_detail">
-                    <ns2:label>Part</ns2:label>
+                    <ns2:label type="number">7</ns2:label>
+                    <ns2:label>Large part</ns2:label>
+                </ns2:number>
+                
+                <ns2:number name="smallpart" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label type="number">8</ns2:label>
+                    <ns2:label>Small part</ns2:label>
                 </ns2:number>
                 <ns2:number name="permanent" type="integer"
                     required="false" ui:tab="pmp_detail">
                     <ns2:label>Permanent</ns2:label>
+                    <ns2:label type="number">9</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
                 <ns2:number name="control" type="integer" key="true"
                     required="false" ui:tab="pmp_detail">
+                    <ns2:label type="number">10</ns2:label>
                     <ns2:label>Control</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:number name="record_type" type="integer" key="true"
+                    required="false" ui:tab="nf_detail">
+                    <ns2:label type="number">11</ns2:label>
+                    <ns2:label>Record type</ns2:label>
+                    <ns2:default value="1"/>
+                    <ns2:compare lte="1" flag="error">
+                        <ns2:message>This field must be greater than 1</ns2:message>
                     </ns2:compare>
                 </ns2:number>
                 <ns2:code name="province" list="province"
@@ -1965,10 +2000,12 @@
                 </ns2:code>
                 <ns2:code name="forest_type" list="forest_class"
                     required="true" ui:tab="pmp_detail">
+                    <ns2:label type="number">16</ns2:label>
                     <ns2:label>Forest type</ns2:label>
                 </ns2:code>
-                <ns2:code name="stand_condition" list="forest_class"
-                    parent="forest_class" required="true" ui:tab="pmp_detail">
+                <ns2:code name="stand_condition" list="forest_class" parent="forest_type"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label type="number">17</ns2:label>
                     <ns2:label>Stand condition</ns2:label>
                 </ns2:code>
                 <ns2:number name="logging_year" type="integer"
