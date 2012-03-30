@@ -2638,6 +2638,13 @@
                     <ns2:number name="damage" type="integer">
                         <ns2:label>Damage</ns2:label>
                     </ns2:number>
+                    <ns2:number name="azimuth_to_tree" type="integer">
+                        <ns2:label>Azimuth to tree</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="horizontal_distance_to_tree" type="real">
+                        <ns2:label>Horizontal distance to tree</ns2:label>
+                        <ns2:precision decimalDigits="2"/>
+                    </ns2:number>
                     <ns2:entity name="trees_higher_than_20cm">
                         <ns2:label>Trees of 20+cm</ns2:label>
                         <ns2:number name="butress_height" type="real">
@@ -2777,10 +2784,15 @@
                     <ns2:label>Segment distance</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
+                <ns2:number name="largepart" type="integer" key="true"
                     relevant="sector!='' or segment_dist!=''"
                     required="true" ui:tab="plotb_detail">
-                    <ns2:label>Part</ns2:label>
+                    <ns2:label>Large part</ns2:label>
+                </ns2:number>
+                <ns2:number name="smallpart" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="plotb_detail">
+                    <ns2:label>Small part</ns2:label>
                 </ns2:number>
                 <ns2:number name="square_5x5" type="real">
                     <ns2:label>5x5m squares</ns2:label>
@@ -2794,6 +2806,7 @@
                     </ns2:compare>
                 </ns2:number>
                 <ns2:entity name="number_of_records" ui:tab="plotb_detail">
+                    <ns2:label>Number of records</ns2:label>
                     <ns2:number name="seedlings" type="integer">
                         <ns2:label>Seedlings</ns2:label>
                     </ns2:number>
@@ -2817,6 +2830,7 @@
                     </ns2:number>
                 </ns2:entity>
                 <ns2:entity name="a_horizon" ui:tab="plotb_detail">
+                    <ns2:label>A-horizone</ns2:label>
                     <ns2:number name="depth" type="real">
                         <ns2:label>Depth</ns2:label>
                     </ns2:number>
@@ -2834,6 +2848,7 @@
                     </ns2:number>
                 </ns2:entity>
                 <ns2:entity name="b_horizon" ui:tab="plotb_detail">
+                    <ns2:label>B-horizone</ns2:label>
                     <ns2:number name="depth" type="real">
                         <ns2:label>Depth</ns2:label>
                     </ns2:number>
@@ -2886,7 +2901,7 @@
                         <ns2:compare gt="0" flag="error"/>
                     </ns2:number>
                     <ns2:entity name="rattan_gte_3m">
-                        <ns2:label>Rattan +m long</ns2:label>
+                        <ns2:label>Rattan 3+m long</ns2:label>
                         <ns2:entity name="s_single">
                             <ns2:label>s single</ns2:label>
                             <ns2:number name="stems" type="integer">
