@@ -1,0 +1,2212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:survey xmlns:ui="http://www.openforis.org/collect/3.0/ui" xmlns:ns2="http://www.openforis.org/idml/3.0">
+    <ns2:project>Indonesia NFI</ns2:project>
+    <ns2:cycle>1</ns2:cycle>
+    <ns2:description>Basis Data Kehutanan Nasional Indonesia</ns2:description>
+    <ns2:configuration>
+        <ui:flex>
+            <ui:tabDefinition rootEntity="cluster">
+                <ui:tabs>
+                    <ui:tab name="cluster">
+                        <ui:label>Cluster</ui:label>
+                    </ui:tab>
+                    <ui:tab name="nf">
+                        <ui:label>Natural Forest</ui:label>
+                        <ui:tabs>
+                            <ui:tab name="nf_detail">
+                                <ui:label>Details</ui:label>
+                            </ui:tab>
+                            <ui:tab name="nf_tp">
+                                <ui:label>Trees, Poles</ui:label>
+                            </ui:tab>
+                            <ui:tab name="nf_ssr">
+                                <ui:label>Seedlings, Saplings, Rattan</ui:label>
+                            </ui:tab>
+                        </ui:tabs>
+                    </ui:tab>
+                    <ui:tab name="pmp">
+                        <ui:label>Plantation, Mangrove and Pine</ui:label>
+                        <ui:tabs>
+                            <ui:tab name="pmp_detail">
+                                <ui:label>Details</ui:label>
+                            </ui:tab>
+                            <ui:tab name="pmp_tp">
+                                <ui:label>Trees, Poles</ui:label>
+                            </ui:tab>
+                            <ui:tab name="pmp_ssr">
+                                <ui:label>Seedlings, Saplings, Rattan</ui:label>
+                            </ui:tab>
+                        </ui:tabs>
+                    </ui:tab>
+                    <ui:tab name="bamboo">
+                        <ui:label>Bamboo</ui:label>
+                        <ui:tabs>
+                            <ui:tab name="bamboo_detail">
+                                <ui:label>Details</ui:label>
+                            </ui:tab>
+                            <ui:tab name="bamboo_enum">
+                                <ui:label>Enumeration</ui:label>
+                            </ui:tab>
+                        </ui:tabs>
+                    </ui:tab>
+                    <ui:tab name="sagu">
+                        <ui:label>Sagu</ui:label>
+                    </ui:tab>
+                    <ui:tab name="nipa">
+                        <ui:label>Nipa</ui:label>
+                    </ui:tab>
+                    <ui:tab name="plot_a">
+                        <ui:label>Permanent Plot A</ui:label>
+                        <ui:tabs>
+                            <ui:tab name="plota_detail">
+                                <ui:label>Details</ui:label>
+                            </ui:tab>
+                            <ui:tab name="plota_enum">
+                                <ui:label>Enumeration</ui:label>
+                            </ui:tab>
+                        </ui:tabs>
+                    </ui:tab>
+                    <ui:tab name="plot_b">
+                        <ui:label>Permanent Plot B</ui:label>
+                        <ui:tabs>
+                            <ui:tab name="plotb_detail">
+                                <ui:label>Details</ui:label>
+                            </ui:tab>
+                            <ui:tab name="plotb_ssr">
+                                <ui:label>Seedling, sapling and rattan</ui:label>
+                            </ui:tab>
+                            <ui:tab name="plotb_bamboo">
+                                <ui:label>Bamboo</ui:label>
+                            </ui:tab>
+                        </ui:tabs>
+                    </ui:tab>
+                </ui:tabs>
+            </ui:tabDefinition>
+        </ui:flex>
+    </ns2:configuration>
+    <ns2:versioning>
+        <ns2:version name="1.0">
+            <ns2:label>Ministry of Forestry Data</ns2:label>
+            <ns2:description>Single data structure and forms used by Indonesia MOFOR</ns2:description>
+            <ns2:date>1990-01-01</ns2:date>
+        </ns2:version>
+    </ns2:versioning>
+    <ns2:codeLists>
+        <ns2:list name="open_or_closed">
+            <ns2:label type="item">Open or Closed</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>O</ns2:code>
+                    <ns2:label>Open</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>C</ns2:code>
+                    <ns2:label>Closed</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="month">
+            <ns2:label type="list">Months</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>January</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>February</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>March</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>April</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>May</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>June</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>July</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>August</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>9</ns2:code>
+                    <ns2:label>September</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>10</ns2:code>
+                    <ns2:label>October</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>11</ns2:code>
+                    <ns2:label>November</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>12</ns2:code>
+                    <ns2:label>December</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="leaf_state">
+            <ns2:label type="item">Leaf State</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>C</ns2:code>
+                    <ns2:label>Cut</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>U</ns2:code>
+                    <ns2:label>Uncut</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="province">
+            <ns2:label type="item">Province</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Daerah Istimewa Aceh</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Sumatera Utara</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Sumatera Barat</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Riau</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Jambi</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>Sumatera Selatan</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>Lampung</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>Bengkulu</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>14</ns2:code>
+                    <ns2:label>Bali</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>15</ns2:code>
+                    <ns2:label>Nusa Tenggara Barat</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>16</ns2:code>
+                    <ns2:label>Nusa Tenggara Timur</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>17</ns2:code>
+                    <ns2:label>Timor Timur</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>18</ns2:code>
+                    <ns2:label>Kalimantan Barat</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>19</ns2:code>
+                    <ns2:label>Kalimantan Tengah</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>20</ns2:code>
+                    <ns2:label>Kalimantan Selatan</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>21</ns2:code>
+                    <ns2:label>Kalimantan Timur</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>22</ns2:code>
+                    <ns2:label>Sulawesi Utara</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>23</ns2:code>
+                    <ns2:label>Sulawesi Tengah</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>24</ns2:code>
+                    <ns2:label>Sulawesi Tenggara</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>25</ns2:code>
+                    <ns2:label>Sulawesi Selatan</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>26</ns2:code>
+                    <ns2:label>Maluku</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>27</ns2:code>
+                    <ns2:label>Irian Jaya</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="land_system">
+            <ns2:label type="item">Land System</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Tidal</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Beach</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Swamp and Wetland</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Meander Belt</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Fans, plains and valleys</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>Terrace</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>Rolling land, amplitude up to 50 m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>Hilly land, amplitude 50 - 300m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>9</ns2:code>
+                    <ns2:label>Mountainous, amplitude more than 300m</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="altitude">
+            <ns2:label type="item">Altitude</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>0</ns2:code>
+                    <ns2:label>0 - 99m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>100 - 199m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>200 - 299m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>300 - 399m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>400 - 499m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>500 - 599m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>600 - 699m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>700 - 799m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>800 - 899m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>9</ns2:code>
+                    <ns2:label>900 - 999m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>10</ns2:code>
+                    <ns2:label>1000 - 1099m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>11</ns2:code>
+                    <ns2:label>1100 - 1199m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>12</ns2:code>
+                    <ns2:label>1200 - 1299m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>13</ns2:code>
+                    <ns2:label>1300 - 1399m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>14</ns2:code>
+                    <ns2:label>1400 - 1499m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>15</ns2:code>
+                    <ns2:label>1500 - 1599m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>16</ns2:code>
+                    <ns2:label>1600 - 1699m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>17</ns2:code>
+                    <ns2:label>1700 - 1799m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>18</ns2:code>
+                    <ns2:label>1800 - 1899m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>19</ns2:code>
+                    <ns2:label>1900 - 1999m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>20</ns2:code>
+                    <ns2:label>2000 - 2099m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>21</ns2:code>
+                    <ns2:label>2100 - 2199m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>22</ns2:code>
+                    <ns2:label>2200 - 2299m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>23</ns2:code>
+                    <ns2:label>2300 - 2399m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>24</ns2:code>
+                    <ns2:label>2400 - 2499m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>25</ns2:code>
+                    <ns2:label>2500 - 2599m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>26</ns2:code>
+                    <ns2:label>2600 - 2699m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>27</ns2:code>
+                    <ns2:label>2700 - 2799m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>28</ns2:code>
+                    <ns2:label>2800 - 2899m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>29</ns2:code>
+                    <ns2:label>2900 - 2999m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>30</ns2:code>
+                    <ns2:label>3000 - 3099m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>31</ns2:code>
+                    <ns2:label>3100 - 3199m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>32</ns2:code>
+                    <ns2:label>3200 - 3299m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>33</ns2:code>
+                    <ns2:label>3300 - 3399m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>34</ns2:code>
+                    <ns2:label>3400 - 3499m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>35</ns2:code>
+                    <ns2:label>3500 - 3599m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>36</ns2:code>
+                    <ns2:label>3600 - 3699m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>37</ns2:code>
+                    <ns2:label>3700 - 3799m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>38</ns2:code>
+                    <ns2:label>3800 - 3899m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>39</ns2:code>
+                    <ns2:label>3900 - 3999m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>40</ns2:code>
+                    <ns2:label>4000 - 4099m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>41</ns2:code>
+                    <ns2:label>4100 - 4199m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>42</ns2:code>
+                    <ns2:label>4200 - 4299m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>43</ns2:code>
+                    <ns2:label>4300 - 4399m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>44</ns2:code>
+                    <ns2:label>4400 - 4499m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>45</ns2:code>
+                    <ns2:label>4500 - 4599m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>46</ns2:code>
+                    <ns2:label>4600 - 4699m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>47</ns2:code>
+                    <ns2:label>4700 - 4799m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>48</ns2:code>
+                    <ns2:label>4800 - 4899m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>49</ns2:code>
+                    <ns2:label>4900 - 4999m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>50</ns2:code>
+                    <ns2:label>5000 - 5099m</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="land_category">
+            <ns2:label type="item">Land System</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Tidal forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Coastal forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Wetland forest (including swamp)</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Dryland forest below 1000 m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Submontane forest 1000-2000 m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>Montane forest above 2000 m</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>Forest and agroforestry plantations</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>Forest fallow</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>9</ns2:code>
+                    <ns2:label>Bushland</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>10</ns2:code>
+                    <ns2:label>Grassland dry</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>11</ns2:code>
+                    <ns2:label>Grassland wet</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>12</ns2:code>
+                    <ns2:label>Tree crops</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>13</ns2:code>
+                    <ns2:label>Agriculture</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>14</ns2:code>
+                    <ns2:label>Unvegetated</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>15</ns2:code>
+                    <ns2:label>Water</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>16</ns2:code>
+                    <ns2:label>Settlement, town</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="forest_class">
+            <ns2:label type="item">Forest Class</ns2:label>
+            <ns2:hierarchy>
+                <ns2:level name="forest_type">
+                    <ns2:label>Forest Type</ns2:label>
+                </ns2:level>
+                <ns2:level name="stand_condition">
+                    <ns2:label>Stand Condition</ns2:label>
+                </ns2:level>
+            </ns2:hierarchy>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Mangrove Forest</ns2:label>
+                    <ns2:item>
+                        <ns2:code>1</ns2:code>
+                        <ns2:label>Stand Type 1</ns2:label>
+                    </ns2:item>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Nipah Forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Palm Forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Coastal forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Swamp forest, seasonally inundated</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>Wetland forest, permanently inundated</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>Peat swamp forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>Moist dryland forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>9</ns2:code>
+                    <ns2:label>Savanna forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>10</ns2:code>
+                    <ns2:label>Pine forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>11</ns2:code>
+                    <ns2:label>Heath forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>12</ns2:code>
+                    <ns2:label>Bamboo forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>13</ns2:code>
+                    <ns2:label>Submontane and montane broadleaved forest</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>14</ns2:code>
+                    <ns2:label>Productive forest plantation</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>15</ns2:code>
+                    <ns2:label>Protective forest plantation</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>16</ns2:code>
+                    <ns2:label>Agro-forestry plantation</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>17</ns2:code>
+                    <ns2:label>Tambak fish ponds</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="stand_condition">
+            <ns2:label type="item">Stand Condition</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Not logged, high volume</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Not logged, medium volume</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Not logged, low volume</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Logged lightly</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Logged heavily</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>Cleared for forest plantations</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>Cleared for permanent agriculture</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>Cleared for shifting cultivation</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>9</ns2:code>
+                    <ns2:label>Cleared with shifting, cultivated crops</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>10</ns2:code>
+                    <ns2:label>Secondary growth, high to medium</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>11</ns2:code>
+                    <ns2:label>Secondary growth, low</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>12</ns2:code>
+                    <ns2:label>Degraded</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>13</ns2:code>
+                    <ns2:label>Destroyed by wild fire</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="terrain">
+            <ns2:label type="item">Land System</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>0</ns2:code>
+                    <ns2:label>Flat and undulating (0-10%)</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Lowland gully</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Lower slope or mould</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Mid slope</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Upper slope</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Slope gully</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>Hill top</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>Ridge</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>Rock slide</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="slope">
+            <ns2:label type="item">Slope</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>0</ns2:code>
+                    <ns2:label>0 - 10% step 10</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>11 - 25% step 15 limit for caterpillar</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>26 - 45% step 20 TGHK limit</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>46 - 70 % step 25 limit for cable</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>71 - 100% step 30 limit for enumeration</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>101+%</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="aspect">
+            <ns2:label type="item">Aspect</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>0</ns2:code>
+                    <ns2:label>Flat and undulating (0 - 10%)</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>N 338 - 22 degrees</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>NE 23 - 67 degrees</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>E 68 - 112 degrees</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>SE 113 - 157 degrees</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>S 158 - 202 degrees</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>SW 203 - 247 degrees</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>7</ns2:code>
+                    <ns2:label>W 248 - 292 degrees</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>8</ns2:code>
+                    <ns2:label>NW 293 - 337 degrees</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+    </ns2:codeLists>
+    <ns2:units>
+        <ns2:unit name="deg" dimension="angle">
+            <ns2:label>degrees</ns2:label>
+            <ns2:abbreviation>deg</ns2:abbreviation>
+        </ns2:unit>
+        <ns2:unit name="kg" dimension="volume" conversionFactor="10.0">
+            <ns2:label>kilogram</ns2:label>
+            <ns2:abbreviation>kg</ns2:abbreviation>
+        </ns2:unit>
+        <ns2:unit name="m" dimension="length" conversionFactor="1.0">
+            <ns2:label>metres</ns2:label>
+            <ns2:abbreviation>m</ns2:abbreviation>
+        </ns2:unit>
+        <ns2:unit name="cm" dimension="length" conversionFactor="0.01">
+            <ns2:label>centimetres</ns2:label>
+            <ns2:abbreviation>cm</ns2:abbreviation>
+        </ns2:unit>
+        <ns2:unit name="km" dimension="length" conversionFactor="1000.0">
+            <ns2:label>kilometre</ns2:label>
+            <ns2:abbreviation>km</ns2:abbreviation>
+        </ns2:unit>
+        <ns2:unit name="ac" dimension="area" conversionFactor="2.4710538">
+            <ns2:label>acres</ns2:label>
+            <ns2:abbreviation>ac</ns2:abbreviation>
+        </ns2:unit>
+        <ns2:unit name="ha" dimension="area" conversionFactor="1.0">
+            <ns2:label>hectares</ns2:label>
+            <ns2:abbreviation>ha</ns2:abbreviation>
+        </ns2:unit>
+        <ns2:unit name="percent" dimension="ratio" conversionFactor="0.01">
+            <ns2:label>percent</ns2:label>
+            <ns2:abbreviation>%</ns2:abbreviation>
+        </ns2:unit>
+    </ns2:units>
+    <ns2:schema>
+        <ns2:entity name="cluster" ui:tab="cluster">
+            <ns2:label type="instance">Cluster</ns2:label>
+            <ns2:number name="utm_zone" type="integer" key="true" required="true">
+                <ns2:label>UTM zone</ns2:label>
+                <ns2:description>Valid UTM Zone between 46 and 54</ns2:description>
+                <ns2:compare lte="54" gte="46" flag="error"/>
+            </ns2:number>
+            <ns2:number name="easting" type="integer" key="true" required="true">
+                <ns2:label type="number">1</ns2:label>
+                <ns2:label>W-E</ns2:label>
+                <ns2:description>Valid UTM easting between 166 and 834</ns2:description>
+                <ns2:compare lte="834" gte="166" flag="error"/>
+            </ns2:number>
+            <ns2:number name="northing" type="integer" key="true" required="true">
+                <ns2:label type="number">2</ns2:label>
+                <ns2:label>S-N</ns2:label>
+                <ns2:description>Valid UTM northing between 0 and 750 or between 8670 and 9999</ns2:description>
+                <ns2:check
+                    expr="($this >= 0 and $this &lt;= 750) or ($this >= 8670 and $this &lt;= 9999)" flag="error">
+                    <ns2:message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</ns2:message>
+                    <ns2:message xml:lang="id"></ns2:message>
+                </ns2:check>
+            </ns2:number>
+            <ns2:entity name="natural_forest" multiple="true"
+                ui:layout="form" ui:tab="nf">
+                <ns2:label type="heading">Enumeration, Natural Forest</ns2:label>
+                <ns2:number name="tract_no" type="integer" key="true"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">3</ns2:label>
+                    <ns2:label>Tract</ns2:label>
+                    <ns2:compare lte="15" gte="1" flag="error"/>
+                </ns2:number>
+                <ns2:number name="subplot_no" type="integer" key="true"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">4</ns2:label>
+                    <ns2:label>Sub-plot</ns2:label>
+                    <ns2:compare lte="8" gte="1" flag="error"/>
+                </ns2:number>
+                <ns2:number name="sector" type="real" ui:tab="nf_detail">
+                    <ns2:label type="number">5</ns2:label>
+                    <ns2:label>Sector degrees</ns2:label>
+                    <ns2:precision unit="deg" decimalDigits="0"/>
+                </ns2:number>
+                <ns2:number name="segment_dist" type="real"
+                    relevant="sector=''" ui:tab="nf_detail">
+                    <ns2:label type="number">6</ns2:label>
+                    <ns2:label>Distance to segment 0.01m</ns2:label>
+                    <ns2:precision unit="m" decimalDigits="2"/>
+                </ns2:number>
+                <ns2:number name="part" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label>Part</ns2:label>
+                </ns2:number>
+                <ns2:number name="permanent" type="integer"
+                    required="false" ui:tab="nf_detail">
+                    <ns2:label>Permanent</ns2:label>
+                    <ns2:compare lte="1" gte="1" flag="error">
+                        <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:number name="control" type="integer" key="true"
+                    required="false" ui:tab="nf_detail">
+                    <ns2:label>Control</ns2:label>
+                    <ns2:compare lte="1" gte="1" flag="error">
+                        <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:code name="province" list="province"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label>Province</ns2:label>
+                </ns2:code>
+                <ns2:code name="land_system" list="land_system"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label>Land system</ns2:label>
+                </ns2:code>
+                <ns2:code name="altitude" list="altitude"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label>Altitude</ns2:label>
+                </ns2:code>
+                <ns2:code name="land_category" list="land_category"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label>Land category</ns2:label>
+                </ns2:code>
+                <ns2:code name="forest_type" list="forest_class"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label>Forest type</ns2:label>
+                </ns2:code>
+                <ns2:number name="logging_year" type="integer"
+                    required="false" ui:tab="nf_detail">
+                    <ns2:label>Logging year</ns2:label>
+                    <ns2:compare lte="2050" gte="1900" flag="error"/>
+                </ns2:number>
+                <ns2:code name="terrain" list="terrain" required="true" ui:tab="nf_detail">
+                    <ns2:label>Terrain</ns2:label>
+                </ns2:code>
+                <ns2:code name="slope" list="slope" required="true" ui:tab="nf_detail">
+                    <ns2:label>Slope</ns2:label>
+                </ns2:code>
+                <ns2:code name="aspect" list="aspect" required="true" ui:tab="nf_detail">
+                    <ns2:label>Aspect</ns2:label>
+                </ns2:code>
+                <ns2:entity name="record_count" multiple="false" ui:tab="nf_detail">
+                    <ns2:label>Number of Records</ns2:label>
+                    <ns2:number name="trees_poles" type="integer" required="false">
+                        <ns2:label>Trees and poles</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="seedlings" type="integer" required="false">
+                        <ns2:label>Seedlings</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="saplings" type="integer" required="false">
+                        <ns2:label>Saplings</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="sm_rattan" type="integer" required="false">
+                        <ns2:label>Rattan (&lt;=2.9m)</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="lg_rattan" type="integer" required="false">
+                        <ns2:label>Rattan (&gt;=3m)</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:number name="crew_no" type="integer"
+                    required="false" ui:tab="nf_detail">
+                    <ns2:label>Crew no.</ns2:label>
+                    <ns2:compare gte="0" flag="error"/>
+                </ns2:number>
+                <ns2:code name="month" list="month" required="true" ui:tab="nf_detail">
+                    <ns2:label>Month</ns2:label>
+                </ns2:code>
+                <ns2:number name="year" type="integer" required="true" ui:tab="nf_detail">
+                    <ns2:label>Year</ns2:label>
+                    <ns2:compare lte="2050" gte="1900" flag="error"/>
+                </ns2:number>
+                <ns2:entity name="tp" multiple="true" ui:tab="nf_tp">
+                    <ns2:label type="heading">Trees and Poles</ns2:label>
+                    <ns2:text name="species_name">
+                        <ns2:label>Name of Species</ns2:label>
+                    </ns2:text>
+                    <ns2:number name="diameter" type="real">
+                        <ns2:label>Diameter</ns2:label>
+                        <ns2:description>DBH or diameter 0.2m AB</ns2:description>
+                        <ns2:precision unit="cm" decimalDigits="1"/>
+                    </ns2:number>
+                    <ns2:entity name="lg_trees"
+                        relevant="diameter >= 20" multiple="false">
+                        <ns2:label>Large trees</ns2:label>
+                        <ns2:description>Trees with diameter &gt;=20cm</ns2:description>
+                        <ns2:number name="buttress_height" type="real">
+                            <ns2:label>Buttress height</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="bole_height" type="real">
+                            <ns2:label>Bole height</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="bole_height" multiple="false">
+                        <ns2:label>Bole height</ns2:label>
+                        <ns2:number name="horizontal_distance" type="real">
+                            <ns2:label>Horizontal distance</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="base_height" type="real">
+                            <ns2:label>Height of base</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="1"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_base" type="real">
+                            <ns2:label>Percent base</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="0"/>
+                            <ns2:compare lte="100" gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_crown_point" type="real">
+                            <ns2:label>Percent crown point</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="0"/>
+                            <ns2:compare lte="100" gte="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="buttress" multiple="false">
+                        <ns2:label>Buttress</ns2:label>
+                        <ns2:number name="horizontal_distance" type="real">
+                            <ns2:label>Horizontal distance</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="2"/>
+                        </ns2:number>
+                        <ns2:number name="percent_base" type="real">
+                            <ns2:label>Percent base</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="0"/>
+                            <ns2:compare lte="100" gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_buttress" type="real">
+                            <ns2:label>Percent buttress</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="0"/>
+                            <ns2:compare lte="100" gte="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="dab" multiple="false">
+                        <ns2:label>DAB</ns2:label>
+                        <ns2:description>Diameter 0.2m above buttress</ns2:description>
+                        <ns2:number name="full_bars" type="real">
+                            <ns2:label>Full bars</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="quarter_bars" type="real">
+                            <ns2:label>1/4 bars</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="1"/>
+                        </ns2:number>
+                    </ns2:entity>
+                </ns2:entity>
+                <ns2:entity name="ssr" multiple="true" ui:tab="nf_ssr">
+                    <ns2:label>Seedlings, Saplings, Rattan</ns2:label>
+                    <ns2:text name="species_name">
+                        <ns2:label>Species name</ns2:label>
+                    </ns2:text>
+                    <ns2:number name="count" type="integer" required="true">
+                        <ns2:label>Count</ns2:label>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="seedlings" type="integer">
+                        <ns2:label>Seedlings</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="saplings" type="integer">
+                        <ns2:label>Saplings</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="sm_rattan" type="integer">
+                        <ns2:label>Small rattan</ns2:label>
+                        <ns2:description>Rattan &lt;= 2.9m</ns2:description>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:entity name="lg_rattan">
+                        <ns2:label>Large rattan</ns2:label>
+                        <ns2:description>Rattan &gt;=3m long</ns2:description>
+                        <ns2:number name="stems" type="integer">
+                            <ns2:label>Stems</ns2:label>
+                            <ns2:default value="0"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="max_diameter" type="real">
+                            <ns2:label>Max. diameter</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="min_diameter" type="real">
+                            <ns2:label>Min. diameter</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="avg_diameter" type="real">
+                            <ns2:label>Avg. diameter</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="avg_length" type="real">
+                            <ns2:label>Avg. length</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="0"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                </ns2:entity>
+            </ns2:entity>
+            <ns2:entity name="pmp" multiple="true" ui:layout="form" ui:tab="pmp">
+                <ns2:label type="heading">Enumeration, Forest Plantations and Pine Forest</ns2:label>
+                <ns2:number name="tract_no" type="integer" key="true"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label>Tract</ns2:label>
+                    <ns2:compare lte="15" gte="1" flag="error"/>
+                </ns2:number>
+                <ns2:number name="subplot_no" type="integer" key="true"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label>Subplot</ns2:label>
+                    <ns2:compare lte="8" gte="1" flag="error"/>
+                </ns2:number>
+                <ns2:number name="sector" type="real" ui:tab="pmp_detail">
+                    <ns2:label>Sector</ns2:label>
+                    <ns2:precision unit="deg" decimalDigits="0"/>
+                </ns2:number>
+                <ns2:number name="segment_dist" type="real"
+                    relevant="sector=''" ui:tab="pmp_detail">
+                    <ns2:label>Segment distance</ns2:label>
+                    <ns2:precision unit="m" decimalDigits="2"/>
+                </ns2:number>
+                <ns2:number name="part" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label>Part</ns2:label>
+                </ns2:number>
+                <ns2:number name="permanent" type="integer"
+                    required="false" ui:tab="pmp_detail">
+                    <ns2:label>Permanent</ns2:label>
+                    <ns2:compare lte="1" gte="1" flag="error">
+                        <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:number name="control" type="integer" key="true"
+                    required="false" ui:tab="pmp_detail">
+                    <ns2:label>Control</ns2:label>
+                    <ns2:compare lte="1" gte="1" flag="error">
+                        <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:code name="province" list="province"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label>Province</ns2:label>
+                </ns2:code>
+                <ns2:code name="land_system" list="land_system"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label>Land system</ns2:label>
+                </ns2:code>
+                <ns2:code name="altitude" list="altitude"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label>Altitude</ns2:label>
+                </ns2:code>
+                <ns2:code name="land_category" list="land_category"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label>Land category</ns2:label>
+                </ns2:code>
+                <ns2:code name="forest_type" list="forest_class"
+                    required="true" ui:tab="pmp_detail">
+                    <ns2:label>Forest type</ns2:label>
+                </ns2:code>
+                <ns2:code name="stand_condition" list="forest_class"
+                    parent="forest_class" required="true" ui:tab="pmp_detail">
+                    <ns2:label>Stand condition</ns2:label>
+                </ns2:code>
+                <ns2:number name="logging_year" type="integer"
+                    required="false" ui:tab="pmp_detail">
+                    <ns2:label>Logging year</ns2:label>
+                    <ns2:compare lte="2050" gte="1900" flag="error"/>
+                </ns2:number>
+                <ns2:code name="terrain" list="terrain" required="true" ui:tab="pmp_detail">
+                    <ns2:label>Terrain</ns2:label>
+                </ns2:code>
+                <ns2:code name="slope" list="slope" required="true" ui:tab="pmp_detail">
+                    <ns2:label>Slope</ns2:label>
+                </ns2:code>
+                <ns2:code name="aspect" list="aspect" required="true" ui:tab="pmp_detail">
+                    <ns2:label>Aspect</ns2:label>
+                </ns2:code>
+                <ns2:entity name="record_count" multiple="false" ui:tab="pmp_detail">
+                    <ns2:label>Number of Records</ns2:label>
+                    <ns2:number name="trees_poles" type="integer" required="false">
+                        <ns2:label>Trees and poles</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="seedlings" type="integer" required="false">
+                        <ns2:label>Seedlings</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="saplings" type="integer" required="false">
+                        <ns2:label>Saplings</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="sm_rattan" type="integer" required="false">
+                        <ns2:label>Rattan (&lt;=2.9m)</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="lg_rattan" type="integer" required="false">
+                        <ns2:label>Rattan (&gt;=3m)</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:number name="crew_no" type="integer"
+                    required="false" ui:tab="pmp_detail">
+                    <ns2:label>Crew no.</ns2:label>
+                    <ns2:compare gte="0" flag="error"/>
+                </ns2:number>
+                <ns2:code name="month" list="month" required="true" ui:tab="pmp_detail">
+                    <ns2:label>Month</ns2:label>
+                </ns2:code>
+                <ns2:number name="year" type="integer" required="true" ui:tab="pmp_detail">
+                    <ns2:label>Year</ns2:label>
+                    <ns2:compare lte="2050" gte="1900" flag="error"/>
+                </ns2:number>
+                <ns2:entity name="tp" multiple="true" ui:tab="pmp_tp">
+                    <ns2:label type="heading">Trees and Poles</ns2:label>
+                    <ns2:text name="species_name">
+                        <ns2:label>Name of Species</ns2:label>
+                    </ns2:text>
+                    <ns2:number name="diameter" type="real">
+                        <ns2:label>Diameter</ns2:label>
+                        <ns2:description>DBH or diameter 0.2m AB</ns2:description>
+                        <ns2:precision unit="cm" decimalDigits="1"/>
+                    </ns2:number>
+                    <ns2:entity name="lg_trees"
+                        relevant="diameter >= 20" multiple="false">
+                        <ns2:label>Large trees</ns2:label>
+                        <ns2:description>Trees with diameter &gt;=10cm</ns2:description>
+                        <ns2:number name="buttress_height" type="real">
+                            <ns2:label>Buttress height</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="bole_height" type="real">
+                            <ns2:label>Bole height</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="bole_height" multiple="false">
+                        <ns2:label>Bole height</ns2:label>
+                        <ns2:number name="horizontal_distance" type="real">
+                            <ns2:label>Horizontal distance</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="base_height" type="real">
+                            <ns2:label>Height of base</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="1"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_base" type="real">
+                            <ns2:label>Percent base</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="0"/>
+                            <ns2:compare lte="100" gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_top_of_tree" type="real">
+                            <ns2:label>Percent top of tree</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="0"/>
+                            <ns2:compare lte="100" gte="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="buttress" multiple="false">
+                        <ns2:label>Buttress</ns2:label>
+                        <ns2:number name="horizontal_distance" type="real">
+                            <ns2:label>Horizontal distance</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="2"/>
+                        </ns2:number>
+                        <ns2:number name="percent_base" type="real">
+                            <ns2:label>Percent base</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="0"/>
+                            <ns2:compare lte="100" gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_buttress" type="real">
+                            <ns2:label>Percent buttress</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="0"/>
+                            <ns2:compare lte="100" gte="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="dab" multiple="false">
+                        <ns2:label>DAB</ns2:label>
+                        <ns2:description>Diameter 0.2m above buttress</ns2:description>
+                        <ns2:number name="full_bars" type="real">
+                            <ns2:label>Full bars</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="quarter_bars" type="real">
+                            <ns2:label>1/4 bars</ns2:label>
+                            <ns2:precision unit="percent" decimalDigits="1"/>
+                        </ns2:number>
+                    </ns2:entity>
+                </ns2:entity>
+                <ns2:entity name="ssr" multiple="true" ui:tab="pmp_ssr">
+                    <ns2:label>Seedlings, Saplings, Rattan</ns2:label>
+                    <ns2:text name="species_name">
+                        <ns2:label>Species name</ns2:label>
+                    </ns2:text>
+                    <ns2:number name="count" type="integer" required="true">
+                        <ns2:label>Count</ns2:label>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="seedlings" type="integer">
+                        <ns2:label>Seedlings</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="saplings" type="integer">
+                        <ns2:label>Saplings</ns2:label>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="sm_rattan" type="integer">
+                        <ns2:label>Small rattan</ns2:label>
+                        <ns2:description>Rattan &lt;= 2.9m</ns2:description>
+                        <ns2:default value="0"/>
+                        <ns2:compare gte="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:entity name="lg_rattan">
+                        <ns2:label>Large rattan</ns2:label>
+                        <ns2:description>Rattan &gt;=3m long</ns2:description>
+                        <ns2:number name="stems" type="integer">
+                            <ns2:label>Stems</ns2:label>
+                            <ns2:default value="0"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="max_diameter" type="real">
+                            <ns2:label>Max. diameter</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="min_diameter" type="real">
+                            <ns2:label>Min. diameter</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="avg_diameter" type="real">
+                            <ns2:label>Avg. diameter</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="avg_length" type="real">
+                            <ns2:label>Avg. length</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="0"/>
+                            <ns2:compare gte="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                </ns2:entity>
+            </ns2:entity>
+            <ns2:entity name="bamboo" multiple="true" ui:layout="form" ui:tab="bamboo">
+                <ns2:label>Bamboo</ns2:label>
+                <ns2:number name="tract_no" type="integer" key="true"
+                    required="true" ui:tab="bamboo_detail">
+                    <ns2:label>Tract</ns2:label>
+                    <ns2:compare lte="15" gte="1" flag="error"/>
+                </ns2:number>
+                <ns2:number name="subplot_no" type="integer" key="true"
+                    required="true" ui:tab="bamboo_detail">
+                    <ns2:label>Subplot</ns2:label>
+                    <ns2:compare lte="8" gte="1" flag="error"/>
+                </ns2:number>
+                <ns2:number name="sector" type="real" ui:tab="bamboo_detail">
+                    <ns2:label>Sector</ns2:label>
+                    <ns2:precision unit="deg" decimalDigits="0"/>
+                </ns2:number>
+                <ns2:number name="segment_dist" type="real"
+                    relevant="sector=''" ui:tab="bamboo_detail">
+                    <ns2:label>Segment distance</ns2:label>
+                    <ns2:precision unit="m" decimalDigits="2"/>
+                </ns2:number>
+                <ns2:number name="part" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="bamboo_detail">
+                    <ns2:label>Part</ns2:label>
+                </ns2:number>
+                <ns2:number name="permanent" type="integer"
+                    required="false" ui:tab="bamboo_detail">
+                    <ns2:label>Permanent</ns2:label>
+                    <ns2:compare lte="1" gte="1" flag="error">
+                        <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:number name="control" type="integer" key="true"
+                    required="false" ui:tab="bamboo_detail">
+                    <ns2:label>Control</ns2:label>
+                    <ns2:compare lte="1" gte="1" flag="error">
+                        <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:entity name="bamboo_enumeration" multiple="true" ui:tab="bamboo_enum">
+                    <ns2:label type="heading">Bamboo Enumeration</ns2:label>
+                    <ns2:text name="name_of_species" required="true">
+                        <ns2:label>Name of species</ns2:label>
+                    </ns2:text>
+                    <ns2:entity name="number_of_bamboo_culms">
+                        <ns2:label>Number of culmns</ns2:label>
+                        <ns2:number name="one_year" type="integer">
+                            <ns2:label>1 - Year</ns2:label>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="two_year" type="integer">
+                            <ns2:label>2 - Year</ns2:label>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="total" type="integer">
+                            <ns2:label>Total</ns2:label>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="live_stumps" type="integer">
+                            <ns2:label>Live Stumps</ns2:label>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="one_year_old">
+                        <ns2:label>1-year old</ns2:label>
+                        <ns2:entity name="low_part">
+                            <ns2:label>Low part</ns2:label>
+                            <ns2:number name="dbh" type="real">
+                                <ns2:label>DBH</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="length" type="real">
+                                <ns2:label>Length</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                        <ns2:entity name="top">
+                            <ns2:label>Top</ns2:label>
+                            <ns2:number name="length" type="real">
+                                <ns2:label>Length</ns2:label>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight</ns2:label>
+                            </ns2:number>
+                        </ns2:entity>
+                    </ns2:entity>
+                    <ns2:entity name="two_year_old">
+                        <ns2:label>2-year old</ns2:label>
+                        <ns2:entity name="low_part">
+                            <ns2:label>Low part</ns2:label>
+                            <ns2:number name="dbh" type="real">
+                                <ns2:label>D B H</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="length" type="real">
+                                <ns2:label>Length</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                        <ns2:entity name="top">
+                            <ns2:label>Top</ns2:label>
+                            <ns2:number name="length" type="real">
+                                <ns2:label>Length</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                    </ns2:entity>
+                    <ns2:entity name="more_than_three_year_old">
+                        <ns2:label>3+year old</ns2:label>
+                        <ns2:entity name="low_part">
+                            <ns2:number name="dbh" type="real">
+                                <ns2:label>DBH</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="length" type="real">
+                                <ns2:label>Length</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                        <ns2:entity name="top">
+                            <ns2:number name="length" type="real">
+                                <ns2:label>Length</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                    </ns2:entity>
+                </ns2:entity>
+            </ns2:entity>
+            <ns2:entity name="sagu" multiple="true" ui:layout="form" ui:tab="sagu">
+                <ns2:label>Sagu Enumeration, TSP</ns2:label>
+                <ns2:text name="species_or_variety">
+                    <ns2:label>Species/Variety</ns2:label>
+                </ns2:text>
+                <ns2:number name="record_type" type="integer">
+                    <ns2:label>Record Type (foxpro:15)</ns2:label>
+                </ns2:number>
+                <ns2:text name="species_code">
+                    <ns2:label>Species Code</ns2:label>
+                </ns2:text>
+                <ns2:number name="cons_culm_number" type="integer">
+                    <ns2:label>Cons Culm Number</ns2:label>
+                </ns2:number>
+                <ns2:number name="clump_diameter" type="real">
+                    <ns2:label>Clump Diameter</ns2:label>
+                </ns2:number>
+                <ns2:entity name="bole_height">
+                    <ns2:number name="horizontal_distance" type="real">
+                        <ns2:label>Horizontal Distance</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="height_of_base" type="real">
+                        <ns2:label>Height of Base</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="percent_base" type="real">
+                        <ns2:label>Percent Base</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="percent_crown_point" type="real">
+                        <ns2:label>Percent Crown Point</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:entity name="m1_m2_m3_stems">
+                    <ns2:number name="number_of_stems_in_clump" type="integer">
+                        <ns2:label>Number of Stems in Clump</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="stems_consec_no_clump" type="integer">
+                        <ns2:label>Stems Consecutive No/Clump</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="damage" type="integer">
+                        <ns2:label>Damage</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="dbh" type="real">
+                        <ns2:label>D B H</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="bole_height" type="real">
+                        <ns2:label>Bole Height</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="maturity_class" type="integer">
+                        <ns2:label>Maturity Class</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:entity name="count_for_young_or_overmature_stemps">
+                    <ns2:number name="no_seedlings_in_sub_plot" type="integer">
+                        <ns2:label>No Seedlings in Sub Plot</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="no_seedlings_in_clump" type="integer">
+                        <ns2:label>No Seedlings in Clump</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="m4_stems_in_clump" type="integer">
+                        <ns2:label>M4 Stems in Clump</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+            </ns2:entity>
+            <ns2:entity name="nipa" multiple="true" ui:layout="form" ui:tab="nipa">
+                <ns2:label>Nipa Enumeration, TSP</ns2:label>
+                <ns2:entity name="data_location">
+                    <ns2:number name="record_type" type="integer">
+                        <ns2:label>Record Type (foxpro:16)</ns2:label>
+                    </ns2:number>
+                    <ns2:code name="province" list="province" required="true">
+                        <ns2:label>Province</ns2:label>
+                    </ns2:code>
+                    <ns2:code name="land_system" list="land_system" required="true">
+                        <ns2:label>Land System</ns2:label>
+                    </ns2:code>
+                    <ns2:number name="altitude" type="integer" required="true">
+                        <ns2:label>Altitude</ns2:label>
+                    </ns2:number>
+                    <ns2:code name="land_category" list="land_category" required="true">
+                        <ns2:label>Land Category</ns2:label>
+                    </ns2:code>
+                    <ns2:code name="forest_type" list="forest_class" required="true">
+                        <ns2:label>Forest Type</ns2:label>
+                    </ns2:code>
+                    <ns2:code name="stand_condition"
+                        list="stand_condition" required="true">
+                        <ns2:label>Stand Condition Cut/Uncut (choice : c/u)</ns2:label>
+                    </ns2:code>
+                    <ns2:number name="year_of_cutting" type="integer" required="true">
+                        <ns2:label>Year of Cutting</ns2:label>
+                    </ns2:number>
+                    <ns2:code name="terrain" list="terrain" required="true">
+                        <ns2:label>Terrain</ns2:label>
+                    </ns2:code>
+                    <ns2:code name="slope" list="slope" required="true">
+                        <ns2:label>Slope</ns2:label>
+                    </ns2:code>
+                    <ns2:code name="aspect" list="aspect" required="true">
+                        <ns2:label>Aspect</ns2:label>
+                    </ns2:code>
+                </ns2:entity>
+                <ns2:entity name="partition">
+                    <ns2:number name="sector_degree" type="real">
+                        <ns2:label>Sector Degree</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="distance_to_segment" type="real">
+                        <ns2:label>Distance to Segment (empty in the foxpro)</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="large_small_part" type="integer">
+                        <ns2:label>Large / Small Part</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:entity name="number_of_records">
+                    <ns2:number name="m1" type="integer">
+                        <ns2:label>M1</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="m2" type="integer">
+                        <ns2:label>M2</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="no_of_seedlings" type="integer">
+                        <ns2:label>Number of Seedlings</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:number name="crew_number" type="integer">
+                    <ns2:label>Crew Number</ns2:label>
+                </ns2:number>
+                <ns2:code name="month" list="month" required="true">
+                    <ns2:label>Month</ns2:label>
+                </ns2:code>
+                <ns2:entity name="data_measure">
+                    <ns2:text name="name_of_species">
+                        <ns2:label>Name of Species</ns2:label>
+                    </ns2:text>
+                    <ns2:number name="record_type" type="integer">
+                        <ns2:label>Record Type (foxpro:17)</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="consec_number" type="integer">
+                        <ns2:label>Consecutive Number (auto filled in FoxPro)</ns2:label>
+                    </ns2:number>
+                    <ns2:text name="species_code">
+                        <ns2:label>Species Code</ns2:label>
+                    </ns2:text>
+                    <ns2:entity name="number_of_leaves">
+                        <ns2:number name="total_number_of_leaves" type="integer">
+                            <ns2:label>Total Number of Leaves</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="no_of_cull_leaves" type="integer">
+                            <ns2:label>No. of Cull Leaves</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="no_of_utilizable_leaves" type="integer">
+                            <ns2:label>No. of Utilizable Leaves</ns2:label>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:number name="height_of_news_nipa" type="real">
+                        <ns2:label>Height of N-E-W-S Nipa</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="height_of_tallest_nipa" type="real">
+                        <ns2:label>Height of Tallest Nipa</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="maturity" type="integer">
+                        <ns2:label>Maturity</ns2:label>
+                    </ns2:number>
+                    <ns2:code name="leaves_cut_or_uncut" list="leaf_state">
+                        <ns2:label>Leaves Cut/Uncut</ns2:label>
+                    </ns2:code>
+                    <ns2:number name="flower_or_fruit" type="integer">
+                        <ns2:label>Flower or Fruit</ns2:label>
+                    </ns2:number>
+                    <ns2:code name="open_or_closed" list="open_or_closed">
+                        <ns2:label>Open or Closed</ns2:label>
+                    </ns2:code>
+                    <ns2:number name="horizontal_distance" type="real">
+                        <ns2:label>Horizontal Distance</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="percent_base" type="real">
+                        <ns2:label>Percent Base</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="percent_top" type="real">
+                        <ns2:label>Percent Top</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="length_news_plant" type="real">
+                        <ns2:label>Length News Plant</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="no_of_util_leaf" type="integer">
+                        <ns2:label>Number of Utility Leaf</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="total_no_of_leaf" type="integer">
+                        <ns2:label>Total Number of Leaf</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+            </ns2:entity>
+            <ns2:entity name="permanent_plot_a" multiple="true"
+                ui:layout="form" ui:tab="plot_a">
+                <ns2:label type="instance">Permanent Plot, A</ns2:label>
+                <ns2:number name="hectare_plot" type="real">
+                    <ns2:label>Hectare Plot</ns2:label>
+                    <ns2:compare gt="0" flag="error"/>
+                </ns2:number>
+                <ns2:number name="record_unit" type="integer">
+                    <ns2:label>Record Unit</ns2:label>
+                    <ns2:compare gt="0" flag="error"/>
+                </ns2:number>
+                <ns2:number name="sector" type="real" ui:tab="plota_detail">
+                    <ns2:label>Sector</ns2:label>
+                    <ns2:precision unit="deg" decimalDigits="0"/>
+                </ns2:number>
+                <ns2:number name="segment_dist" type="real"
+                    relevant="sector=''" ui:tab="plota_detail">
+                    <ns2:label>Segment distance</ns2:label>
+                    <ns2:precision unit="m" decimalDigits="2"/>
+                </ns2:number>
+                <ns2:number name="part" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Part</ns2:label>
+                </ns2:number>
+                <ns2:number name="square_5x3" type="real">
+                    <ns2:label>5x3m squares</ns2:label>
+                    <ns2:compare gt="0" flag="error"/>
+                </ns2:number>
+                <ns2:number name="control" type="integer" key="true"
+                    required="false" ui:tab="plota_detail">
+                    <ns2:label>Control</ns2:label>
+                    <ns2:compare lte="1" gte="1" flag="error">
+                        <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:code name="province" list="province"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Province</ns2:label>
+                </ns2:code>
+                <ns2:code name="land_system" list="land_system"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Land system</ns2:label>
+                </ns2:code>
+                <ns2:code name="altitude" list="altitude"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Altitude</ns2:label>
+                </ns2:code>
+                <ns2:code name="land_category" list="land_category"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Land category</ns2:label>
+                </ns2:code>
+                <ns2:code name="forest_type" list="forest_class"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Forest type</ns2:label>
+                </ns2:code>
+                <ns2:number name="logging_year" type="integer"
+                    required="false" ui:tab="plota_detail">
+                    <ns2:label>Logging year</ns2:label>
+                    <ns2:compare lte="2050" gte="1900" flag="error"/>
+                </ns2:number>
+                <ns2:code name="terrain" list="terrain" required="true" ui:tab="plota_detail">
+                    <ns2:label>Terrain</ns2:label>
+                </ns2:code>
+                <ns2:code name="slope" list="slope" required="true" ui:tab="plota_detail">
+                    <ns2:label>Slope</ns2:label>
+                </ns2:code>
+                <ns2:code name="aspect" list="aspect" required="true" ui:tab="plota_detail">
+                    <ns2:label>Aspect</ns2:label>
+                </ns2:code>
+                <ns2:number name="tp_recorded" type="integer"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Trees and poles recorded</ns2:label>
+                </ns2:number>
+                <ns2:number name="crew_no" type="integer"
+                    required="false" ui:tab="plota_detail">
+                    <ns2:label>Crew no.</ns2:label>
+                    <ns2:compare gte="0" flag="error"/>
+                </ns2:number>
+                <ns2:code name="month" list="month" required="true" ui:tab="plota_detail">
+                    <ns2:label>Month</ns2:label>
+                </ns2:code>
+                <ns2:number name="year" type="integer" required="true" ui:tab="plota_detail">
+                    <ns2:label>Year</ns2:label>
+                    <ns2:compare lte="2050" gte="1900" flag="error"/>
+                </ns2:number>
+                <ns2:entity name="plota_enum" multiple="true"
+                    ui:layout="table" ui:tab="plota_enum">
+                    <ns2:label>Plot A Enumeration</ns2:label>
+                    <ns2:text name="name_of_species" required="true">
+                        <ns2:label>Name of species</ns2:label>
+                    </ns2:text>
+                    <ns2:number name="dbb_or_b" type="real">
+                        <ns2:label>DBB or B 0.2m AB 0.1cm</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="damage" type="integer">
+                        <ns2:label>Damage</ns2:label>
+                    </ns2:number>
+                    <ns2:entity name="trees_higher_than_20cm">
+                        <ns2:label>Trees of 20+cm</ns2:label>
+                        <ns2:number name="butress_height" type="real">
+                            <ns2:label>Buttress height 0.01m</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="d_2point2m_ab" type="real">
+                            <ns2:label>D 2.2m AB 0.1cm</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="1"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="bole_height" type="real">
+                            <ns2:label>Bole height 0.1m</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="1"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="tree_height" type="real">
+                            <ns2:label>Tree height</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="1"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="grade" type="integer">
+                            <ns2:label>Grade</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="infestation" type="integer">
+                            <ns2:label>Infestation</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="tree_class" type="integer">
+                            <ns2:label>Tree class</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="crown_class" type="integer">
+                            <ns2:label>Crown class</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="crown_position" type="integer">
+                            <ns2:label>Crown position</ns2:label>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="bole_and_tree_height">
+                        <ns2:label>Bole and tree height</ns2:label>
+                        <ns2:number name="horizontal_distance" type="real">
+                            <ns2:label>Horizontal distance 0.01m</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="height_of_base" type="real">
+                            <ns2:label>Height of base 0.1m</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="1"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_base" type="real">
+                            <ns2:label>Percent base</ns2:label>
+                            <ns2:precision decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_crown_point" type="real">
+                            <ns2:label>Percent crown point</ns2:label>
+                            <ns2:precision decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_top_of_tree" type="real">
+                            <ns2:label>Percent top of tree</ns2:label>
+                            <ns2:precision decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="buttress_and_diameter_above_buttress">
+                        <ns2:label>Buttress and diameters above buttress</ns2:label>
+                        <ns2:number name="horizontal_distance" type="real">
+                            <ns2:label>Horizontal distance 0.01m</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_base" type="real">
+                            <ns2:label>Percent base</ns2:label>
+                            <ns2:precision decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="percent_buttress" type="real">
+                            <ns2:label>Percent buttress</ns2:label>
+                            <ns2:precision decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:entity name="d_02_ab">
+                            <ns2:label>D 0.2 AB</ns2:label>
+                            <ns2:number name="full_bars" type="real">
+                                <ns2:label>Full bars</ns2:label>
+                                <ns2:precision decimalDigits="2"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="quarter_bars" type="real">
+                                <ns2:label>1/4 bars</ns2:label>
+                                <ns2:precision decimalDigits="2"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                        <ns2:number name="percent_2point2m_ab" type="real">
+                            <ns2:label>Percent 2.2m AB</ns2:label>
+                            <ns2:precision unit="m" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:entity name="d_22_ab">
+                            <ns2:label>D 2.2 AB</ns2:label>
+                            <ns2:number name="full_bars">
+                                <ns2:label>Full bars</ns2:label>
+                                <ns2:precision decimalDigits="2"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="quarter_bars" type="real">
+                                <ns2:label>1/4 bars 0.1</ns2:label>
+                                <ns2:precision decimalDigits="2"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                    </ns2:entity>
+                </ns2:entity>
+            </ns2:entity>
+            <ns2:entity name="permanent_plot_b" multiple="true"
+                ui:layout="form" ui:tab="plot_b">
+                <ns2:label>Permanent Plot, B</ns2:label>
+                <ns2:number name="hectare_plot" type="real"
+                    required="true" ui:tab="plotb_detail">
+                    <ns2:label>Hectare plot</ns2:label>
+                    <ns2:compare gt="0" flag="error"/>
+                </ns2:number>
+                <ns2:number name="record_unit" type="integer"
+                    required="true" ui:tab="plotb_detail">
+                    <ns2:label>Record unit</ns2:label>
+                    <ns2:compare gt="0" flag="error"/>
+                </ns2:number>
+                <ns2:number name="sector" type="real" ui:tab="plotb_detail">
+                    <ns2:label>Sector</ns2:label>
+                    <ns2:precision unit="deg" decimalDigits="0"/>
+                </ns2:number>
+                <ns2:number name="segment_dist" type="real"
+                    relevant="sector=''" ui:tab="plotb_detail">
+                    <ns2:label>Segment distance</ns2:label>
+                    <ns2:precision unit="m" decimalDigits="2"/>
+                </ns2:number>
+                <ns2:number name="part" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="plotb_detail">
+                    <ns2:label>Part</ns2:label>
+                </ns2:number>
+                <ns2:number name="square_5x5" type="real">
+                    <ns2:label>5x5m squares</ns2:label>
+                    <ns2:compare gt="0" flag="error"/>
+                </ns2:number>
+                <ns2:number name="control" type="integer" key="true"
+                    required="false" ui:tab="plotb_detail">
+                    <ns2:label>Control</ns2:label>
+                    <ns2:compare lte="1" gte="1" flag="error">
+                        <ns2:message>This field must be either 1 or blank</ns2:message>
+                    </ns2:compare>
+                </ns2:number>
+                <ns2:entity name="number_of_records" ui:tab="plotb_detail">
+                    <ns2:number name="seedlings" type="integer">
+                        <ns2:label>Seedlings</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="saplings" type="integer">
+                        <ns2:label>Saplings</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="rattan_less_than2point9m">
+                        <ns2:label>Rattan [-2.9m]</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="rattan_more_than3point0m">
+                        <ns2:label>Rattan [+3.0m]</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="bamboo" type="real">
+                        <ns2:label>Bamboo</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="depth_of_peat_layer" type="real">
+                        <ns2:label>Depth of Peat Layer</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="depth_of_litter" type="real">
+                        <ns2:label>Depth of Litter</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:entity name="a_horizon" ui:tab="plotb_detail">
+                    <ns2:number name="depth" type="real">
+                        <ns2:label>Depth</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="stones" type="real">
+                        <ns2:label>Stones</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="colour" type="integer">
+                        <ns2:label>Colour</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="water_regime" type="integer">
+                        <ns2:label>Water Regime</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="texture" type="integer">
+                        <ns2:label>Texture</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:entity name="b_horizon" ui:tab="plotb_detail">
+                    <ns2:number name="depth" type="real">
+                        <ns2:label>Depth</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="stones" type="real">
+                        <ns2:label>Stones</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="colour" type="integer">
+                        <ns2:label>Colour</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="water_regime" type="integer">
+                        <ns2:label>Water Regime</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="texture" type="integer">
+                        <ns2:label>Texture</ns2:label>
+                    </ns2:number>
+                </ns2:entity>
+                <ns2:number name="c_horizon" type="integer">
+                    <ns2:label>C Horizon</ns2:label>
+                </ns2:number>
+                <ns2:number name="crew_number" type="integer">
+                    <ns2:label>Crew Number</ns2:label>
+                </ns2:number>
+                <ns2:code name="month" list="month" required="true">
+                    <ns2:label>Month</ns2:label>
+                </ns2:code>
+                <ns2:number name="year" type="integer" required="true" ui:tab="nf_detail">
+                    <ns2:label>Year</ns2:label>
+                    <ns2:compare lte="2050" gte="1900" flag="error"/>
+                </ns2:number>
+                <ns2:entity name="plotb_ssr" multiple="true"
+                    ui:layout="table" ui:tab="plotb_ssr">
+                    <ns2:label>R 1m tree seedlings, r 2m tree saplings, r 5m rattan -2.9m, r 10m rattan 3+m</ns2:label>
+                    <ns2:text name="name_of_species" required="true">
+                        <ns2:label>Name of Species</ns2:label>
+                    </ns2:text>
+                    <ns2:number name="count" type="integer">
+                        <ns2:label>Count</ns2:label>
+                        <ns2:compare gt="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="seedlings" type="integer">
+                        <ns2:label>Seedlings</ns2:label>
+                        <ns2:compare gt="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="saplings" type="integer">
+                        <ns2:label>Saplings</ns2:label>
+                        <ns2:compare gt="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="rattan_lte_2point9m" type="integer">
+                        <ns2:label>Rattan -2.9m</ns2:label>
+                        <ns2:compare gt="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:entity name="rattan_gte_3m">
+                        <ns2:label>Rattan +m long</ns2:label>
+                        <ns2:entity name="s_single">
+                            <ns2:label>s single</ns2:label>
+                            <ns2:number name="stems" type="integer">
+                                <ns2:label>Stems</ns2:label>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="d_max" type="real">
+                                <ns2:label>D max 0.1cm</ns2:label>
+                                <ns2:precision unit="cm" decimalDigits="2"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                        <ns2:entity name="c_cluster">
+                            <ns2:label>c cluster</ns2:label>
+                            <ns2:number name="d_min" type="real">
+                                <ns2:label>D min 0.1cm</ns2:label>
+                                <ns2:precision unit="cm" decimalDigits="2"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="d_avg" type="real">
+                                <ns2:label>D average 0.1cm</ns2:label>
+                                <ns2:precision unit="cm" decimalDigits="2"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="l_avg" type="real">
+                                <ns2:label>L average m</ns2:label>
+                                <ns2:precision unit="m" decimalDigits="2"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                    </ns2:entity>
+                </ns2:entity>
+                <ns2:entity name="bamboo" multiple="true"
+                    ui:layout="table" ui:tab="plotb_bamboo">
+                    <ns2:label>R 10 m Bamboo</ns2:label>
+                    <ns2:text name="name_of_species" required="true">
+                        <ns2:label>Name of Species</ns2:label>
+                    </ns2:text>
+                    <ns2:entity name="no_culm">
+                        <ns2:label>Number of culmns</ns2:label>
+                        <ns2:number name="one_year" type="integer">
+                            <ns2:label>1-year</ns2:label>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="two_year" type="integer">
+                            <ns2:label>2-year</ns2:label>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="total" type="integer">
+                            <ns2:label>Total</ns2:label>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                        <ns2:number name="live_stumps" type="integer">
+                            <ns2:label>Live stumps</ns2:label>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
+                    </ns2:entity>
+                    <ns2:entity name="one_year">
+                        <ns2:label>1-year old</ns2:label>
+                        <ns2:entity name="low_part">
+                            <ns2:label>Low part</ns2:label>
+                            <ns2:number name="dbh" type="real">
+                                <ns2:label>Dbh 0.1cm</ns2:label>
+                                <ns2:precision unit="cm" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="length">
+                                <ns2:label>Length 0.1m</ns2:label>
+                                <ns2:precision unit="m" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight 0.1kg</ns2:label>
+                                <ns2:precision unit="kg" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                    </ns2:entity>
+                    <ns2:entity name="two_year">
+                        <ns2:label>2-year old</ns2:label>
+                        <ns2:entity name="low_part">
+                            <ns2:label>Low part</ns2:label>
+                            <ns2:number name="dbh" type="real">
+                                <ns2:label>Dbh 0.1cm</ns2:label>
+                                <ns2:precision unit="cm" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="length">
+                                <ns2:label>Length 0.1m</ns2:label>
+                                <ns2:precision unit="m" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight 0.1kg</ns2:label>
+                                <ns2:precision unit="kg" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                    </ns2:entity>
+                    <ns2:entity name="three_year">
+                        <ns2:label>3+year old</ns2:label>
+                        <ns2:entity name="low_part">
+                            <ns2:label>Low part</ns2:label>
+                            <ns2:number name="dbh" type="real">
+                                <ns2:label>Dbh 0.1cm</ns2:label>
+                                <ns2:precision unit="cm" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="length">
+                                <ns2:label>Length 0.1m</ns2:label>
+                                <ns2:precision unit="m" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                            <ns2:number name="weight" type="real">
+                                <ns2:label>Weight 0.1kg</ns2:label>
+                                <ns2:precision unit="kg" decimalDigits="1"/>
+                                <ns2:compare gt="0" flag="error"/>
+                            </ns2:number>
+                        </ns2:entity>
+                    </ns2:entity>
+                </ns2:entity>
+            </ns2:entity>
+        </ns2:entity>
+    </ns2:schema>
+</ui:survey>
