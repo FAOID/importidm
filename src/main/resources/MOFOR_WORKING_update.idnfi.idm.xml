@@ -2602,6 +2602,10 @@
                     required="true" ui:tab="plota_detail">
                     <ns2:label>Forest type</ns2:label>
                 </ns2:code>
+                <ns2:code name="stand_condition" list="forest_class"
+                    parent="forest_type" required="true" ui:tab="plota_detail">
+                    <ns2:label>Stand condition</ns2:label>
+                </ns2:code>
                 <ns2:number name="logging_year" type="integer"
                     required="false" ui:tab="plota_detail">
                     <ns2:label>Logging year</ns2:label>

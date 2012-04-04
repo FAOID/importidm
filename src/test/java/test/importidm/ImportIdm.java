@@ -70,7 +70,7 @@ public class ImportIdm {
 	 */
 	private Survey updateModel() throws IOException, InvalidIdmlException, SurveyImportException {
 		
-		URL idm = ClassLoader.getSystemResource("MOFOR_2012_04_03_update.idnfi.idm.xml");
+		URL idm = ClassLoader.getSystemResource("MOFOR_WORKING_update.idnfi.idm.xml");//MOFOR_2012_04_03_update.idnfi.idm.xml
 		InputStream is = idm.openStream();
 		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
