@@ -1629,6 +1629,10 @@
                     <ns2:message xml:lang="id"></ns2:message>
                 </ns2:check>
             </ns2:number>
+            <ns2:number name="year" type="integer" required="true">
+                <ns2:label>Year</ns2:label>
+                <ns2:compare lte="2050" gte="1900" flag="error"/>
+            </ns2:number>
             <ns2:entity name="natural_forest" multiple="true"
                 ui:layout="form" ui:tab="nf">
                 <ns2:label type="heading">Enumeration, Natural Forest</ns2:label>
