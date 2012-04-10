@@ -72,4 +72,8 @@
 	</bean>
 	<!-- enables interpretation of the @Transactional annotations for declarative transaction management-->
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+	
+	<!-- Idm Editor -->
+	<bean id="idmEditor" class="org.openforis.collect.model.editor.IdmEditor" >
+	</bean>
 </beans>
