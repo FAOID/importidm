@@ -1821,6 +1821,14 @@
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
+                        <ns2:number name="grade" type="integer">
+                            <ns2:label>Grade</ns2:label>
+                            <ns2:label type="number">20</ns2:label>
+                        </ns2:number>
+                        <ns2:number name="infestation" type="integer">
+                            <ns2:label>Infestation</ns2:label>
+                            <ns2:label type="number">21</ns2:label>
+                        </ns2:number>
                     </ns2:entity>
                     <ns2:entity name="bole_height" multiple="false">
                         <ns2:label>Bole height</ns2:label>
