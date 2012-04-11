@@ -38,12 +38,12 @@ public class ImportIdm {
 
 	@Test
 	public void updateIdnfiIdm() throws IOException, InvalidIdmlException, SurveyImportException {
-		idmUpdater.updateModel("idnfi",ClassLoader.getSystemResource("MOFOR_WORKING_update.idnfi.idm.xml"));
+		idmUpdater.updateModel("idnfi",ClassLoader.getSystemResource("MOFOR_WORKING.idnfi.idm.xml"));
 	}
 	
 	@Test
 	public void updateGreenbookIdm() throws IOException, InvalidIdmlException, SurveyImportException {
-		idmUpdater.updateModel("greenbook",ClassLoader.getSystemResource("MOFOR_WORKING_update.greenbook.idm.xml"));
+		idmUpdater.updateModel("greenbook",ClassLoader.getSystemResource("MOFOR_WORKING.greenbook.idm.xml"));
 	}
 	
 }
