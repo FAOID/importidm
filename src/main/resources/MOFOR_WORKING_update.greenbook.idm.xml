@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:survey xmlns:ui="http://www.openforis.org/collect/3.0/ui" xmlns:ns2="http://www.openforis.org/idml/3.0">
+    <ns2:project>Indonesia NFI</ns2:project>
+    <ns2:cycle>1</ns2:cycle>
+    <ns2:description>Basis Data Kehutanan Nasional Indonesia</ns2:description>
+    <ns2:configuration>
+        <ui:flex>
+            <ui:tabDefinition rootEntity="cluster">
+                <ui:tabs>
+                    <ui:tab name="cluster">
+                        <ui:label>Cluster</ui:label>
+                    </ui:tab>
+                </ui:tabs>
+            </ui:tabDefinition>
+        </ui:flex>
+    </ns2:configuration>
+    <ns2:versioning>
+        <ns2:version name="1.0">
+            <ns2:label>Ministry of Forestry Data</ns2:label>
+            <ns2:description>Single data structure and forms used by Indonesia MOFOR</ns2:description>
+            <ns2:date>1990-01-01</ns2:date>
+        </ns2:version>
+    </ns2:versioning>
+    <ns2:schema>
+        <ns2:entity name="greenbook" ui:tab="cluster">
+            <ns2:label type="instance">Cluster</ns2:label>
+            <ns2:number name="utm_zone" type="integer" key="true" required="true">
+                <ns2:label>UTM zone</ns2:label>
+                <ns2:description>Valid UTM Zone between 46 and 54</ns2:description>
+                <ns2:compare lte="54" gte="46" flag="error"/>
+            </ns2:number>
+            <ns2:number name="easting" type="integer" key="true" required="true">
+                <ns2:label type="number">1</ns2:label>
+                <ns2:label>W-E</ns2:label>
+                <ns2:description>Valid UTM easting between 166 and 834</ns2:description>
+                <ns2:compare lte="834" gte="166" flag="error"/>
+            </ns2:number>
+            <ns2:number name="northing" type="integer" key="true" required="true">
+                <ns2:label type="number">2</ns2:label>
+                <ns2:label>S-N</ns2:label>
+                <ns2:description>Valid UTM northing between 0 and 750 or between 8670 and 9999</ns2:description>
+                <ns2:check
+                    expr="($this >= 0 and $this &lt;= 750) or ($this >= 8670 and $this &lt;= 9999)" flag="error">
+                    <ns2:message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</ns2:message>
+                    <ns2:message xml:lang="id"></ns2:message>
+                </ns2:check>
+            </ns2:number>
+            <ns2:number name="year" type="integer" required="true">
+                <ns2:label>Year</ns2:label>
+                <ns2:compare lte="2050" gte="1900" flag="error"/>
+            </ns2:number>
+        </ns2:entity>
+    </ns2:schema>
+</ui:survey>

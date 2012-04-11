@@ -1,23 +1,12 @@
 package test.importidm;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import org.openforis.collect.model.CollectSurvey;
-import org.openforis.collect.model.editor.IdmEditor;
-import org.openforis.collect.persistence.RecordDao;
-import org.openforis.collect.persistence.SurveyDao;
+import org.openforis.collect.model.editor.IdmUpdater;
 import org.openforis.collect.persistence.SurveyImportException;
-import org.openforis.collect.persistence.xml.CollectIdmlBindingContext;
-import org.openforis.idm.metamodel.Survey;
-import org.openforis.idm.metamodel.validation.Validator;
 import org.openforis.idm.metamodel.xml.InvalidIdmlException;
-import org.openforis.idm.metamodel.xml.SurveyUnmarshaller;
-import org.openforis.idm.model.expression.ExpressionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -32,17 +21,23 @@ public class ImportIdm {
 
 	
 	@Autowired
-	protected IdmEditor idmEditor;
+	protected IdmUpdater idmUpdater;
 	
 
 	/* @Test */
 	public void testImportIdnfi() throws Exception {
-		idmEditor.importIdnfi();
+		idmUpdater.importIdnfi("idnfi", ClassLoader.getSystemResource("idnfi.idm.xml"));
 	}
 
 
 	@Test
 	public void testUpdateIdnfi() throws IOException, InvalidIdmlException, SurveyImportException {
-		idmEditor.updateModel();
+		idmUpdater.updateModel("idnfi",ClassLoader.getSystemResource("MOFOR_WORKING_update.idnfi.idm.xml"));
 	}
+	
+	@Test
+	public void testUpdateGreenbook() throws IOException, InvalidIdmlException, SurveyImportException {
+		idmUpdater.updateModel("greenbook",ClassLoader.getSystemResource("MOFOR_WORKING_update.greenbook.idm.xml"));
+	}
+	
 }
