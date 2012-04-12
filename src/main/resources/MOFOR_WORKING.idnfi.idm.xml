@@ -1663,7 +1663,7 @@
                     relevant="sector!='' or segment_dist!=''"
                     required="true" ui:tab="nf_detail">
                     <ns2:label type="number">7</ns2:label>
-                    <ns2:label>Part</ns2:label>
+                    <ns2:label>Large part</ns2:label>
                 </ns2:number>
                 <ns2:number name="smallpart" type="integer" key="true"
                     relevant="sector!='' or segment_dist!=''"
@@ -2234,10 +2234,15 @@
                     <ns2:label>Segment distance</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
+                <ns2:number name="largepart" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Large part</ns2:label>
+                </ns2:number>
                 <ns2:number name="part" type="integer" key="true"
                     relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="bamboo_detail">
-                    <ns2:label>Part</ns2:label>
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Small part</ns2:label>
                 </ns2:number>
                 <ns2:number name="permanent" type="integer"
                     required="false" ui:tab="bamboo_detail">
@@ -2572,16 +2577,16 @@
                     relevant="sector=''" ui:tab="plota_detail">
                     <ns2:label>Segment distance</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
-                </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="plota_detail">
-                    <ns2:label>Part</ns2:label>
-                </ns2:number>
+                </ns2:number>                
                 <ns2:number name="largepart" type="integer" key="true"
                     relevant="sector!='' or segment_dist!=''"
                     required="true" ui:tab="plota_detail">
                     <ns2:label>Large part</ns2:label>
+                </ns2:number>
+                <ns2:number name="part" type="integer" key="true"
+                    relevant="sector!='' or segment_dist!=''"
+                    required="true" ui:tab="plota_detail">
+                    <ns2:label>Small part</ns2:label>
                 </ns2:number>
                 <ns2:number name="square_5x3" type="real">
                     <ns2:label>5x3m squares</ns2:label>
@@ -2809,7 +2814,7 @@
                 <ns2:number name="part" type="integer" key="true"
                     relevant="sector!='' or segment_dist!=''"
                     required="true" ui:tab="plotb_detail">
-                    <ns2:label>Part</ns2:label>
+                    <ns2:label>Large part</ns2:label>
                 </ns2:number>
                 <ns2:number name="smallpart" type="integer" key="true"
                     relevant="sector!='' or segment_dist!=''"
