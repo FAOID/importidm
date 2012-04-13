@@ -2892,16 +2892,16 @@
                         <ns2:label>Texture</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:number name="c_horizon" type="integer">
+                <ns2:number name="c_horizon" type="integer" ui:tab="plotb_detail">
                     <ns2:label>C Horizon</ns2:label>
                 </ns2:number>
-                <ns2:number name="crew_number" type="integer">
+                <ns2:number name="crew_number" type="integer" ui:tab="plotb_detail">
                     <ns2:label>Crew Number</ns2:label>
                 </ns2:number>
-                <ns2:code name="month" list="month" required="true">
+                <ns2:code name="month" list="month" required="true" ui:tab="plotb_detail">
                     <ns2:label>Month</ns2:label>
                 </ns2:code>
-                <ns2:number name="year" type="integer" required="true" ui:tab="nf_detail">
+                <ns2:number name="year" type="integer" required="true" ui:tab="plotb_detail">
                     <ns2:label>Year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
