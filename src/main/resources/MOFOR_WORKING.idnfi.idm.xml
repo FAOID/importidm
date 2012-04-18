@@ -1570,6 +1570,93 @@
                 </ns2:item>
             </ns2:items>
         </ns2:list>
+        <ns2:list name="damage">
+            <ns2:label type="item">Damage</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>0</ns2:code>
+                    <ns2:label>No damage</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Slight damage, tree will survice</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Heavy damage, tree will not survice</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Uprooted</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Felled</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Broken</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>Dead</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="grade">
+            <ns2:label type="item">Grade</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Straight and clean without damage, cross section circular, apparently sound</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Similar to 1 but up to half of surface knotty, or cross section irregular, or slight sweep</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Twisted and knotty, or with other defects which reduce the usable volume by up to one quarter, such as rot, burn, physical damage, forks or bend</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Very knotty and bent, or with defects which reduce the usable volume by one quarter to half</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Rejects, with such defects that only less than half of the volume could be used</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
+        <ns2:list name="infestation">
+            <ns2:label type="item">Infestation</ns2:label>
+            <ns2:items>
+                <ns2:item>
+                    <ns2:code>0</ns2:code>
+                    <ns2:label>None</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>1</ns2:code>
+                    <ns2:label>Insects</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>2</ns2:code>
+                    <ns2:label>Rattan</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>3</ns2:code>
+                    <ns2:label>Slightly by climbers</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>4</ns2:code>
+                    <ns2:label>Severely by climbers</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>5</ns2:code>
+                    <ns2:label>Ficus</ns2:label>
+                </ns2:item>
+            </ns2:items>
+        </ns2:list>
     </ns2:codeLists>
     <ns2:units>
         <ns2:unit name="deg" dimension="angle">
@@ -1803,10 +1890,10 @@
                         <ns2:description>DBH or diameter 0.2m AB</ns2:description>
                         <ns2:precision unit="cm" decimalDigits="1"/>
                     </ns2:number>
-                    <ns2:number name="damage" type="integer">
+                    <ns2:code name="damage" list="damage">
                         <ns2:label>Damage</ns2:label>
                         <ns2:label type="number">15</ns2:label>
-                    </ns2:number>
+                    </ns2:code>                    
                     <ns2:entity name="lg_trees"
                         relevant="diameter >= 20" multiple="false">
                         <ns2:label>Large trees</ns2:label>
@@ -1821,14 +1908,14 @@
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="grade" type="integer">
+                        <ns2:code name="grade" list="grade">
                             <ns2:label>Grade</ns2:label>
                             <ns2:label type="number">20</ns2:label>
-                        </ns2:number>
-                        <ns2:number name="infestation" type="integer">
-                            <ns2:label>Infestation</ns2:label>
+                        </ns2:code>
+                        <ns2:code name="infestation" list="infestation">
                             <ns2:label type="number">21</ns2:label>
-                        </ns2:number>
+                            <ns2:label>Infestation</ns2:label>
+                        </ns2:code>
                     </ns2:entity>
                     <ns2:entity name="bole_height" multiple="false">
                         <ns2:label>Bole height</ns2:label>
@@ -2405,9 +2492,9 @@
                     <ns2:number name="stems_consec_no_clump" type="integer">
                         <ns2:label>Stems Consecutive No/Clump</ns2:label>
                     </ns2:number>
-                    <ns2:number name="damage" type="integer">
+                    <ns2:code name="damage" list="damage">
                         <ns2:label>Damage</ns2:label>
-                    </ns2:number>
+                    </ns2:code>
                     <ns2:number name="dbh" type="real">
                         <ns2:label>D B H</ns2:label>
                     </ns2:number>
@@ -2662,9 +2749,10 @@
                     <ns2:number name="dbb_or_b" type="real">
                         <ns2:label>DBB or B 0.2m AB 0.1cm</ns2:label>
                     </ns2:number>
-                    <ns2:number name="damage" type="integer">
+                    
+                    <ns2:code name="damage" list="damage">
                         <ns2:label>Damage</ns2:label>
-                    </ns2:number>
+                    </ns2:code>
                     <ns2:number name="azimuth_to_tree" type="integer">
                         <ns2:label>Azimuth to tree</ns2:label>
                     </ns2:number>
@@ -2694,12 +2782,12 @@
                             <ns2:precision unit="m" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="grade" type="integer">
+                        <ns2:code name="grade" list="grade">
                             <ns2:label>Grade</ns2:label>
-                        </ns2:number>
-                        <ns2:number name="infestation" type="integer">
+                        </ns2:code>
+                        <ns2:code name="infestation" list="infestation">
                             <ns2:label>Infestation</ns2:label>
-                        </ns2:number>
+                        </ns2:code>
                         <ns2:number name="tree_class" type="integer">
                             <ns2:label>Tree class</ns2:label>
                         </ns2:number>
