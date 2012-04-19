@@ -1890,10 +1890,10 @@
                         <ns2:description>DBH or diameter 0.2m AB</ns2:description>
                         <ns2:precision unit="cm" decimalDigits="1"/>
                     </ns2:number>
-                    <ns2:code name="damage" list="damage">
+                    <ns2:number name="damage" type="integer">
                         <ns2:label>Damage</ns2:label>
                         <ns2:label type="number">15</ns2:label>
-                    </ns2:code>                    
+                    </ns2:number>                    
                     <ns2:entity name="lg_trees"
                         relevant="diameter >= 20" multiple="false">
                         <ns2:label>Large trees</ns2:label>
@@ -1908,14 +1908,14 @@
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:code name="grade" list="grade">
+                        <ns2:number name="grade"  type="integer">
                             <ns2:label>Grade</ns2:label>
                             <ns2:label type="number">20</ns2:label>
-                        </ns2:code>
-                        <ns2:code name="infestation" list="infestation">
+                        </ns2:number>
+                        <ns2:number name="infestation" type="integer">
                             <ns2:label type="number">21</ns2:label>
                             <ns2:label>Infestation</ns2:label>
-                        </ns2:code>
+                        </ns2:number>
                     </ns2:entity>
                     <ns2:entity name="bole_height" multiple="false">
                         <ns2:label>Bole height</ns2:label>
@@ -2492,9 +2492,9 @@
                     <ns2:number name="stems_consec_no_clump" type="integer">
                         <ns2:label>Stems Consecutive No/Clump</ns2:label>
                     </ns2:number>
-                    <ns2:code name="damage" list="damage">
+                    <ns2:number name="damage"  type="integer">
                         <ns2:label>Damage</ns2:label>
-                    </ns2:code>
+                    </ns2:number>
                     <ns2:number name="dbh" type="real">
                         <ns2:label>D B H</ns2:label>
                     </ns2:number>
@@ -2750,9 +2750,9 @@
                         <ns2:label>DBB or B 0.2m AB 0.1cm</ns2:label>
                     </ns2:number>
                     
-                    <ns2:code name="damage" list="damage">
+                    <ns2:number name="damage"  type="integer">
                         <ns2:label>Damage</ns2:label>
-                    </ns2:code>
+                    </ns2:number>
                     <ns2:number name="azimuth_to_tree" type="integer">
                         <ns2:label>Azimuth to tree</ns2:label>
                     </ns2:number>
@@ -2782,12 +2782,12 @@
                             <ns2:precision unit="m" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:code name="grade" list="grade">
+                        <ns2:number name="grade" type="integer">
                             <ns2:label>Grade</ns2:label>
-                        </ns2:code>
-                        <ns2:code name="infestation" list="infestation">
+                        </ns2:number>
+                        <ns2:number name="infestation" type="integer">
                             <ns2:label>Infestation</ns2:label>
-                        </ns2:code>
+                        </ns2:number>
                         <ns2:number name="tree_class" type="integer">
                             <ns2:label>Tree class</ns2:label>
                         </ns2:number>
@@ -2945,7 +2945,7 @@
                     </ns2:number>
                 </ns2:entity>
                 <ns2:entity name="a_horizon" ui:tab="plotb_detail">
-                    <ns2:label>A-horizone</ns2:label>
+                    <ns2:label>A-horizone / 10 cm</ns2:label>
                     <ns2:number name="depth" type="real">
                         <ns2:label>Depth</ns2:label>
                     </ns2:number>
@@ -2963,7 +2963,7 @@
                     </ns2:number>
                 </ns2:entity>
                 <ns2:entity name="b_horizon" ui:tab="plotb_detail">
-                    <ns2:label>B-horizone</ns2:label>
+                    <ns2:label>B-horizone / 30 cm</ns2:label>
                     <ns2:number name="depth" type="real">
                         <ns2:label>Depth</ns2:label>
                     </ns2:number>
@@ -2979,6 +2979,18 @@
                     <ns2:number name="texture" type="integer">
                         <ns2:label>Texture</ns2:label>
                     </ns2:number>
+                </ns2:entity>
+                <ns2:entity name="50_cm" ui:tab="plotb_detail">
+                    <ns2:label>50 cm</ns2:label>
+                    <ns2:number name="texture" type="integer">
+                        <ns2:label>Texture</ns2:label>
+                    </ns2:number>                    
+                    <ns2:number name="colour" type="integer">
+                        <ns2:label>Colour</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="stones" type="real">
+                        <ns2:label>Stones</ns2:label>
+                    </ns2:number>                    
                 </ns2:entity>
                 <ns2:number name="c_horizon" type="integer" ui:tab="plotb_detail">
                     <ns2:label>C Horizon</ns2:label>
