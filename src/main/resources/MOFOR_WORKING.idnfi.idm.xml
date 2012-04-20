@@ -2938,10 +2938,16 @@
                         <ns2:label>Bamboo</ns2:label>
                     </ns2:number>
                     <ns2:number name="depth_of_peat_layer" type="real">
-                        <ns2:label>Depth of Peat Layer</ns2:label>
+                        <ns2:label>Depth of peat layer</ns2:label>
                     </ns2:number>
                     <ns2:number name="depth_of_litter" type="real">
-                        <ns2:label>Depth of Litter</ns2:label>
+                        <ns2:label>Depth of litter</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="depth_of_peath" type="real">
+                        <ns2:label>Depth of peath(cm)</ns2:label>
+                    </ns2:number>
+                    <ns2:number name="depth_of_humus" type="real">
+                        <ns2:label>Depth of humus(cm)</ns2:label>
                     </ns2:number>
                 </ns2:entity>
                 <ns2:entity name="a_horizon" ui:tab="plotb_detail">
@@ -2995,8 +3001,11 @@
                 <ns2:number name="c_horizon" type="integer" ui:tab="plotb_detail">
                     <ns2:label>C Horizon</ns2:label>
                 </ns2:number>
+                <ns2:number name="slope_position" type="integer" ui:tab="plotb_detail">
+                    <ns2:label>Slope position</ns2:label>
+                </ns2:number>
                 <ns2:number name="crew_number" type="integer" ui:tab="plotb_detail">
-                    <ns2:label>Crew Number</ns2:label>
+                    <ns2:label>Crew number</ns2:label>
                 </ns2:number>
                 <ns2:code name="month" list="month" required="true" ui:tab="plotb_detail">
                     <ns2:label>Month</ns2:label>
