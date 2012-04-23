@@ -36,8 +36,8 @@ public class ImportIdm {
 	@Test
 	public void updateIdnfiIdm() throws IOException, InvalidIdmlException,
 			SurveyImportException {
-		idmUpdater.updateModel("idnfi",
-				ClassLoader.getSystemResource("MOFOR_WORKING.idnfi.idm.xml"));
+		idmUpdater.importIdnfi("idnfi",
+				ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml"));
 	}
 
 	//@Test
