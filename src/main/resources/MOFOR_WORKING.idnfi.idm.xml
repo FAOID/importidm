@@ -1903,6 +1903,11 @@
                             <ns2:precision unit="cm" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
+                        <ns2:number name="tree_height" type="real">
+                            <ns2:label>Tree height</ns2:label>
+                            <ns2:precision unit="cm" decimalDigits="2"/>
+                            <ns2:compare gt="0" flag="error"/>
+                        </ns2:number>
                         <ns2:number name="bole_height" type="real">
                             <ns2:label>Bole height</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
@@ -2652,7 +2657,7 @@
                     <ns2:label>Hectare Plot</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="record_unit" type="integer">
+                <ns2:number name="record_unit" type="integer" ui:tab="plota_detail">
                     <ns2:label>Record Unit</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
