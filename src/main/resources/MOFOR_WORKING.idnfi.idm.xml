@@ -262,6 +262,30 @@
                     <ns2:code>27</ns2:code>
                     <ns2:label>Irian Jaya</ns2:label>
                 </ns2:item>
+                <ns2:item>
+                    <ns2:code>28</ns2:code>
+                    <ns2:label>Kepulauan Riau</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>29</ns2:code>
+                    <ns2:label>Bangka Belitung</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>30</ns2:code>
+                    <ns2:label>Gorontalo</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>31</ns2:code>
+                    <ns2:label>Sulawesi Barat</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>32</ns2:code>
+                    <ns2:label>Maluku Utara</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>33</ns2:code>
+                    <ns2:label>Irian Barat</ns2:label>
+                </ns2:item>
             </ns2:items>
         </ns2:list>
         <ns2:list name="land_system">
