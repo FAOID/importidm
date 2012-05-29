@@ -51,7 +51,7 @@ public class ImportIdm {
 	@Test
 	public void updateIdnfiIdm() throws IOException, InvalidIdmlException,
 			SurveyImportException {
-		idmUpdater.importIdnfi("idnfi",
+		idmUpdater.updateModel("idnfi",
 				ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml"));
 	}
 
@@ -62,7 +62,7 @@ public class ImportIdm {
 				.getSystemResource("MOFOR_WORKING.greenbook.idm.xml"));
 	}
 	
-	@Test
+	//@Test
 	public void storeLogo() throws IOException
 	{
 		DialectAwareJooqFactory jf = logoDao.getJooqFactory();

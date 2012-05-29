@@ -4,6 +4,7 @@
     xmlns:ns2="http://www.openforis.org/collect/3.0/collect"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/faoid/idm/reengineering/idm-api/src/main/resources/idml3.xsd">
+    
     <project>Indonesia NFI</project>
     <cycle>1</cycle>
     <description>Basis Data Kehutanan Nasional Indonesia</description>
@@ -265,6 +266,30 @@
                 <item>
                     <code>27</code>
                     <label>Irian Jaya</label>
+                </item>
+                <item>
+                    <code>28</code>
+                    <label>Kepulauan Riau</label>
+                </item>
+                <item>
+                    <code>29</code>
+                    <label>Bangka Belitung</label>
+                </item>
+                <item>
+                    <code>30</code>
+                    <label>Gorontalo</label>
+                </item>
+                <item>
+                    <code>31</code>
+                    <label>Sulawesi Barat</label>
+                </item>
+                <item>
+                    <code>32</code>
+                    <label>Maluku Utara</label>
+                </item>
+                <item>
+                    <code>33</code>
+                    <label>Irian Barat</label>
                 </item>
             </items>
         </list>
@@ -1884,13 +1909,13 @@
                     <compare lte="2050" gte="1900" flag="error"/>
                 </number>
                 <entity name="tp" multiple="true" ui:tab="nf_tp">
-                    <label type="heading">Trees and Poles</label>                    
+                    <label type="heading">Trees and Poles</label>
                     <text name="species_name">
                         <label>Name of Species</label>
                     </text>
-                    <taxon name="species" taxonomy="trees" highestRank="genus" required="true" qualifier1="province">
+                    <taxon name="species" taxonomy="trees" highestRank="genus" required="true" qualifiers="province">
                         <label>Name of Species</label>
-                    </taxon>                    
+                    </taxon>
                     <number name="diameter" type="real">
                         <label>Diameter</label>
                         <label type="number">14</label>
@@ -1907,6 +1932,11 @@
                         <description>Trees with diameter &gt;=20cm</description>
                         <number name="buttress_height" type="real">
                             <label>Buttress height</label>
+                            <precision unit="cm" decimalDigits="2"/>
+                            <compare gt="0" flag="error"/>
+                        </number>
+                        <number name="tree_height" type="real">
+                            <label>Tree height</label>
                             <precision unit="cm" decimalDigits="2"/>
                             <compare gt="0" flag="error"/>
                         </number>
@@ -2659,7 +2689,7 @@
                     <label>Hectare Plot</label>
                     <compare gt="0" flag="error"/>
                 </number>
-                <number name="record_unit" type="integer">
+                <number name="record_unit" type="integer" ui:tab="plota_detail">
                     <label>Record Unit</label>
                     <compare gt="0" flag="error"/>
                 </number>
@@ -2993,7 +3023,7 @@
                         <label>Texture</label>
                     </number>
                 </entity>
-                <entity name="fifty_cm" ui:tab="plotb_detail">
+                <entity name="50_cm" ui:tab="plotb_detail">
                     <label>50 cm</label>
                     <number name="texture" type="integer">
                         <label>Texture</label>
