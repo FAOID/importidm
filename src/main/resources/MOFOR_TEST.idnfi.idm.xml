@@ -1745,7 +1745,12 @@
                     <message xml:lang="id"></message>
                 </check>
             </number>
+            <code name="province" list="province" required="true" >
+                <label type="number">3</label>
+                <label>Province</label>
+            </code>
             <number name="year" type="integer" required="true">
+                <label type="number">4</label>
                 <label>Year</label>
                 <compare lte="2050" gte="1900" flag="error"/>
             </number>
@@ -1812,11 +1817,6 @@
                         <message>This field must be greater than 1</message>
                     </compare>
                 </number>
-                <code name="province" list="province"
-                    required="true" ui:tab="nf_detail">
-                    <label type="number">12</label>
-                    <label>Province</label>
-                </code>
                 <code name="land_system" list="land_system"
                     required="true" ui:tab="nf_detail">
                     <label type="number">13</label>
@@ -1913,7 +1913,7 @@
                     <text name="species_name">
                         <label>Name of Species</label>
                     </text>
-                    <taxon name="species" taxonomy="trees" highestRank="genus" required="true" qualifiers="province">
+                    <taxon name="species" taxonomy="trees" highestRank="genus" required="true" qualifiers="/cluster/province">
                         <label>Name of Species</label>
                     </taxon>
                     <number name="diameter" type="real">
@@ -2123,11 +2123,7 @@
                     <compare lte="1" flag="error">
                         <message>This field must be greater than 1</message>
                     </compare>
-                </number>
-                <code name="province" list="province"
-                    required="true" ui:tab="pmp_detail">
-                    <label>Province</label>
-                </code>
+                </number>                
                 <code name="land_system" list="land_system"
                     required="true" ui:tab="pmp_detail">
                     <label>Land system</label>
@@ -2560,9 +2556,6 @@
                     <number name="record_type" type="integer">
                         <label>Record Type (foxpro:16)</label>
                     </number>
-                    <code name="province" list="province" required="true">
-                        <label>Province</label>
-                    </code>
                     <code name="land_system" list="land_system" required="true">
                         <label>Land System</label>
                     </code>
@@ -2723,10 +2716,6 @@
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <code name="province" list="province" key="true"
-                    required="true" ui:tab="plota_detail">
-                    <label>Province</label>
-                </code>
                 <code name="land_system" list="land_system"
                     required="true" ui:tab="plota_detail">
                     <label>Land system</label>
