@@ -6,6 +6,7 @@
     xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/faoid/idm/reengineering/idm-api/src/main/resources/idml3.xsd">
     
     <project>Indonesia NFI</project>
+    <uri>http://www.openforis.org/idm/idnfi</uri>
     <cycle>1</cycle>
     <description>Basis Data Kehutanan Nasional Indonesia</description>
     <configuration>
