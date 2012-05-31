@@ -51,14 +51,14 @@ public class ImportIdm {
 	@Test
 	public void updateIdnfiIdm() throws IOException, InvalidIdmlException,
 			SurveyImportException {
-		idmUpdater.updateModel("idnfi",
+		idmUpdater.updateModel("idnfi","http://www.openforis.org/idml/3.0/idnfi",
 				ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml"));
 	}
 
 	//@Test
 	public void updateGreenbookIdm() throws IOException, InvalidIdmlException,
 			SurveyImportException {
-		idmUpdater.updateModel("greenbook", ClassLoader
+		idmUpdater.updateModel("greenbook", "http://www.openforis.org/idml/3.0/greenbook", ClassLoader
 				.getSystemResource("MOFOR_WORKING.greenbook.idm.xml"));
 	}
 	
