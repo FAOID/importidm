@@ -51,18 +51,18 @@ public class ImportIdm {
 	@Test
 	public void updateIdnfiIdm() throws IOException, InvalidIdmlException,
 			SurveyImportException {
-		idmUpdater.updateModel("http://www.openforis.org/idm/idnfi",
+		idmUpdater.updateModel("idnfi", "http://www.openforis.org/idm/idnfi",
 				ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml"));
 	}
 
 	//@Test
 	public void updateGreenbookIdm() throws IOException, InvalidIdmlException,
 			SurveyImportException {
-		idmUpdater.updateModel("http://www.openforis.org/idm/greenbook", ClassLoader
+		idmUpdater.updateModel("greenbook", "http://www.openforis.org/idm/greenbook", ClassLoader
 				.getSystemResource("MOFOR_WORKING.greenbook.idm.xml"));
 	}
 	
-	//@Test
+	@Test
 	public void storeLogo() throws IOException
 	{
 		DialectAwareJooqFactory jf = logoDao.getJooqFactory();
