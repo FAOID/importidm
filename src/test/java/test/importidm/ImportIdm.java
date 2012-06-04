@@ -10,14 +10,18 @@ import java.net.URL;
 import org.jooq.impl.Factory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openforis.collect.model.CollectSurvey;
 import org.openforis.collect.model.Configuration;
 import org.openforis.collect.model.Logo;
 import org.openforis.collect.model.editor.IdmUpdater;
 import org.openforis.collect.persistence.ConfigurationDao;
 import org.openforis.collect.persistence.LogoDao;
+import org.openforis.collect.persistence.SurveyDao;
 import org.openforis.collect.persistence.SurveyImportException;
 import org.openforis.collect.persistence.jooq.DialectAwareJooqFactory;
+import org.openforis.collect.persistence.xml.CollectIdmlBindingContext;
 import org.openforis.idm.metamodel.xml.InvalidIdmlException;
+import org.openforis.idm.metamodel.xml.SurveyUnmarshaller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -35,7 +39,7 @@ import static org.openforis.collect.persistence.jooq.tables.OfcLogo.OFC_LOGO;
 public class ImportIdm {
 
 	@Autowired
-	protected IdmUpdater idmUpdater;
+	protected SurveyDao surveyDao;
 
 	@Autowired
 	protected LogoDao logoDao;
@@ -49,17 +53,27 @@ public class ImportIdm {
 	 */
 
 	@Test
-	public void updateIdnfiIdm() throws IOException, InvalidIdmlException,
-			SurveyImportException {
-		idmUpdater.updateModel("idnfi", "http://www.openforis.org/idm/idnfi",
-				ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml"));
+	public void updateIdnfiIdm() throws IOException, InvalidIdmlException, SurveyImportException {
+	
+		InputStream is = ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml").openStream();
+		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
+		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
+		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
+		survey.setName("idnfi");
+		survey.setUri("http://www.openforis.org/idm/idnfi");
+		surveyDao.updateModel(survey);
 	}
 
 	//@Test
 	public void updateGreenbookIdm() throws IOException, InvalidIdmlException,
 			SurveyImportException {
-		idmUpdater.updateModel("greenbook", "http://www.openforis.org/idm/greenbook", ClassLoader
-				.getSystemResource("MOFOR_WORKING.greenbook.idm.xml"));
+		InputStream is = ClassLoader.getSystemResource("MOFOR_WORKING.greenbook.idm.xml").openStream();
+		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
+		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
+		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
+		survey.setName("greenbook");
+		survey.setUri("http://www.openforis.org/idm/greenbook");
+		surveyDao.updateModel(survey);
 	}
 	
 	@Test
