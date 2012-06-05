@@ -2,19 +2,14 @@ package test.importidm;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-import org.jooq.impl.Factory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openforis.collect.model.CollectSurvey;
-import org.openforis.collect.model.Configuration;
 import org.openforis.collect.model.Logo;
-import org.openforis.collect.model.editor.IdmUpdater;
-import org.openforis.collect.persistence.ConfigurationDao;
 import org.openforis.collect.persistence.LogoDao;
 import org.openforis.collect.persistence.SurveyDao;
 import org.openforis.collect.persistence.SurveyImportException;
@@ -55,7 +50,7 @@ public class ImportIdm {
 	@Test
 	public void updateIdnfiIdm() throws IOException, InvalidIdmlException, SurveyImportException {
 	
-		InputStream is = ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml").openStream();
+		InputStream is = ClassLoader.getSystemResource("MOFOR_WORKING_REMOVING_PROVINCE.idnfi.idm.xml").openStream();
 		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
 		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);

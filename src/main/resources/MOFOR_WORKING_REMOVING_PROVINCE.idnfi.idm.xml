@@ -1826,12 +1826,7 @@
                     <ns2:compare lte="1" flag="error">
                         <ns2:message>This field must be greater than 1</ns2:message>
                     </ns2:compare>
-                </ns2:number>
-                <ns2:code name="province" list="province"
-                    required="true" ui:tab="nf_detail">
-                    <ns2:label type="number">12</ns2:label>
-                    <ns2:label>Province</ns2:label>
-                </ns2:code>
+                </ns2:number>                
                 <ns2:code name="land_system" list="land_system"
                     required="true" ui:tab="nf_detail">
                     <ns2:label type="number">13</ns2:label>
