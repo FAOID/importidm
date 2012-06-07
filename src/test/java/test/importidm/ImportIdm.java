@@ -8,6 +8,7 @@ import java.net.URL;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openforis.collect.manager.LogoManager;
 import org.openforis.collect.model.CollectSurvey;
 import org.openforis.collect.model.Logo;
 import org.openforis.collect.persistence.LogoDao;
@@ -37,7 +38,7 @@ public class ImportIdm {
 	protected SurveyDao surveyDao;
 
 	@Autowired
-	protected LogoDao logoDao;
+	protected LogoManager logoManager;
 	
 	/*
 	 * disabled. UpdateModel has all the functionality of importModel, with
@@ -74,17 +75,14 @@ public class ImportIdm {
 	@Test
 	public void storeLogo() throws IOException
 	{
-		DialectAwareJooqFactory jf = logoDao.getJooqFactory();
-		jf.delete(OFC_LOGO).execute();
-		
-		Logo logo = new Logo();
 		byte[] image = null;
-		
+		Logo logo = new Logo();
+		logo.setPosition(0);
 		URL imgFile = ClassLoader.getSystemResource("logo/specific_logo.jpg");
 		File file = new File(imgFile.getPath());		
 		image = getBytesFromFile(file);
-		logo.setImage(image);
-		logoDao.insert(logo);
+		logo.setImage(image);		
+		logoManager.storeLogo(logo);
 	}
 	
 	// borrowed from http://www.exampledepot.com/egs/java.io/file2bytearray.html
