@@ -1934,6 +1934,9 @@
                     <ns2:text name="species_name">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                        <label>Name of Species</label>
+                    </taxon>
                     <ns2:number name="diameter" type="real">
                         <ns2:label>Diameter</ns2:label>
                         <ns2:label type="number">14</ns2:label>
@@ -1987,12 +1990,10 @@
                         <ns2:number name="percent_base" type="real">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
-                            <ns2:compare lte="100" gte="0" flag="error"/>
                         </ns2:number>
                         <ns2:number name="percent_crown_point" type="real">
                             <ns2:label>Percent crown point</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
-                            <ns2:compare lte="100" gte="0" flag="error"/>
                         </ns2:number>
                     </ns2:entity>
                     <ns2:entity name="buttress" multiple="false">
@@ -2004,7 +2005,6 @@
                         <ns2:number name="percent_base" type="real">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
-                            <ns2:compare lte="100" gte="0" flag="error"/>
                         </ns2:number>
                         <ns2:number name="percent_buttress" type="real">
                             <ns2:label>Percent buttress</ns2:label>
@@ -2029,6 +2029,9 @@
                     <ns2:text name="species_name">
                         <ns2:label>Species name</ns2:label>
                     </ns2:text>
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                        <label>Name of Species</label>
+                    </taxon>
                     <ns2:number name="count" type="integer" required="true">
                         <ns2:label>Count</ns2:label>
                         <ns2:compare gte="0" flag="error"/>
@@ -2227,6 +2230,9 @@
                     <ns2:text name="species_name">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                        <label>Name of Species</label>
+                    </taxon>
                     <ns2:number name="diameter" type="real">
                         <ns2:label>Diameter</ns2:label>
                         <ns2:description>DBH or diameter 0.2m AB</ns2:description>
@@ -2262,7 +2268,6 @@
                         <ns2:number name="percent_base" type="real">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
-                            <ns2:compare lte="100" gte="0" flag="error"/>
                         </ns2:number>
                         <ns2:number name="percent_top_of_tree" type="real">
                             <ns2:label>Percent top of tree</ns2:label>
@@ -2279,7 +2284,6 @@
                         <ns2:number name="percent_base" type="real">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
-                            <ns2:compare lte="100" gte="0" flag="error"/>
                         </ns2:number>
                         <ns2:number name="percent_buttress" type="real">
                             <ns2:label>Percent buttress</ns2:label>
@@ -2304,6 +2308,9 @@
                     <ns2:text name="species_name">
                         <ns2:label>Species name</ns2:label>
                     </ns2:text>
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                        <label>Name of Species</label>
+                    </taxon>
                     <ns2:number name="count" type="integer" required="true">
                         <ns2:label>Count</ns2:label>
                         <ns2:compare gte="0" flag="error"/>
@@ -2801,6 +2808,9 @@
                     <ns2:text name="name_of_species" required="true">
                         <ns2:label>Name of species</ns2:label>
                     </ns2:text>
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                        <label>Name of Species</label>
+                    </taxon>
                     <ns2:number name="dbb_or_b" type="real">
                         <ns2:label>DBB or B 0.2m AB 0.1cm</ns2:label>
                     </ns2:number>
@@ -2867,12 +2877,10 @@
                         <ns2:number name="percent_base" type="real">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision decimalDigits="2"/>
-                            <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
                         <ns2:number name="percent_crown_point" type="real">
                             <ns2:label>Percent crown point</ns2:label>
                             <ns2:precision decimalDigits="2"/>
-                            <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
                         <ns2:number name="percent_top_of_tree" type="real">
                             <ns2:label>Percent top of tree</ns2:label>
@@ -2890,7 +2898,6 @@
                         <ns2:number name="percent_base" type="real">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision decimalDigits="2"/>
-                            <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
                         <ns2:number name="percent_buttress" type="real">
                             <ns2:label>Percent buttress</ns2:label>
@@ -2974,6 +2981,11 @@
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
+                <ns2:code name="province" list="province"
+                    required="true" ui:tab="nf_detail">
+                    <ns2:label type="number">12</ns2:label>
+                    <ns2:label>Province</ns2:label>
+                </ns2:code>
                 <ns2:entity name="number_of_records" ui:tab="plotb_detail">
                     <ns2:label>Number of records</ns2:label>
                     <ns2:number name="seedlings" type="integer">
@@ -3074,6 +3086,9 @@
                     <ns2:text name="name_of_species" required="true">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                        <label>Name of Species</label>
+                    </taxon>
                     <ns2:number name="count" type="integer">
                         <ns2:label>Count</ns2:label>
                         <ns2:compare gt="0" flag="error"/>
@@ -3130,6 +3145,9 @@
                     <ns2:text name="name_of_species" required="true">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                        <label>Name of Species</label>
+                    </taxon>
                     <ns2:entity name="no_culm">
                         <ns2:label>Number of culmns</ns2:label>
                         <ns2:number name="one_year" type="integer">
