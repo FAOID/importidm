@@ -2710,15 +2710,15 @@
             <ns2:entity name="permanent_plot_a" multiple="true"
                 ui:layout="form" ui:tab="plot_a">
                 <ns2:label type="instance">Permanent Plot, A</ns2:label>
-                <ns2:number name="hectare_plot" type="real">
+                <ns2:number name="hectare_plot" type="real" ui:tab="plota_detail">
                     <ns2:label>Hectare Plot</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="record_unit" type="integer" ui:tab="plota_detail">
+                <ns2:number name="record_unit" type="integer" ui:tab="plota_detail" key="true">
                     <ns2:label>Record Unit</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="sector" type="real" key="true" ui:tab="plota_detail">
+                <ns2:number name="sector" type="real" ui:tab="plota_detail">
                     <ns2:label>Sector</ns2:label>
                     <ns2:precision unit="deg" decimalDigits="0"/>
                 </ns2:number>
