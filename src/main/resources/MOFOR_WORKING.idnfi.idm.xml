@@ -3230,6 +3230,16 @@
                             </ns2:number>
                         </ns2:entity>
                     </ns2:entity>
+                    <ns2:number name="azimuth_to_bamboo" type="integer">
+                        <ns2:label>Azimuth to bamboo</ns2:label>
+                        <ns2:precision unit="cm" decimalDigits="1"/>
+                        <ns2:compare gt="0" flag="error"/>
+                    </ns2:number>
+                    <ns2:number name="horizontal_distance_to_bamboo" type="real">
+                        <ns2:label>Horizontal distance to bamboo</ns2:label>
+                        <ns2:precision unit="cm" decimalDigits="1"/>
+                        <ns2:compare gt="0" flag="error"/>
+                    </ns2:number>
                 </ns2:entity>
             </ns2:entity>
         </ns2:entity>
