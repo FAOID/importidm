@@ -4,7 +4,7 @@
     xmlns:ui="http://www.openforis.org/collect/3.0/ui" 
     xmlns:ns2="http://www.openforis.org/idml/3.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/faoid/idm/reengineering/idm-api/src/main/resources/idml3.xsd">
+    xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/faoid/idm/id3/idm-api/src/main/resources/idml3.xsd">
     <ns2:project>Indonesia NFI</ns2:project>
     <uri>http://www.openforis.org/idm/archenland</uri>
     <ns2:cycle>1</ns2:cycle>
@@ -1747,20 +1747,20 @@
         </ns2:unit>
     </ns2:units>
     <ns2:schema>
-        <ns2:entity name="cluster" ui:tab="cluster">
+        <ns2:entity name="cluster" ui:tab="cluster" id="1">
             <ns2:label type="instance">Cluster</ns2:label>
-            <ns2:number name="utm_zone" type="integer" key="true" required="true">
+            <ns2:number name="utm_zone" type="integer" key="true" required="true" id="2">
                 <ns2:label>UTM zone</ns2:label>
                 <ns2:description>Valid UTM Zone between 46 and 54</ns2:description>
                 <ns2:compare lte="54" gte="46" flag="error"/>
             </ns2:number>
-            <ns2:number name="easting" type="integer" key="true" required="true">
+            <ns2:number name="easting" type="integer" key="true" required="true" id="3">
                 <ns2:label type="number">1</ns2:label>
                 <ns2:label>W-E</ns2:label>
                 <ns2:description>Valid UTM easting between 166 and 834</ns2:description>
                 <ns2:compare lte="834" gte="166" flag="error"/>
             </ns2:number>
-            <ns2:number name="northing" type="integer" key="true" required="true">
+            <ns2:number name="northing" type="integer" key="true" required="true" id="4">
                 <ns2:label type="number">2</ns2:label>
                 <ns2:label>S-N</ns2:label>
                 <ns2:description>Valid UTM northing between 0 and 750 or between 8670 and 9999</ns2:description>
@@ -1770,66 +1770,55 @@
                     <ns2:message xml:lang="id"></ns2:message>
                 </ns2:check>
             </ns2:number>
-            <ns2:number name="year" type="integer" required="true">
+            <ns2:number name="year" type="integer" required="true" id="5">
                 <ns2:label>Year</ns2:label>
                 <ns2:compare lte="2050" gte="1900" flag="error"/>
             </ns2:number>
-            <ns2:entity name="natural_forest" multiple="true"
-                ui:layout="form" ui:tab="nf">
+            <ns2:entity name="natural_forest" multiple="true" ui:layout="form" ui:tab="nf" id="6">
                 <ns2:label type="heading">Enumeration, Natural Forest</ns2:label>
-                <ns2:number name="tract_no" type="integer" key="true"
-                    required="true" ui:tab="nf_detail">
+                <ns2:number name="tract_no" type="integer" key="true" required="true" ui:tab="nf_detail" id="7">
                     <ns2:label type="number">3</ns2:label>
                     <ns2:label>Tract</ns2:label>
                     <ns2:compare lte="15" gte="1" flag="error"/>
                 </ns2:number>
-                <ns2:number name="subplot_no" type="integer" key="true"
-                    required="true" ui:tab="nf_detail">
+                <ns2:number name="subplot_no" type="integer" key="true" required="true" ui:tab="nf_detail" id="8">
                     <ns2:label type="number">4</ns2:label>
                     <ns2:label>Sub-plot</ns2:label>
                     <ns2:compare lte="8" gte="1" flag="error"/>
                 </ns2:number>
-                <ns2:number name="sector" type="real" ui:tab="nf_detail">
+                <ns2:number name="sector" type="real" ui:tab="nf_detail" id="9">
                     <ns2:label type="number">5</ns2:label>
                     <ns2:label>Sector degrees</ns2:label>
                     <ns2:precision unit="deg" decimalDigits="0"/>
                 </ns2:number>
-                <ns2:number name="segment_dist" type="real"
-                    relevant="sector=''" ui:tab="nf_detail">
+                <ns2:number name="segment_dist" type="real" relevant="sector=''" ui:tab="nf_detail" id="10">
                     <ns2:label type="number">6</ns2:label>
                     <ns2:label>Distance to segment 0.01m</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="nf_detail">
+                <ns2:number name="part" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="nf_detail" id="11">
                     <ns2:label type="number">7</ns2:label>
                     <ns2:label>Large part</ns2:label>
                 </ns2:number>
-                <ns2:number name="smallpart" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="nf_detail">
+                <ns2:number name="smallpart" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="nf_detail" id="12">
                     <ns2:label type="number">8</ns2:label>
                     <ns2:label>Small part</ns2:label>
                 </ns2:number>
-                <ns2:number name="permanent" type="integer"
-                    required="false" ui:tab="nf_detail">
+                <ns2:number name="permanent" type="integer" required="false" ui:tab="nf_detail" id="13">
                     <ns2:label type="number">9</ns2:label>
                     <ns2:label>Permanent</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:number name="control" type="integer" key="true"
-                    required="false" ui:tab="nf_detail">
+                <ns2:number name="control" type="integer" key="true" required="false" ui:tab="nf_detail" id="14">
                     <ns2:label type="number">10</ns2:label>
                     <ns2:label>Control</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:number name="record_type" type="integer" key="true"
-                    required="false" ui:tab="nf_detail">
+                <ns2:number name="record_type" type="integer" key="true" required="false" ui:tab="nf_detail" id="15">
                     <ns2:label type="number">11</ns2:label>
                     <ns2:label>Record type</ns2:label>
                     <ns2:default value="1"/>
@@ -1837,249 +1826,240 @@
                         <ns2:message>This field must be greater than 1</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:code name="province" list="province"
-                    required="true" ui:tab="nf_detail">
+                <ns2:code name="province" list="province" required="true" ui:tab="nf_detail" id="16">
                     <ns2:label type="number">12</ns2:label>
                     <ns2:label>Province</ns2:label>
                 </ns2:code>
-                <ns2:code name="land_system" list="land_system"
-                    required="true" ui:tab="nf_detail">
+                <ns2:code name="land_system" list="land_system" required="true" ui:tab="nf_detail" id="17">
                     <ns2:label type="number">13</ns2:label>
                     <ns2:label>Land system</ns2:label>
                 </ns2:code>
-                <ns2:code name="altitude" list="altitude"
-                    required="true" ui:tab="nf_detail">
+                <ns2:code name="altitude" list="altitude" required="true" ui:tab="nf_detail" id="18">
                     <ns2:label type="number">14</ns2:label>
                     <ns2:label>Altitude</ns2:label>
                 </ns2:code>
-                <ns2:code name="land_category" list="land_category"
-                    required="true" ui:tab="nf_detail">
+                <ns2:code name="land_category" list="land_category" required="true" ui:tab="nf_detail" id="19">
                     <ns2:label type="number">15</ns2:label>
                     <ns2:label>Land category</ns2:label>
                 </ns2:code>
-                <ns2:code name="forest_type" list="forest_class"
-                    required="true" ui:tab="nf_detail">
+                <ns2:code name="forest_type" list="forest_class" required="true" ui:tab="nf_detail" id="20">
                     <ns2:label type="number">16</ns2:label>
                     <ns2:label>Forest type</ns2:label>
                 </ns2:code>
-                <ns2:code name="stand_condition" list="forest_class"
-                    parent="forest_type" required="true" ui:tab="nf_detail">
+                <ns2:code name="stand_condition" list="forest_class" parent="forest_type" required="true" ui:tab="nf_detail" id="21">
                     <ns2:label type="number">17</ns2:label>
                     <ns2:label>Stand condition</ns2:label>
                 </ns2:code>
-                <ns2:number name="logging_year" type="integer"
-                    required="false" ui:tab="nf_detail">
+                <ns2:number name="logging_year" type="integer" required="false" ui:tab="nf_detail" id="22">
                     <ns2:label type="number">18</ns2:label>
                     <ns2:label>Logging year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
-                <ns2:code name="terrain" list="terrain" required="true" ui:tab="nf_detail">
+                <ns2:code name="terrain" list="terrain" required="true" ui:tab="nf_detail" id="23">
                     <ns2:label type="number">19</ns2:label>
                     <ns2:label>Terrain</ns2:label>
                 </ns2:code>
-                <ns2:code name="slope" list="slope" required="true" ui:tab="nf_detail">
+                <ns2:code name="slope" list="slope" required="true" ui:tab="nf_detail" id="24">
                     <ns2:label type="number">20</ns2:label>
                     <ns2:label>Slope</ns2:label>
                 </ns2:code>
-                <ns2:code name="aspect" list="aspect" required="true" ui:tab="nf_detail">
+                <ns2:code name="aspect" list="aspect" required="true" ui:tab="nf_detail" id="25">
                     <ns2:label type="number">21</ns2:label>
                     <ns2:label>Aspect</ns2:label>
                 </ns2:code>
-                <ns2:entity name="record_count" multiple="false" ui:tab="nf_detail">
+                <ns2:entity name="record_count" multiple="false" ui:tab="nf_detail" id="26">
                     <ns2:label>Number of Records</ns2:label>
-                    <ns2:number name="trees_poles" type="integer" required="false">
+                    <ns2:number name="trees_poles" type="integer" required="false" id="27">
                         <ns2:label type="number">22</ns2:label>
                         <ns2:label>Trees and poles</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="seedlings" type="integer" required="false">
+                    <ns2:number name="seedlings" type="integer" required="false" id="28">
                         <ns2:label type="number">23</ns2:label>
                         <ns2:label>Seedlings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="saplings" type="integer" required="false">
+                    <ns2:number name="saplings" type="integer" required="false" id="29">
                         <ns2:label type="number">24</ns2:label>
                         <ns2:label>Saplings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="sm_rattan" type="integer" required="false">
+                    <ns2:number name="sm_rattan" type="integer" required="false" id="30">
                         <ns2:label type="number">25</ns2:label>
                         <ns2:label>Rattan (&lt;=2.9m)</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="lg_rattan" type="integer" required="false">
+                    <ns2:number name="lg_rattan" type="integer" required="false" id="31">
                         <ns2:label type="number">26</ns2:label>
                         <ns2:label>Rattan (&gt;=3m)</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:number name="crew_no" type="integer"
-                    required="false" ui:tab="nf_detail">
+                <ns2:number name="crew_no" type="integer" required="false" ui:tab="nf_detail" id="32">
                     <ns2:label type="number">27</ns2:label>
                     <ns2:label>Crew no.</ns2:label>
                     <ns2:compare gte="0" flag="error"/>
                 </ns2:number>
-                <ns2:code name="month" list="month" required="true" ui:tab="nf_detail">
+                <ns2:code name="month" list="month" required="true" ui:tab="nf_detail" id="33">
                     <ns2:label type="number">28</ns2:label>
                     <ns2:label>Month</ns2:label>
                 </ns2:code>
-                <ns2:number name="year" type="integer" required="true" ui:tab="nf_detail">
+                <ns2:number name="year" type="integer" required="true" ui:tab="nf_detail" id="34">
                     <ns2:label type="number">29</ns2:label>
                     <ns2:label>Year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
-                <ns2:entity name="tp" multiple="true" ui:tab="nf_tp">
+                <ns2:entity name="tp" multiple="true" ui:tab="nf_tp" id="35">
                     <ns2:label type="heading">Trees and Poles</ns2:label>
-                    <ns2:text name="species_name">
+                    <ns2:text name="species_name" id="35">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
-                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province" id="36">
                         <label>Name of Species</label>
                     </taxon>
-                    <ns2:number name="diameter" type="real">
+                    <ns2:number name="diameter" type="real" id="37">
                         <ns2:label>Diameter</ns2:label>
                         <ns2:label type="number">14</ns2:label>
                         <ns2:description>DBH or diameter 0.2m AB</ns2:description>
                         <ns2:precision unit="cm" decimalDigits="1"/>
                     </ns2:number>
-                    <ns2:number name="damage" type="integer">
+                    <ns2:number name="damage" type="integer" id="38">
                         <ns2:label>Damage</ns2:label>
                         <ns2:label type="number">15</ns2:label>
                     </ns2:number>
-                    <ns2:entity name="lg_trees"
-                        relevant="diameter >= 20" multiple="false">
+                    <ns2:entity name="lg_trees" relevant="diameter >= 20" multiple="false" id="39">
                         <ns2:label>Large trees</ns2:label>
                         <ns2:description>Trees with diameter &gt;=20cm</ns2:description>
-                        <ns2:number name="buttress_height" type="real">
+                        <ns2:number name="buttress_height" type="real" id="40">
                             <ns2:label>Buttress height</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="tree_height" type="real">
+                        <ns2:number name="tree_height" type="real" id="41">
                             <ns2:label>Tree height</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="bole_height" type="real">
+                        <ns2:number name="bole_height" type="real" id="42">
                             <ns2:label>Bole height</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="grade" type="integer">
+                        <ns2:number name="grade" type="integer" id="43">
                             <ns2:label>Grade</ns2:label>
                             <ns2:label type="number">20</ns2:label>
                         </ns2:number>
-                        <ns2:number name="infestation" type="integer">
+                        <ns2:number name="infestation" type="integer" id="44">
                             <ns2:label type="number">21</ns2:label>
                             <ns2:label>Infestation</ns2:label>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="bole_height" multiple="false">
+                    <ns2:entity name="bole_height" multiple="false" id="45">
                         <ns2:label>Bole height</ns2:label>
-                        <ns2:number name="horizontal_distance" type="real">
+                        <ns2:number name="horizontal_distance" type="real" id="46">
                             <ns2:label>Horizontal distance</ns2:label>
                             <ns2:precision unit="m" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="base_height" type="real">
+                        <ns2:number name="base_height" type="real" id="47">
                             <ns2:label>Height of base</ns2:label>
                             <ns2:precision unit="m" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="percent_base" type="real">
+                        <ns2:number name="percent_base" type="real" id="48">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
                         </ns2:number>
-                        <ns2:number name="percent_crown_point" type="real">
+                        <ns2:number name="percent_crown_point" type="real" id="49">
                             <ns2:label>Percent crown point</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="buttress" multiple="false">
+                    <ns2:entity name="buttress" multiple="false" id="50">
                         <ns2:label>Buttress</ns2:label>
-                        <ns2:number name="horizontal_distance" type="real">
+                        <ns2:number name="horizontal_distance" type="real" id="51">
                             <ns2:label>Horizontal distance</ns2:label>
                             <ns2:precision unit="m" decimalDigits="2"/>
                         </ns2:number>
-                        <ns2:number name="percent_base" type="real">
+                        <ns2:number name="percent_base" type="real" id="52">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
                         </ns2:number>
-                        <ns2:number name="percent_buttress" type="real">
+                        <ns2:number name="percent_buttress" type="real" id="53">
                             <ns2:label>Percent buttress</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
                             <ns2:compare lte="100" gte="0" flag="error"/>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="dab" multiple="false">
+                    <ns2:entity name="dab" multiple="false" id="54">
                         <ns2:label>DAB</ns2:label>
                         <ns2:description>Diameter 0.2m above buttress</ns2:description>
-                        <ns2:number name="full_bars" type="real">
+                        <ns2:number name="full_bars" type="real" id="55">
                             <ns2:label>Full bars</ns2:label>
                         </ns2:number>
-                        <ns2:number name="quarter_bars" type="real">
+                        <ns2:number name="quarter_bars" type="real" id="56">
                             <ns2:label>1/4 bars</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="1"/>
                         </ns2:number>
                     </ns2:entity>
                 </ns2:entity>
-                <ns2:entity name="ssr" multiple="true" ui:tab="nf_ssr">
+                <ns2:entity name="ssr" multiple="true" ui:tab="nf_ssr" id="57">
                     <ns2:label>Seedlings, Saplings, Rattan</ns2:label>
-                    <ns2:text name="species_name">
+                    <ns2:text name="species_name" id="58">
                         <ns2:label>Species name</ns2:label>
                     </ns2:text>
-                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province" id="59">
                         <label>Name of Species</label>
                     </taxon>
-                    <ns2:number name="count" type="integer" required="true">
+                    <ns2:number name="count" type="integer" required="true" id="60">
                         <ns2:label>Count</ns2:label>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="seedlings" type="integer">
+                    <ns2:number name="seedlings" type="integer" id="61">
                         <ns2:label>Seedlings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="saplings" type="integer">
+                    <ns2:number name="saplings" type="integer" id="62">
                         <ns2:label>Saplings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="sm_rattan" type="integer">
+                    <ns2:number name="sm_rattan" type="integer" id="63">
                         <ns2:label>Small rattan</ns2:label>
                         <ns2:description>Rattan &lt;= 2.9m</ns2:description>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:entity name="lg_rattan">
+                    <ns2:entity name="lg_rattan" id="64">
                         <ns2:label>Large rattan</ns2:label>
                         <ns2:description>Rattan &gt;=3m long</ns2:description>
-                        <ns2:number name="stems" type="integer">
+                        <ns2:number name="stems" type="integer" id="65">
                             <ns2:label>Stems</ns2:label>
                             <ns2:default value="0"/>
                             <ns2:compare gte="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="max_diameter" type="real">
+                        <ns2:number name="max_diameter" type="real" id="66">
                             <ns2:label>Max. diameter</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gte="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="min_diameter" type="real">
+                        <ns2:number name="min_diameter" type="real" id="67">
                             <ns2:label>Min. diameter</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gte="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="avg_diameter" type="real">
+                        <ns2:number name="avg_diameter" type="real" id="68">
                             <ns2:label>Avg. diameter</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gte="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="avg_length" type="real">
+                        <ns2:number name="avg_length" type="real" id="69">
                             <ns2:label>Avg. length</ns2:label>
                             <ns2:precision unit="m" decimalDigits="0"/>
                             <ns2:compare gte="0" flag="error"/>
@@ -2087,61 +2067,51 @@
                     </ns2:entity>
                 </ns2:entity>
             </ns2:entity>
-            <ns2:entity name="pmp" multiple="true" ui:layout="form" ui:tab="pmp">
+            <ns2:entity name="pmp" multiple="true" ui:layout="form" ui:tab="pmp" id="70">
                 <ns2:label type="heading">Enumeration, Forest Plantations and Pine Forest</ns2:label>
-                <ns2:number name="tract_no" type="integer" key="true"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:number name="tract_no" type="integer" key="true" required="true" ui:tab="pmp_detail" id="71">
                     <ns2:label type="number">3</ns2:label>
                     <ns2:label>Tract</ns2:label>
                     <ns2:compare lte="15" gte="1" flag="error"/>
                 </ns2:number>
-                <ns2:number name="subplot_no" type="integer" key="true"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:number name="subplot_no" type="integer" key="true" required="true" ui:tab="pmp_detail" id="72">
                     <ns2:label type="number">4</ns2:label>
                     <ns2:label>Sub-plot</ns2:label>
                     <ns2:compare lte="8" gte="1" flag="error"/>
                 </ns2:number>
-                <ns2:number name="sector" type="real" ui:tab="pmp_detail">
+                <ns2:number name="sector" type="real" ui:tab="pmp_detail" id="73">
                     <ns2:label type="number">5</ns2:label>
                     <ns2:label>Sector</ns2:label>
                     <ns2:precision unit="deg" decimalDigits="0"/>
                 </ns2:number>
-                <ns2:number name="segment_dist" type="real"
-                    relevant="sector=''" ui:tab="pmp_detail">
+                <ns2:number name="segment_dist" type="real" relevant="sector=''" ui:tab="pmp_detail" id="74">
                     <ns2:label type="number">6</ns2:label>
                     <ns2:label>Segment distance</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:number name="part" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="pmp_detail" id="75">
                     <ns2:label type="number">7</ns2:label>
                     <ns2:label>Large part</ns2:label>
                 </ns2:number>
-                <ns2:number name="smallpart" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:number name="smallpart" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="pmp_detail" id="76">
                     <ns2:label type="number">8</ns2:label>
                     <ns2:label>Small part</ns2:label>
                 </ns2:number>
-                <ns2:number name="permanent" type="integer"
-                    required="false" ui:tab="pmp_detail">
+                <ns2:number name="permanent" type="integer" required="false" ui:tab="pmp_detail" id="77">
                     <ns2:label>Permanent</ns2:label>
                     <ns2:label type="number">9</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:number name="control" type="integer" key="true"
-                    required="false" ui:tab="pmp_detail">
+                <ns2:number name="control" type="integer" key="true" required="false" ui:tab="pmp_detail" id="78">
                     <ns2:label type="number">10</ns2:label>
                     <ns2:label>Control</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:number name="record_type" type="integer" key="true"
-                    required="false" ui:tab="nf_detail">
+                <ns2:number name="record_type" type="integer" key="true" required="false" ui:tab="nf_detail" id="79">
                     <ns2:label type="number">11</ns2:label>
                     <ns2:label>Record type</ns2:label>
                     <ns2:default value="1"/>
@@ -2149,216 +2119,207 @@
                         <ns2:message>This field must be greater than 1</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:code name="province" list="province"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:code name="province" list="province" required="true" ui:tab="pmp_detail" id="80">
                     <ns2:label>Province</ns2:label>
                 </ns2:code>
-                <ns2:code name="land_system" list="land_system"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:code name="land_system" list="land_system" required="true" ui:tab="pmp_detail" id="81">
                     <ns2:label>Land system</ns2:label>
                 </ns2:code>
-                <ns2:code name="altitude" list="altitude"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:code name="altitude" list="altitude" required="true" ui:tab="pmp_detail" id="82">
                     <ns2:label>Altitude</ns2:label>
                 </ns2:code>
-                <ns2:code name="land_category" list="land_category"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:code name="land_category" list="land_category" required="true" ui:tab="pmp_detail" id="83">
                     <ns2:label>Land category</ns2:label>
                 </ns2:code>
-                <ns2:code name="forest_type" list="forest_class"
-                    required="true" ui:tab="pmp_detail">
+                <ns2:code name="forest_type" list="forest_class" required="true" ui:tab="pmp_detail" id="84">
                     <ns2:label type="number">16</ns2:label>
                     <ns2:label>Forest type</ns2:label>
                 </ns2:code>
-                <ns2:code name="stand_condition" list="forest_class"
-                    parent="forest_type" required="true" ui:tab="pmp_detail">
+                <ns2:code name="stand_condition" list="forest_class" parent="forest_type" required="true" ui:tab="pmp_detail" id="85">
                     <ns2:label type="number">17</ns2:label>
                     <ns2:label>Stand condition</ns2:label>
                 </ns2:code>
-                <ns2:number name="logging_year" type="integer"
-                    required="false" ui:tab="pmp_detail">
+                <ns2:number name="logging_year" type="integer" required="false" ui:tab="pmp_detail" id="86">
                     <ns2:label>Logging year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
-                <ns2:code name="terrain" list="terrain" required="true" ui:tab="pmp_detail">
+                <ns2:code name="terrain" list="terrain" required="true" ui:tab="pmp_detail" id="87">
                     <ns2:label>Terrain</ns2:label>
                 </ns2:code>
-                <ns2:code name="slope" list="slope" required="true" ui:tab="pmp_detail">
+                <ns2:code name="slope" list="slope" required="true" ui:tab="pmp_detail" id="88">
                     <ns2:label>Slope</ns2:label>
                 </ns2:code>
-                <ns2:code name="aspect" list="aspect" required="true" ui:tab="pmp_detail">
+                <ns2:code name="aspect" list="aspect" required="true" ui:tab="pmp_detail" id="89">
                     <ns2:label>Aspect</ns2:label>
                 </ns2:code>
-                <ns2:entity name="record_count" multiple="false" ui:tab="pmp_detail">
+                <ns2:entity name="record_count" multiple="false" ui:tab="pmp_detail" id="90">
                     <ns2:label>Number of Records</ns2:label>
-                    <ns2:number name="trees_poles" type="integer" required="false">
+                    <ns2:number name="trees_poles" type="integer" required="false" id="91">
                         <ns2:label>Trees and poles</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="seedlings" type="integer" required="false">
+                    <ns2:number name="seedlings" type="integer" required="false" id="92">
                         <ns2:label>Seedlings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="saplings" type="integer" required="false">
+                    <ns2:number name="saplings" type="integer" required="false" id="93">
                         <ns2:label>Saplings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="sm_rattan" type="integer" required="false">
+                    <ns2:number name="sm_rattan" type="integer" required="false" id="94">
                         <ns2:label>Rattan (&lt;=2.9m)</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="lg_rattan" type="integer" required="false">
+                    <ns2:number name="lg_rattan" type="integer" required="false" id="95">
                         <ns2:label>Rattan (&gt;=3m)</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:number name="crew_no" type="integer"
-                    required="false" ui:tab="pmp_detail">
+                <ns2:number name="crew_no" type="integer" required="false" ui:tab="pmp_detail" id="96">
                     <ns2:label>Crew no.</ns2:label>
                     <ns2:compare gte="0" flag="error"/>
                 </ns2:number>
-                <ns2:code name="month" list="month" required="true" ui:tab="pmp_detail">
+                <ns2:code name="month" list="month" required="true" ui:tab="pmp_detail" id="97">
                     <ns2:label>Month</ns2:label>
                 </ns2:code>
-                <ns2:number name="year" type="integer" required="true" ui:tab="pmp_detail">
+                <ns2:number name="year" type="integer" required="true" ui:tab="pmp_detail" id="98">
                     <ns2:label>Year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
-                <ns2:entity name="tp" multiple="true" ui:tab="pmp_tp">
+                <ns2:entity name="tp" multiple="true" ui:tab="pmp_tp" id="99">
                     <ns2:label type="heading">Trees and Poles</ns2:label>
-                    <ns2:text name="species_name">
+                    <ns2:text name="species_name" id="100">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
-                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province" id="101">
                         <label>Name of Species</label>
                     </taxon>
-                    <ns2:number name="diameter" type="real">
+                    <ns2:number name="diameter" type="real" id="102">
                         <ns2:label>Diameter</ns2:label>
                         <ns2:description>DBH or diameter 0.2m AB</ns2:description>
                         <ns2:precision unit="cm" decimalDigits="1"/>
                     </ns2:number>
-                    <ns2:entity name="lg_trees"
-                        relevant="diameter >= 20" multiple="false">
+                    <ns2:entity name="lg_trees" relevant="diameter >= 20" multiple="false" id="103">
                         <ns2:label>Large trees</ns2:label>
                         <ns2:description>Trees with diameter &gt;=10cm</ns2:description>
-                        <ns2:number name="buttress_height" type="real">
+                        <ns2:number name="buttress_height" type="real" id="104">
                             <ns2:label>Buttress height</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="bole_height" type="real">
+                        <ns2:number name="bole_height" type="real" id="105">
                             <ns2:label>Bole height</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="bole_height" multiple="false">
+                    <ns2:entity name="bole_height" multiple="false" id="106">
                         <ns2:label>Bole height</ns2:label>
-                        <ns2:number name="horizontal_distance" type="real">
+                        <ns2:number name="horizontal_distance" type="real" id="107">
                             <ns2:label>Horizontal distance</ns2:label>
                             <ns2:precision unit="m" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="base_height" type="real">
+                        <ns2:number name="base_height" type="real" id="108">
                             <ns2:label>Height of base</ns2:label>
                             <ns2:precision unit="m" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="percent_base" type="real">
+                        <ns2:number name="percent_base" type="real" id="109">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
                         </ns2:number>
-                        <ns2:number name="percent_top_of_tree" type="real">
+                        <ns2:number name="percent_top_of_tree" type="real" id="110">
                             <ns2:label>Percent top of tree</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
                             <ns2:compare lte="100" gte="0" flag="error"/>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="buttress" multiple="false">
+                    <ns2:entity name="buttress" multiple="false" id="111">
                         <ns2:label>Buttress</ns2:label>
-                        <ns2:number name="horizontal_distance" type="real">
+                        <ns2:number name="horizontal_distance" type="real" id="112">
                             <ns2:label>Horizontal distance</ns2:label>
                             <ns2:precision unit="m" decimalDigits="2"/>
                         </ns2:number>
-                        <ns2:number name="percent_base" type="real">
+                        <ns2:number name="percent_base" type="real" id="113">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
                         </ns2:number>
-                        <ns2:number name="percent_buttress" type="real">
+                        <ns2:number name="percent_buttress" type="real" id="114">
                             <ns2:label>Percent buttress</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="0"/>
                             <ns2:compare lte="100" gte="0" flag="error"/>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="dab" multiple="false">
+                    <ns2:entity name="dab" multiple="false" id="115">
                         <ns2:label>DAB</ns2:label>
                         <ns2:description>Diameter 0.2m above buttress</ns2:description>
-                        <ns2:number name="full_bars" type="real">
+                        <ns2:number name="full_bars" type="real" id="116">
                             <ns2:label>Full bars</ns2:label>
                         </ns2:number>
-                        <ns2:number name="quarter_bars" type="real">
+                        <ns2:number name="quarter_bars" type="real" id="117">
                             <ns2:label>1/4 bars</ns2:label>
                             <ns2:precision unit="percent" decimalDigits="1"/>
                         </ns2:number>
                     </ns2:entity>
                 </ns2:entity>
-                <ns2:entity name="ssr" multiple="true" ui:tab="pmp_ssr">
+                <ns2:entity name="ssr" multiple="true" ui:tab="pmp_ssr" id="118">
                     <ns2:label>Seedlings, Saplings, Rattan</ns2:label>
-                    <ns2:text name="species_name">
+                    <ns2:text name="species_name" id="119">
                         <ns2:label>Species name</ns2:label>
                     </ns2:text>
-                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province" id="120">
                         <label>Name of Species</label>
                     </taxon>
-                    <ns2:number name="count" type="integer" required="true">
+                    <ns2:number name="count" type="integer" required="true" id="121">
                         <ns2:label>Count</ns2:label>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="seedlings" type="integer">
+                    <ns2:number name="seedlings" type="integer" id="122">
                         <ns2:label>Seedlings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="saplings" type="integer">
+                    <ns2:number name="saplings" type="integer" id="123">
                         <ns2:label>Saplings</ns2:label>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="sm_rattan" type="integer">
+                    <ns2:number name="sm_rattan" type="integer" id="124">
                         <ns2:label>Small rattan</ns2:label>
                         <ns2:description>Rattan &lt;= 2.9m</ns2:description>
                         <ns2:default value="0"/>
                         <ns2:compare gte="0" flag="error"/>
                     </ns2:number>
-                    <ns2:entity name="lg_rattan">
+                    <ns2:entity name="lg_rattan" id="125">
                         <ns2:label>Large rattan</ns2:label>
                         <ns2:description>Rattan &gt;=3m long</ns2:description>
-                        <ns2:number name="stems" type="integer">
+                        <ns2:number name="stems" type="integer" id="126">
                             <ns2:label>Stems</ns2:label>
                             <ns2:default value="0"/>
                             <ns2:compare gte="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="max_diameter" type="real">
+                        <ns2:number name="max_diameter" type="real" id="127">
                             <ns2:label>Max. diameter</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gte="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="min_diameter" type="real">
+                        <ns2:number name="min_diameter" type="real" id="128">
                             <ns2:label>Min. diameter</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gte="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="avg_diameter" type="real">
+                        <ns2:number name="avg_diameter" type="real" id="129">
                             <ns2:label>Avg. diameter</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gte="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="avg_length" type="real">
+                        <ns2:number name="avg_length" type="real" id="130">
                             <ns2:label>Avg. length</ns2:label>
                             <ns2:precision unit="m" decimalDigits="0"/>
                             <ns2:compare gte="0" flag="error"/>
@@ -2366,153 +2327,144 @@
                     </ns2:entity>
                 </ns2:entity>
             </ns2:entity>
-            <ns2:entity name="bamboo" multiple="true" ui:layout="form" ui:tab="bamboo">
+            <ns2:entity name="bamboo" multiple="true" ui:layout="form" ui:tab="bamboo" id="131">
                 <ns2:label>Bamboo</ns2:label>
-                <ns2:number name="tract_no" type="integer" key="true"
-                    required="true" ui:tab="bamboo_detail">
+                <ns2:number name="tract_no" type="integer" key="true" required="true" ui:tab="bamboo_detail" id="132">
                     <ns2:label>Tract</ns2:label>
                     <ns2:compare lte="15" gte="1" flag="error"/>
                 </ns2:number>
-                <ns2:number name="subplot_no" type="integer" key="true"
-                    required="true" ui:tab="bamboo_detail">
+                <ns2:number name="subplot_no" type="integer" key="true" required="true" ui:tab="bamboo_detail" id="133">
                     <ns2:label>Subplot</ns2:label>
                     <ns2:compare lte="8" gte="1" flag="error"/>
                 </ns2:number>
-                <ns2:number name="sector" type="real" ui:tab="bamboo_detail">
+                <ns2:number name="sector" type="real" ui:tab="bamboo_detail" id="134">
                     <ns2:label>Sector</ns2:label>
                     <ns2:precision unit="deg" decimalDigits="0"/>
                 </ns2:number>
-                <ns2:number name="segment_dist" type="real"
-                    relevant="sector=''" ui:tab="bamboo_detail">
+                <ns2:number name="segment_dist" type="real" relevant="sector=''" ui:tab="bamboo_detail" id="135">
                     <ns2:label>Segment distance</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
-                <ns2:number name="largepart" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="plota_detail">
+                <ns2:number name="largepart" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="plota_detail" id="136">
                     <ns2:label>Large part</ns2:label>
                 </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="plota_detail">
+                <ns2:number name="part" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="plota_detail" id="137">
                     <ns2:label>Small part</ns2:label>
                 </ns2:number>
-                <ns2:number name="permanent" type="integer"
-                    required="false" ui:tab="bamboo_detail">
+                <ns2:number name="permanent" type="integer" required="false" ui:tab="bamboo_detail" id="138">
                     <ns2:label>Permanent</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:number name="control" type="integer" key="true"
-                    required="false" ui:tab="bamboo_detail">
+                <ns2:number name="control" type="integer" key="true" required="false" ui:tab="bamboo_detail" id="370">
                     <ns2:label>Control</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:entity name="bamboo_enumeration" multiple="true" ui:tab="bamboo_enum">
+                <ns2:entity name="bamboo_enumeration" multiple="true" ui:tab="bamboo_enum" id="139">
                     <ns2:label type="heading">Bamboo Enumeration</ns2:label>
-                    <ns2:text name="name_of_species" required="true">
+                    <ns2:text name="name_of_species" required="true" id="140">
                         <ns2:label>Name of species</ns2:label>
                     </ns2:text>
-                    <ns2:entity name="number_of_bamboo_culms">
+                    <ns2:entity name="number_of_bamboo_culms" id="141">
                         <ns2:label>Number of culmns</ns2:label>
-                        <ns2:number name="one_year" type="integer">
+                        <ns2:number name="one_year" type="integer" id="142">
                             <ns2:label>1 - Year</ns2:label>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="two_year" type="integer">
+                        <ns2:number name="two_year" type="integer" id="143">
                             <ns2:label>2 - Year</ns2:label>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="total" type="integer">
+                        <ns2:number name="total" type="integer" id="144">
                             <ns2:label>Total</ns2:label>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="live_stumps" type="integer">
+                        <ns2:number name="live_stumps" type="integer" id="145">
                             <ns2:label>Live Stumps</ns2:label>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="one_year_old">
+                    <ns2:entity name="one_year_old" id="146">
                         <ns2:label>1-year old</ns2:label>
-                        <ns2:entity name="low_part">
+                        <ns2:entity name="low_part" id="147">
                             <ns2:label>Low part</ns2:label>
-                            <ns2:number name="dbh" type="real">
+                            <ns2:number name="dbh" type="real" id="148">
                                 <ns2:label>DBH</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="length" type="real">
+                            <ns2:number name="length" type="real" id="149">
                                 <ns2:label>Length</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="150">
                                 <ns2:label>Weight</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
-                        <ns2:entity name="top">
+                        <ns2:entity name="top" id="151">
                             <ns2:label>Top</ns2:label>
-                            <ns2:number name="length" type="real">
+                            <ns2:number name="length" type="real" id="152">
                                 <ns2:label>Length</ns2:label>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="153">
                                 <ns2:label>Weight</ns2:label>
                             </ns2:number>
                         </ns2:entity>
                     </ns2:entity>
-                    <ns2:entity name="two_year_old">
+                    <ns2:entity name="two_year_old" id="154">
                         <ns2:label>2-year old</ns2:label>
-                        <ns2:entity name="low_part">
+                        <ns2:entity name="low_part" id="155">
                             <ns2:label>Low part</ns2:label>
-                            <ns2:number name="dbh" type="real">
+                            <ns2:number name="dbh" type="real" id="156">
                                 <ns2:label>D B H</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="length" type="real">
+                            <ns2:number name="length" type="real" id="157">
                                 <ns2:label>Length</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="158">
                                 <ns2:label>Weight</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
-                        <ns2:entity name="top">
+                        <ns2:entity name="top" id="159">
                             <ns2:label>Top</ns2:label>
-                            <ns2:number name="length" type="real">
+                            <ns2:number name="length" type="real" id="160">
                                 <ns2:label>Length</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="161">
                                 <ns2:label>Weight</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
                     </ns2:entity>
-                    <ns2:entity name="more_than_three_year_old">
+                    <ns2:entity name="more_than_three_year_old" id="162">
                         <ns2:label>3+year old</ns2:label>
-                        <ns2:entity name="low_part">
-                            <ns2:number name="dbh" type="real">
+                        <ns2:entity name="low_part" id="163">
+                            <ns2:number name="dbh" type="real" id="164">
                                 <ns2:label>DBH</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="length" type="real">
+                            <ns2:number name="length" type="real" id="165">
                                 <ns2:label>Length</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="166">
                                 <ns2:label>Weight</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
-                        <ns2:entity name="top">
-                            <ns2:number name="length" type="real">
+                        <ns2:entity name="top" id="167">
+                            <ns2:number name="length" type="real" id="168">
                                 <ns2:label>Length</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="169">
                                 <ns2:label>Weight</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
@@ -2520,420 +2472,402 @@
                     </ns2:entity>
                 </ns2:entity>
             </ns2:entity>
-            <ns2:entity name="sagu" multiple="true" ui:layout="form" ui:tab="sagu">
+            <ns2:entity name="sagu" multiple="true" ui:layout="form" ui:tab="sagu" id="170">
                 <ns2:label>Sagu Enumeration, TSP</ns2:label>
-                <ns2:text name="species_or_variety">
+                <ns2:text name="species_or_variety" id="171">
                     <ns2:label>Species/Variety</ns2:label>
                 </ns2:text>
-                <ns2:number name="record_type" type="integer">
+                <ns2:number name="record_type" type="integer" id="371">
                     <ns2:label>Record Type (foxpro:15)</ns2:label>
                 </ns2:number>
-                <ns2:text name="species_code">
+                <ns2:text name="species_code" id="172">
                     <ns2:label>Species Code</ns2:label>
                 </ns2:text>
-                <ns2:number name="cons_culm_number" type="integer">
+                <ns2:number name="cons_culm_number" type="integer" id="173">
                     <ns2:label>Cons Culm Number</ns2:label>
                 </ns2:number>
-                <ns2:number name="clump_diameter" type="real">
+                <ns2:number name="clump_diameter" type="real" id="174">
                     <ns2:label>Clump Diameter</ns2:label>
                 </ns2:number>
-                <ns2:entity name="bole_height">
-                    <ns2:number name="horizontal_distance" type="real">
+                <ns2:entity name="bole_height" id="175">
+                    <ns2:number name="horizontal_distance" type="real" id="176">
                         <ns2:label>Horizontal Distance</ns2:label>
                     </ns2:number>
-                    <ns2:number name="height_of_base" type="real">
+                    <ns2:number name="height_of_base" type="real" id="177">
                         <ns2:label>Height of Base</ns2:label>
                     </ns2:number>
-                    <ns2:number name="percent_base" type="real">
+                    <ns2:number name="percent_base" type="real" id="178">
                         <ns2:label>Percent Base</ns2:label>
                     </ns2:number>
-                    <ns2:number name="percent_crown_point" type="real">
+                    <ns2:number name="percent_crown_point" type="real" id="179">
                         <ns2:label>Percent Crown Point</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:entity name="m1_m2_m3_stems">
-                    <ns2:number name="number_of_stems_in_clump" type="integer">
+                <ns2:entity name="m1_m2_m3_stems" id="180">
+                    <ns2:number name="number_of_stems_in_clump" type="integer" id="181">
                         <ns2:label>Number of Stems in Clump</ns2:label>
                     </ns2:number>
-                    <ns2:number name="stems_consec_no_clump" type="integer">
+                    <ns2:number name="stems_consec_no_clump" type="integer" id="182">
                         <ns2:label>Stems Consecutive No/Clump</ns2:label>
                     </ns2:number>
-                    <ns2:number name="damage" type="integer">
+                    <ns2:number name="damage" type="integer" id="183">
                         <ns2:label>Damage</ns2:label>
                     </ns2:number>
-                    <ns2:number name="dbh" type="real">
+                    <ns2:number name="dbh" type="real" id="184">
                         <ns2:label>D B H</ns2:label>
                     </ns2:number>
-                    <ns2:number name="bole_height" type="real">
+                    <ns2:number name="bole_height" type="real" id="185">
                         <ns2:label>Bole Height</ns2:label>
                     </ns2:number>
-                    <ns2:number name="maturity_class" type="integer">
+                    <ns2:number name="maturity_class" type="integer" id="186">
                         <ns2:label>Maturity Class</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:entity name="count_for_young_or_overmature_stemps">
-                    <ns2:number name="no_seedlings_in_sub_plot" type="integer">
+                <ns2:entity name="count_for_young_or_overmature_stemps" id="187">
+                    <ns2:number name="no_seedlings_in_sub_plot" type="integer" id="188">
                         <ns2:label>No Seedlings in Sub Plot</ns2:label>
                     </ns2:number>
-                    <ns2:number name="no_seedlings_in_clump" type="integer">
+                    <ns2:number name="no_seedlings_in_clump" type="integer" id="189">
                         <ns2:label>No Seedlings in Clump</ns2:label>
                     </ns2:number>
-                    <ns2:number name="m4_stems_in_clump" type="integer">
+                    <ns2:number name="m4_stems_in_clump" type="integer" id="190">
                         <ns2:label>M4 Stems in Clump</ns2:label>
                     </ns2:number>
                 </ns2:entity>
             </ns2:entity>
-            <ns2:entity name="nipa" multiple="true" ui:layout="form" ui:tab="nipa">
+            <ns2:entity name="nipa" multiple="true" ui:layout="form" ui:tab="nipa" id="191">
                 <ns2:label>Nipa Enumeration, TSP</ns2:label>
-                <ns2:entity name="data_location">
-                    <ns2:number name="record_type" type="integer">
+                <ns2:entity name="data_location" id="192">
+                    <ns2:number name="record_type" type="integer" id="193">
                         <ns2:label>Record Type (foxpro:16)</ns2:label>
                     </ns2:number>
-                    <ns2:code name="province" list="province" required="true">
+                    <ns2:code name="province" list="province" required="true" id="194">
                         <ns2:label>Province</ns2:label>
                     </ns2:code>
-                    <ns2:code name="land_system" list="land_system" required="true">
+                    <ns2:code name="land_system" list="land_system" required="true" id="195">
                         <ns2:label>Land System</ns2:label>
                     </ns2:code>
-                    <ns2:number name="altitude" type="integer" required="true">
+                    <ns2:number name="altitude" type="integer" required="true" id="196">
                         <ns2:label>Altitude</ns2:label>
                     </ns2:number>
-                    <ns2:code name="land_category" list="land_category" required="true">
+                    <ns2:code name="land_category" list="land_category" required="true" id="197">
                         <ns2:label>Land Category</ns2:label>
                     </ns2:code>
-                    <ns2:code name="forest_type" list="forest_class" required="true">
+                    <ns2:code name="forest_type" list="forest_class" required="true" id="198">
                         <ns2:label>Forest Type</ns2:label>
                     </ns2:code>
-                    <ns2:code name="stand_condition"
-                        list="stand_condition" required="true">
+                    <ns2:code name="stand_condition" list="stand_condition" required="true" id="199">
                         <ns2:label>Stand Condition Cut/Uncut (choice : c/u)</ns2:label>
                     </ns2:code>
-                    <ns2:number name="year_of_cutting" type="integer" required="true">
+                    <ns2:number name="year_of_cutting" type="integer" required="true" id="200">
                         <ns2:label>Year of Cutting</ns2:label>
                     </ns2:number>
-                    <ns2:code name="terrain" list="terrain" required="true">
+                    <ns2:code name="terrain" list="terrain" required="true" id="201">
                         <ns2:label>Terrain</ns2:label>
                     </ns2:code>
-                    <ns2:code name="slope" list="slope" required="true">
+                    <ns2:code name="slope" list="slope" required="true" id="202">
                         <ns2:label>Slope</ns2:label>
                     </ns2:code>
-                    <ns2:code name="aspect" list="aspect" required="true">
+                    <ns2:code name="aspect" list="aspect" required="true" id="203">
                         <ns2:label>Aspect</ns2:label>
                     </ns2:code>
                 </ns2:entity>
-                <ns2:entity name="partition">
-                    <ns2:number name="sector_degree" type="real">
+                <ns2:entity name="partition" id="204">
+                    <ns2:number name="sector_degree" type="real" id="205">
                         <ns2:label>Sector Degree</ns2:label>
                     </ns2:number>
-                    <ns2:number name="distance_to_segment" type="real">
+                    <ns2:number name="distance_to_segment" type="real" id="206">
                         <ns2:label>Distance to Segment (empty in the foxpro)</ns2:label>
                     </ns2:number>
-                    <ns2:number name="large_small_part" type="integer">
+                    <ns2:number name="large_small_part" type="integer" id="207">
                         <ns2:label>Large / Small Part</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:entity name="number_of_records">
-                    <ns2:number name="m1" type="integer">
+                <ns2:entity name="number_of_records" id="208">
+                    <ns2:number name="m1" type="integer" id="209">
                         <ns2:label>M1</ns2:label>
                     </ns2:number>
-                    <ns2:number name="m2" type="integer">
+                    <ns2:number name="m2" type="integer" id="210">
                         <ns2:label>M2</ns2:label>
                     </ns2:number>
-                    <ns2:number name="no_of_seedlings" type="integer">
+                    <ns2:number name="no_of_seedlings" type="integer" id="211">
                         <ns2:label>Number of Seedlings</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:number name="crew_number" type="integer">
+                <ns2:number name="crew_number" type="integer" id="212">
                     <ns2:label>Crew Number</ns2:label>
                 </ns2:number>
-                <ns2:code name="month" list="month" required="true">
+                <ns2:code name="month" list="month" required="true" id="213">
                     <ns2:label>Month</ns2:label>
                 </ns2:code>
-                <ns2:entity name="data_measure">
-                    <ns2:text name="name_of_species">
+                <ns2:entity name="data_measure" id="214">
+                    <ns2:text name="name_of_species" id="215">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
-                    <ns2:number name="record_type" type="integer">
+                    <ns2:number name="record_type" type="integer" id="216">
                         <ns2:label>Record Type (foxpro:17)</ns2:label>
                     </ns2:number>
-                    <ns2:number name="consec_number" type="integer">
+                    <ns2:number name="consec_number" type="integer" id="217">
                         <ns2:label>Consecutive Number (auto filled in FoxPro)</ns2:label>
                     </ns2:number>
-                    <ns2:text name="species_code">
+                    <ns2:text name="species_code" id="218">
                         <ns2:label>Species Code</ns2:label>
                     </ns2:text>
-                    <ns2:entity name="number_of_leaves">
-                        <ns2:number name="total_number_of_leaves" type="integer">
+                    <ns2:entity name="number_of_leaves" id="219">
+                        <ns2:number name="total_number_of_leaves" type="integer" id="220">
                             <ns2:label>Total Number of Leaves</ns2:label>
                         </ns2:number>
-                        <ns2:number name="no_of_cull_leaves" type="integer">
+                        <ns2:number name="no_of_cull_leaves" type="integer" id="221">
                             <ns2:label>No. of Cull Leaves</ns2:label>
                         </ns2:number>
-                        <ns2:number name="no_of_utilizable_leaves" type="integer">
+                        <ns2:number name="no_of_utilizable_leaves" type="integer" id="222">
                             <ns2:label>No. of Utilizable Leaves</ns2:label>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:number name="height_of_news_nipa" type="real">
+                    <ns2:number name="height_of_news_nipa" type="real" id="223">
                         <ns2:label>Height of N-E-W-S Nipa</ns2:label>
                     </ns2:number>
-                    <ns2:number name="height_of_tallest_nipa" type="real">
+                    <ns2:number name="height_of_tallest_nipa" type="real" id="224">
                         <ns2:label>Height of Tallest Nipa</ns2:label>
                     </ns2:number>
-                    <ns2:number name="maturity" type="integer">
+                    <ns2:number name="maturity" type="integer" id="225">
                         <ns2:label>Maturity</ns2:label>
                     </ns2:number>
-                    <ns2:code name="leaves_cut_or_uncut" list="leaf_state">
+                    <ns2:code name="leaves_cut_or_uncut" list="leaf_state" id="226">
                         <ns2:label>Leaves Cut/Uncut</ns2:label>
                     </ns2:code>
-                    <ns2:number name="flower_or_fruit" type="integer">
+                    <ns2:number name="flower_or_fruit" type="integer" id="227">
                         <ns2:label>Flower or Fruit</ns2:label>
                     </ns2:number>
-                    <ns2:code name="open_or_closed" list="open_or_closed">
+                    <ns2:code name="open_or_closed" list="open_or_closed" id="228">
                         <ns2:label>Open or Closed</ns2:label>
                     </ns2:code>
-                    <ns2:number name="horizontal_distance" type="real">
+                    <ns2:number name="horizontal_distance" type="real" id="229">
                         <ns2:label>Horizontal Distance</ns2:label>
                     </ns2:number>
-                    <ns2:number name="percent_base" type="real">
+                    <ns2:number name="percent_base" type="real" id="230">
                         <ns2:label>Percent Base</ns2:label>
                     </ns2:number>
-                    <ns2:number name="percent_top" type="real">
+                    <ns2:number name="percent_top" type="real" id="231">
                         <ns2:label>Percent Top</ns2:label>
                     </ns2:number>
-                    <ns2:number name="length_news_plant" type="real">
+                    <ns2:number name="length_news_plant" type="real" id="232">
                         <ns2:label>Length News Plant</ns2:label>
                     </ns2:number>
-                    <ns2:number name="no_of_util_leaf" type="integer">
+                    <ns2:number name="no_of_util_leaf" type="integer" id="233">
                         <ns2:label>Number of Utility Leaf</ns2:label>
                     </ns2:number>
-                    <ns2:number name="total_no_of_leaf" type="integer">
+                    <ns2:number name="total_no_of_leaf" type="integer" id="234">
                         <ns2:label>Total Number of Leaf</ns2:label>
                     </ns2:number>
                 </ns2:entity>
             </ns2:entity>
-            <ns2:entity name="permanent_plot_a" multiple="true"
-                ui:layout="form" ui:tab="plot_a">
+            <ns2:entity name="permanent_plot_a" multiple="true" ui:layout="form" ui:tab="plot_a" id="235">
                 <ns2:label type="instance">Permanent Plot, A</ns2:label>
-                <ns2:number name="hectare_plot" type="real" ui:tab="plota_detail">
+                <ns2:number name="hectare_plot" type="real" ui:tab="plota_detail" id="236">
                     <ns2:label>Hectare Plot</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="record_unit" type="integer" ui:tab="plota_detail" key="true">
+                <ns2:number name="record_unit" type="integer" ui:tab="plota_detail" key="true" id="237">
                     <ns2:label>Record Unit</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="sector" type="real" ui:tab="plota_detail">
+                <ns2:number name="sector" type="real" ui:tab="plota_detail" id="238">
                     <ns2:label>Sector</ns2:label>
                     <ns2:precision unit="deg" decimalDigits="0"/>
                 </ns2:number>
-                <ns2:number name="segment_dist" type="real"
-                    relevant="sector=''" ui:tab="plota_detail">
+                <ns2:number name="segment_dist" type="real" relevant="sector=''" ui:tab="plota_detail" id="239">
                     <ns2:label>Segment distance</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
-                <ns2:number name="largepart" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="plota_detail">
+                <ns2:number name="largepart" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="plota_detail" id="240">
                     <ns2:label>Large part</ns2:label>
                 </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="plota_detail">
+                <ns2:number name="part" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="plota_detail" id="241">
                     <ns2:label>Small part</ns2:label>
                 </ns2:number>
-                <ns2:number name="square_5x3" type="real">
+                <ns2:number name="square_5x3" type="real" id="242">
                     <ns2:label>5x3m squares</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="control" type="integer" key="true"
-                    required="false" ui:tab="plota_detail">
+                <ns2:number name="control" type="integer" key="true" required="false" ui:tab="plota_detail" id="243">
                     <ns2:label>Control</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:code name="province" list="province" key="true"
-                    required="true" ui:tab="plota_detail">
+                <ns2:code name="province" list="province" key="true" required="true" ui:tab="plota_detail" id="244">
                     <ns2:label>Province</ns2:label>
                 </ns2:code>
-                <ns2:code name="land_system" list="land_system"
-                    required="true" ui:tab="plota_detail">
+                <ns2:code name="land_system" list="land_system" required="true" ui:tab="plota_detail" id="245">
                     <ns2:label>Land system</ns2:label>
                 </ns2:code>
-                <ns2:code name="altitude" list="altitude"
-                    required="true" ui:tab="plota_detail">
+                <ns2:code name="altitude" list="altitude" required="true" ui:tab="plota_detail" id="246">
                     <ns2:label>Altitude</ns2:label>
                 </ns2:code>
-                <ns2:code name="land_category" list="land_category"
-                    required="true" ui:tab="plota_detail">
+                <ns2:code name="land_category" list="land_category" required="true" ui:tab="plota_detail" id="247">
                     <ns2:label>Land category</ns2:label>
                 </ns2:code>
-                <ns2:code name="forest_type" list="forest_class"
-                    required="true" ui:tab="plota_detail">
+                <ns2:code name="forest_type" list="forest_class" required="true" ui:tab="plota_detail" id="248">
                     <ns2:label>Forest type</ns2:label>
                 </ns2:code>
-                <ns2:code name="stand_condition" list="forest_class"
-                    parent="forest_type" required="true" ui:tab="plota_detail">
+                <ns2:code name="stand_condition" list="forest_class" parent="forest_type" required="true" ui:tab="plota_detail" id="249">
                     <ns2:label>Stand condition</ns2:label>
                 </ns2:code>
-                <ns2:number name="logging_year" type="integer"
-                    required="false" ui:tab="plota_detail">
+                <ns2:number name="logging_year" type="integer" required="false" ui:tab="plota_detail" id="250">
                     <ns2:label>Logging year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
-                <ns2:code name="terrain" list="terrain" required="true" ui:tab="plota_detail">
+                <ns2:code name="terrain" list="terrain" required="true" ui:tab="plota_detail" id="251">
                     <ns2:label>Terrain</ns2:label>
                 </ns2:code>
-                <ns2:code name="slope" list="slope" required="true" ui:tab="plota_detail">
+                <ns2:code name="slope" list="slope" required="true" ui:tab="plota_detail" id="252">
                     <ns2:label>Slope</ns2:label>
                 </ns2:code>
-                <ns2:code name="aspect" list="aspect" required="true" ui:tab="plota_detail">
+                <ns2:code name="aspect" list="aspect" required="true" ui:tab="plota_detail" id="253">
                     <ns2:label>Aspect</ns2:label>
                 </ns2:code>
-                <ns2:number name="tp_recorded" type="integer"
-                    required="true" ui:tab="plota_detail">
+                <ns2:number name="tp_recorded" type="integer" required="true" ui:tab="plota_detail" id="254">
                     <ns2:label>Trees and poles recorded</ns2:label>
                 </ns2:number>
-                <ns2:number name="crew_no" type="integer"
-                    required="false" ui:tab="plota_detail">
+                <ns2:number name="crew_no" type="integer" required="false" ui:tab="plota_detail" id="255">
                     <ns2:label>Crew no.</ns2:label>
                     <ns2:compare gte="0" flag="error"/>
                 </ns2:number>
-                <ns2:code name="month" list="month" required="true" ui:tab="plota_detail">
+                <ns2:code name="month" list="month" required="true" ui:tab="plota_detail" id="256">
                     <ns2:label>Month</ns2:label>
                 </ns2:code>
-                <ns2:number name="year" type="integer" required="true" ui:tab="plota_detail">
+                <ns2:number name="year" type="integer" required="true" ui:tab="plota_detail" id="257">
                     <ns2:label>Year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
-                <ns2:entity name="plota_enum" multiple="true"
-                    ui:layout="table" ui:tab="plota_enum">
+                <ns2:entity name="plota_enum" multiple="true" ui:layout="table" ui:tab="plota_enum" id="258">
                     <ns2:label>Plot A Enumeration</ns2:label>
-                    <ns2:text name="name_of_species" required="true">
+                    <ns2:text name="name_of_species" required="true" id="259">
                         <ns2:label>Name of species</ns2:label>
                     </ns2:text>
-                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province" id="260">
                         <label>Name of Species</label>
                     </taxon>
-                    <ns2:number name="dbb_or_b" type="real">
+                    <ns2:number name="dbb_or_b" type="real" id="261">
                         <ns2:label>DBB or B 0.2m AB 0.1cm</ns2:label>
                     </ns2:number>
-                    <ns2:number name="damage" type="integer">
+                    <ns2:number name="damage" type="integer" id="262">
                         <ns2:label>Damage</ns2:label>
                     </ns2:number>
-                    <ns2:number name="azimuth_to_tree" type="integer">
+                    <ns2:number name="azimuth_to_tree" type="integer" id="263">
                         <ns2:label>Azimuth to tree</ns2:label>
                     </ns2:number>
-                    <ns2:number name="horizontal_distance_to_tree" type="real">
+                    <ns2:number name="horizontal_distance_to_tree" type="real" id="264">
                         <ns2:label>Horizontal distance to tree</ns2:label>
                         <ns2:precision decimalDigits="2"/>
                     </ns2:number>
-                    <ns2:entity name="trees_higher_than_20cm">
+                    <ns2:entity name="trees_higher_than_20cm" id="265">
                         <ns2:label>Trees of 20+cm</ns2:label>
-                        <ns2:number name="butress_height" type="real">
+                        <ns2:number name="butress_height" type="real" id="266">
                             <ns2:label>Buttress height 0.01m</ns2:label>
                             <ns2:precision unit="m" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="d_2point2m_ab" type="real">
+                        <ns2:number name="d_2point2m_ab" type="real" id="267">
                             <ns2:label>D 2.2m AB 0.1cm</ns2:label>
                             <ns2:precision unit="cm" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="bole_height" type="real">
+                        <ns2:number name="bole_height" type="real" id="268">
                             <ns2:label>Bole height 0.1m</ns2:label>
                             <ns2:precision unit="m" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="tree_height" type="real">
+                        <ns2:number name="tree_height" type="real" id="269">
                             <ns2:label>Tree height</ns2:label>
                             <ns2:precision unit="m" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="grade" type="integer">
+                        <ns2:number name="grade" type="integer" id="270">
                             <ns2:label>Grade</ns2:label>
                         </ns2:number>
-                        <ns2:number name="infestation" type="integer">
+                        <ns2:number name="infestation" type="integer" id="271">
                             <ns2:label>Infestation</ns2:label>
                         </ns2:number>
-                        <ns2:number name="tree_class" type="integer">
+                        <ns2:number name="tree_class" type="integer" id="272">
                             <ns2:label>Tree class</ns2:label>
                         </ns2:number>
-                        <ns2:number name="crown_class" type="integer">
+                        <ns2:number name="crown_class" type="integer" id="273">
                             <ns2:label>Crown class</ns2:label>
                         </ns2:number>
-                        <ns2:number name="crown_position" type="integer">
+                        <ns2:number name="crown_position" type="integer" id="274">
                             <ns2:label>Crown position</ns2:label>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="bole_and_tree_height">
+                    <ns2:entity name="bole_and_tree_height" id="275">
                         <ns2:label>Bole and tree height</ns2:label>
-                        <ns2:number name="horizontal_distance" type="real">
+                        <ns2:number name="horizontal_distance" type="real" id="276">
                             <ns2:label>Horizontal distance 0.01m</ns2:label>
                             <ns2:precision unit="m" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="height_of_base" type="real">
+                        <ns2:number name="height_of_base" type="real" id="277">
                             <ns2:label>Height of base 0.1m</ns2:label>
                             <ns2:precision unit="m" decimalDigits="1"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="percent_base" type="real">
+                        <ns2:number name="percent_base" type="real" id="278">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision decimalDigits="2"/>
                         </ns2:number>
-                        <ns2:number name="percent_crown_point" type="real">
+                        <ns2:number name="percent_crown_point" type="real" id="279">
                             <ns2:label>Percent crown point</ns2:label>
                             <ns2:precision decimalDigits="2"/>
                         </ns2:number>
-                        <ns2:number name="percent_top_of_tree" type="real">
+                        <ns2:number name="percent_top_of_tree" type="real" id="280">
                             <ns2:label>Percent top of tree</ns2:label>
                             <ns2:precision decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="buttress_and_diameter_above_buttress">
+                    <ns2:entity name="buttress_and_diameter_above_buttress" id="281">
                         <ns2:label>Buttress and diameters above buttress</ns2:label>
-                        <ns2:number name="horizontal_distance" type="real">
+                        <ns2:number name="horizontal_distance" type="real" id="282">
                             <ns2:label>Horizontal distance 0.01m</ns2:label>
                             <ns2:precision unit="m" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="percent_base" type="real">
+                        <ns2:number name="percent_base" type="real" id="283">
                             <ns2:label>Percent base</ns2:label>
                             <ns2:precision decimalDigits="2"/>
                         </ns2:number>
-                        <ns2:number name="percent_buttress" type="real">
+                        <ns2:number name="percent_buttress" type="real" id="284">
                             <ns2:label>Percent buttress</ns2:label>
                             <ns2:precision decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:entity name="d_02_ab">
+                        <ns2:entity name="d_02_ab" id="285">
                             <ns2:label>D 0.2 AB</ns2:label>
-                            <ns2:number name="full_bars" type="real">
+                            <ns2:number name="full_bars" type="real" id="286">
                                 <ns2:label>Full bars</ns2:label>
                                 <ns2:precision decimalDigits="2"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="quarter_bars" type="real">
+                            <ns2:number name="quarter_bars" type="real" id="287">
                                 <ns2:label>1/4 bars</ns2:label>
                                 <ns2:precision decimalDigits="2"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
-                        <ns2:number name="percent_2point2m_ab" type="real">
+                        <ns2:number name="percent_2point2m_ab" type="real" id="288">
                             <ns2:label>Percent 2.2m AB</ns2:label>
                             <ns2:precision unit="m" decimalDigits="2"/>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:entity name="d_22_ab">
+                        <ns2:entity name="d_22_ab" id="289">
                             <ns2:label>D 2.2 AB</ns2:label>
-                            <ns2:number name="full_bars">
+                            <ns2:number name="full_bars" id="290">
                                 <ns2:label>Full bars</ns2:label>
                                 <ns2:precision decimalDigits="2"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="quarter_bars" type="real">
+                            <ns2:number name="quarter_bars" type="real" id="291">
                                 <ns2:label>1/4 bars 0.1</ns2:label>
                                 <ns2:precision decimalDigits="2"/>
                                 <ns2:compare gt="0" flag="error"/>
@@ -2942,200 +2876,189 @@
                     </ns2:entity>
                 </ns2:entity>
             </ns2:entity>
-            <ns2:entity name="permanent_plot_b" multiple="true"
-                ui:layout="form" ui:tab="plot_b">
+            <ns2:entity name="permanent_plot_b" multiple="true" ui:layout="form" ui:tab="plot_b" id="292">
                 <ns2:label>Permanent Plot, B</ns2:label>
-                <ns2:number name="hectare_plot" type="real"
-                    required="true" ui:tab="plotb_detail">
+                <ns2:number name="hectare_plot" type="real" required="true" ui:tab="plotb_detail" id="293">
                     <ns2:label>Hectare plot</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="record_unit" type="integer"
-                    required="true" ui:tab="plotb_detail">
+                <ns2:number name="record_unit" type="integer" required="true" ui:tab="plotb_detail" id="294">
                     <ns2:label>Record unit</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="sector" type="real" ui:tab="plotb_detail">
+                <ns2:number name="sector" type="real" ui:tab="plotb_detail" id="295">
                     <ns2:label>Sector</ns2:label>
                     <ns2:precision unit="deg" decimalDigits="0"/>
                 </ns2:number>
-                <ns2:number name="segment_dist" type="real"
-                    relevant="sector=''" ui:tab="plotb_detail">
+                <ns2:number name="segment_dist" type="real" relevant="sector=''" ui:tab="plotb_detail" id="296">
                     <ns2:label>Segment distance</ns2:label>
                     <ns2:precision unit="m" decimalDigits="2"/>
                 </ns2:number>
-                <ns2:number name="part" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="plotb_detail">
+                <ns2:number name="part" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="plotb_detail" id="297">
                     <ns2:label>Large part</ns2:label>
                 </ns2:number>
-                <ns2:number name="smallpart" type="integer" key="true"
-                    relevant="sector!='' or segment_dist!=''"
-                    required="true" ui:tab="plotb_detail">
+                <ns2:number name="smallpart" type="integer" key="true" relevant="sector!='' or segment_dist!=''" required="true" ui:tab="plotb_detail" id="298">
                     <ns2:label>Small part</ns2:label>
                 </ns2:number>
-                <ns2:number name="square_5x5" type="real">
+                <ns2:number name="square_5x5" type="real" id="299">
                     <ns2:label>5x5m squares</ns2:label>
                     <ns2:compare gt="0" flag="error"/>
                 </ns2:number>
-                <ns2:number name="control" type="integer" key="true"
-                    required="false" ui:tab="plotb_detail">
+                <ns2:number name="control" type="integer" key="true" required="false" ui:tab="plotb_detail" id="300">
                     <ns2:label>Control</ns2:label>
                     <ns2:compare lte="1" gte="1" flag="error">
                         <ns2:message>This field must be either 1 or blank</ns2:message>
                     </ns2:compare>
                 </ns2:number>
-                <ns2:code name="province" list="province"
-                    required="true" ui:tab="nf_detail">
+                <ns2:code name="province" list="province" required="true" ui:tab="nf_detail" id="301">
                     <ns2:label type="number">12</ns2:label>
                     <ns2:label>Province</ns2:label>
                 </ns2:code>
-                <ns2:entity name="number_of_records" ui:tab="plotb_detail">
+                <ns2:entity name="number_of_records" ui:tab="plotb_detail" id="302">
                     <ns2:label>Number of records</ns2:label>
-                    <ns2:number name="seedlings" type="integer">
+                    <ns2:number name="seedlings" type="integer" id="303">
                         <ns2:label>Seedlings</ns2:label>
                     </ns2:number>
-                    <ns2:number name="saplings" type="integer">
+                    <ns2:number name="saplings" type="integer" id="304">
                         <ns2:label>Saplings</ns2:label>
                     </ns2:number>
-                    <ns2:number name="rattan_less_than2point9m">
+                    <ns2:number name="rattan_less_than2point9m" id="305">
                         <ns2:label>Rattan [-2.9m]</ns2:label>
                     </ns2:number>
-                    <ns2:number name="rattan_more_than3point0m">
+                    <ns2:number name="rattan_more_than3point0m" id="306">
                         <ns2:label>Rattan [+3.0m]</ns2:label>
                     </ns2:number>
-                    <ns2:number name="bamboo" type="real">
+                    <ns2:number name="bamboo" type="real" id="307">
                         <ns2:label>Bamboo</ns2:label>
                     </ns2:number>
-                    <ns2:number name="depth_of_peat_layer" type="real">
+                    <ns2:number name="depth_of_peat_layer" type="real" id="308">
                         <ns2:label>Depth of peat layer</ns2:label>
                     </ns2:number>
-                    <ns2:number name="depth_of_litter" type="real">
+                    <ns2:number name="depth_of_litter" type="real" id="309">
                         <ns2:label>Depth of litter</ns2:label>
                     </ns2:number>
-                    <ns2:number name="depth_of_peath" type="real">
+                    <ns2:number name="depth_of_peath" type="real" id="310">
                         <ns2:label>Depth of peath(cm)</ns2:label>
                     </ns2:number>
-                    <ns2:number name="depth_of_humus" type="real">
+                    <ns2:number name="depth_of_humus" type="real" id="311">
                         <ns2:label>Depth of humus(cm)</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:entity name="a_horizon" ui:tab="plotb_detail">
+                <ns2:entity name="a_horizon" ui:tab="plotb_detail" id="312">
                     <ns2:label>A-horizone / 10 cm</ns2:label>
-                    <ns2:number name="depth" type="real">
+                    <ns2:number name="depth" type="real" id="312">
                         <ns2:label>Depth</ns2:label>
                     </ns2:number>
-                    <ns2:number name="stones" type="real">
+                    <ns2:number name="stones" type="real" id="313">
                         <ns2:label>Stones</ns2:label>
                     </ns2:number>
-                    <ns2:number name="colour" type="integer">
+                    <ns2:number name="colour" type="integer" id="314">
                         <ns2:label>Colour</ns2:label>
                     </ns2:number>
-                    <ns2:number name="water_regime" type="integer">
+                    <ns2:number name="water_regime" type="integer" id="315">
                         <ns2:label>Water Regime</ns2:label>
                     </ns2:number>
-                    <ns2:number name="texture" type="integer">
+                    <ns2:number name="texture" type="integer" id="316">
                         <ns2:label>Texture</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:entity name="b_horizon" ui:tab="plotb_detail">
+                <ns2:entity name="b_horizon" ui:tab="plotb_detail" id="317">
                     <ns2:label>B-horizone / 30 cm</ns2:label>
-                    <ns2:number name="depth" type="real">
+                    <ns2:number name="depth" type="real" id="318">
                         <ns2:label>Depth</ns2:label>
                     </ns2:number>
-                    <ns2:number name="stones" type="real">
+                    <ns2:number name="stones" type="real" id="319">
                         <ns2:label>Stones</ns2:label>
                     </ns2:number>
-                    <ns2:number name="colour" type="integer">
+                    <ns2:number name="colour" type="integer" id="320">
                         <ns2:label>Colour</ns2:label>
                     </ns2:number>
-                    <ns2:number name="water_regime" type="integer">
+                    <ns2:number name="water_regime" type="integer" id="321">
                         <ns2:label>Water Regime</ns2:label>
                     </ns2:number>
-                    <ns2:number name="texture" type="integer">
+                    <ns2:number name="texture" type="integer" id="322">
                         <ns2:label>Texture</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:entity name="50_cm" ui:tab="plotb_detail">
+                <ns2:entity name="50_cm" ui:tab="plotb_detail" id="323">
                     <ns2:label>50 cm</ns2:label>
-                    <ns2:number name="texture" type="integer">
+                    <ns2:number name="texture" type="integer" id="324">
                         <ns2:label>Texture</ns2:label>
                     </ns2:number>
-                    <ns2:number name="colour" type="integer">
+                    <ns2:number name="colour" type="integer" id="325">
                         <ns2:label>Colour</ns2:label>
                     </ns2:number>
-                    <ns2:number name="stones" type="real">
+                    <ns2:number name="stones" type="real" id="326">
                         <ns2:label>Stones</ns2:label>
                     </ns2:number>
                 </ns2:entity>
-                <ns2:number name="c_horizon" type="integer" ui:tab="plotb_detail">
+                <ns2:number name="c_horizon" type="integer" ui:tab="plotb_detail" id="327">
                     <ns2:label>C Horizon</ns2:label>
                 </ns2:number>
-                <ns2:number name="slope_position" type="integer" ui:tab="plotb_detail">
+                <ns2:number name="slope_position" type="integer" ui:tab="plotb_detail" id="328">
                     <ns2:label>Slope position</ns2:label>
                 </ns2:number>
-                <ns2:number name="crew_number" type="integer" ui:tab="plotb_detail">
+                <ns2:number name="crew_number" type="integer" ui:tab="plotb_detail" id="329">
                     <ns2:label>Crew number</ns2:label>
                 </ns2:number>
-                <ns2:code name="month" list="month" required="true" ui:tab="plotb_detail">
+                <ns2:code name="month" list="month" required="true" ui:tab="plotb_detail" id="330">
                     <ns2:label>Month</ns2:label>
                 </ns2:code>
-                <ns2:number name="year" type="integer" required="true" ui:tab="plotb_detail">
+                <ns2:number name="year" type="integer" required="true" ui:tab="plotb_detail" id="331">
                     <ns2:label>Year</ns2:label>
                     <ns2:compare lte="2050" gte="1900" flag="error"/>
                 </ns2:number>
-                <ns2:entity name="plotb_ssr" multiple="true"
-                    ui:layout="table" ui:tab="plotb_ssr">
+                <ns2:entity name="plotb_ssr" multiple="true" ui:layout="table" ui:tab="plotb_ssr" id="332">
                     <ns2:label>R 1m tree seedlings, r 2m tree saplings, r 5m rattan -2.9m, r 10m rattan 3+m</ns2:label>
-                    <ns2:text name="name_of_species" required="true">
+                    <ns2:text name="name_of_species" required="true" id="333">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
-                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province" id="334">
                         <label>Name of Species</label>
                     </taxon>
-                    <ns2:number name="count" type="integer">
+                    <ns2:number name="count" type="integer" id="335">
                         <ns2:label>Count</ns2:label>
                         <ns2:compare gt="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="seedlings" type="integer">
+                    <ns2:number name="seedlings" type="integer" id="336">
                         <ns2:label>Seedlings</ns2:label>
                         <ns2:compare gt="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="saplings" type="integer">
+                    <ns2:number name="saplings" type="integer" id="337">
                         <ns2:label>Saplings</ns2:label>
                         <ns2:compare gt="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="rattan_lte_2point9m" type="integer">
+                    <ns2:number name="rattan_lte_2point9m" type="integer" id="338">
                         <ns2:label>Rattan -2.9m</ns2:label>
                         <ns2:compare gt="0" flag="error"/>
                     </ns2:number>
-                    <ns2:entity name="rattan_gte_3m">
+                    <ns2:entity name="rattan_gte_3m" id="339">
                         <ns2:label>Rattan 3+m long</ns2:label>
-                        <ns2:entity name="s_single">
+                        <ns2:entity name="s_single" id="340">
                             <ns2:label>s single</ns2:label>
-                            <ns2:number name="stems" type="integer">
+                            <ns2:number name="stems" type="integer" id="341">
                                 <ns2:label>Stems</ns2:label>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="d_max" type="real">
+                            <ns2:number name="d_max" type="real" id="342">
                                 <ns2:label>D max 0.1cm</ns2:label>
                                 <ns2:precision unit="cm" decimalDigits="2"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
-                        <ns2:entity name="c_cluster">
+                        <ns2:entity name="c_cluster" id="343">
                             <ns2:label>c cluster</ns2:label>
-                            <ns2:number name="d_min" type="real">
+                            <ns2:number name="d_min" type="real" id="344">
                                 <ns2:label>D min 0.1cm</ns2:label>
                                 <ns2:precision unit="cm" decimalDigits="2"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="d_avg" type="real">
+                            <ns2:number name="d_avg" type="real" id="345">
                                 <ns2:label>D average 0.1cm</ns2:label>
                                 <ns2:precision unit="cm" decimalDigits="2"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="l_avg" type="real">
+                            <ns2:number name="l_avg" type="real" id="346">
                                 <ns2:label>L average m</ns2:label>
                                 <ns2:precision unit="m" decimalDigits="2"/>
                                 <ns2:compare gt="0" flag="error"/>
@@ -3143,103 +3066,102 @@
                         </ns2:entity>
                     </ns2:entity>
                 </ns2:entity>
-                <ns2:entity name="bamboo" multiple="true"
-                    ui:layout="table" ui:tab="plotb_bamboo">
+                <ns2:entity name="bamboo" multiple="true" ui:layout="table" ui:tab="plotb_bamboo" id="347">
                     <ns2:label>R 10 m Bamboo</ns2:label>
-                    <ns2:text name="name_of_species" required="true">
+                    <ns2:text name="name_of_species" required="true" id="373">
                         <ns2:label>Name of Species</ns2:label>
                     </ns2:text>
-                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province">
+                    <taxon name="species" taxonomy="mofor_species" highestRank="genus" required="true" qualifiers="()parent/()parent/province" id="348">
                         <label>Name of Species</label>
                     </taxon>
-                    <ns2:entity name="no_culm">
+                    <ns2:entity name="no_culm" id="349">
                         <ns2:label>Number of culmns</ns2:label>
-                        <ns2:number name="one_year" type="integer">
+                        <ns2:number name="one_year" type="integer" id="350">
                             <ns2:label>1-year</ns2:label>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="two_year" type="integer">
+                        <ns2:number name="two_year" type="integer" id="351">
                             <ns2:label>2-year</ns2:label>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="total" type="integer">
+                        <ns2:number name="total" type="integer" id="352">
                             <ns2:label>Total</ns2:label>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
-                        <ns2:number name="live_stumps" type="integer">
+                        <ns2:number name="live_stumps" type="integer" id="353">
                             <ns2:label>Live stumps</ns2:label>
                             <ns2:compare gt="0" flag="error"/>
                         </ns2:number>
                     </ns2:entity>
-                    <ns2:entity name="one_year">
+                    <ns2:entity name="one_year" id="354">
                         <ns2:label>1-year old</ns2:label>
-                        <ns2:entity name="low_part">
+                        <ns2:entity name="low_part" id="354">
                             <ns2:label>Low part</ns2:label>
-                            <ns2:number name="dbh" type="real">
+                            <ns2:number name="dbh" type="real" id="355">
                                 <ns2:label>Dbh 0.1cm</ns2:label>
                                 <ns2:precision unit="cm" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="length">
+                            <ns2:number name="length" id="356">
                                 <ns2:label>Length 0.1m</ns2:label>
                                 <ns2:precision unit="m" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="357">
                                 <ns2:label>Weight 0.1kg</ns2:label>
                                 <ns2:precision unit="kg" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
                     </ns2:entity>
-                    <ns2:entity name="two_year">
+                    <ns2:entity name="two_year" id="358">
                         <ns2:label>2-year old</ns2:label>
-                        <ns2:entity name="low_part">
+                        <ns2:entity name="low_part" id="359">
                             <ns2:label>Low part</ns2:label>
-                            <ns2:number name="dbh" type="real">
+                            <ns2:number name="dbh" type="real" id="360">
                                 <ns2:label>Dbh 0.1cm</ns2:label>
                                 <ns2:precision unit="cm" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="length">
+                            <ns2:number name="length" id="361">
                                 <ns2:label>Length 0.1m</ns2:label>
                                 <ns2:precision unit="m" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="362">
                                 <ns2:label>Weight 0.1kg</ns2:label>
                                 <ns2:precision unit="kg" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
                     </ns2:entity>
-                    <ns2:entity name="three_year">
+                    <ns2:entity name="three_year" id="363">
                         <ns2:label>3+year old</ns2:label>
-                        <ns2:entity name="low_part">
+                        <ns2:entity name="low_part" id="364">
                             <ns2:label>Low part</ns2:label>
-                            <ns2:number name="dbh" type="real">
+                            <ns2:number name="dbh" type="real" id="365">
                                 <ns2:label>Dbh 0.1cm</ns2:label>
                                 <ns2:precision unit="cm" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="length">
+                            <ns2:number name="length" id="366">
                                 <ns2:label>Length 0.1m</ns2:label>
                                 <ns2:precision unit="m" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
-                            <ns2:number name="weight" type="real">
+                            <ns2:number name="weight" type="real" id="367">
                                 <ns2:label>Weight 0.1kg</ns2:label>
                                 <ns2:precision unit="kg" decimalDigits="1"/>
                                 <ns2:compare gt="0" flag="error"/>
                             </ns2:number>
                         </ns2:entity>
                     </ns2:entity>
-                    <ns2:number name="azimuth_to_bamboo" type="integer">
+                    <ns2:number name="azimuth_to_bamboo" type="integer" id="368">
                         <ns2:label>Azimuth to bamboo</ns2:label>
                         <ns2:precision unit="cm" decimalDigits="1"/>
                         <ns2:compare gt="0" flag="error"/>
                     </ns2:number>
-                    <ns2:number name="horizontal_distance_to_bamboo" type="real">
+                    <ns2:number name="horizontal_distance_to_bamboo" type="real" id="369">
                         <ns2:label>Horizontal distance to bamboo</ns2:label>
                         <ns2:precision unit="cm" decimalDigits="1"/>
                         <ns2:compare gt="0" flag="error"/>
