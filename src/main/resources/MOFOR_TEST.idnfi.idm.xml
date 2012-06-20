@@ -1555,27 +1555,31 @@
             <ns2:items>
                 <ns2:item>
                     <ns2:code>0</ns2:code>
-                    <ns2:label>0 - 10% step 10</ns2:label>
+                    <ns2:label>0 - 8%</ns2:label>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>1</ns2:code>
-                    <ns2:label>11 - 25% step 15 limit for caterpillar</ns2:label>
+                    <ns2:label>9 - 15%</ns2:label>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>2</ns2:code>
-                    <ns2:label>26 - 45% step 20 TGHK limit</ns2:label>
+                    <ns2:label>16 - 25%</ns2:label>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>3</ns2:code>
-                    <ns2:label>46 - 70 % step 25 limit for cable</ns2:label>
+                    <ns2:label>26 - 45%</ns2:label>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>4</ns2:code>
-                    <ns2:label>71 - 100% step 30 limit for enumeration</ns2:label>
+                    <ns2:label>46 - 70%</ns2:label>
                 </ns2:item>
                 <ns2:item>
                     <ns2:code>5</ns2:code>
-                    <ns2:label>101+%</ns2:label>
+                    <ns2:label>71% - 100%</ns2:label>
+                </ns2:item>
+                <ns2:item>
+                    <ns2:code>6</ns2:code>
+                    <ns2:label>More than 100%</ns2:label>
                 </ns2:item>
             </ns2:items>
         </ns2:list>
@@ -1743,7 +1747,7 @@
         </ns2:unit>
     </ns2:units>
     <ns2:schema>
-        <ns2:entity name="cluster" ui:tab="cluster" id="1">
+        <ns2:entity name="cluster" ui:tab="cluster">
             <ns2:label type="instance">Cluster</ns2:label>
             <ns2:number name="utm_zone" type="integer" key="true" required="true">
                 <ns2:label>UTM zone</ns2:label>
