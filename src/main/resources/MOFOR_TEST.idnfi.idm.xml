@@ -1743,7 +1743,7 @@
         </ns2:unit>
     </ns2:units>
     <ns2:schema>
-        <ns2:entity name="cluster" ui:tab="cluster">
+        <ns2:entity name="cluster" ui:tab="cluster" id="1">
             <ns2:label type="instance">Cluster</ns2:label>
             <ns2:number name="utm_zone" type="integer" key="true" required="true">
                 <ns2:label>UTM zone</ns2:label>
