@@ -1749,7 +1749,7 @@
     <ns2:schema>
         <ns2:entity name="cluster" ui:tab="cluster" id="1">
             <ns2:label type="instance">Cluster</ns2:label>
-            <ns2:number name="utm_zone" type="integer" key="true" required="true" id="2">
+            <ns2:number name="utm_zone_x" type="integer" key="true" required="true" id="2">
                 <ns2:label>UTM zone</ns2:label>
                 <ns2:description>Valid UTM Zone between 46 and 54</ns2:description>
                 <ns2:compare lte="54" gte="46" flag="error"/>
