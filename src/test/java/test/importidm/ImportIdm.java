@@ -6,9 +6,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+import org.jooq.Record;
+import org.jooq.SelectConditionStep;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openforis.collect.manager.LogoManager;
+import org.openforis.collect.manager.RecordManager;
 import org.openforis.collect.model.CollectSurvey;
 import org.openforis.collect.model.Logo;
 import org.openforis.collect.persistence.LogoDao;
@@ -16,6 +19,9 @@ import org.openforis.collect.persistence.SurveyDao;
 import org.openforis.collect.persistence.SurveyImportException;
 import org.openforis.collect.persistence.jooq.DialectAwareJooqFactory;
 import org.openforis.collect.persistence.xml.CollectIdmlBindingContext;
+import org.openforis.idm.metamodel.EntityDefinition;
+import org.openforis.idm.metamodel.NodeDefinition;
+import org.openforis.idm.metamodel.Schema;
 import org.openforis.idm.metamodel.xml.InvalidIdmlException;
 import org.openforis.idm.metamodel.xml.SurveyUnmarshaller;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +36,8 @@ import java.io.InputStream;
 import java.io.StringWriter;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -70,6 +78,13 @@ public class ImportIdm {
 	
 	protected String idmFileName;
 	
+	@Autowired
+	protected FactoryDao factoryDao;
+	
+	@Autowired
+	protected RecordManager recordManager;
+	
+	/*
 	//@Test
 	public void testAddIds() throws TransformerException, ParserConfigurationException, IOException, SAXException {
 		idmFileName = "MOFOR_WORKING.idnfi.idm.xml";
@@ -84,7 +99,7 @@ public class ImportIdm {
 		addIdsToSchema(documentElement);
 		String docToString = docToString(doc);
 		System.out.println(docToString);
-	}
+	}*/
 
 	protected void addIdsToLists(Element documentElement) {
 		Element codeListsEl = getChildNode(documentElement, "codeLists");
@@ -140,25 +155,57 @@ public class ImportIdm {
 		}
 	}
 	
+	/*HashMap<String, Integer> hashPath = new HashMap<String, Integer>();
 	protected void addIdsToSchema(Element docEl) {
+		
+		InputStream is;
+		
+		
+		DialectAwareJooqFactory jf = factoryDao.getJooqFactory();
+		try {
+			is = ClassLoader.getSystemResource("MOFOR_WORKING.idnfi.idm.xml").openStream();
+			CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
+			SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
+			CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
+			Schema schema = survey.getSchema();
+			Collection<NodeDefinition> definitions = schema.getAllDefinitions();
+			for (NodeDefinition definition : definitions) {
+				Record q = jf.select(OFC_SCHEMA_DEFINITION.ID).from(OFC_SCHEMA_DEFINITION).where(OFC_SCHEMA_DEFINITION.PATH.equal(definition.getPath())).fetchOne();
+				hashPath.put(definition.getPath(), q.getValueAsInteger(OFC_SCHEMA_DEFINITION.ID));
+				
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvalidIdmlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		Element schemaEl = getChildNode(docEl, "schema");
 		List<Node> rootEntities = getChildNodes(schemaEl, "entity");
-		int currentId = 1;
 		for (Node rootEntityEl : rootEntities) {
-			currentId = addIdsToEntity((Element) rootEntityEl, currentId);
+			String rootPath = "/" + ((Element) rootEntityEl).getAttribute("name");
+			addIdsToEntity((Element) rootEntityEl, hashPath.get(rootPath) , rootPath);
+						
 		}
+		
+		
+
 	}
 	
-	protected int addIdsToEntity(Element entityEl, int currentId) {
-		entityEl.setAttribute("id", Integer.toString(currentId++));
+	protected void addIdsToEntity(Element entityEl, int currentId, String rootPath) {
+		entityEl.setAttribute("id", ""+ currentId);
 		NodeList childNodes = entityEl.getChildNodes();
 		for (int i = 0; i < childNodes.getLength(); i++) {
 			Node tmp = childNodes.item(i);
 			if (tmp.getNodeType() == Node.ELEMENT_NODE) {
-				String nodeName = tmp.getNodeName();
+				String nodeName = tmp.getNodeName();				
 				if ( nodeName != null ) {
 					if ( nodeName.equals("entity") ) {
-						currentId = addIdsToEntity((Element) tmp, currentId);
+						currentId = hashPath.get(rootPath + "/" + ((Element) tmp).getAttribute("name"));
+						addIdsToEntity((Element) tmp,  currentId, rootPath + "/" + ((Element) tmp).getAttribute("name"));						
 					} else if ( 
 							nodeName.equals("boolean") ||
 							nodeName.equals("code") || 
@@ -171,17 +218,18 @@ public class ImportIdm {
 							nodeName.equals("text") ||
 							nodeName.equals("time") 
 							) {
-						addIdToAttribue((Element) tmp, currentId++);
+							
+						addIdToAttribue((Element) tmp,  hashPath.get(rootPath + "/" + ((Element) tmp).getAttribute("name")));
 					}
 				}
 			}
 		}
-		return currentId;
 	}
 	
-	protected void addIdToAttribue(Element attributeEl, int id) {
-		attributeEl.setAttribute("id", Integer.toString(id));
-	}
+	protected void addIdToAttribue(Element attributeEl, int currentId) {
+		
+		attributeEl.setAttribute("id", "" + currentId);
+	}*/
 
 	protected Document parseXmlFile() throws ParserConfigurationException, IOException, SAXException{
 		//get the factory
@@ -272,6 +320,22 @@ public class ImportIdm {
 		survey.setName("greenbook");
 		survey.setUri("http://www.openforis.org/idm/greenbook");
 		surveyDao.updateModel(survey);
+	}
+	
+	//@Test
+	public void testWat() throws IOException, InvalidIdmlException
+	{
+		InputStream is = ClassLoader.getSystemResource("MOFOR_WORKING.idnfi.idm.xml").openStream();
+		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
+		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
+		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
+		Schema schema = survey.getSchema();
+		String rootEntityName="cluster";
+		EntityDefinition rootEntityDefinition = schema.getRootEntityDefinition(rootEntityName);
+		String rootEntityDefinitionName = rootEntityDefinition.getName();
+		int count = recordManager.getRecordCount(survey, rootEntityDefinitionName);
+		System.out.println(count);
+	
 	}
 	
 	//@Test
