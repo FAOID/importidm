@@ -1,11 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <survey
     xmlns="http://www.openforis.org/idml/3.0"
     xmlns:ui="http://www.openforis.org/collect/3.0/ui" 
     xmlns:ns2="http://www.openforis.org/idml/3.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/faoid/idm/id3sp1/idm-api/src/main/resources/idml3.xsd">  
+    xsi:schemaLocation="http://www.openforis.org/idml/3.0 https://raw.github.com/faoid/idm/id3sp1/idm-api/src/main/resources/idml3.xsd">
     <project>Indonesia NFI</project>
-    <uri>http://www.openforis.org/idm/archenland</uri>
+    <uri>http://www.openforis.org/idm/idnfi</uri>
     <cycle>1</cycle>
     <description>Basis Data Kehutanan Nasional Indonesia</description>
     <configuration>
@@ -1746,20 +1747,20 @@
         </unit>
     </units>
     <schema>
-        <entity id="1" name="cluster" ui:tab="cluster">
+        <entity id="1447" name="cluster" ui:tab="cluster">
             <label type="instance">Cluster</label>
-            <number id="2" key="true" name="utm_zone" required="true" type="integer">
+            <number id="1330" key="true" name="utm_zone" required="true" type="integer">
                 <label>UTM zone</label>
                 <description>Valid UTM Zone between 46 and 54</description>
                 <compare flag="error" gte="46" lte="54"/>
             </number>
-            <number id="3" key="true" name="easting" required="true" type="integer">
+            <number id="1544" key="true" name="easting" required="true" type="integer">
                 <label type="number">1</label>
                 <label>W-E</label>
                 <description>Valid UTM easting between 166 and 834</description>
                 <compare flag="error" gte="166" lte="834"/>
             </number>
-            <number id="4" key="true" name="northing" required="true" type="integer">
+            <number id="1570" key="true" name="northing" required="true" type="integer">
                 <label type="number">2</label>
                 <label>S-N</label>
                 <description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
@@ -1768,55 +1769,55 @@
                     <message xml:lang="id"/>
                 </check>
             </number>
-            <number id="5" name="year" required="true" type="integer">
+            <number id="11510" name="year" required="true" type="integer">
                 <label>Year</label>
                 <compare flag="error" gte="1900" lte="2050"/>
             </number>
-            <entity id="6" multiple="true" name="natural_forest" ui:layout="form" ui:tab="nf">
+            <entity id="1375" multiple="true" name="natural_forest" ui:layout="form" ui:tab="nf">
                 <label type="heading">Enumeration, Natural Forest</label>
-                <number id="7" key="true" name="tract_no" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1402" key="true" name="tract_no" required="true" type="integer" ui:tab="nf_detail">
                     <label type="number">3</label>
                     <label>Tract</label>
                     <compare flag="error" gte="1" lte="15"/>
                 </number>
-                <number id="8" key="true" name="subplot_no" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1433" key="true" name="subplot_no" required="true" type="integer" ui:tab="nf_detail">
                     <label type="number">4</label>
                     <label>Sub-plot</label>
                     <compare flag="error" gte="1" lte="8"/>
                 </number>
-                <number id="9" name="sector" type="real" ui:tab="nf_detail">
+                <number id="1594" name="sector" type="real" ui:tab="nf_detail">
                     <label type="number">5</label>
                     <label>Sector degrees</label>
                     <precision decimalDigits="0" unit="deg"/>
                 </number>
-                <number id="10" name="segment_dist" relevant="sector=''" type="real" ui:tab="nf_detail">
+                <number id="1424" name="segment_dist" relevant="sector=''" type="real" ui:tab="nf_detail">
                     <label type="number">6</label>
                     <label>Distance to segment 0.01m</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="11" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1420" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
                     <label type="number">7</label>
                     <label>Large part</label>
                 </number>
-                <number id="12" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
+                <number id="9889" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
                     <label type="number">8</label>
                     <label>Small part</label>
                 </number>
-                <number id="13" name="permanent" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1416" name="permanent" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">9</label>
                     <label>Permanent</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="14" key="true" name="control" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1628" key="true" name="control" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">10</label>
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="15" key="true" name="record_type" required="false" type="integer" ui:tab="nf_detail">
+                <number id="9569" key="true" name="record_type" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">11</label>
                     <label>Record type</label>
                     <default value="1"/>
@@ -1824,240 +1825,240 @@
                         <message>This field must be greater than 1</message>
                     </compare>
                 </number>
-                <code id="16" list="province" name="province" required="true" ui:tab="nf_detail">
+                <code id="1301" list="province" name="province" required="true" ui:tab="nf_detail">
                     <label type="number">12</label>
                     <label>Province</label>
                 </code>
-                <code id="17" list="land_system" name="land_system" required="true" ui:tab="nf_detail">
+                <code id="1350" list="land_system" name="land_system" required="true" ui:tab="nf_detail">
                     <label type="number">13</label>
                     <label>Land system</label>
                 </code>
-                <code id="18" list="altitude" name="altitude" required="true" ui:tab="nf_detail">
+                <code id="1486" list="altitude" name="altitude" required="true" ui:tab="nf_detail">
                     <label type="number">14</label>
                     <label>Altitude</label>
                 </code>
-                <code id="19" list="land_category" name="land_category" required="true" ui:tab="nf_detail">
+                <code id="1411" list="land_category" name="land_category" required="true" ui:tab="nf_detail">
                     <label type="number">15</label>
                     <label>Land category</label>
                 </code>
-                <code id="20" list="forest_class" name="forest_type" required="true" ui:tab="nf_detail">
+                <code id="1478" list="forest_class" name="forest_type" required="true" ui:tab="nf_detail">
                     <label type="number">16</label>
                     <label>Forest type</label>
                 </code>
-                <code id="21" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="nf_detail">
+                <code id="9794" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="nf_detail">
                     <label type="number">17</label>
                     <label>Stand condition</label>
                 </code>
-                <number id="22" name="logging_year" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1343" name="logging_year" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">18</label>
                     <label>Logging year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <code id="23" list="terrain" name="terrain" required="true" ui:tab="nf_detail">
+                <code id="1382" list="terrain" name="terrain" required="true" ui:tab="nf_detail">
                     <label type="number">19</label>
                     <label>Terrain</label>
                 </code>
-                <code id="24" list="slope" name="slope" required="true" ui:tab="nf_detail">
+                <code id="1621" list="slope" name="slope" required="true" ui:tab="nf_detail">
                     <label type="number">20</label>
                     <label>Slope</label>
                 </code>
-                <code id="25" list="aspect" name="aspect" required="true" ui:tab="nf_detail">
+                <code id="1327" list="aspect" name="aspect" required="true" ui:tab="nf_detail">
                     <label type="number">21</label>
                     <label>Aspect</label>
                 </code>
-                <entity id="26" multiple="false" name="record_count" ui:tab="nf_detail">
+                <entity id="1523" multiple="false" name="record_count" ui:tab="nf_detail">
                     <label>Number of Records</label>
-                    <number id="27" name="trees_poles" required="false" type="integer">
+                    <number id="1530" name="trees_poles" required="false" type="integer">
                         <label type="number">22</label>
                         <label>Trees and poles</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="28" name="seedlings" required="false" type="integer">
+                    <number id="1307" name="seedlings" required="false" type="integer">
                         <label type="number">23</label>
                         <label>Seedlings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="29" name="saplings" required="false" type="integer">
+                    <number id="1529" name="saplings" required="false" type="integer">
                         <label type="number">24</label>
                         <label>Saplings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="30" name="sm_rattan" required="false" type="integer">
+                    <number id="1302" name="sm_rattan" required="false" type="integer">
                         <label type="number">25</label>
                         <label>Rattan (&lt;=2.9m)</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="31" name="lg_rattan" required="false" type="integer">
+                    <number id="1288" name="lg_rattan" required="false" type="integer">
                         <label type="number">26</label>
                         <label>Rattan (&gt;=3m)</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
                 </entity>
-                <number id="32" name="crew_no" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1360" name="crew_no" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">27</label>
                     <label>Crew no.</label>
                     <compare flag="error" gte="0"/>
                 </number>
-                <code id="33" list="month" name="month" required="true" ui:tab="nf_detail">
+                <code id="1533" list="month" name="month" required="true" ui:tab="nf_detail">
                     <label type="number">28</label>
                     <label>Month</label>
                 </code>
-                <number id="34" name="year" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1593" name="year" required="true" type="integer" ui:tab="nf_detail">
                     <label type="number">29</label>
                     <label>Year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <entity id="35" multiple="true" name="tp" ui:tab="nf_tp">
+                <entity id="1392" multiple="true" name="tp" ui:tab="nf_tp">
                     <label type="heading">Trees and Poles</label>
-                    <text id="36" name="species_name">
+                    <text id="1387" name="species_name">
                         <label>Name of Species</label>
                     </text>
-                    <taxon highestRank="genus" id="37" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="16688" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <number id="38" name="diameter" type="real">
+                    <number id="1348" name="diameter" type="real">
                         <label>Diameter</label>
                         <label type="number">14</label>
                         <description>DBH or diameter 0.2m AB</description>
                         <precision decimalDigits="1" unit="cm"/>
                     </number>
-                    <number id="39" name="damage" type="integer">
+                    <number id="9759" name="damage" type="integer">
                         <label>Damage</label>
                         <label type="number">15</label>
                     </number>
-                    <entity id="40" multiple="false" name="lg_trees" relevant="diameter &gt;= 20">
+                    <entity id="1617" multiple="false" name="lg_trees" relevant="diameter &gt;= 20">
                         <label>Large trees</label>
                         <description>Trees with diameter &gt;=20cm</description>
-                        <number id="41" name="buttress_height" type="real">
+                        <number id="1349" name="buttress_height" type="real">
                             <label>Buttress height</label>
                             <precision decimalDigits="2" unit="cm"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="42" name="tree_height" type="real">
+                        <number id="15567" name="tree_height" type="real">
                             <label>Tree height</label>
                             <precision decimalDigits="2" unit="cm"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="43" name="bole_height" type="real">
+                        <number id="1554" name="bole_height" type="real">
                             <label>Bole height</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="44" name="grade" type="integer">
+                        <number id="11505" name="grade" type="integer">
                             <label>Grade</label>
                             <label type="number">20</label>
                         </number>
-                        <number id="45" name="infestation" type="integer">
+                        <number id="11372" name="infestation" type="integer">
                             <label type="number">21</label>
                             <label>Infestation</label>
                         </number>
                     </entity>
-                    <entity id="46" multiple="false" name="bole_height">
+                    <entity id="1431" multiple="false" name="bole_height">
                         <label>Bole height</label>
-                        <number id="47" name="horizontal_distance" type="real">
+                        <number id="1463" name="horizontal_distance" type="real">
                             <label>Horizontal distance</label>
                             <precision decimalDigits="2" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="48" name="base_height" type="real">
+                        <number id="1448" name="base_height" type="real">
                             <label>Height of base</label>
                             <precision decimalDigits="1" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="49" name="percent_base" type="real">
+                        <number id="1347" name="percent_base" type="real">
                             <label>Percent base</label>
                             <precision decimalDigits="0" unit="percent"/>
                         </number>
-                        <number id="50" name="percent_crown_point" type="real">
+                        <number id="1520" name="percent_crown_point" type="real">
                             <label>Percent crown point</label>
                             <precision decimalDigits="0" unit="percent"/>
                         </number>
                     </entity>
-                    <entity id="51" multiple="false" name="buttress">
+                    <entity id="1394" multiple="false" name="buttress">
                         <label>Buttress</label>
-                        <number id="52" name="horizontal_distance" type="real">
+                        <number id="1452" name="horizontal_distance" type="real">
                             <label>Horizontal distance</label>
                             <precision decimalDigits="2" unit="m"/>
                         </number>
-                        <number id="53" name="percent_base" type="real">
+                        <number id="1535" name="percent_base" type="real">
                             <label>Percent base</label>
                             <precision decimalDigits="0" unit="percent"/>
                         </number>
-                        <number id="54" name="percent_buttress" type="real">
+                        <number id="1598" name="percent_buttress" type="real">
                             <label>Percent buttress</label>
                             <precision decimalDigits="0" unit="percent"/>
                             <compare flag="error" gte="0" lte="100"/>
                         </number>
                     </entity>
-                    <entity id="55" multiple="false" name="dab">
+                    <entity id="1366" multiple="false" name="dab">
                         <label>DAB</label>
                         <description>Diameter 0.2m above buttress</description>
-                        <number id="56" name="full_bars" type="real">
+                        <number id="1388" name="full_bars" type="real">
                             <label>Full bars</label>
                         </number>
-                        <number id="57" name="quarter_bars" type="real">
+                        <number id="1291" name="quarter_bars" type="real">
                             <label>1/4 bars</label>
                             <precision decimalDigits="1" unit="percent"/>
                         </number>
                     </entity>
                 </entity>
-                <entity id="58" multiple="true" name="ssr" ui:tab="nf_ssr">
+                <entity id="1531" multiple="true" name="ssr" ui:tab="nf_ssr">
                     <label>Seedlings, Saplings, Rattan</label>
-                    <text id="59" name="species_name">
+                    <text id="1582" name="species_name">
                         <label>Species name</label>
                     </text>
-                    <taxon highestRank="genus" id="60" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="16915" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <number id="61" name="count" required="true" type="integer">
+                    <number id="1325" name="count" required="true" type="integer">
                         <label>Count</label>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="62" name="seedlings" type="integer">
+                    <number id="1455" name="seedlings" type="integer">
                         <label>Seedlings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="63" name="saplings" type="integer">
+                    <number id="1557" name="saplings" type="integer">
                         <label>Saplings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="64" name="sm_rattan" type="integer">
+                    <number id="1473" name="sm_rattan" type="integer">
                         <label>Small rattan</label>
                         <description>Rattan &lt;= 2.9m</description>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <entity id="65" name="lg_rattan">
+                    <entity id="1399" name="lg_rattan">
                         <label>Large rattan</label>
                         <description>Rattan &gt;=3m long</description>
-                        <number id="66" name="stems" type="integer">
+                        <number id="1331" name="stems" type="integer">
                             <label>Stems</label>
                             <default value="0"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="67" name="max_diameter" type="real">
+                        <number id="1590" name="max_diameter" type="real">
                             <label>Max. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="68" name="min_diameter" type="real">
+                        <number id="1385" name="min_diameter" type="real">
                             <label>Min. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="69" name="avg_diameter" type="real">
+                        <number id="1380" name="avg_diameter" type="real">
                             <label>Avg. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="70" name="avg_length" type="real">
+                        <number id="1336" name="avg_length" type="real">
                             <label>Avg. length</label>
                             <precision decimalDigits="0" unit="m"/>
                             <compare flag="error" gte="0"/>
@@ -2065,51 +2066,51 @@
                     </entity>
                 </entity>
             </entity>
-            <entity id="71" multiple="true" name="pmp" ui:layout="form" ui:tab="pmp">
+            <entity id="1502" multiple="true" name="pmp" ui:layout="form" ui:tab="pmp">
                 <label type="heading">Enumeration, Forest Plantations and Pine Forest</label>
-                <number id="72" key="true" name="tract_no" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="1527" key="true" name="tract_no" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">3</label>
                     <label>Tract</label>
                     <compare flag="error" gte="1" lte="15"/>
                 </number>
-                <number id="73" key="true" name="subplot_no" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="1407" key="true" name="subplot_no" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">4</label>
                     <label>Sub-plot</label>
                     <compare flag="error" gte="1" lte="8"/>
                 </number>
-                <number id="74" name="sector" type="real" ui:tab="pmp_detail">
+                <number id="1511" name="sector" type="real" ui:tab="pmp_detail">
                     <label type="number">5</label>
                     <label>Sector</label>
                     <precision decimalDigits="0" unit="deg"/>
                 </number>
-                <number id="75" name="segment_dist" relevant="sector=''" type="real" ui:tab="pmp_detail">
+                <number id="1571" name="segment_dist" relevant="sector=''" type="real" ui:tab="pmp_detail">
                     <label type="number">6</label>
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="76" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="1495" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">7</label>
                     <label>Large part</label>
                 </number>
-                <number id="77" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="9646" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">8</label>
                     <label>Small part</label>
                 </number>
-                <number id="78" name="permanent" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="1379" name="permanent" required="false" type="integer" ui:tab="pmp_detail">
                     <label>Permanent</label>
                     <label type="number">9</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="79" key="true" name="control" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="1524" key="true" name="control" required="false" type="integer" ui:tab="pmp_detail">
                     <label type="number">10</label>
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="80" key="true" name="record_type" required="false" type="integer" ui:tab="nf_detail">
+                <number id="9658" key="true" name="record_type" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">11</label>
                     <label>Record type</label>
                     <default value="1"/>
@@ -2117,207 +2118,207 @@
                         <message>This field must be greater than 1</message>
                     </compare>
                 </number>
-                <code id="81" list="province" name="province" required="true" ui:tab="pmp_detail">
+                <code id="1517" list="province" name="province" required="true" ui:tab="pmp_detail">
                     <label>Province</label>
                 </code>
-                <code id="82" list="land_system" name="land_system" required="true" ui:tab="pmp_detail">
+                <code id="1298" list="land_system" name="land_system" required="true" ui:tab="pmp_detail">
                     <label>Land system</label>
                 </code>
-                <code id="83" list="altitude" name="altitude" required="true" ui:tab="pmp_detail">
+                <code id="1573" list="altitude" name="altitude" required="true" ui:tab="pmp_detail">
                     <label>Altitude</label>
                 </code>
-                <code id="84" list="land_category" name="land_category" required="true" ui:tab="pmp_detail">
+                <code id="1351" list="land_category" name="land_category" required="true" ui:tab="pmp_detail">
                     <label>Land category</label>
                 </code>
-                <code id="85" list="forest_class" name="forest_type" required="true" ui:tab="pmp_detail">
+                <code id="1460" list="forest_class" name="forest_type" required="true" ui:tab="pmp_detail">
                     <label type="number">16</label>
                     <label>Forest type</label>
                 </code>
-                <code id="86" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="pmp_detail">
+                <code id="1337" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="pmp_detail">
                     <label type="number">17</label>
                     <label>Stand condition</label>
                 </code>
-                <number id="87" name="logging_year" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="1363" name="logging_year" required="false" type="integer" ui:tab="pmp_detail">
                     <label>Logging year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <code id="88" list="terrain" name="terrain" required="true" ui:tab="pmp_detail">
+                <code id="1577" list="terrain" name="terrain" required="true" ui:tab="pmp_detail">
                     <label>Terrain</label>
                 </code>
-                <code id="89" list="slope" name="slope" required="true" ui:tab="pmp_detail">
+                <code id="1338" list="slope" name="slope" required="true" ui:tab="pmp_detail">
                     <label>Slope</label>
                 </code>
-                <code id="90" list="aspect" name="aspect" required="true" ui:tab="pmp_detail">
+                <code id="1362" list="aspect" name="aspect" required="true" ui:tab="pmp_detail">
                     <label>Aspect</label>
                 </code>
-                <entity id="91" multiple="false" name="record_count" ui:tab="pmp_detail">
+                <entity id="1352" multiple="false" name="record_count" ui:tab="pmp_detail">
                     <label>Number of Records</label>
-                    <number id="92" name="trees_poles" required="false" type="integer">
+                    <number id="1491" name="trees_poles" required="false" type="integer">
                         <label>Trees and poles</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="93" name="seedlings" required="false" type="integer">
+                    <number id="1464" name="seedlings" required="false" type="integer">
                         <label>Seedlings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="94" name="saplings" required="false" type="integer">
+                    <number id="1540" name="saplings" required="false" type="integer">
                         <label>Saplings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="95" name="sm_rattan" required="false" type="integer">
+                    <number id="1548" name="sm_rattan" required="false" type="integer">
                         <label>Rattan (&lt;=2.9m)</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="96" name="lg_rattan" required="false" type="integer">
+                    <number id="1624" name="lg_rattan" required="false" type="integer">
                         <label>Rattan (&gt;=3m)</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
                 </entity>
-                <number id="97" name="crew_no" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="1315" name="crew_no" required="false" type="integer" ui:tab="pmp_detail">
                     <label>Crew no.</label>
                     <compare flag="error" gte="0"/>
                 </number>
-                <code id="98" list="month" name="month" required="true" ui:tab="pmp_detail">
+                <code id="1545" list="month" name="month" required="true" ui:tab="pmp_detail">
                     <label>Month</label>
                 </code>
-                <number id="99" name="year" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="1602" name="year" required="true" type="integer" ui:tab="pmp_detail">
                     <label>Year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <entity id="100" multiple="true" name="tp" ui:tab="pmp_tp">
+                <entity id="1612" multiple="true" name="tp" ui:tab="pmp_tp">
                     <label type="heading">Trees and Poles</label>
-                    <text id="101" name="species_name">
+                    <text id="1498" name="species_name">
                         <label>Name of Species</label>
                     </text>
-                    <taxon highestRank="genus" id="102" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="16715" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <number id="103" name="diameter" type="real">
+                    <number id="1404" name="diameter" type="real">
                         <label>Diameter</label>
                         <description>DBH or diameter 0.2m AB</description>
                         <precision decimalDigits="1" unit="cm"/>
                     </number>
-                    <entity id="104" multiple="false" name="lg_trees" relevant="diameter &gt;= 20">
+                    <entity id="1543" multiple="false" name="lg_trees" relevant="diameter &gt;= 20">
                         <label>Large trees</label>
                         <description>Trees with diameter &gt;=10cm</description>
-                        <number id="105" name="buttress_height" type="real">
+                        <number id="1605" name="buttress_height" type="real">
                             <label>Buttress height</label>
                             <precision decimalDigits="2" unit="cm"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="106" name="bole_height" type="real">
+                        <number id="1299" name="bole_height" type="real">
                             <label>Bole height</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gt="0"/>
                         </number>
                     </entity>
-                    <entity id="107" multiple="false" name="bole_height">
+                    <entity id="1308" multiple="false" name="bole_height">
                         <label>Bole height</label>
-                        <number id="108" name="horizontal_distance" type="real">
+                        <number id="1403" name="horizontal_distance" type="real">
                             <label>Horizontal distance</label>
                             <precision decimalDigits="2" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="109" name="base_height" type="real">
+                        <number id="1371" name="base_height" type="real">
                             <label>Height of base</label>
                             <precision decimalDigits="1" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="110" name="percent_base" type="real">
+                        <number id="1397" name="percent_base" type="real">
                             <label>Percent base</label>
                             <precision decimalDigits="0" unit="percent"/>
                         </number>
-                        <number id="111" name="percent_top_of_tree" type="real">
+                        <number id="1461" name="percent_top_of_tree" type="real">
                             <label>Percent top of tree</label>
                             <precision decimalDigits="0" unit="percent"/>
                             <compare flag="error" gte="0" lte="100"/>
                         </number>
                     </entity>
-                    <entity id="112" multiple="false" name="buttress">
+                    <entity id="1503" multiple="false" name="buttress">
                         <label>Buttress</label>
-                        <number id="113" name="horizontal_distance" type="real">
+                        <number id="1599" name="horizontal_distance" type="real">
                             <label>Horizontal distance</label>
                             <precision decimalDigits="2" unit="m"/>
                         </number>
-                        <number id="114" name="percent_base" type="real">
+                        <number id="1606" name="percent_base" type="real">
                             <label>Percent base</label>
                             <precision decimalDigits="0" unit="percent"/>
                         </number>
-                        <number id="115" name="percent_buttress" type="real">
+                        <number id="1341" name="percent_buttress" type="real">
                             <label>Percent buttress</label>
                             <precision decimalDigits="0" unit="percent"/>
                             <compare flag="error" gte="0" lte="100"/>
                         </number>
                     </entity>
-                    <entity id="116" multiple="false" name="dab">
+                    <entity id="1429" multiple="false" name="dab">
                         <label>DAB</label>
                         <description>Diameter 0.2m above buttress</description>
-                        <number id="117" name="full_bars" type="real">
+                        <number id="1367" name="full_bars" type="real">
                             <label>Full bars</label>
                         </number>
-                        <number id="118" name="quarter_bars" type="real">
+                        <number id="1453" name="quarter_bars" type="real">
                             <label>1/4 bars</label>
                             <precision decimalDigits="1" unit="percent"/>
                         </number>
                     </entity>
                 </entity>
-                <entity id="119" multiple="true" name="ssr" ui:tab="pmp_ssr">
+                <entity id="1415" multiple="true" name="ssr" ui:tab="pmp_ssr">
                     <label>Seedlings, Saplings, Rattan</label>
-                    <text id="120" name="species_name">
+                    <text id="1413" name="species_name">
                         <label>Species name</label>
                     </text>
-                    <taxon highestRank="genus" id="121" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="16745" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <number id="122" name="count" required="true" type="integer">
+                    <number id="1578" name="count" required="true" type="integer">
                         <label>Count</label>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="123" name="seedlings" type="integer">
+                    <number id="1555" name="seedlings" type="integer">
                         <label>Seedlings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="124" name="saplings" type="integer">
+                    <number id="1449" name="saplings" type="integer">
                         <label>Saplings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="125" name="sm_rattan" type="integer">
+                    <number id="1398" name="sm_rattan" type="integer">
                         <label>Small rattan</label>
                         <description>Rattan &lt;= 2.9m</description>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <entity id="126" name="lg_rattan">
+                    <entity id="1583" name="lg_rattan">
                         <label>Large rattan</label>
                         <description>Rattan &gt;=3m long</description>
-                        <number id="127" name="stems" type="integer">
+                        <number id="1289" name="stems" type="integer">
                             <label>Stems</label>
                             <default value="0"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="128" name="max_diameter" type="real">
+                        <number id="1386" name="max_diameter" type="real">
                             <label>Max. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="129" name="min_diameter" type="real">
+                        <number id="1558" name="min_diameter" type="real">
                             <label>Min. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="130" name="avg_diameter" type="real">
+                        <number id="1414" name="avg_diameter" type="real">
                             <label>Avg. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="131" name="avg_length" type="real">
+                        <number id="1562" name="avg_length" type="real">
                             <label>Avg. length</label>
                             <precision decimalDigits="0" unit="m"/>
                             <compare flag="error" gte="0"/>
@@ -2325,144 +2326,144 @@
                     </entity>
                 </entity>
             </entity>
-            <entity id="132" multiple="true" name="bamboo" ui:layout="form" ui:tab="bamboo">
+            <entity id="1329" multiple="true" name="bamboo" ui:layout="form" ui:tab="bamboo">
                 <label>Bamboo</label>
-                <number id="133" key="true" name="tract_no" required="true" type="integer" ui:tab="bamboo_detail">
+                <number id="1303" key="true" name="tract_no" required="true" type="integer" ui:tab="bamboo_detail">
                     <label>Tract</label>
                     <compare flag="error" gte="1" lte="15"/>
                 </number>
-                <number id="134" key="true" name="subplot_no" required="true" type="integer" ui:tab="bamboo_detail">
+                <number id="1476" key="true" name="subplot_no" required="true" type="integer" ui:tab="bamboo_detail">
                     <label>Subplot</label>
                     <compare flag="error" gte="1" lte="8"/>
                 </number>
-                <number id="135" name="sector" type="real" ui:tab="bamboo_detail">
+                <number id="1618" name="sector" type="real" ui:tab="bamboo_detail">
                     <label>Sector</label>
                     <precision decimalDigits="0" unit="deg"/>
                 </number>
-                <number id="136" name="segment_dist" relevant="sector=''" type="real" ui:tab="bamboo_detail">
+                <number id="1318" name="segment_dist" relevant="sector=''" type="real" ui:tab="bamboo_detail">
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="137" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="11724" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Large part</label>
                 </number>
-                <number id="138" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="1600" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Small part</label>
                 </number>
-                <number id="139" name="permanent" required="false" type="integer" ui:tab="bamboo_detail">
+                <number id="1466" name="permanent" required="false" type="integer" ui:tab="bamboo_detail">
                     <label>Permanent</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="140" key="true" name="control" required="false" type="integer" ui:tab="bamboo_detail">
+                <number id="1501" key="true" name="control" required="false" type="integer" ui:tab="bamboo_detail">
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <entity id="141" multiple="true" name="bamboo_enumeration" ui:tab="bamboo_enum">
+                <entity id="1616" multiple="true" name="bamboo_enumeration" ui:tab="bamboo_enum">
                     <label type="heading">Bamboo Enumeration</label>
-                    <text id="142" name="name_of_species" required="true">
+                    <text id="1294" name="name_of_species" required="true">
                         <label>Name of species</label>
                     </text>
-                    <entity id="143" name="number_of_bamboo_culms">
+                    <entity id="1584" name="number_of_bamboo_culms">
                         <label>Number of culmns</label>
-                        <number id="144" name="one_year" type="integer">
+                        <number id="1432" name="one_year" type="integer">
                             <label>1 - Year</label>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="145" name="two_year" type="integer">
+                        <number id="1344" name="two_year" type="integer">
                             <label>2 - Year</label>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="146" name="total" type="integer">
+                        <number id="1356" name="total" type="integer">
                             <label>Total</label>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="147" name="live_stumps" type="integer">
+                        <number id="1550" name="live_stumps" type="integer">
                             <label>Live Stumps</label>
                             <compare flag="error" gt="0"/>
                         </number>
                     </entity>
-                    <entity id="148" name="one_year_old">
+                    <entity id="1586" name="one_year_old">
                         <label>1-year old</label>
-                        <entity id="149" name="low_part">
+                        <entity id="1401" name="low_part">
                             <label>Low part</label>
-                            <number id="150" name="dbh" type="real">
+                            <number id="1436" name="dbh" type="real">
                                 <label>DBH</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="151" name="length" type="real">
+                            <number id="1474" name="length" type="real">
                                 <label>Length</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="152" name="weight" type="real">
+                            <number id="1482" name="weight" type="real">
                                 <label>Weight</label>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
-                        <entity id="153" name="top">
+                        <entity id="1506" name="top">
                             <label>Top</label>
-                            <number id="154" name="length" type="real">
+                            <number id="1418" name="length" type="real">
                                 <label>Length</label>
                             </number>
-                            <number id="155" name="weight" type="real">
+                            <number id="1322" name="weight" type="real">
                                 <label>Weight</label>
                             </number>
                         </entity>
                     </entity>
-                    <entity id="156" name="two_year_old">
+                    <entity id="1456" name="two_year_old">
                         <label>2-year old</label>
-                        <entity id="157" name="low_part">
+                        <entity id="1627" name="low_part">
                             <label>Low part</label>
-                            <number id="158" name="dbh" type="real">
+                            <number id="1312" name="dbh" type="real">
                                 <label>D B H</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="159" name="length" type="real">
+                            <number id="1368" name="length" type="real">
                                 <label>Length</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="160" name="weight" type="real">
+                            <number id="1421" name="weight" type="real">
                                 <label>Weight</label>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
-                        <entity id="161" name="top">
+                        <entity id="1395" name="top">
                             <label>Top</label>
-                            <number id="162" name="length" type="real">
+                            <number id="1546" name="length" type="real">
                                 <label>Length</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="163" name="weight" type="real">
+                            <number id="1434" name="weight" type="real">
                                 <label>Weight</label>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
                     </entity>
-                    <entity id="164" name="more_than_three_year_old">
+                    <entity id="1364" name="more_than_three_year_old">
                         <label>3+year old</label>
-                        <entity id="165" name="low_part">
-                            <number id="166" name="dbh" type="real">
+                        <entity id="1625" name="low_part">
+                            <number id="1470" name="dbh" type="real">
                                 <label>DBH</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="167" name="length" type="real">
+                            <number id="1335" name="length" type="real">
                                 <label>Length</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="168" name="weight" type="real">
+                            <number id="1608" name="weight" type="real">
                                 <label>Weight</label>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
-                        <entity id="169" name="top">
-                            <number id="170" name="length" type="real">
+                        <entity id="1340" name="top">
+                            <number id="1422" name="length" type="real">
                                 <label>Length</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="171" name="weight" type="real">
+                            <number id="1538" name="weight" type="real">
                                 <label>Weight</label>
                                 <compare flag="error" gt="0"/>
                             </number>
@@ -2470,402 +2471,402 @@
                     </entity>
                 </entity>
             </entity>
-            <entity id="172" multiple="true" name="sagu" ui:layout="form" ui:tab="sagu">
+            <entity id="1450" multiple="true" name="sagu" ui:layout="form" ui:tab="sagu">
                 <label>Sagu Enumeration, TSP</label>
-                <text id="173" name="species_or_variety">
+                <text id="1481" name="species_or_variety">
                     <label>Species/Variety</label>
                 </text>
-                <number id="174" name="record_type" type="integer">
+                <number id="1553" name="record_type" type="integer">
                     <label>Record Type (foxpro:15)</label>
                 </number>
-                <text id="175" name="species_code">
+                <text id="1620" name="species_code">
                     <label>Species Code</label>
                 </text>
-                <number id="176" name="cons_culm_number" type="integer">
+                <number id="1539" name="cons_culm_number" type="integer">
                     <label>Cons Culm Number</label>
                 </number>
-                <number id="177" name="clump_diameter" type="real">
+                <number id="1311" name="clump_diameter" type="real">
                     <label>Clump Diameter</label>
                 </number>
-                <entity id="178" name="bole_height">
-                    <number id="179" name="horizontal_distance" type="real">
+                <entity id="1384" name="bole_height">
+                    <number id="1321" name="horizontal_distance" type="real">
                         <label>Horizontal Distance</label>
                     </number>
-                    <number id="180" name="height_of_base" type="real">
+                    <number id="1565" name="height_of_base" type="real">
                         <label>Height of Base</label>
                     </number>
-                    <number id="181" name="percent_base" type="real">
+                    <number id="1443" name="percent_base" type="real">
                         <label>Percent Base</label>
                     </number>
-                    <number id="182" name="percent_crown_point" type="real">
+                    <number id="1437" name="percent_crown_point" type="real">
                         <label>Percent Crown Point</label>
                     </number>
                 </entity>
-                <entity id="183" name="m1_m2_m3_stems">
-                    <number id="184" name="number_of_stems_in_clump" type="integer">
+                <entity id="1374" name="m1_m2_m3_stems">
+                    <number id="1339" name="number_of_stems_in_clump" type="integer">
                         <label>Number of Stems in Clump</label>
                     </number>
-                    <number id="185" name="stems_consec_no_clump" type="integer">
+                    <number id="1314" name="stems_consec_no_clump" type="integer">
                         <label>Stems Consecutive No/Clump</label>
                     </number>
-                    <number id="186" name="damage" type="integer">
+                    <number id="1438" name="damage" type="integer">
                         <label>Damage</label>
                     </number>
-                    <number id="187" name="dbh" type="real">
+                    <number id="1623" name="dbh" type="real">
                         <label>D B H</label>
                     </number>
-                    <number id="188" name="bole_height" type="real">
+                    <number id="1552" name="bole_height" type="real">
                         <label>Bole Height</label>
                     </number>
-                    <number id="189" name="maturity_class" type="integer">
+                    <number id="1563" name="maturity_class" type="integer">
                         <label>Maturity Class</label>
                     </number>
                 </entity>
-                <entity id="190" name="count_for_young_or_overmature_stemps">
-                    <number id="191" name="no_seedlings_in_sub_plot" type="integer">
+                <entity id="1613" name="count_for_young_or_overmature_stemps">
+                    <number id="1496" name="no_seedlings_in_sub_plot" type="integer">
                         <label>No Seedlings in Sub Plot</label>
                     </number>
-                    <number id="192" name="no_seedlings_in_clump" type="integer">
+                    <number id="1393" name="no_seedlings_in_clump" type="integer">
                         <label>No Seedlings in Clump</label>
                     </number>
-                    <number id="193" name="m4_stems_in_clump" type="integer">
+                    <number id="1313" name="m4_stems_in_clump" type="integer">
                         <label>M4 Stems in Clump</label>
                     </number>
                 </entity>
             </entity>
-            <entity id="194" multiple="true" name="nipa" ui:layout="form" ui:tab="nipa">
+            <entity id="1412" multiple="true" name="nipa" ui:layout="form" ui:tab="nipa">
                 <label>Nipa Enumeration, TSP</label>
-                <entity id="195" name="data_location">
-                    <number id="196" name="record_type" type="integer">
+                <entity id="1615" name="data_location">
+                    <number id="1417" name="record_type" type="integer">
                         <label>Record Type (foxpro:16)</label>
                     </number>
-                    <code id="197" list="province" name="province" required="true">
+                    <code id="1451" list="province" name="province" required="true">
                         <label>Province</label>
                     </code>
-                    <code id="198" list="land_system" name="land_system" required="true">
+                    <code id="1373" list="land_system" name="land_system" required="true">
                         <label>Land System</label>
                     </code>
-                    <number id="199" name="altitude" required="true" type="integer">
+                    <number id="1459" name="altitude" required="true" type="integer">
                         <label>Altitude</label>
                     </number>
-                    <code id="200" list="land_category" name="land_category" required="true">
+                    <code id="1408" list="land_category" name="land_category" required="true">
                         <label>Land Category</label>
                     </code>
-                    <code id="201" list="forest_class" name="forest_type" required="true">
+                    <code id="1542" list="forest_class" name="forest_type" required="true">
                         <label>Forest Type</label>
                     </code>
-                    <code id="202" list="stand_condition" name="stand_condition" required="true">
+                    <code id="1320" list="stand_condition" name="stand_condition" required="true">
                         <label>Stand Condition Cut/Uncut (choice : c/u)</label>
                     </code>
-                    <number id="203" name="year_of_cutting" required="true" type="integer">
+                    <number id="1370" name="year_of_cutting" required="true" type="integer">
                         <label>Year of Cutting</label>
                     </number>
-                    <code id="204" list="terrain" name="terrain" required="true">
+                    <code id="1559" list="terrain" name="terrain" required="true">
                         <label>Terrain</label>
                     </code>
-                    <code id="205" list="slope" name="slope" required="true">
+                    <code id="1440" list="slope" name="slope" required="true">
                         <label>Slope</label>
                     </code>
-                    <code id="206" list="aspect" name="aspect" required="true">
+                    <code id="1561" list="aspect" name="aspect" required="true">
                         <label>Aspect</label>
                     </code>
                 </entity>
-                <entity id="207" name="partition">
-                    <number id="208" name="sector_degree" type="real">
+                <entity id="1494" name="partition">
+                    <number id="1564" name="sector_degree" type="real">
                         <label>Sector Degree</label>
                     </number>
-                    <number id="209" name="distance_to_segment" type="real">
+                    <number id="1430" name="distance_to_segment" type="real">
                         <label>Distance to Segment (empty in the foxpro)</label>
                     </number>
-                    <number id="210" name="large_small_part" type="integer">
+                    <number id="1457" name="large_small_part" type="integer">
                         <label>Large / Small Part</label>
                     </number>
                 </entity>
-                <entity id="211" name="number_of_records">
-                    <number id="212" name="m1" type="integer">
+                <entity id="1445" name="number_of_records">
+                    <number id="1468" name="m1" type="integer">
                         <label>M1</label>
                     </number>
-                    <number id="213" name="m2" type="integer">
+                    <number id="1465" name="m2" type="integer">
                         <label>M2</label>
                     </number>
-                    <number id="214" name="no_of_seedlings" type="integer">
+                    <number id="1317" name="no_of_seedlings" type="integer">
                         <label>Number of Seedlings</label>
                     </number>
                 </entity>
-                <number id="215" name="crew_number" type="integer">
+                <number id="1556" name="crew_number" type="integer">
                     <label>Crew Number</label>
                 </number>
-                <code id="216" list="month" name="month" required="true">
+                <code id="1419" list="month" name="month" required="true">
                     <label>Month</label>
                 </code>
-                <entity id="217" name="data_measure">
-                    <text id="218" name="name_of_species">
+                <entity id="1423" name="data_measure">
+                    <text id="1581" name="name_of_species">
                         <label>Name of Species</label>
                     </text>
-                    <number id="219" name="record_type" type="integer">
+                    <number id="1353" name="record_type" type="integer">
                         <label>Record Type (foxpro:17)</label>
                     </number>
-                    <number id="220" name="consec_number" type="integer">
+                    <number id="1532" name="consec_number" type="integer">
                         <label>Consecutive Number (auto filled in FoxPro)</label>
                     </number>
-                    <text id="221" name="species_code">
+                    <text id="1372" name="species_code">
                         <label>Species Code</label>
                     </text>
-                    <entity id="222" name="number_of_leaves">
-                        <number id="223" name="total_number_of_leaves" type="integer">
+                    <entity id="1519" name="number_of_leaves">
+                        <number id="1604" name="total_number_of_leaves" type="integer">
                             <label>Total Number of Leaves</label>
                         </number>
-                        <number id="224" name="no_of_cull_leaves" type="integer">
+                        <number id="1575" name="no_of_cull_leaves" type="integer">
                             <label>No. of Cull Leaves</label>
                         </number>
-                        <number id="225" name="no_of_utilizable_leaves" type="integer">
+                        <number id="1359" name="no_of_utilizable_leaves" type="integer">
                             <label>No. of Utilizable Leaves</label>
                         </number>
                     </entity>
-                    <number id="226" name="height_of_news_nipa" type="real">
+                    <number id="1305" name="height_of_news_nipa" type="real">
                         <label>Height of N-E-W-S Nipa</label>
                     </number>
-                    <number id="227" name="height_of_tallest_nipa" type="real">
+                    <number id="1510" name="height_of_tallest_nipa" type="real">
                         <label>Height of Tallest Nipa</label>
                     </number>
-                    <number id="228" name="maturity" type="integer">
+                    <number id="1439" name="maturity" type="integer">
                         <label>Maturity</label>
                     </number>
-                    <code id="229" list="leaf_state" name="leaves_cut_or_uncut">
+                    <code id="1611" list="leaf_state" name="leaves_cut_or_uncut">
                         <label>Leaves Cut/Uncut</label>
                     </code>
-                    <number id="230" name="flower_or_fruit" type="integer">
+                    <number id="1509" name="flower_or_fruit" type="integer">
                         <label>Flower or Fruit</label>
                     </number>
-                    <code id="231" list="open_or_closed" name="open_or_closed">
+                    <code id="1536" list="open_or_closed" name="open_or_closed">
                         <label>Open or Closed</label>
                     </code>
-                    <number id="232" name="horizontal_distance" type="real">
+                    <number id="1500" name="horizontal_distance" type="real">
                         <label>Horizontal Distance</label>
                     </number>
-                    <number id="233" name="percent_base" type="real">
+                    <number id="1505" name="percent_base" type="real">
                         <label>Percent Base</label>
                     </number>
-                    <number id="234" name="percent_top" type="real">
+                    <number id="1454" name="percent_top" type="real">
                         <label>Percent Top</label>
                     </number>
-                    <number id="235" name="length_news_plant" type="real">
+                    <number id="1295" name="length_news_plant" type="real">
                         <label>Length News Plant</label>
                     </number>
-                    <number id="236" name="no_of_util_leaf" type="integer">
+                    <number id="1406" name="no_of_util_leaf" type="integer">
                         <label>Number of Utility Leaf</label>
                     </number>
-                    <number id="237" name="total_no_of_leaf" type="integer">
+                    <number id="1444" name="total_no_of_leaf" type="integer">
                         <label>Total Number of Leaf</label>
                     </number>
                 </entity>
             </entity>
-            <entity id="238" multiple="true" name="permanent_plot_a" ui:layout="form" ui:tab="plot_a">
+            <entity id="1514" multiple="true" name="permanent_plot_a" ui:layout="form" ui:tab="plot_a">
                 <label type="instance">Permanent Plot, A</label>
-                <number id="239" name="hectare_plot" type="real" ui:tab="plota_detail">
+                <number id="1292" name="hectare_plot" type="real" ui:tab="plota_detail">
                     <label>Hectare Plot</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="240" key="true" name="record_unit" type="integer" ui:tab="plota_detail">
+                <number id="1603" key="true" name="record_unit" type="integer" ui:tab="plota_detail">
                     <label>Record Unit</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="241" name="sector" type="real" ui:tab="plota_detail">
+                <number id="1493" name="sector" type="real" ui:tab="plota_detail">
                     <label>Sector</label>
                     <precision decimalDigits="0" unit="deg"/>
                 </number>
-                <number id="242" name="segment_dist" relevant="sector=''" type="real" ui:tab="plota_detail">
+                <number id="1490" name="segment_dist" relevant="sector=''" type="real" ui:tab="plota_detail">
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="243" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="9579" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Large part</label>
                 </number>
-                <number id="244" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="1469" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Small part</label>
                 </number>
-                <number id="245" name="square_5x3" type="real">
+                <number id="1354" name="square_5x3" type="real">
                     <label>5x3m squares</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="246" key="true" name="control" required="false" type="integer" ui:tab="plota_detail">
+                <number id="1537" key="true" name="control" required="false" type="integer" ui:tab="plota_detail">
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <code id="247" key="true" list="province" name="province" required="true" ui:tab="plota_detail">
+                <code id="1483" key="true" list="province" name="province" required="true" ui:tab="plota_detail">
                     <label>Province</label>
                 </code>
-                <code id="248" list="land_system" name="land_system" required="true" ui:tab="plota_detail">
+                <code id="1441" list="land_system" name="land_system" required="true" ui:tab="plota_detail">
                     <label>Land system</label>
                 </code>
-                <code id="249" list="altitude" name="altitude" required="true" ui:tab="plota_detail">
+                <code id="1499" list="altitude" name="altitude" required="true" ui:tab="plota_detail">
                     <label>Altitude</label>
                 </code>
-                <code id="250" list="land_category" name="land_category" required="true" ui:tab="plota_detail">
+                <code id="1390" list="land_category" name="land_category" required="true" ui:tab="plota_detail">
                     <label>Land category</label>
                 </code>
-                <code id="251" list="forest_class" name="forest_type" required="true" ui:tab="plota_detail">
+                <code id="1515" list="forest_class" name="forest_type" required="true" ui:tab="plota_detail">
                     <label>Forest type</label>
                 </code>
-                <code id="252" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="plota_detail">
+                <code id="10261" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="plota_detail">
                     <label>Stand condition</label>
                 </code>
-                <number id="253" name="logging_year" required="false" type="integer" ui:tab="plota_detail">
+                <number id="1497" name="logging_year" required="false" type="integer" ui:tab="plota_detail">
                     <label>Logging year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <code id="254" list="terrain" name="terrain" required="true" ui:tab="plota_detail">
+                <code id="1323" list="terrain" name="terrain" required="true" ui:tab="plota_detail">
                     <label>Terrain</label>
                 </code>
-                <code id="255" list="slope" name="slope" required="true" ui:tab="plota_detail">
+                <code id="1580" list="slope" name="slope" required="true" ui:tab="plota_detail">
                     <label>Slope</label>
                 </code>
-                <code id="256" list="aspect" name="aspect" required="true" ui:tab="plota_detail">
+                <code id="1319" list="aspect" name="aspect" required="true" ui:tab="plota_detail">
                     <label>Aspect</label>
                 </code>
-                <number id="257" name="tp_recorded" required="true" type="integer" ui:tab="plota_detail">
+                <number id="1534" name="tp_recorded" required="true" type="integer" ui:tab="plota_detail">
                     <label>Trees and poles recorded</label>
                 </number>
-                <number id="258" name="crew_no" required="false" type="integer" ui:tab="plota_detail">
+                <number id="1516" name="crew_no" required="false" type="integer" ui:tab="plota_detail">
                     <label>Crew no.</label>
                     <compare flag="error" gte="0"/>
                 </number>
-                <code id="259" list="month" name="month" required="true" ui:tab="plota_detail">
+                <code id="1365" list="month" name="month" required="true" ui:tab="plota_detail">
                     <label>Month</label>
                 </code>
-                <number id="260" name="year" required="true" type="integer" ui:tab="plota_detail">
+                <number id="1576" name="year" required="true" type="integer" ui:tab="plota_detail">
                     <label>Year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <entity id="261" multiple="true" name="plota_enum" ui:layout="table" ui:tab="plota_enum">
+                <entity id="1446" multiple="true" name="plota_enum" ui:layout="table" ui:tab="plota_enum">
                     <label>Plot A Enumeration</label>
-                    <text id="262" name="name_of_species" required="true">
+                    <text id="1361" name="name_of_species" required="true">
                         <label>Name of species</label>
                     </text>
-                    <taxon highestRank="genus" id="263" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="23443" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <number id="264" name="dbb_or_b" type="real">
+                    <number id="1442" name="dbb_or_b" type="real">
                         <label>DBB or B 0.2m AB 0.1cm</label>
                     </number>
-                    <number id="265" name="damage" type="integer">
+                    <number id="1507" name="damage" type="integer">
                         <label>Damage</label>
                     </number>
-                    <number id="266" name="azimuth_to_tree" type="integer">
+                    <number id="9687" name="azimuth_to_tree" type="integer">
                         <label>Azimuth to tree</label>
                     </number>
-                    <number id="267" name="horizontal_distance_to_tree" type="real">
+                    <number id="9639" name="horizontal_distance_to_tree" type="real">
                         <label>Horizontal distance to tree</label>
                         <precision decimalDigits="2"/>
                     </number>
-                    <entity id="268" name="trees_higher_than_20cm">
+                    <entity id="1484" name="trees_higher_than_20cm">
                         <label>Trees of 20+cm</label>
-                        <number id="269" name="butress_height" type="real">
+                        <number id="1306" name="butress_height" type="real">
                             <label>Buttress height 0.01m</label>
                             <precision decimalDigits="2" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="270" name="d_2point2m_ab" type="real">
+                        <number id="1607" name="d_2point2m_ab" type="real">
                             <label>D 2.2m AB 0.1cm</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="271" name="bole_height" type="real">
+                        <number id="1595" name="bole_height" type="real">
                             <label>Bole height 0.1m</label>
                             <precision decimalDigits="1" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="272" name="tree_height" type="real">
+                        <number id="1587" name="tree_height" type="real">
                             <label>Tree height</label>
                             <precision decimalDigits="1" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="273" name="grade" type="integer">
+                        <number id="1405" name="grade" type="integer">
                             <label>Grade</label>
                         </number>
-                        <number id="274" name="infestation" type="integer">
+                        <number id="1310" name="infestation" type="integer">
                             <label>Infestation</label>
                         </number>
-                        <number id="275" name="tree_class" type="integer">
+                        <number id="1296" name="tree_class" type="integer">
                             <label>Tree class</label>
                         </number>
-                        <number id="276" name="crown_class" type="integer">
+                        <number id="1316" name="crown_class" type="integer">
                             <label>Crown class</label>
                         </number>
-                        <number id="277" name="crown_position" type="integer">
+                        <number id="1357" name="crown_position" type="integer">
                             <label>Crown position</label>
                         </number>
                     </entity>
-                    <entity id="278" name="bole_and_tree_height">
+                    <entity id="1324" name="bole_and_tree_height">
                         <label>Bole and tree height</label>
-                        <number id="279" name="horizontal_distance" type="real">
+                        <number id="1619" name="horizontal_distance" type="real">
                             <label>Horizontal distance 0.01m</label>
                             <precision decimalDigits="2" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="280" name="height_of_base" type="real">
+                        <number id="1477" name="height_of_base" type="real">
                             <label>Height of base 0.1m</label>
                             <precision decimalDigits="1" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="281" name="percent_base" type="real">
+                        <number id="1601" name="percent_base" type="real">
                             <label>Percent base</label>
                             <precision decimalDigits="2"/>
                         </number>
-                        <number id="282" name="percent_crown_point" type="real">
+                        <number id="1591" name="percent_crown_point" type="real">
                             <label>Percent crown point</label>
                             <precision decimalDigits="2"/>
                         </number>
-                        <number id="283" name="percent_top_of_tree" type="real">
+                        <number id="1300" name="percent_top_of_tree" type="real">
                             <label>Percent top of tree</label>
                             <precision decimalDigits="2"/>
                             <compare flag="error" gt="0"/>
                         </number>
                     </entity>
-                    <entity id="284" name="buttress_and_diameter_above_buttress">
+                    <entity id="1487" name="buttress_and_diameter_above_buttress">
                         <label>Buttress and diameters above buttress</label>
-                        <number id="285" name="horizontal_distance" type="real">
+                        <number id="1471" name="horizontal_distance" type="real">
                             <label>Horizontal distance 0.01m</label>
                             <precision decimalDigits="2" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="286" name="percent_base" type="real">
+                        <number id="1513" name="percent_base" type="real">
                             <label>Percent base</label>
                             <precision decimalDigits="2"/>
                         </number>
-                        <number id="287" name="percent_buttress" type="real">
+                        <number id="1410" name="percent_buttress" type="real">
                             <label>Percent buttress</label>
                             <precision decimalDigits="2"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <entity id="288" name="d_02_ab">
+                        <entity id="1528" name="d_02_ab">
                             <label>D 0.2 AB</label>
-                            <number id="289" name="full_bars" type="real">
+                            <number id="1383" name="full_bars" type="real">
                                 <label>Full bars</label>
                                 <precision decimalDigits="2"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="290" name="quarter_bars" type="real">
+                            <number id="1297" name="quarter_bars" type="real">
                                 <label>1/4 bars</label>
                                 <precision decimalDigits="2"/>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
-                        <number id="291" name="percent_2point2m_ab" type="real">
+                        <number id="1391" name="percent_2point2m_ab" type="real">
                             <label>Percent 2.2m AB</label>
                             <precision decimalDigits="2" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <entity id="292" name="d_22_ab">
+                        <entity id="1342" name="d_22_ab">
                             <label>D 2.2 AB</label>
-                            <number id="293" name="full_bars">
+                            <number id="1332" name="full_bars">
                                 <label>Full bars</label>
                                 <precision decimalDigits="2"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="294" name="quarter_bars" type="real">
+                            <number id="1479" name="quarter_bars" type="real">
                                 <label>1/4 bars 0.1</label>
                                 <precision decimalDigits="2"/>
                                 <compare flag="error" gt="0"/>
@@ -2874,189 +2875,189 @@
                     </entity>
                 </entity>
             </entity>
-            <entity id="295" multiple="true" name="permanent_plot_b" ui:layout="form" ui:tab="plot_b">
+            <entity id="1512" multiple="true" name="permanent_plot_b" ui:layout="form" ui:tab="plot_b">
                 <label>Permanent Plot, B</label>
-                <number id="296" name="hectare_plot" required="true" type="real" ui:tab="plotb_detail">
+                <number id="1472" name="hectare_plot" required="true" type="real" ui:tab="plotb_detail">
                     <label>Hectare plot</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="297" name="record_unit" required="true" type="integer" ui:tab="plotb_detail">
+                <number id="1588" name="record_unit" required="true" type="integer" ui:tab="plotb_detail">
                     <label>Record unit</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="298" name="sector" type="real" ui:tab="plotb_detail">
+                <number id="1334" name="sector" type="real" ui:tab="plotb_detail">
                     <label>Sector</label>
                     <precision decimalDigits="0" unit="deg"/>
                 </number>
-                <number id="299" name="segment_dist" relevant="sector=''" type="real" ui:tab="plotb_detail">
+                <number id="1304" name="segment_dist" relevant="sector=''" type="real" ui:tab="plotb_detail">
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="300" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
+                <number id="1309" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
                     <label>Large part</label>
                 </number>
-                <number id="301" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
+                <number id="9746" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
                     <label>Small part</label>
                 </number>
-                <number id="302" name="square_5x5" type="real">
+                <number id="1333" name="square_5x5" type="real">
                     <label>5x5m squares</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="303" key="true" name="control" required="false" type="integer" ui:tab="plotb_detail">
+                <number id="1504" key="true" name="control" required="false" type="integer" ui:tab="plotb_detail">
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <code id="304" list="province" name="province" required="true" ui:tab="nf_detail">
+                <code id="23306" list="province" name="province" required="true" ui:tab="nf_detail">
                     <label type="number">12</label>
                     <label>Province</label>
                 </code>
-                <entity id="305" name="number_of_records" ui:tab="plotb_detail">
+                <entity id="1526" name="number_of_records" ui:tab="plotb_detail">
                     <label>Number of records</label>
-                    <number id="306" name="seedlings" type="integer">
+                    <number id="1435" name="seedlings" type="integer">
                         <label>Seedlings</label>
                     </number>
-                    <number id="307" name="saplings" type="integer">
+                    <number id="1376" name="saplings" type="integer">
                         <label>Saplings</label>
                     </number>
-                    <number id="308" name="rattan_less_than2point9m">
+                    <number id="1425" name="rattan_less_than2point9m">
                         <label>Rattan [-2.9m]</label>
                     </number>
-                    <number id="309" name="rattan_more_than3point0m">
+                    <number id="1485" name="rattan_more_than3point0m">
                         <label>Rattan [+3.0m]</label>
                     </number>
-                    <number id="310" name="bamboo" type="real">
+                    <number id="1462" name="bamboo" type="real">
                         <label>Bamboo</label>
                     </number>
-                    <number id="311" name="depth_of_peat_layer" type="real">
+                    <number id="1566" name="depth_of_peat_layer" type="real">
                         <label>Depth of peat layer</label>
                     </number>
-                    <number id="312" name="depth_of_litter" type="real">
+                    <number id="1541" name="depth_of_litter" type="real">
                         <label>Depth of litter</label>
                     </number>
-                    <number id="313" name="depth_of_peath" type="real">
+                    <number id="13062" name="depth_of_peath" type="real">
                         <label>Depth of peath(cm)</label>
                     </number>
-                    <number id="314" name="depth_of_humus" type="real">
+                    <number id="13053" name="depth_of_humus" type="real">
                         <label>Depth of humus(cm)</label>
                     </number>
                 </entity>
-                <entity id="315" name="a_horizon" ui:tab="plotb_detail">
+                <entity id="1400" name="a_horizon" ui:tab="plotb_detail">
                     <label>A-horizone / 10 cm</label>
-                    <number id="316" name="depth" type="real">
+                    <number id="1592" name="depth" type="real">
                         <label>Depth</label>
                     </number>
-                    <number id="317" name="stones" type="real">
+                    <number id="1480" name="stones" type="real">
                         <label>Stones</label>
                     </number>
-                    <number id="318" name="colour" type="integer">
+                    <number id="1579" name="colour" type="integer">
                         <label>Colour</label>
                     </number>
-                    <number id="319" name="water_regime" type="integer">
+                    <number id="1409" name="water_regime" type="integer">
                         <label>Water Regime</label>
                     </number>
-                    <number id="320" name="texture" type="integer">
+                    <number id="1567" name="texture" type="integer">
                         <label>Texture</label>
                     </number>
                 </entity>
-                <entity id="321" name="b_horizon" ui:tab="plotb_detail">
+                <entity id="1560" name="b_horizon" ui:tab="plotb_detail">
                     <label>B-horizone / 30 cm</label>
-                    <number id="322" name="depth" type="real">
+                    <number id="1572" name="depth" type="real">
                         <label>Depth</label>
                     </number>
-                    <number id="323" name="stones" type="real">
+                    <number id="1290" name="stones" type="real">
                         <label>Stones</label>
                     </number>
-                    <number id="324" name="colour" type="integer">
+                    <number id="1378" name="colour" type="integer">
                         <label>Colour</label>
                     </number>
-                    <number id="325" name="water_regime" type="integer">
+                    <number id="1551" name="water_regime" type="integer">
                         <label>Water Regime</label>
                     </number>
-                    <number id="326" name="texture" type="integer">
+                    <number id="1389" name="texture" type="integer">
                         <label>Texture</label>
                     </number>
                 </entity>
-                <entity id="327" name="50_cm" ui:tab="plotb_detail">
+                <entity id="12515" name="50_cm" ui:tab="plotb_detail">
                     <label>50 cm</label>
-                    <number id="328" name="texture" type="integer">
+                    <number id="12484" name="texture" type="integer">
                         <label>Texture</label>
                     </number>
-                    <number id="329" name="colour" type="integer">
+                    <number id="12509" name="colour" type="integer">
                         <label>Colour</label>
                     </number>
-                    <number id="330" name="stones" type="real">
+                    <number id="12693" name="stones" type="real">
                         <label>Stones</label>
                     </number>
                 </entity>
-                <number id="331" name="c_horizon" type="integer" ui:tab="plotb_detail">
+                <number id="1626" name="c_horizon" type="integer" ui:tab="plotb_detail">
                     <label>C Horizon</label>
                 </number>
-                <number id="332" name="slope_position" type="integer" ui:tab="plotb_detail">
+                <number id="12867" name="slope_position" type="integer" ui:tab="plotb_detail">
                     <label>Slope position</label>
                 </number>
-                <number id="333" name="crew_number" type="integer" ui:tab="plotb_detail">
+                <number id="1574" name="crew_number" type="integer" ui:tab="plotb_detail">
                     <label>Crew number</label>
                 </number>
-                <code id="334" list="month" name="month" required="true" ui:tab="plotb_detail">
+                <code id="1328" list="month" name="month" required="true" ui:tab="plotb_detail">
                     <label>Month</label>
                 </code>
-                <number id="335" name="year" required="true" type="integer" ui:tab="plotb_detail">
+                <number id="1488" name="year" required="true" type="integer" ui:tab="plotb_detail">
                     <label>Year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <entity id="336" multiple="true" name="plotb_ssr" ui:layout="table" ui:tab="plotb_ssr">
+                <entity id="1427" multiple="true" name="plotb_ssr" ui:layout="table" ui:tab="plotb_ssr">
                     <label>R 1m tree seedlings, r 2m tree saplings, r 5m rattan -2.9m, r 10m rattan 3+m</label>
-                    <text id="337" name="name_of_species" required="true">
+                    <text id="1355" name="name_of_species" required="true">
                         <label>Name of Species</label>
                     </text>
-                    <taxon highestRank="genus" id="338" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="23366" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <number id="339" name="count" type="integer">
+                    <number id="1610" name="count" type="integer">
                         <label>Count</label>
                         <compare flag="error" gt="0"/>
                     </number>
-                    <number id="340" name="seedlings" type="integer">
+                    <number id="1377" name="seedlings" type="integer">
                         <label>Seedlings</label>
                         <compare flag="error" gt="0"/>
                     </number>
-                    <number id="341" name="saplings" type="integer">
+                    <number id="1597" name="saplings" type="integer">
                         <label>Saplings</label>
                         <compare flag="error" gt="0"/>
                     </number>
-                    <number id="342" name="rattan_lte_2point9m" type="integer">
+                    <number id="1346" name="rattan_lte_2point9m" type="integer">
                         <label>Rattan -2.9m</label>
                         <compare flag="error" gt="0"/>
                     </number>
-                    <entity id="343" name="rattan_gte_3m">
+                    <entity id="1589" name="rattan_gte_3m">
                         <label>Rattan 3+m long</label>
-                        <entity id="344" name="s_single">
+                        <entity id="1345" name="s_single">
                             <label>s single</label>
-                            <number id="345" name="stems" type="integer">
+                            <number id="1622" name="stems" type="integer">
                                 <label>Stems</label>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="346" name="d_max" type="real">
+                            <number id="1596" name="d_max" type="real">
                                 <label>D max 0.1cm</label>
                                 <precision decimalDigits="2" unit="cm"/>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
-                        <entity id="347" name="c_cluster">
+                        <entity id="1467" name="c_cluster">
                             <label>c cluster</label>
-                            <number id="348" name="d_min" type="real">
+                            <number id="1287" name="d_min" type="real">
                                 <label>D min 0.1cm</label>
                                 <precision decimalDigits="2" unit="cm"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="349" name="d_avg" type="real">
+                            <number id="1428" name="d_avg" type="real">
                                 <label>D average 0.1cm</label>
                                 <precision decimalDigits="2" unit="cm"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="350" name="l_avg" type="real">
+                            <number id="1549" name="l_avg" type="real">
                                 <label>L average m</label>
                                 <precision decimalDigits="2" unit="m"/>
                                 <compare flag="error" gt="0"/>
@@ -3064,102 +3065,102 @@
                         </entity>
                     </entity>
                 </entity>
-                <entity id="351" multiple="true" name="bamboo" ui:layout="table" ui:tab="plotb_bamboo">
+                <entity id="1358" multiple="true" name="bamboo" ui:layout="table" ui:tab="plotb_bamboo">
                     <label>R 10 m Bamboo</label>
-                    <text id="352" name="name_of_species" required="true">
+                    <text id="1525" name="name_of_species" required="true">
                         <label>Name of Species</label>
                     </text>
-                    <taxon highestRank="genus" id="353" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="23174" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <entity id="354" name="no_culm">
+                    <entity id="1293" name="no_culm">
                         <label>Number of culmns</label>
-                        <number id="355" name="one_year" type="integer">
+                        <number id="1458" name="one_year" type="integer">
                             <label>1-year</label>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="356" name="two_year" type="integer">
+                        <number id="1489" name="two_year" type="integer">
                             <label>2-year</label>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="357" name="total" type="integer">
+                        <number id="1396" name="total" type="integer">
                             <label>Total</label>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="358" name="live_stumps" type="integer">
+                        <number id="1475" name="live_stumps" type="integer">
                             <label>Live stumps</label>
                             <compare flag="error" gt="0"/>
                         </number>
                     </entity>
-                    <entity id="359" name="one_year">
+                    <entity id="1521" name="one_year">
                         <label>1-year old</label>
-                        <entity id="360" name="low_part">
+                        <entity id="1369" name="low_part">
                             <label>Low part</label>
-                            <number id="361" name="dbh" type="real">
+                            <number id="1518" name="dbh" type="real">
                                 <label>Dbh 0.1cm</label>
                                 <precision decimalDigits="1" unit="cm"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="362" name="length">
+                            <number id="1614" name="length">
                                 <label>Length 0.1m</label>
                                 <precision decimalDigits="1" unit="m"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="363" name="weight" type="real">
+                            <number id="1522" name="weight" type="real">
                                 <label>Weight 0.1kg</label>
                                 <precision decimalDigits="1" unit="kg"/>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
                     </entity>
-                    <entity id="364" name="two_year">
+                    <entity id="1381" name="two_year">
                         <label>2-year old</label>
-                        <entity id="365" name="low_part">
+                        <entity id="1426" name="low_part">
                             <label>Low part</label>
-                            <number id="366" name="dbh" type="real">
+                            <number id="1569" name="dbh" type="real">
                                 <label>Dbh 0.1cm</label>
                                 <precision decimalDigits="1" unit="cm"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="367" name="length">
+                            <number id="1508" name="length">
                                 <label>Length 0.1m</label>
                                 <precision decimalDigits="1" unit="m"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="368" name="weight" type="real">
+                            <number id="1568" name="weight" type="real">
                                 <label>Weight 0.1kg</label>
                                 <precision decimalDigits="1" unit="kg"/>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
                     </entity>
-                    <entity id="369" name="three_year">
+                    <entity id="1326" name="three_year">
                         <label>3+year old</label>
-                        <entity id="370" name="low_part">
+                        <entity id="1547" name="low_part">
                             <label>Low part</label>
-                            <number id="371" name="dbh" type="real">
+                            <number id="1585" name="dbh" type="real">
                                 <label>Dbh 0.1cm</label>
                                 <precision decimalDigits="1" unit="cm"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="372" name="length">
+                            <number id="1609" name="length">
                                 <label>Length 0.1m</label>
                                 <precision decimalDigits="1" unit="m"/>
                                 <compare flag="error" gt="0"/>
                             </number>
-                            <number id="373" name="weight" type="real">
+                            <number id="1492" name="weight" type="real">
                                 <label>Weight 0.1kg</label>
                                 <precision decimalDigits="1" unit="kg"/>
                                 <compare flag="error" gt="0"/>
                             </number>
                         </entity>
                     </entity>
-                    <number id="374" name="azimuth_to_bamboo" type="integer">
+                    <number id="23501" name="azimuth_to_bamboo" type="integer">
                         <label>Azimuth to bamboo</label>
                         <precision decimalDigits="1" unit="cm"/>
                         <compare flag="error" gt="0"/>
                     </number>
-                    <number id="375" name="horizontal_distance_to_bamboo" type="real">
+                    <number id="23711" name="horizontal_distance_to_bamboo" type="real">
                         <label>Horizontal distance to bamboo</label>
                         <precision decimalDigits="1" unit="cm"/>
                         <compare flag="error" gt="0"/>

@@ -30,6 +30,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import static org.openforis.collect.persistence.jooq.tables.OfcLogo.OFC_LOGO;
+import static org.openforis.collect.persistence.jooq.tables.OfcSchemaDefinition.OFC_SCHEMA_DEFINITION;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -84,8 +85,8 @@ public class ImportIdm {
 	@Autowired
 	protected RecordManager recordManager;
 	
-	/*
-	//@Test
+	
+	@Test
 	public void testAddIds() throws TransformerException, ParserConfigurationException, IOException, SAXException {
 		idmFileName = "MOFOR_WORKING.idnfi.idm.xml";
 		
@@ -99,7 +100,7 @@ public class ImportIdm {
 		addIdsToSchema(documentElement);
 		String docToString = docToString(doc);
 		System.out.println(docToString);
-	}*/
+	}
 
 	protected void addIdsToLists(Element documentElement) {
 		Element codeListsEl = getChildNode(documentElement, "codeLists");
@@ -155,7 +156,7 @@ public class ImportIdm {
 		}
 	}
 	
-	/*HashMap<String, Integer> hashPath = new HashMap<String, Integer>();
+	HashMap<String, Integer> hashPath = new HashMap<String, Integer>();
 	protected void addIdsToSchema(Element docEl) {
 		
 		InputStream is;
@@ -170,6 +171,7 @@ public class ImportIdm {
 			Schema schema = survey.getSchema();
 			Collection<NodeDefinition> definitions = schema.getAllDefinitions();
 			for (NodeDefinition definition : definitions) {
+				System.out.println(definition.getPath());
 				Record q = jf.select(OFC_SCHEMA_DEFINITION.ID).from(OFC_SCHEMA_DEFINITION).where(OFC_SCHEMA_DEFINITION.PATH.equal(definition.getPath())).fetchOne();
 				hashPath.put(definition.getPath(), q.getValueAsInteger(OFC_SCHEMA_DEFINITION.ID));
 				
@@ -229,7 +231,7 @@ public class ImportIdm {
 	protected void addIdToAttribue(Element attributeEl, int currentId) {
 		
 		attributeEl.setAttribute("id", "" + currentId);
-	}*/
+	}
 
 	protected Document parseXmlFile() throws ParserConfigurationException, IOException, SAXException{
 		//get the factory
@@ -298,7 +300,7 @@ public class ImportIdm {
 
 	
 	
-	@Test
+	//@Test
 	public void testUpdateIdnfiIdm() throws IOException, InvalidIdmlException, SurveyImportException {
 	
 		InputStream is = ClassLoader.getSystemResource("MOFOR_WORKING.idnfi.idm.xml").openStream();
