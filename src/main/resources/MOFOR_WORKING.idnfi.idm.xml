@@ -1795,7 +1795,7 @@
                     <label>Distance to segment 0.01m</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="1420" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1420" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
                     <label type="number">7</label>
                     <label>Large part</label>
                 </number>
@@ -2088,7 +2088,7 @@
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="1495" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="1495" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">7</label>
                     <label>Large part</label>
                 </number>
@@ -2347,7 +2347,7 @@
                 <number id="11724" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Large part</label>
                 </number>
-                <number id="1600" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="1600" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Small part</label>
                 </number>
                 <number id="1466" name="permanent" required="false" type="integer" ui:tab="bamboo_detail">
@@ -2682,7 +2682,7 @@
                 <number id="9579" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Large part</label>
                 </number>
-                <number id="1469" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="1469" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Small part</label>
                 </number>
                 <number id="1354" name="square_5x3" type="real">
@@ -2893,7 +2893,7 @@
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="1309" key="true" name="part" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
+                <number id="1309" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
                     <label>Large part</label>
                 </number>
                 <number id="9746" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
@@ -2979,7 +2979,7 @@
                         <label>Texture</label>
                     </number>
                 </entity>
-                <entity id="12515" name="50_cm" ui:tab="plotb_detail">
+                <entity id="12515" name="fifty_cm" ui:tab="plotb_detail">
                     <label>50 cm</label>
                     <number id="12484" name="texture" type="integer">
                         <label>Texture</label>
