@@ -2066,51 +2066,52 @@
                     </entity>
                 </entity>
             </entity>
-            <entity id="1502" multiple="true" name="pmp" ui:layout="form" ui:tab="pmp">
-                <label type="heading">Enumeration, Forest Plantations and Pine Forest</label>
-                <number id="1527" key="true" name="tract_no" required="true" type="integer" ui:tab="pmp_detail">
+            
+            <entity id="1" multiple="true" name="pmp" ui:layout="form" ui:tab="pmp">
+                <label type="heading">Plantation, Mangrove and Pine</label>
+                <number id="2" key="true" name="tract_no" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">3</label>
                     <label>Tract</label>
                     <compare flag="error" gte="1" lte="15"/>
                 </number>
-                <number id="1407" key="true" name="subplot_no" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="3" key="true" name="subplot_no" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">4</label>
                     <label>Sub-plot</label>
                     <compare flag="error" gte="1" lte="8"/>
                 </number>
-                <number id="1511" name="sector" type="real" ui:tab="pmp_detail">
+                <number id="4" name="sector" type="real" ui:tab="pmp_detail">
                     <label type="number">5</label>
-                    <label>Sector</label>
+                    <label>Sector degrees</label>
                     <precision decimalDigits="0" unit="deg"/>
                 </number>
-                <number id="1571" name="segment_dist" relevant="sector=''" type="real" ui:tab="pmp_detail">
+                <number id="5" name="segment_dist" relevant="sector=''" type="real" ui:tab="pmp_detail">
                     <label type="number">6</label>
-                    <label>Segment distance</label>
+                    <label>Distance to segment 0.01m</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="1495" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="6" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">7</label>
                     <label>Large part</label>
                 </number>
-                <number id="9646" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="7" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">8</label>
                     <label>Small part</label>
                 </number>
-                <number id="1379" name="permanent" required="false" type="integer" ui:tab="pmp_detail">
-                    <label>Permanent</label>
+                <number id="8" name="permanent" required="false" type="integer" ui:tab="pmp_detail">
                     <label type="number">9</label>
+                    <label>Permanent</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="1524" key="true" name="control" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="9" key="true" name="control" required="false" type="integer" ui:tab="pmp_detail">
                     <label type="number">10</label>
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="9658" key="true" name="record_type" required="false" type="integer" ui:tab="nf_detail">
+                <number id="10" key="true" name="record_type" required="false" type="integer" ui:tab="pmp_detail">
                     <label type="number">11</label>
                     <label>Record type</label>
                     <default value="1"/>
@@ -2118,207 +2119,240 @@
                         <message>This field must be greater than 1</message>
                     </compare>
                 </number>
-                <code id="1517" list="province" name="province" required="true" ui:tab="pmp_detail">
+                <code id="11" list="province" name="province" required="true" ui:tab="pmp_detail">
+                    <label type="number">12</label>
                     <label>Province</label>
                 </code>
-                <code id="1298" list="land_system" name="land_system" required="true" ui:tab="pmp_detail">
+                <code id="12" list="land_system" name="land_system" required="true" ui:tab="pmp_detail">
+                    <label type="number">13</label>
                     <label>Land system</label>
                 </code>
-                <code id="1573" list="altitude" name="altitude" required="true" ui:tab="pmp_detail">
+                <code id="13" list="altitude" name="altitude" required="true" ui:tab="pmp_detail">
+                    <label type="number">14</label>
                     <label>Altitude</label>
                 </code>
-                <code id="1351" list="land_category" name="land_category" required="true" ui:tab="pmp_detail">
+                <code id="14" list="land_category" name="land_category" required="true" ui:tab="pmp_detail">
+                    <label type="number">15</label>
                     <label>Land category</label>
                 </code>
-                <code id="1460" list="forest_class" name="forest_type" required="true" ui:tab="pmp_detail">
+                <code id="15" list="forest_class" name="forest_type" required="true" ui:tab="pmp_detail">
                     <label type="number">16</label>
                     <label>Forest type</label>
                 </code>
-                <code id="1337" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="pmp_detail">
+                <code id="16" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="pmp_detail">
                     <label type="number">17</label>
                     <label>Stand condition</label>
                 </code>
-                <number id="1363" name="logging_year" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="17" name="logging_year" required="false" type="integer" ui:tab="pmp_detail">
+                    <label type="number">18</label>
                     <label>Logging year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <code id="1577" list="terrain" name="terrain" required="true" ui:tab="pmp_detail">
+                <code id="18" list="terrain" name="terrain" required="true" ui:tab="pmp_detail">
+                    <label type="number">19</label>
                     <label>Terrain</label>
                 </code>
-                <code id="1338" list="slope" name="slope" required="true" ui:tab="pmp_detail">
+                <code id="19" list="slope" name="slope" required="true" ui:tab="pmp_detail">
+                    <label type="number">20</label>
                     <label>Slope</label>
                 </code>
-                <code id="1362" list="aspect" name="aspect" required="true" ui:tab="pmp_detail">
+                <code id="20" list="aspect" name="aspect" required="true" ui:tab="pmp_detail">
+                    <label type="number">21</label>
                     <label>Aspect</label>
                 </code>
-                <entity id="1352" multiple="false" name="record_count" ui:tab="pmp_detail">
+                <entity id="21" multiple="false" name="record_count" ui:tab="pmp_detail">
                     <label>Number of Records</label>
-                    <number id="1491" name="trees_poles" required="false" type="integer">
+                    <number id="22" name="trees_poles" required="false" type="integer">
+                        <label type="number">22</label>
                         <label>Trees and poles</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="1464" name="seedlings" required="false" type="integer">
+                    <number id="23" name="seedlings" required="false" type="integer">
+                        <label type="number">23</label>
                         <label>Seedlings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="1540" name="saplings" required="false" type="integer">
+                    <number id="24" name="saplings" required="false" type="integer">
+                        <label type="number">24</label>
                         <label>Saplings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="1548" name="sm_rattan" required="false" type="integer">
+                    <number id="25" name="sm_rattan" required="false" type="integer">
+                        <label type="number">25</label>
                         <label>Rattan (&lt;=2.9m)</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="1624" name="lg_rattan" required="false" type="integer">
+                    <number id="26" name="lg_rattan" required="false" type="integer">
+                        <label type="number">26</label>
                         <label>Rattan (&gt;=3m)</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
                 </entity>
-                <number id="1315" name="crew_no" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="27" name="crew_no" required="false" type="integer" ui:tab="pmp_detail">
+                    <label type="number">27</label>
                     <label>Crew no.</label>
                     <compare flag="error" gte="0"/>
                 </number>
-                <code id="1545" list="month" name="month" required="true" ui:tab="pmp_detail">
+                <code id="28" list="month" name="month" required="true" ui:tab="pmp_detail">
+                    <label type="number">28</label>
                     <label>Month</label>
                 </code>
-                <number id="1602" name="year" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="29" name="year" required="true" type="integer" ui:tab="pmp_detail">
+                    <label type="number">29</label>
                     <label>Year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <entity id="1612" multiple="true" name="tp" ui:tab="pmp_tp">
+                <entity id="30" multiple="true" name="tp" ui:tab="pmp_tp">
                     <label type="heading">Trees and Poles</label>
-                    <text id="1498" name="species_name">
+                    <text id="31" name="species_name">
                         <label>Name of Species</label>
                     </text>
-                    <taxon highestRank="genus" id="16715" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="32" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <number id="1404" name="diameter" type="real">
+                    <number id="33" name="diameter" type="real">
                         <label>Diameter</label>
+                        <label type="number">14</label>
                         <description>DBH or diameter 0.2m AB</description>
                         <precision decimalDigits="1" unit="cm"/>
                     </number>
-                    <entity id="1543" multiple="false" name="lg_trees" relevant="diameter &gt;= 20">
+                    <number id="34" name="damage" type="integer">
+                        <label>Damage</label>
+                        <label type="number">15</label>
+                    </number>
+                    <entity id="35" multiple="false" name="lg_trees" relevant="diameter &gt;= 20">
                         <label>Large trees</label>
-                        <description>Trees with diameter &gt;=10cm</description>
-                        <number id="1605" name="buttress_height" type="real">
+                        <description>Trees with diameter &gt;=20cm</description>
+                        <number id="36" name="buttress_height" type="real">
                             <label>Buttress height</label>
                             <precision decimalDigits="2" unit="cm"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="1299" name="bole_height" type="real">
+                        <number id="37" name="tree_height" type="real">
+                            <label>Tree height</label>
+                            <precision decimalDigits="2" unit="cm"/>
+                            <compare flag="error" gt="0"/>
+                        </number>
+                        <number id="38" name="bole_height" type="real">
                             <label>Bole height</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gt="0"/>
                         </number>
+                        <number id="39" name="grade" type="integer">
+                            <label>Grade</label>
+                            <label type="number">20</label>
+                        </number>
+                        <number id="40" name="infestation" type="integer">
+                            <label type="number">21</label>
+                            <label>Infestation</label>
+                        </number>
                     </entity>
-                    <entity id="1308" multiple="false" name="bole_height">
+                    <entity id="41" multiple="false" name="bole_height">
                         <label>Bole height</label>
-                        <number id="1403" name="horizontal_distance" type="real">
+                        <number id="42" name="horizontal_distance" type="real">
                             <label>Horizontal distance</label>
                             <precision decimalDigits="2" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="1371" name="base_height" type="real">
+                        <number id="43" name="base_height" type="real">
                             <label>Height of base</label>
                             <precision decimalDigits="1" unit="m"/>
                             <compare flag="error" gt="0"/>
                         </number>
-                        <number id="1397" name="percent_base" type="real">
+                        <number id="44" name="percent_base" type="real">
                             <label>Percent base</label>
                             <precision decimalDigits="0" unit="percent"/>
                         </number>
-                        <number id="1461" name="percent_top_of_tree" type="real">
-                            <label>Percent top of tree</label>
+                        <number id="45" name="percent_crown_point" type="real">
+                            <label>Percent crown point</label>
                             <precision decimalDigits="0" unit="percent"/>
-                            <compare flag="error" gte="0" lte="100"/>
                         </number>
                     </entity>
-                    <entity id="1503" multiple="false" name="buttress">
+                    <entity id="46" multiple="false" name="buttress">
                         <label>Buttress</label>
-                        <number id="1599" name="horizontal_distance" type="real">
+                        <number id="47" name="horizontal_distance" type="real">
                             <label>Horizontal distance</label>
                             <precision decimalDigits="2" unit="m"/>
                         </number>
-                        <number id="1606" name="percent_base" type="real">
+                        <number id="48" name="percent_base" type="real">
                             <label>Percent base</label>
                             <precision decimalDigits="0" unit="percent"/>
                         </number>
-                        <number id="1341" name="percent_buttress" type="real">
+                        <number id="49" name="percent_buttress" type="real">
                             <label>Percent buttress</label>
                             <precision decimalDigits="0" unit="percent"/>
                             <compare flag="error" gte="0" lte="100"/>
                         </number>
                     </entity>
-                    <entity id="1429" multiple="false" name="dab">
+                    <entity id="50" multiple="false" name="dab">
                         <label>DAB</label>
                         <description>Diameter 0.2m above buttress</description>
-                        <number id="1367" name="full_bars" type="real">
+                        <number id="51" name="full_bars" type="real">
                             <label>Full bars</label>
                         </number>
-                        <number id="1453" name="quarter_bars" type="real">
+                        <number id="52" name="quarter_bars" type="real">
                             <label>1/4 bars</label>
                             <precision decimalDigits="1" unit="percent"/>
                         </number>
                     </entity>
                 </entity>
-                <entity id="1415" multiple="true" name="ssr" ui:tab="pmp_ssr">
+                <entity id="53" multiple="true" name="ssr" ui:tab="pmp_ssr">
                     <label>Seedlings, Saplings, Rattan</label>
-                    <text id="1413" name="species_name">
+                    <text id="54" name="species_name">
                         <label>Species name</label>
                     </text>
-                    <taxon highestRank="genus" id="16745" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="55" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
-                    <number id="1578" name="count" required="true" type="integer">
+                    <number id="56" name="count" required="true" type="integer">
                         <label>Count</label>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="1555" name="seedlings" type="integer">
+                    <number id="57" name="seedlings" type="integer">
                         <label>Seedlings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="1449" name="saplings" type="integer">
+                    <number id="58" name="saplings" type="integer">
                         <label>Saplings</label>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <number id="1398" name="sm_rattan" type="integer">
+                    <number id="59" name="sm_rattan" type="integer">
                         <label>Small rattan</label>
                         <description>Rattan &lt;= 2.9m</description>
                         <default value="0"/>
                         <compare flag="error" gte="0"/>
                     </number>
-                    <entity id="1583" name="lg_rattan">
+                    <entity id="60" name="lg_rattan">
                         <label>Large rattan</label>
                         <description>Rattan &gt;=3m long</description>
-                        <number id="1289" name="stems" type="integer">
+                        <number id="61" name="stems" type="integer">
                             <label>Stems</label>
                             <default value="0"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="1386" name="max_diameter" type="real">
+                        <number id="62" name="max_diameter" type="real">
                             <label>Max. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="1558" name="min_diameter" type="real">
+                        <number id="63" name="min_diameter" type="real">
                             <label>Min. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="1414" name="avg_diameter" type="real">
+                        <number id="64" name="avg_diameter" type="real">
                             <label>Avg. diameter</label>
                             <precision decimalDigits="1" unit="cm"/>
                             <compare flag="error" gte="0"/>
                         </number>
-                        <number id="1562" name="avg_length" type="real">
+                        <number id="65" name="avg_length" type="real">
                             <label>Avg. length</label>
                             <precision decimalDigits="0" unit="m"/>
                             <compare flag="error" gte="0"/>
@@ -2326,6 +2360,7 @@
                     </entity>
                 </entity>
             </entity>
+            
             <entity id="1329" multiple="true" name="bamboo" ui:layout="form" ui:tab="bamboo">
                 <label>Bamboo</label>
                 <number id="1303" key="true" name="tract_no" required="true" type="integer" ui:tab="bamboo_detail">
