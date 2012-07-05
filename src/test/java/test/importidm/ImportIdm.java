@@ -12,9 +12,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openforis.collect.manager.LogoManager;
 import org.openforis.collect.manager.RecordManager;
+import org.openforis.collect.model.CollectRecord;
 import org.openforis.collect.model.CollectSurvey;
 import org.openforis.collect.model.Logo;
 import org.openforis.collect.persistence.LogoDao;
+import org.openforis.collect.persistence.RecordDao;
 import org.openforis.collect.persistence.SurveyDao;
 import org.openforis.collect.persistence.SurveyImportException;
 import org.openforis.collect.persistence.jooq.DialectAwareJooqFactory;
@@ -64,7 +66,7 @@ import org.xml.sax.SAXException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/ImportIdm-context.xml" })
-@TransactionConfiguration(defaultRollback = false)
+//@TransactionConfiguration(defaultRollback = false)
 /**
  * @author Wibowo, Eko
  */
@@ -74,6 +76,9 @@ public class ImportIdm {
 	@Autowired
 	protected SurveyDao surveyDao;
 
+	@Autowired
+	protected RecordDao recordDao;
+	
 	@Autowired
 	protected LogoManager logoManager;
 	
@@ -100,6 +105,25 @@ public class ImportIdm {
 		addIdsToSchema(documentElement);
 		String docToString = docToString(doc);
 		System.out.println(docToString);
+	}
+	
+	@Test
+	public void testUpgradeToAlpha3()
+	{
+		String name = "idnfi";
+		CollectSurvey survey = surveyDao.load(name);
+		List<CollectRecord> records = recordDao.loadSummaries(survey, "cluster", 0, 10000, null, null);
+		for(CollectRecord r:records)
+		{
+			System.out.println("Record ID " + r.getId());
+			try {
+				CollectRecord record = recordDao.load(survey, r.getId(), 1);
+				recordDao.update(record);
+			}catch(Exception e)
+			{
+				System.out.println("Error on Record ID "  + r.getId());
+			}
+		}
 	}
 
 	protected void addIdsToLists(Element documentElement) {
@@ -173,7 +197,7 @@ public class ImportIdm {
 			for (NodeDefinition definition : definitions) {
 				System.out.println(definition.getPath());
 				//Record q = jf.select(OFC_SCHEMA_DEFINITION.ID).from(OFC_SCHEMA_DEFINITION).where(OFC_SCHEMA_DEFINITION.PATH.equal(definition.getPath())).fetchOne();
-				hashPath.put(definition.getPath(), q.getValueAsInteger(OFC_SCHEMA_DEFINITION.ID));
+				//hashPath.put(definition.getPath(), q.getValueAsInteger(OFC_SCHEMA_DEFINITION.ID));
 				
 			}
 		} catch (IOException e) {
@@ -300,7 +324,7 @@ public class ImportIdm {
 
 	
 	
-	@Test
+	//@Test
 	public void testUpdateIdnfiIdm() throws IOException, InvalidIdmlException, SurveyImportException {
 	
 		InputStream is = ClassLoader.getSystemResource("MOFOR_WORKING.idnfi.idm.xml").openStream();
@@ -350,7 +374,7 @@ public class ImportIdm {
 		File file = new File(imgFile.getPath());		
 		image = getBytesFromFile(file);
 		logo.setImage(image);		
-		logoManager.storeLogo(logo);
+		//logoManager.storeLogo(logo);
 	}
 	
 	// borrowed from http://www.exampledepot.com/egs/java.io/file2bytearray.html
