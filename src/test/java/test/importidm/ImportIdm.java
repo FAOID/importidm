@@ -26,6 +26,7 @@ import org.openforis.idm.metamodel.NodeDefinition;
 import org.openforis.idm.metamodel.Schema;
 import org.openforis.idm.metamodel.xml.InvalidIdmlException;
 import org.openforis.idm.metamodel.xml.SurveyUnmarshaller;
+import org.openforis.idm.model.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -66,11 +67,9 @@ import org.xml.sax.SAXException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/ImportIdm-context.xml" })
-//@TransactionConfiguration(defaultRollback = false)
 /**
  * @author Wibowo, Eko
  */
-@Transactional
 public class ImportIdm {
 
 	@Autowired
@@ -114,16 +113,27 @@ public class ImportIdm {
 		CollectSurvey survey = surveyDao.load(name);
 		List<CollectRecord> records = recordDao.loadSummaries(survey, "cluster", 0, 10000, null, null);
 		for(CollectRecord r:records)
-		{
-			System.out.println("Record ID " + r.getId());
-			try {
+		{	try {
 				CollectRecord record = recordDao.load(survey, r.getId(), 1);
 				recordDao.update(record);
+				System.out.println("Success updating Record ID " + r.getId());
 			}catch(Exception e)
 			{
 				System.out.println("Error on Record ID "  + r.getId());
 			}
 		}
+	}
+	
+	private void replaceData(CollectRecord fromRecord, CollectRecord toRecord) {
+		toRecord.setCreatedBy(fromRecord.getCreatedBy());
+		toRecord.setCreationDate(fromRecord.getCreationDate());
+		toRecord.setModifiedBy(fromRecord.getModifiedBy());
+		toRecord.setModifiedDate(fromRecord.getModifiedDate());
+		toRecord.setStep(fromRecord.getStep());
+		toRecord.setState(fromRecord.getState());
+		toRecord.setRootEntity(fromRecord.getRootEntity());
+		toRecord.updateRootEntityKeyValues();
+		toRecord.updateEntityCounts();
 	}
 
 	protected void addIdsToLists(Element documentElement) {
