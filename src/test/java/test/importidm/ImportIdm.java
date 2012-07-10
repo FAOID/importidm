@@ -111,7 +111,8 @@ public class ImportIdm {
 	{
 		String name = "idnfi";
 		CollectSurvey survey = surveyDao.load(name);
-		List<CollectRecord> records = recordDao.loadSummaries(survey, "cluster", 0, 10000, null, null);
+		List<CollectRecord> records = recordDao.loadSummaries(survey, "cluster", 0, Integer.MAX_VALUE, null, null);
+		System.out.println("Record size = " + records.size());
 		for(CollectRecord r:records)
 		{	try {
 				CollectRecord record = recordDao.load(survey, r.getId(), 1);
@@ -122,18 +123,6 @@ public class ImportIdm {
 				System.out.println("Error on Record ID "  + r.getId());
 			}
 		}
-	}
-	
-	private void replaceData(CollectRecord fromRecord, CollectRecord toRecord) {
-		toRecord.setCreatedBy(fromRecord.getCreatedBy());
-		toRecord.setCreationDate(fromRecord.getCreationDate());
-		toRecord.setModifiedBy(fromRecord.getModifiedBy());
-		toRecord.setModifiedDate(fromRecord.getModifiedDate());
-		toRecord.setStep(fromRecord.getStep());
-		toRecord.setState(fromRecord.getState());
-		toRecord.setRootEntity(fromRecord.getRootEntity());
-		toRecord.updateRootEntityKeyValues();
-		toRecord.updateEntityCounts();
 	}
 
 	protected void addIdsToLists(Element documentElement) {
