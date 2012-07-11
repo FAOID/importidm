@@ -106,7 +106,7 @@ public class ImportIdm {
 		System.out.println(docToString);
 	}
 	
-	@Test
+	//@Test
 	public void testUpgradeToAlpha3()
 	{
 		String name = "idnfi";
@@ -323,10 +323,10 @@ public class ImportIdm {
 
 	
 	
-	//@Test
+	@Test
 	public void testUpdateIdnfiIdm() throws IOException, InvalidIdmlException, SurveyImportException {
 	
-		InputStream is = ClassLoader.getSystemResource("MOFOR_WORKING.idnfi.idm.xml").openStream();
+		InputStream is = ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml").openStream();
 		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
 		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);

@@ -1795,11 +1795,11 @@
                     <label>Distance to segment 0.01m</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="1420" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1420" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
                     <label type="number">7</label>
                     <label>Large part</label>
                 </number>
-                <number id="9889" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
+                <number id="9889" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
                     <label type="number">8</label>
                     <label>Small part</label>
                 </number>
@@ -1810,7 +1810,7 @@
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="1628" key="true" name="control" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1628" name="control" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">10</label>
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
@@ -2724,13 +2724,13 @@
                     <label>5x3m squares</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="1537" key="true" name="control" required="false" type="integer" ui:tab="plota_detail">
+                <number id="1537" name="control" required="false" type="integer" ui:tab="plota_detail">
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <code id="1483" key="true" list="province" name="province" required="true" ui:tab="plota_detail">
+                <code id="1483" list="province" name="province" required="true" ui:tab="plota_detail">
                     <label>Province</label>
                 </code>
                 <code id="1441" list="land_system" name="land_system" required="true" ui:tab="plota_detail">
@@ -2916,7 +2916,7 @@
                     <label>Hectare plot</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="1588" name="record_unit" required="true" type="integer" ui:tab="plotb_detail">
+                <number id="1588" name="record_unit" required="true" type="integer" ui:tab="plotb_detail" key="true">
                     <label>Record unit</label>
                     <compare flag="error" gt="0"/>
                 </number>
@@ -2938,7 +2938,7 @@
                     <label>5x5m squares</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="1504" key="true" name="control" required="false" type="integer" ui:tab="plotb_detail">
+                <number id="1504" name="control" required="false" type="integer" ui:tab="plotb_detail">
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
