@@ -1769,7 +1769,8 @@
                     <message xml:lang="id"/>
                 </check>
             </number>
-            <number id="11510" name="year" required="true" type="integer">
+            <number id="11510" name="year" required="true" type="integer" key="true">
+                <label type="number">3</label>
                 <label>Year</label>
                 <compare flag="error" gte="1900" lte="2050"/>
             </number>
