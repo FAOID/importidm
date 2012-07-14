@@ -2944,10 +2944,6 @@
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <code id="23306" list="province" name="province" required="true" ui:tab="nf_detail">
-                    <label type="number">12</label>
-                    <label>Province</label>
-                </code>
                 <entity id="1526" name="number_of_records" ui:tab="plotb_detail">
                     <label>Number of records</label>
                     <number id="1435" name="seedlings" type="integer">

@@ -1774,6 +1774,9 @@
                 <label>Year</label>
                 <compare flag="error" gte="1900" lte="2050"/>
             </number>
+            <text id="5000" name="description" key="true">
+                <label>Description</label>
+            </text>
             <entity id="1375" multiple="true" name="natural_forest" ui:layout="form" ui:tab="nf">
                 <label type="heading">Enumeration, Natural Forest</label>
                 <number id="1402" key="true" name="tract_no" required="true" type="integer" ui:tab="nf_detail">
