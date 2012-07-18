@@ -1807,13 +1807,6 @@
                     <label type="number">8</label>
                     <label>Small part</label>
                 </number>
-                <number id="1416" name="permanent" required="false" type="integer" ui:tab="nf_detail">
-                    <label type="number">9</label>
-                    <label>Permanent</label>
-                    <compare flag="error" gte="1" lte="1">
-                        <message>This field must be either 1 or blank</message>
-                    </compare>
-                </number>
                 <number id="1628" name="control" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">10</label>
                     <label>Control</label>
