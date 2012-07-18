@@ -107,7 +107,7 @@ public class ImportIdm {
 	}
 	
 	//@Test
-	public void testUpgradeToAlpha3()
+	public void testVerifyData()
 	{
 		String name = "idnfi";
 		CollectSurvey survey = surveyDao.load(name);
