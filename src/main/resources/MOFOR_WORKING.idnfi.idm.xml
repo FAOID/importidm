@@ -1769,10 +1769,14 @@
                     <message xml:lang="id"/>
                 </check>
             </number>
-            <number id="11510" name="year" required="true" type="integer">
+            <number id="11510" name="year" required="true" type="integer" key="true">
+                <label type="number">3</label>
                 <label>Year</label>
                 <compare flag="error" gte="1900" lte="2050"/>
             </number>
+            <text id="5000" name="description" key="true">
+                <label>Description</label>
+            </text>
             <entity id="1375" multiple="true" name="natural_forest" ui:layout="form" ui:tab="nf">
                 <label type="heading">Enumeration, Natural Forest</label>
                 <number id="1402" key="true" name="tract_no" required="true" type="integer" ui:tab="nf_detail">
@@ -1810,14 +1814,14 @@
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="1628" key="true" name="control" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1628" name="control" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">10</label>
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="9569" key="true" name="record_type" required="false" type="integer" ui:tab="nf_detail">
+                <number id="9569"  name="record_type" required="false" type="integer" ui:tab="nf_detail">
                     <label type="number">11</label>
                     <label>Record type</label>
                     <default value="1"/>
@@ -2089,11 +2093,11 @@
                     <label>Distance to segment 0.01m</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="6" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="6" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">7</label>
                     <label>Large part</label>
                 </number>
-                <number id="7" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
+                <number id="7" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
                     <label type="number">8</label>
                     <label>Small part</label>
                 </number>
@@ -2104,14 +2108,14 @@
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="9" key="true" name="control" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="9" name="control" required="false" type="integer" ui:tab="pmp_detail">
                     <label type="number">10</label>
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="10" key="true" name="record_type" required="false" type="integer" ui:tab="pmp_detail">
+                <number id="10" name="record_type" required="false" type="integer" ui:tab="pmp_detail">
                     <label type="number">11</label>
                     <label>Record type</label>
                     <default value="1"/>
@@ -2379,10 +2383,10 @@
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="11724" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="11724" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Large part</label>
                 </number>
-                <number id="1600" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="1600" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Small part</label>
                 </number>
                 <number id="1466" name="permanent" required="false" type="integer" ui:tab="bamboo_detail">
@@ -2391,7 +2395,7 @@
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="1501" key="true" name="control" required="false" type="integer" ui:tab="bamboo_detail">
+                <number id="1501" name="control" required="false" type="integer" ui:tab="bamboo_detail">
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
@@ -2714,17 +2718,17 @@
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="9579" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="9579" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Large part</label>
                 </number>
-                <number id="1469" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
+                <number id="1469" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
                     <label>Small part</label>
                 </number>
                 <number id="1354" name="square_5x3" type="real">
                     <label>5x3m squares</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="1537" key="true" name="control" required="false" type="integer" ui:tab="plota_detail">
+                <number id="1537" name="control" required="false" type="integer" ui:tab="plota_detail">
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
@@ -2928,22 +2932,26 @@
                     <label>Segment distance</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="1309" key="true" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
+                <number id="1309" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
                     <label>Large part</label>
                 </number>
-                <number id="9746" key="true" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
+                <number id="9746" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
                     <label>Small part</label>
                 </number>
                 <number id="1333" name="square_5x5" type="real">
                     <label>5x5m squares</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <number id="1504" key="true" name="control" required="false" type="integer" ui:tab="plotb_detail">
+                <number id="1504" name="control" required="false" type="integer" ui:tab="plotb_detail">
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
+                <code id="23306" list="province" name="province" required="true" ui:tab="nf_detail">
+                    <label type="number">12</label>
+                    <label>Province</label>
+                </code>
                 <entity id="1526" name="number_of_records" ui:tab="plotb_detail">
                     <label>Number of records</label>
                     <number id="1435" name="seedlings" type="integer">
