@@ -86,27 +86,27 @@
                             </ui:tab>
                         </ui:tabs>
                     </ui:tab>
-                    <ui:tab name="carbon_pull_c">
-                        <ui:label>Carbon Pull C</ui:label>
+                    <ui:tab name="carbon_pool_c">
+                        <ui:label>Carbon pool C</ui:label>
                         <ui:tabs>
-                            <ui:tab name="carbon_pull_c_detail">
+                            <ui:tab name="carbon_pool_c_detail">
                                 <ui:label>Details</ui:label>
                             </ui:tab>                           
-                            <ui:tab name="carbon_pull_c_tree">
+                            <ui:tab name="carbon_pool_c_tree">
                                 <ui:label>Trees</ui:label>
                             </ui:tab>
-                            <ui:tab name="carbon_pull_c_bamboo">
+                            <ui:tab name="carbon_pool_c_bamboo">
                                 <ui:label>Bamboo</ui:label>
                             </ui:tab>
                         </ui:tabs>
                     </ui:tab>
-                    <ui:tab name="carbon_pull_d">
-                        <ui:label>Carbon Pull D</ui:label>
+                    <ui:tab name="carbon_pool_d">
+                        <ui:label>Carbon pool D</ui:label>
                         <ui:tabs>
-                            <ui:tab name="carbon_pull_d_detail">
+                            <ui:tab name="carbon_pool_d_detail">
                                 <ui:label>Details</ui:label>
                             </ui:tab>                           
-                            <ui:tab name="carbon_pull_d_enumeration">
+                            <ui:tab name="carbon_pool_d_enumeration">
                                 <ui:label>Enumeration</ui:label>
                             </ui:tab>
                         </ui:tabs>
@@ -3235,16 +3235,16 @@
                     </number>
                 </entity>
             </entity>
-            <entity id="20000" multiple="true" name="carbon_pull_c" ui:layout="form" ui:tab="carbon_pull_c">
+            <entity id="20000" multiple="true" name="carbon_pool_c" ui:layout="form" ui:tab="carbon_pool_c">
                 <label>Tally Sheet C - Pengukuran Semai dan Pacang</label>
-                <number id="20001" key="true" name="record_unit" type="integer" ui:tab="carbon_pull_c_detail">
+                <number id="20001" key="true" name="record_unit" type="integer" ui:tab="carbon_pool_c_detail">
                     <label>Record Unit</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <code id="20023" list="province" name="province" required="true" ui:tab="carbon_pull_c_detail">
+                <code id="20023" list="province" name="province" required="true" ui:tab="carbon_pool_c_detail">
                     <label>Province</label>
                 </code>
-                <entity id="20002" name="tree" multiple="true" ui:layout="table" ui:tab="carbon_pull_c_tree">
+                <entity id="20002" name="tree" multiple="true" ui:layout="table" ui:tab="carbon_pool_c_tree">
                     <taxon highestRank="genus" id="20003" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>                    
@@ -3288,7 +3288,7 @@
                     </entity>
                 </entity>
                 
-                <entity id="20014" name="bamboo" multiple="true" ui:layout="table" ui:tab="carbon_pull_c_bamboo">
+                <entity id="20014" name="bamboo" multiple="true" ui:layout="table" ui:tab="carbon_pool_c_bamboo">
                     <taxon highestRank="genus" id="20015" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
@@ -3318,56 +3318,56 @@
                 </entity>                
             </entity>
             
-            <entity id="30000" multiple="true" name="carbon_pull_d" ui:layout="form" ui:tab="carbon_pull_d">
+            <entity id="30000" multiple="true" name="carbon_pool_d" ui:layout="form" ui:tab="carbon_pool_d">
                 <label>Tally Sheet D - Pengamatan Tiang dan Pohon</label>
-                <number id="30001" key="true" name="record_unit" type="integer" ui:tab="carbon_pull_d_detail">
+                <number id="30001" key="true" name="record_unit" type="integer" ui:tab="carbon_pool_d_detail">
                     <label>Record Unit</label>
                     <compare flag="error" gt="0"/>
                 </number>
-                <code id="30002" list="province" name="province" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30002" list="province" name="province" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Province</label>
                 </code>
-                <code id="30003" list="land_system" name="land_system" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30003" list="land_system" name="land_system" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Land system</label>
                 </code>
-                <code id="30004" list="altitude" name="altitude" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30004" list="altitude" name="altitude" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Altitude</label>
                 </code>
-                <code id="30005" list="land_category" name="land_category" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30005" list="land_category" name="land_category" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Land category</label>
                 </code>
-                <code id="30006" list="forest_class" name="forest_type" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30006" list="forest_class" name="forest_type" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Forest type</label>
                 </code>
-                <code id="30007" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30007" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Stand condition</label>
                 </code>
-                <number id="30008" name="logging_year" type="integer" ui:tab="carbon_pull_d_detail">
+                <number id="30008" name="logging_year" type="integer" ui:tab="carbon_pool_d_detail">
                     <label>Logging year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <code id="30009" list="terrain" name="terrain" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30009" list="terrain" name="terrain" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Terrain</label>
                 </code>
-                <code id="30010" list="slope" name="slope" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30010" list="slope" name="slope" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Slope</label>
                 </code>
-                <code id="30011" list="aspect" name="aspect" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30011" list="aspect" name="aspect" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Aspect</label>
                 </code>
-                <number id="30012" name="crew_no" required="false" type="integer" ui:tab="carbon_pull_d_detail">
+                <number id="30012" name="crew_no" required="false" type="integer" ui:tab="carbon_pool_d_detail">
                     <label>Crew no.</label>
                     <compare flag="error" gte="0"/>
                 </number>
-                <code id="30013" list="month" name="month" required="true" ui:tab="carbon_pull_d_detail">
+                <code id="30013" list="month" name="month" required="true" ui:tab="carbon_pool_d_detail">
                     <label>Month</label>
                 </code>
-                <number id="30014" name="year" required="true" type="integer" ui:tab="carbon_pull_d_detail">
+                <number id="30014" name="year" required="true" type="integer" ui:tab="carbon_pool_d_detail">
                     <label>Year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
                 
-                <entity id="30015" name="enumeration" multiple="true" ui:layout="table" ui:tab="carbon_pull_d_enumeration">
+                <entity id="30015" name="enumeration" multiple="true" ui:layout="table" ui:tab="carbon_pool_d_enumeration">
                     <taxon highestRank="genus" id="20015" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
