@@ -326,12 +326,12 @@ public class ImportIdm {
 	@Test
 	public void testUpdateIdnfiIdm() throws IOException, InvalidIdmlException, SurveyImportException {
 	
-		InputStream is = ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml").openStream();
+		InputStream is = ClassLoader.getSystemResource("DESRE.idm.xml").openStream();
 		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
 		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
-		survey.setName("idnfi");
-		survey.setUri("http://www.openforis.org/idm/idnfi");		
+		survey.setName("desre");
+		survey.setUri("http://www.openforis.org/idm/desre");		
 		surveyDao.updateModel(survey);
 	}
 
@@ -363,7 +363,7 @@ public class ImportIdm {
 	
 	}
 	
-	//@Test
+	@Test
 	public void storeLogo() throws IOException
 	{
 		byte[] image = null;
@@ -373,7 +373,7 @@ public class ImportIdm {
 		File file = new File(imgFile.getPath());		
 		image = getBytesFromFile(file);
 		logo.setImage(image);		
-		//logoManager.storeLogo(logo);
+		logoManager.insertLogo(logo);
 	}
 	
 	// borrowed from http://www.exampledepot.com/egs/java.io/file2bytearray.html
