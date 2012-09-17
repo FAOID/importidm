@@ -70,7 +70,7 @@ import org.xml.sax.SAXException;
 /**
  * @author Wibowo, Eko
  */
-public class ImportIdm {
+public class ImportIdmTest {
 
 	@Autowired
 	protected SurveyDao surveyDao;
@@ -329,9 +329,10 @@ public class ImportIdm {
 		InputStream is = ClassLoader.getSystemResource("DESRE.idm.xml").openStream();
 		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
-		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
+		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);		
 		survey.setName("desre");
 		survey.setUri("http://www.openforis.org/idm/desre");		
+		surveyDao.clearModel();
 		surveyDao.updateModel(survey);
 	}
 
@@ -363,7 +364,7 @@ public class ImportIdm {
 	
 	}
 	
-	@Test
+	//@Test
 	public void storeLogo() throws IOException
 	{
 		byte[] image = null;

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <survey
     xmlns="http://www.openforis.org/idml/3.0"
     xmlns:ui="http://www.openforis.org/collect/3.0/ui" 
@@ -14,75 +13,16 @@
             <ui:tabDefinition rootEntity="cluster">
                 <ui:tabs>
                     <ui:tab name="cluster">
-                        <ui:label>Cluster</ui:label>
+                        <ui:label>Klaster</ui:label>
                     </ui:tab>
                     <ui:tab name="nf">
-                        <ui:label>Natural Forest</ui:label>
+                        <ui:label>Informasi Klaster</ui:label>
                         <ui:tabs>
                             <ui:tab name="nf_detail">
-                                <ui:label>Details</ui:label>
+                                <ui:label>Detail</ui:label>
                             </ui:tab>
-                            <ui:tab name="nf_tp">
-                                <ui:label>Trees, Poles</ui:label>
-                            </ui:tab>
-                            <ui:tab name="nf_ssr">
-                                <ui:label>Seedlings, Saplings, Rattan</ui:label>
-                            </ui:tab>
-                        </ui:tabs>
-                    </ui:tab>
-                    <ui:tab name="pmp">
-                        <ui:label>Plantation, Mangrove and Pine</ui:label>
-                        <ui:tabs>
-                            <ui:tab name="pmp_detail">
-                                <ui:label>Details</ui:label>
-                            </ui:tab>
-                            <ui:tab name="pmp_tp">
-                                <ui:label>Trees, Poles</ui:label>
-                            </ui:tab>
-                            <ui:tab name="pmp_ssr">
-                                <ui:label>Seedlings, Saplings, Rattan</ui:label>
-                            </ui:tab>
-                        </ui:tabs>
-                    </ui:tab>
-                    <ui:tab name="bamboo">
-                        <ui:label>Bamboo</ui:label>
-                        <ui:tabs>
-                            <ui:tab name="bamboo_detail">
-                                <ui:label>Details</ui:label>
-                            </ui:tab>
-                            <ui:tab name="bamboo_enum">
-                                <ui:label>Enumeration</ui:label>
-                            </ui:tab>
-                        </ui:tabs>
-                    </ui:tab>
-                    <ui:tab name="sagu">
-                        <ui:label>Sagu</ui:label>
-                    </ui:tab>
-                    <ui:tab name="nipa">
-                        <ui:label>Nipa</ui:label>
-                    </ui:tab>
-                    <ui:tab name="plot_a">
-                        <ui:label>Permanent Plot A</ui:label>
-                        <ui:tabs>
-                            <ui:tab name="plota_detail">
-                                <ui:label>Details</ui:label>
-                            </ui:tab>
-                            <ui:tab name="plota_enum">
-                                <ui:label>Enumeration</ui:label>
-                            </ui:tab>
-                        </ui:tabs>
-                    </ui:tab>
-                    <ui:tab name="plot_b">
-                        <ui:label>Permanent Plot B</ui:label>
-                        <ui:tabs>
-                            <ui:tab name="plotb_detail">
-                                <ui:label>Details</ui:label>
-                            </ui:tab>
-                            <ui:tab name="plotb_ssr">
-                                <ui:label>Seedling, sapling and rattan</ui:label>
-                            </ui:tab>
-                            <ui:tab name="plotb_bamboo">
-                                <ui:label>Bamboo</ui:label>
+                            <ui:tab name="nf_lokasi">
+                                <ui:label>Lokasi</ui:label>
                             </ui:tab>
                         </ui:tabs>
                     </ui:tab>
@@ -123,19 +63,6 @@
         </version>
     </versioning>
     <codeLists>
-        <list id="1" name="open_or_closed">
-            <label type="item">Open or Closed</label>
-            <items>
-                <item id="1">
-                    <code>O</code>
-                    <label>Open</label>
-                </item>
-                <item id="2">
-                    <code>C</code>
-                    <label>Closed</label>
-                </item>
-            </items>
-        </list>
         <list id="2" name="month">
             <label type="list">Months</label>
             <items>
@@ -189,1554 +116,388 @@
                 </item>
             </items>
         </list>
-        <list id="3" name="leaf_state">
-            <label type="item">Leaf State</label>
-            <items>
-                <item id="1">
-                    <code>C</code>
-                    <label>Cut</label>
-                </item>
-                <item id="2">
-                    <code>U</code>
-                    <label>Uncut</label>
-                </item>
-            </items>
-        </list>
-        <list id="4" name="province">
-            <label type="item">Province</label>
-            <items>
-                <item id="1">
-                    <code>1</code>
-                    <label>Daerah Istimewa Aceh</label>
-                </item>
-                <item id="2">
-                    <code>2</code>
-                    <label>Sumatera Utara</label>
-                </item>
-                <item id="3">
-                    <code>3</code>
-                    <label>Sumatera Barat</label>
-                </item>
-                <item id="4">
-                    <code>4</code>
-                    <label>Riau</label>
-                </item>
-                <item id="5">
-                    <code>5</code>
-                    <label>Jambi</label>
-                </item>
-                <item id="6">
-                    <code>6</code>
-                    <label>Sumatera Selatan</label>
-                </item>
-                <item id="7">
-                    <code>7</code>
-                    <label>Lampung</label>
-                </item>
-                <item id="8">
-                    <code>8</code>
-                    <label>Bengkulu</label>
-                </item>
-                <item id="9">
-                    <code>9</code>
-                    <label>Banten</label>
-                </item>
-                <item id="10">
-                    <code>10</code>
-                    <label>Jawa Barat</label>
-                </item>
-                <item id="11">
-                    <code>11</code>
-                    <label>Jawa Tengah</label>
-                </item>
-                <item id="12">
-                    <code>12</code>
-                    <label>DIY</label>
-                </item>
-                <item id="13">
-                    <code>13</code>
-                    <label>Jawa Timur</label>
-                </item>
-                <item id="14">
-                    <code>14</code>
-                    <label>Bali</label>
-                </item>
-                <item id="15">
-                    <code>15</code>
-                    <label>Nusa Tenggara Barat</label>
-                </item>
-                <item id="16">
-                    <code>16</code>
-                    <label>Nusa Tenggara Timur</label>
-                </item>
-                <item id="17">
-                    <code>17</code>
-                    <label>Timor Timur</label>
-                </item>
-                <item id="18">
-                    <code>18</code>
-                    <label>Kalimantan Barat</label>
-                </item>
-                <item id="19">
-                    <code>19</code>
-                    <label>Kalimantan Tengah</label>
-                </item>
-                <item id="20">
-                    <code>20</code>
-                    <label>Kalimantan Selatan</label>
-                </item>
-                <item id="21">
-                    <code>21</code>
-                    <label>Kalimantan Timur</label>
-                </item>
-                <item id="22">
-                    <code>22</code>
-                    <label>Sulawesi Utara</label>
-                </item>
-                <item id="23">
-                    <code>23</code>
-                    <label>Sulawesi Tengah</label>
-                </item>
-                <item id="24">
-                    <code>24</code>
-                    <label>Sulawesi Tenggara</label>
-                </item>
-                <item id="25">
-                    <code>25</code>
-                    <label>Sulawesi Selatan</label>
-                </item>
-                <item id="26">
-                    <code>26</code>
-                    <label>Maluku</label>
-                </item>
-                <item id="27">
-                    <code>27</code>
-                    <label>Irian Jaya</label>
-                </item>
-                <item id="28">
-                    <code>28</code>
-                    <label>Kepulauan Riau</label>
-                </item>
-                <item id="29">
-                    <code>29</code>
-                    <label>Bangka Belitung</label>
-                </item>
-                <item id="30">
-                    <code>30</code>
-                    <label>Gorontalo</label>
-                </item>
-                <item id="31">
-                    <code>31</code>
-                    <label>Sulawesi Barat</label>
-                </item>
-                <item id="32">
-                    <code>32</code>
-                    <label>Maluku Utara</label>
-                </item>
-                <item id="33">
-                    <code>33</code>
-                    <label>Irian Barat</label>
-                </item>
-            </items>
-        </list>
-        <list id="5" name="land_system">
-            <label type="item">Land System</label>
-            <items>
-                <item id="1">
-                    <code>1</code>
-                    <label>Tidal</label>
-                </item>
-                <item id="2">
-                    <code>2</code>
-                    <label>Beach</label>
-                </item>
-                <item id="3">
-                    <code>3</code>
-                    <label>Swamp and Wetland</label>
-                </item>
-                <item id="4">
-                    <code>4</code>
-                    <label>Meander Belt</label>
-                </item>
-                <item id="5">
-                    <code>5</code>
-                    <label>Fans, plains and valleys</label>
-                </item>
-                <item id="6">
-                    <code>6</code>
-                    <label>Terrace</label>
-                </item>
-                <item id="7">
-                    <code>7</code>
-                    <label>Rolling land, amplitude up to 50 m</label>
-                </item>
-                <item id="8">
-                    <code>8</code>
-                    <label>Hilly land, amplitude 50 - 300m</label>
-                </item>
-                <item id="9">
-                    <code>9</code>
-                    <label>Mountainous, amplitude more than 300m</label>
-                </item>
-            </items>
-        </list>
-        <list id="6" name="altitude">
-            <label type="item">Altitude</label>
-            <items>
-                <item id="1">
-                    <code>0</code>
-                    <label>0 - 99m</label>
-                </item>
-                <item id="2">
-                    <code>1</code>
-                    <label>100 - 199m</label>
-                </item>
-                <item id="3">
-                    <code>2</code>
-                    <label>200 - 299m</label>
-                </item>
-                <item id="4">
-                    <code>3</code>
-                    <label>300 - 399m</label>
-                </item>
-                <item id="5">
-                    <code>4</code>
-                    <label>400 - 499m</label>
-                </item>
-                <item id="6">
-                    <code>5</code>
-                    <label>500 - 599m</label>
-                </item>
-                <item id="7">
-                    <code>6</code>
-                    <label>600 - 699m</label>
-                </item>
-                <item id="8">
-                    <code>7</code>
-                    <label>700 - 799m</label>
-                </item>
-                <item id="9">
-                    <code>8</code>
-                    <label>800 - 899m</label>
-                </item>
-                <item id="10">
-                    <code>9</code>
-                    <label>900 - 999m</label>
-                </item>
-                <item id="11">
-                    <code>10</code>
-                    <label>1000 - 1099m</label>
-                </item>
-                <item id="12">
-                    <code>11</code>
-                    <label>1100 - 1199m</label>
-                </item>
-                <item id="13">
-                    <code>12</code>
-                    <label>1200 - 1299m</label>
-                </item>
-                <item id="14">
-                    <code>13</code>
-                    <label>1300 - 1399m</label>
-                </item>
-                <item id="15">
-                    <code>14</code>
-                    <label>1400 - 1499m</label>
-                </item>
-                <item id="16">
-                    <code>15</code>
-                    <label>1500 - 1599m</label>
-                </item>
-                <item id="17">
-                    <code>16</code>
-                    <label>1600 - 1699m</label>
-                </item>
-                <item id="18">
-                    <code>17</code>
-                    <label>1700 - 1799m</label>
-                </item>
-                <item id="19">
-                    <code>18</code>
-                    <label>1800 - 1899m</label>
-                </item>
-                <item id="20">
-                    <code>19</code>
-                    <label>1900 - 1999m</label>
-                </item>
-                <item id="21">
-                    <code>20</code>
-                    <label>2000 - 2099m</label>
-                </item>
-                <item id="22">
-                    <code>21</code>
-                    <label>2100 - 2199m</label>
-                </item>
-                <item id="23">
-                    <code>22</code>
-                    <label>2200 - 2299m</label>
-                </item>
-                <item id="24">
-                    <code>23</code>
-                    <label>2300 - 2399m</label>
-                </item>
-                <item id="25">
-                    <code>24</code>
-                    <label>2400 - 2499m</label>
-                </item>
-                <item id="26">
-                    <code>25</code>
-                    <label>2500 - 2599m</label>
-                </item>
-                <item id="27">
-                    <code>26</code>
-                    <label>2600 - 2699m</label>
-                </item>
-                <item id="28">
-                    <code>27</code>
-                    <label>2700 - 2799m</label>
-                </item>
-                <item id="29">
-                    <code>28</code>
-                    <label>2800 - 2899m</label>
-                </item>
-                <item id="30">
-                    <code>29</code>
-                    <label>2900 - 2999m</label>
-                </item>
-                <item id="31">
-                    <code>30</code>
-                    <label>3000 - 3099m</label>
-                </item>
-                <item id="32">
-                    <code>31</code>
-                    <label>3100 - 3199m</label>
-                </item>
-                <item id="33">
-                    <code>32</code>
-                    <label>3200 - 3299m</label>
-                </item>
-                <item id="34">
-                    <code>33</code>
-                    <label>3300 - 3399m</label>
-                </item>
-                <item id="35">
-                    <code>34</code>
-                    <label>3400 - 3499m</label>
-                </item>
-                <item id="36">
-                    <code>35</code>
-                    <label>3500 - 3599m</label>
-                </item>
-                <item id="37">
-                    <code>36</code>
-                    <label>3600 - 3699m</label>
-                </item>
-                <item id="38">
-                    <code>37</code>
-                    <label>3700 - 3799m</label>
-                </item>
-                <item id="39">
-                    <code>38</code>
-                    <label>3800 - 3899m</label>
-                </item>
-                <item id="40">
-                    <code>39</code>
-                    <label>3900 - 3999m</label>
-                </item>
-                <item id="41">
-                    <code>40</code>
-                    <label>4000 - 4099m</label>
-                </item>
-                <item id="42">
-                    <code>41</code>
-                    <label>4100 - 4199m</label>
-                </item>
-                <item id="43">
-                    <code>42</code>
-                    <label>4200 - 4299m</label>
-                </item>
-                <item id="44">
-                    <code>43</code>
-                    <label>4300 - 4399m</label>
-                </item>
-                <item id="45">
-                    <code>44</code>
-                    <label>4400 - 4499m</label>
-                </item>
-                <item id="46">
-                    <code>45</code>
-                    <label>4500 - 4599m</label>
-                </item>
-                <item id="47">
-                    <code>46</code>
-                    <label>4600 - 4699m</label>
-                </item>
-                <item id="48">
-                    <code>47</code>
-                    <label>4700 - 4799m</label>
-                </item>
-                <item id="49">
-                    <code>48</code>
-                    <label>4800 - 4899m</label>
-                </item>
-                <item id="50">
-                    <code>49</code>
-                    <label>4900 - 4999m</label>
-                </item>
-                <item id="51">
-                    <code>50</code>
-                    <label>5000 - 5099m</label>
-                </item>
-            </items>
-        </list>
-        <list id="7" name="land_category">
-            <label type="item">Land System</label>
-            <items>
-                <item id="1">
-                    <code>1</code>
-                    <label>Tidal forest</label>
-                </item>
-                <item id="2">
-                    <code>2</code>
-                    <label>Coastal forest</label>
-                </item>
-                <item id="3">
-                    <code>3</code>
-                    <label>Wetland forest (including swamp)</label>
-                </item>
-                <item id="4">
-                    <code>4</code>
-                    <label>Dryland forest below 1000 m</label>
-                </item>
-                <item id="5">
-                    <code>5</code>
-                    <label>Submontane forest 1000-2000 m</label>
-                </item>
-                <item id="6">
-                    <code>6</code>
-                    <label>Montane forest above 2000 m</label>
-                </item>
-                <item id="7">
-                    <code>7</code>
-                    <label>Forest and agroforestry plantations</label>
-                </item>
-                <item id="8">
-                    <code>8</code>
-                    <label>Forest fallow</label>
-                </item>
-                <item id="9">
-                    <code>9</code>
-                    <label>Bushland</label>
-                </item>
-                <item id="10">
-                    <code>10</code>
-                    <label>Grassland dry</label>
-                </item>
-                <item id="11">
-                    <code>11</code>
-                    <label>Grassland wet</label>
-                </item>
-                <item id="12">
-                    <code>12</code>
-                    <label>Tree crops</label>
-                </item>
-                <item id="13">
-                    <code>13</code>
-                    <label>Agriculture</label>
-                </item>
-                <item id="14">
-                    <code>14</code>
-                    <label>Unvegetated</label>
-                </item>
-                <item id="15">
-                    <code>15</code>
-                    <label>Water</label>
-                </item>
-                <item id="16">
-                    <code>16</code>
-                    <label>Settlement, town</label>
-                </item>
-            </items>
-        </list>
-        <list id="8" name="forest_class">
-            <label type="item">Forest Class</label>
-            <label type="list">Forest Classes</label>
+        
+        
+        
+        
+        
+        <list id="8" name="list_bpkh_propinsi_kabupaten">
+            <label type="item">BPKH</label>
+            <label type="list">Daftar BPKH</label>
             <codingScheme scope="local"/>
             <hierarchy>
-                <level id="1" name="forest_type">
-                    <label>Forest Type</label>
+                <level id="1" name="list_bpkh">
+                    <label>Daftar BPKH</label>
                 </level>
-                <level id="2" name="stand_condition">
-                    <label>Stand Condition</label>
+                <level id="2" name="list_propinsi">
+                    <label>Daftar Propinsi</label>
+                </level>
+                <level id="3" name="list_kabupaten">
+                    <label>Daftar Kabupaten</label>
+                </level>
+                <level id="4" name="list_kecamatan">
+                    <label>Daftar Kecamatan</label>
+                </level>
+                <level id="5" name="list_desa">
+                    <label>Daftar Desa</label>
                 </level>
             </hierarchy>
             <items>
                 <item id="1">
                     <code>1</code>
-                    <label>Mangrove Forest</label>
+                    <label>BPKH 1</label>
                     <item id="1">
                         <code>1</code>
-                        <label>Not logged, high volume</label>
+                        <label>Daerah Istimewa Aceh</label>                        
+                        <item id="1">
+                            <code>1</code>
+                            <label>Aceh Barat</label>
+                            <item id="1">
+                                <code>1</code>
+                                <label>Kecamatan 1</label>
+                                <item id="1">
+                                    <code>1</code>
+                                    <label>Desa 1</label>
+                                </item>
+                            </item>
+                        </item>
+                        <item id="2">
+                            <code>2</code>
+                            <label>Aceh Barat Daya</label>
+                            <item id="1">
+                                <code>1</code>
+                                <label>Kecamatan 1</label>
+                                <item id="1">
+                                    <code>1</code>
+                                    <label>Desa 1</label>
+                                </item>
+                            </item>
+                        </item>
+                        <item id="3">
+                            <code>3</code>
+                            <label>Aceh Besar</label>
+                        </item>
+                        <item id="4">
+                            <code>4</code>
+                            <label>Aceh Jaya</label>
+                        </item>
+                        <item id="5">
+                            <code>5</code>
+                            <label>Aceh Selatan</label>
+                        </item>
+                        <item id="6">
+                            <code>6</code>
+                            <label>Aceh Singkil</label>
+                        </item>
+                        <item id="7">
+                            <code>7</code>
+                            <label>Aceh Tamiang</label>
+                        </item>
+                        <item id="8">
+                            <code>8</code>
+                            <label>Aceh Tengah</label>
+                        </item>
+                        <item id="9">
+                            <code>9</code>
+                            <label>Aceh Tenggara</label>
+                        </item>
+                        <item id="10">
+                            <code>10</code>
+                            <label>Aceh Timur</label>
+                        </item>
+                        <item id="11">
+                            <code>11</code>
+                            <label>Aceh Utara</label>
+                        </item>              
+                        <item id="12">
+                            <code>12</code>
+                            <label>Bener Meriah</label>
+                        </item>
+                        <item id="13">
+                            <code>13</code>
+                            <label>Bireuen</label>
+                        </item>
+                        <item id="14">
+                            <code>14</code>
+                            <label>Gayo Lues</label>
+                        </item>
+                        <item id="15">
+                            <code>15</code>
+                            <label>Nagan Raya</label>
+                        </item>
+                        <item id="16">
+                            <code>16</code>
+                            <label>Pidie</label>
+                        </item>
+                        <item id="17">
+                            <code>17</code>
+                            <label>Pidie Jaya</label>
+                        </item>
+                        <item id="18">
+                            <code>18</code>
+                            <label>Simeulue</label>
+                        </item>
+                        <item id="19">
+                            <code>19</code>
+                            <label>Kota Banda Aceh</label>
+                        </item>
+                        <item id="20">
+                            <code>20</code>
+                            <label>Kota Langsa</label>
+                        </item>
+                        <item id="21">
+                            <code>21</code>
+                            <label>Kota Lhokseumawe</label>
+                        </item>
+                        <item id="22">
+                            <code>22</code>
+                            <label>Kota Sabang</label>
+                        </item>
+                        <item id="23">
+                            <code>23</code>
+                            <label>Kota Subulussalam</label>
+                        </item>
                     </item>
                     <item id="2">
                         <code>2</code>
-                        <label>Not logged, medium volume</label>
+                        <label>Sumatera Utara</label>
                     </item>
                     <item id="3">
                         <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Logged heavily</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>10</code>
-                        <label>Secondary growth, high to medium</label>
-                    </item>
-                    <item id="11">
-                        <code>11</code>
-                        <label>Secondary growth, low</label>
-                    </item>
-                    <item id="12">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="13">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                        <label>Sumatera Barat</label>
                     </item>
                 </item>
+
                 <item id="2">
                     <code>2</code>
-                    <label>Nipah Forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, well stocked</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium stocked</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, poorly stocked</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Due to logging, medium stocked</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Due to logging, poorly stocked</label>
-                    </item>
+                    <label>BPKH 2</label>
                     <item id="6">
                         <code>6</code>
-                        <label>Cleared for forest plantations</label>
+                        <label>Sumatera Selatan</label>
                     </item>
                     <item id="7">
                         <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
+                        <label>Lampung</label>
                     </item>
                     <item id="8">
                         <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="11">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                        <label>Bengkulu</label>
                     </item>
                 </item>
+                
                 <item id="3">
                     <code>3</code>
-                    <label>Palm Forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, well stocked</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium stocked</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, poorly stocked</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Due to logging, medium stocked</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Due to logging, poorly stocked</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="11">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <label>BPKH 3</label>
+                    <item id="18">
+                        <code>18</code>
+                        <label>Kalimantan Barat</label>
                     </item>
                 </item>
+                
                 <item id="4">
                     <code>4</code>
-                    <label>Coastal forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, high volume</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium volume</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Logged heavily</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>10</code>
-                        <label>Secondary growth, high to medium</label>
-                    </item>
-                    <item id="11">
-                        <code>11</code>
-                        <label>Secondary growth, low</label>
-                    </item>
-                    <item id="12">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="13">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <label>BPKH 4</label>
+                    <item id="21">
+                        <code>21</code>
+                        <label>Kalimantan Timur</label>
                     </item>
                 </item>
+                
                 <item id="5">
                     <code>5</code>
-                    <label>Swamp forest, seasonally inundated</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, high volume</label>
+                    <label>BPKH 5</label>
+                    <item id="19">
+                        <code>19</code>
+                        <label>Kalimantan Tengah</label>
                     </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium volume</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Logged heavily</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>10</code>
-                        <label>Secondary growth, high to medium</label>
-                    </item>
-                    <item id="11">
-                        <code>11</code>
-                        <label>Secondary growth, low</label>
-                    </item>
-                    <item id="12">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="13">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <item id="20">
+                        <code>20</code>
+                        <label>Kalimantan Selatan</label>
                     </item>
                 </item>
+                
                 <item id="6">
                     <code>6</code>
-                    <label>Wetland forest, permanently inundated</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, high volume</label>
+                    <label>BPKH 6</label>
+                    <item id="22">
+                        <code>22</code>
+                        <label>Sulawesi Utara</label>
                     </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium volume</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Logged heavily</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>10</code>
-                        <label>Secondary growth, high to medium</label>
-                    </item>
-                    <item id="11">
-                        <code>11</code>
-                        <label>Secondary growth, low</label>
-                    </item>
-                    <item id="12">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="13">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <item id="32">
+                        <code>32</code>
+                        <label>Maluku Utara</label>
                     </item>
                 </item>
+                
                 <item id="7">
                     <code>7</code>
-                    <label>Peat swamp forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, high volume</label>
+                    <label>BPKH VII</label>
+                    <item id="24">
+                        <code>24</code>
+                        <label>Sulawesi Tenggara</label>
                     </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium volume</label>
+                    <item id="25">
+                        <code>25</code>
+                        <label>Sulawesi Selatan</label>
                     </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Logged heavily</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>10</code>
-                        <label>Secondary growth, high to medium</label>
-                    </item>
-                    <item id="11">
-                        <code>11</code>
-                        <label>Secondary growth, low</label>
-                    </item>
-                    <item id="12">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="13">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <item id="31">
+                        <code>31</code>
+                        <label>Sulawesi Barat</label>
                     </item>
                 </item>
+                
                 <item id="8">
                     <code>8</code>
-                    <label>Moist dryland forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, high volume</label>
+                    <label>BPKH VIII</label>
+                    <item id="14">
+                        <code>14</code>
+                        <label>Bali</label>
                     </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium volume</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Logged heavily</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>10</code>
-                        <label>Secondary growth, high to medium</label>
-                    </item>
-                    <item id="11">
-                        <code>11</code>
-                        <label>Secondary growth, low</label>
-                    </item>
-                    <item id="12">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="13">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <item id="15">
+                        <code>15</code>
+                        <label>Nusa Tenggara Barat</label>
                     </item>
                 </item>
+                
                 <item id="9">
                     <code>9</code>
-                    <label>Savanna forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, well stocked</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium stocked</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, poorly stocked</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Due to logging, medium stocked</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Due to logging, poorly stocked</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="11">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <label>BPKH IX</label>
+                    <item id="26">
+                        <code>26</code>
+                        <label>Maluku</label>
                     </item>
                 </item>
+                
                 <item id="10">
                     <code>10</code>
-                    <label>Pine forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, well stocked</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium stocked</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, poorly stocked</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Due to logging, medium stocked</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Due to logging, poorly stocked</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="11">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <label>BPKH X</label>
+                    <item id="27">
+                        <code>27</code>
+                        <label>Irian Jaya</label>
                     </item>
                 </item>
+                
                 <item id="11">
                     <code>11</code>
-                    <label>Heath forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, high volume</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium volume</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Logged heavily</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
+                    <label>BPKH XI</label>
                     <item id="9">
                         <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
+                        <label>Banten</label>
                     </item>
                     <item id="10">
                         <code>10</code>
-                        <label>Secondary growth, high to medium</label>
+                        <label>Jawa Barat</label>
                     </item>
                     <item id="11">
                         <code>11</code>
-                        <label>Secondary growth, low</label>
+                        <label>Jawa Tengah</label>
                     </item>
                     <item id="12">
                         <code>12</code>
-                        <label>Degraded</label>
+                        <label>DIY</label>
                     </item>
                     <item id="13">
                         <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                        <label>Jawa Timur</label>
                     </item>
                 </item>
+                
                 <item id="12">
                     <code>12</code>
-                    <label>Bamboo forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, well stocked</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium stocked</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, poorly stocked</label>
-                    </item>
+                    <label>BPKH XII</label>
                     <item id="4">
                         <code>4</code>
-                        <label>Due to logging, medium stocked</label>
+                        <label>Riau</label>                        
                     </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Due to logging, poorly stocked</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="11">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <item id="28">
+                        <code>28</code>
+                        <label>Kepulauan Riau</label>
                     </item>
                 </item>
+                
                 <item id="13">
                     <code>13</code>
-                    <label>Submontane and montane broadleaved forest</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, high volume</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium volume</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
+                    <label>BPKH XIII</label>
                     <item id="5">
                         <code>5</code>
-                        <label>Logged heavily</label>
+                        <label>Jambi</label>
                     </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>10</code>
-                        <label>Secondary growth, high to medium</label>
-                    </item>
-                    <item id="11">
-                        <code>11</code>
-                        <label>Secondary growth, low</label>
-                    </item>
-                    <item id="12">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="13">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
+                    <item id="29">
+                        <code>29</code>
+                        <label>Bangka Belitung</label>
                     </item>
                 </item>
+                
                 <item id="14">
                     <code>14</code>
-                    <label>Productive forest plantation</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Well stocked</label>
+                    <label>BPKH XIV</label>
+                    <item id="16">
+                        <code>16</code>
+                        <label>Nusa Tenggara Timur</label>
                     </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Medium stocked</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Poorly stocked</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Failure</label>
+                    <item id="17">
+                        <code>17</code>
+                        <label>Timor Timur</label>
                     </item>
                 </item>
+                
                 <item id="15">
                     <code>15</code>
-                    <label>Protective forest plantation</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Well stocked</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Medium stocked</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Poorly stocked</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Failure</label>
+                    <label>BPKH XV</label>
+                    <item id="30">
+                        <code>30</code>
+                        <label>Gorontalo</label>
                     </item>
                 </item>
+                
                 <item id="16">
                     <code>16</code>
-                    <label>Agro-forestry plantation</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Well stocked</label>
-                    </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Medium stocked</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Poorly stocked</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Failure</label>
+                    <label>BPKH XVI</label>
+                    <item id="23">
+                        <code>23</code>
+                        <label>Sulawesi Tengah</label>
                     </item>
                 </item>
+                
                 <item id="17">
                     <code>17</code>
-                    <label>Tambak fish ponds</label>
-                    <item id="1">
-                        <code>1</code>
-                        <label>Not logged, high volume</label>
+                    <label>BPKH XVII</label>
+                    <item id="33">
+                        <code>33</code>
+                        <label>Irian Barat</label>
                     </item>
-                    <item id="2">
-                        <code>2</code>
-                        <label>Not logged, medium volume</label>
-                    </item>
-                    <item id="3">
-                        <code>3</code>
-                        <label>Not logged, low volume</label>
-                    </item>
-                    <item id="4">
-                        <code>4</code>
-                        <label>Logged lightly</label>
-                    </item>
-                    <item id="5">
-                        <code>5</code>
-                        <label>Logged heavily</label>
-                    </item>
-                    <item id="6">
-                        <code>6</code>
-                        <label>Cleared for forest plantations</label>
-                    </item>
-                    <item id="7">
-                        <code>7</code>
-                        <label>Cleared for permanent agriculture</label>
-                    </item>
-                    <item id="8">
-                        <code>8</code>
-                        <label>Cleared for shifting cultivation</label>
-                    </item>
-                    <item id="9">
-                        <code>9</code>
-                        <label>Cleared with shift, cult, crops</label>
-                    </item>
-                    <item id="10">
-                        <code>10</code>
-                        <label>Secondary growth, high to medium</label>
-                    </item>
-                    <item id="11">
-                        <code>11</code>
-                        <label>Secondary growth, low</label>
-                    </item>
-                    <item id="12">
-                        <code>12</code>
-                        <label>Degraded</label>
-                    </item>
-                    <item id="13">
-                        <code>13</code>
-                        <label>Destroyed by wild fire</label>
-                    </item>
-                </item>
-            </items>
+                </item></items>
         </list>
-        <list id="9" name="stand_condition">
-            <label type="item">Stand Condition</label>
+        <list id="9" name="list_kondisi_plot">
+            <label type="item">Kondisi Plot</label>
+            <label type="list">Daftar Kondisi Plot</label>
             <items>
                 <item id="1">
                     <code>1</code>
-                    <label>Not logged, high volume</label>
+                    <label>Lama</label>
                 </item>
                 <item id="2">
                     <code>2</code>
-                    <label>Not logged, medium volume</label>
-                </item>
-                <item id="3">
-                    <code>3</code>
-                    <label>Not logged, low volume</label>
-                </item>
-                <item id="4">
-                    <code>4</code>
-                    <label>Logged lightly</label>
-                </item>
-                <item id="5">
-                    <code>5</code>
-                    <label>Logged heavily</label>
-                </item>
-                <item id="6">
-                    <code>6</code>
-                    <label>Cleared for forest plantations</label>
-                </item>
-                <item id="7">
-                    <code>7</code>
-                    <label>Cleared for permanent agriculture</label>
-                </item>
-                <item id="8">
-                    <code>8</code>
-                    <label>Cleared for shifting cultivation</label>
-                </item>
-                <item id="9">
-                    <code>9</code>
-                    <label>Cleared with shifting, cultivated crops</label>
-                </item>
-                <item id="10">
-                    <code>10</code>
-                    <label>Secondary growth, high to medium</label>
-                </item>
-                <item id="11">
-                    <code>11</code>
-                    <label>Secondary growth, low</label>
-                </item>
-                <item id="12">
-                    <code>12</code>
-                    <label>Degraded</label>
-                </item>
-                <item id="13">
-                    <code>13</code>
-                    <label>Destroyed by wild fire</label>
+                    <label>Baru</label>
                 </item>
             </items>
         </list>
-        <list id="10" name="terrain">
-            <label type="item">Land System</label>
-            <items>
-                <item id="1">
-                    <code>0</code>
-                    <label>Flat and undulating (0-10%)</label>
-                </item>
-                <item id="2">
-                    <code>1</code>
-                    <label>Lowland gully</label>
-                </item>
-                <item id="3">
-                    <code>2</code>
-                    <label>Lower slope or mould</label>
-                </item>
-                <item id="4">
-                    <code>3</code>
-                    <label>Mid slope</label>
-                </item>
-                <item id="5">
-                    <code>4</code>
-                    <label>Upper slope</label>
-                </item>
-                <item id="6">
-                    <code>5</code>
-                    <label>Slope gully</label>
-                </item>
-                <item id="7">
-                    <code>6</code>
-                    <label>Hill top</label>
-                </item>
-                <item id="8">
-                    <code>7</code>
-                    <label>Ridge</label>
-                </item>
-                <item id="9">
-                    <code>8</code>
-                    <label>Rock slide</label>
-                </item>
-            </items>
-        </list>
-        <list id="11" name="slope">
-            <label type="item">Slope</label>
-            <items>
-                <item id="1">
-                    <code>0</code>
-                    <label>0 - 8%</label>
-                </item>
-                <item id="2">
-                    <code>1</code>
-                    <label>9 - 15%</label>
-                </item>
-                <item id="3">
-                    <code>2</code>
-                    <label>16 - 25%</label>
-                </item>
-                <item id="4">
-                    <code>3</code>
-                    <label>26 - 45%</label>
-                </item>
-                <item id="5">
-                    <code>4</code>
-                    <label>46 - 70%</label>
-                </item>
-                <item id="6">
-                    <code>5</code>
-                    <label>71% - 100%</label>
-                </item>
-                <item id="7">
-                    <code>6</code>
-                    <label>More than 100%</label>
-                </item>
-            </items>
-        </list>
-        <list id="12" name="aspect">
-            <label type="item">Aspect</label>
-            <items>
-                <item id="1">
-                    <code>0</code>
-                    <label>Flat and undulating (0 - 10%)</label>
-                </item>
-                <item id="2">
-                    <code>1</code>
-                    <label>N 338 - 22 degrees</label>
-                </item>
-                <item id="3">
-                    <code>2</code>
-                    <label>NE 23 - 67 degrees</label>
-                </item>
-                <item id="4">
-                    <code>3</code>
-                    <label>E 68 - 112 degrees</label>
-                </item>
-                <item id="5">
-                    <code>4</code>
-                    <label>SE 113 - 157 degrees</label>
-                </item>
-                <item id="6">
-                    <code>5</code>
-                    <label>S 158 - 202 degrees</label>
-                </item>
-                <item id="7">
-                    <code>6</code>
-                    <label>SW 203 - 247 degrees</label>
-                </item>
-                <item id="8">
-                    <code>7</code>
-                    <label>W 248 - 292 degrees</label>
-                </item>
-                <item id="9">
-                    <code>8</code>
-                    <label>NW 293 - 337 degrees</label>
-                </item>
-            </items>
-        </list>
-        <list id="13" name="damage">
-            <label type="item">Damage</label>
-            <items>
-                <item id="1">
-                    <code>0</code>
-                    <label>No damage</label>
-                </item>
-                <item id="2">
-                    <code>1</code>
-                    <label>Slight damage, tree will survice</label>
-                </item>
-                <item id="3">
-                    <code>2</code>
-                    <label>Heavy damage, tree will not survice</label>
-                </item>
-                <item id="4">
-                    <code>3</code>
-                    <label>Uprooted</label>
-                </item>
-                <item id="5">
-                    <code>4</code>
-                    <label>Felled</label>
-                </item>
-                <item id="6">
-                    <code>5</code>
-                    <label>Broken</label>
-                </item>
-                <item id="7">
-                    <code>6</code>
-                    <label>Dead</label>
-                </item>
-            </items>
-        </list>
-        <list id="14" name="grade">
-            <label type="item">Grade</label>
+        <list id="10" name="list_koreksi_plot">
+            <label type="item">Koreksi</label>
+            <label type="list">Daftar Koreksi</label>
             <items>
                 <item id="1">
                     <code>1</code>
-                    <label>Straight and clean without damage, cross section circular, apparently sound</label>
+                    <label>Ya</label>
                 </item>
                 <item id="2">
                     <code>2</code>
-                    <label>Similar to 1 but up to half of surface knotty, or cross section irregular, or slight sweep</label>
-                </item>
-                <item id="3">
-                    <code>3</code>
-                    <label>Twisted and knotty, or with other defects which reduce the usable volume by up to one quarter, such as rot, burn, physical damage, forks or bend</label>
-                </item>
-                <item id="4">
-                    <code>4</code>
-                    <label>Very knotty and bent, or with defects which reduce the usable volume by one quarter to half</label>
-                </item>
-                <item id="5">
-                    <code>5</code>
-                    <label>Rejects, with such defects that only less than half of the volume could be used</label>
-                </item>
-            </items>
-        </list>
-        <list id="15" name="infestation">
-            <label type="item">Infestation</label>
-            <items>
-                <item id="1">
-                    <code>0</code>
-                    <label>None</label>
-                </item>
-                <item id="2">
-                    <code>1</code>
-                    <label>Insects</label>
-                </item>
-                <item id="3">
-                    <code>2</code>
-                    <label>Rattan</label>
-                </item>
-                <item id="4">
-                    <code>3</code>
-                    <label>Slightly by climbers</label>
-                </item>
-                <item id="5">
-                    <code>4</code>
-                    <label>Severely by climbers</label>
-                </item>
-                <item id="6">
-                    <code>5</code>
-                    <label>Ficus</label>
+                    <label>Tidak</label>
                 </item>
             </items>
         </list>
     </codeLists>
+    
     <units>
         <unit dimension="angle" id="1" name="deg">
             <label>degrees</label>
@@ -1777,80 +538,210 @@
     </units>
     <schema>
         <entity id="1447" name="cluster" ui:tab="cluster">
-            <label type="instance">Cluster</label>
+            <label type="instance">Klaster</label>            
             <number id="1330" key="true" name="utm_zone" required="true" type="integer">
                 <label>UTM zone</label>
                 <description>Valid UTM Zone between 46 and 54</description>
                 <compare flag="error" gte="46" lte="54"/>
             </number>
             <number id="1544" key="true" name="easting" required="true" type="integer">
-                <label type="number">1</label>
                 <label>W-E</label>
                 <description>Valid UTM easting between 166 and 834</description>
                 <compare flag="error" gte="166" lte="834"/>
             </number>
             <number id="1570" key="true" name="northing" required="true" type="integer">
-                <label type="number">2</label>
                 <label>S-N</label>
                 <description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
                 <check expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)" flag="error">
                     <message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</message>
                     <message xml:lang="id"/>
                 </check>
-            </number>
-            <number id="11510" name="year" required="true" type="integer" key="true">
-                <label type="number">3</label>
-                <label>Year</label>
-                <compare flag="error" gte="1900" lte="2050"/>
-            </number>
-            <text id="5000" name="description" key="true">
-                <label>Description</label>
-            </text>
-            <entity id="1375" multiple="true" name="natural_forest" ui:layout="form" ui:tab="nf">
+            </number>                        
+            
+            
+               
+            <entity id="8000" name="informasi_klaster" ui:layout="form" ui:tab="nf" multiple="true">
+                <label type="heading">Tahun pengamatan</label>
+                <number id="11510" name="year" required="true" type="integer" key="true" ui:tab="nf_detail">
+                    <label>Tahun</label>
+                    <compare flag="error" gte="1900" lte="2050"/>
+                </number>
+                <text id="8001" name="ketua_regu" ui:tab="nf_detail">
+                    <label>Ketua Regu</label>
+                </text>  
+                <text id="8031" name="description" type="memo" ui:tab="nf_detail">
+                    <label>Keterangan</label>
+                </text>
+                
+                <code id="7000" list="list_bpkh_propinsi_kabupaten" name="bpkh" required="true" ui:tab="nf_lokasi">
+                    <label>BPKH</label>
+                </code>
+                <code id="7001" list="list_bpkh_propinsi_kabupaten" name="propinsi" parent="bpkh" required="true" ui:tab="nf_lokasi">
+                    <label>Propinsi</label>
+                </code>
+                <code id="7002" list="list_bpkh_propinsi_kabupaten" name="kabupaten" parent="propinsi" required="true" ui:tab="nf_lokasi">
+                    <label>Kabupaten</label>
+                </code>
+                <code id="7003" list="list_bpkh_propinsi_kabupaten" name="kecamatan" parent="kabupaten" required="true" ui:tab="nf_lokasi">
+                    <label>Kecamatan</label>
+                </code>
+                <code id="7004" list="list_bpkh_propinsi_kabupaten" name="desa" parent="kecamatan" required="true" ui:tab="nf_lokasi">
+                    <label>Desa</label>
+                </code>
+                
+                <text id="8003" name="rph" ui:tab="nf_lokasi">
+                    <label>RPH</label>
+                </text>
+                <text id="8004" name="bkph" ui:tab="nf_lokasi">
+                    <label>BKPH</label>
+                </text>
+                <text id="8005" name="cdk" ui:tab="nf_lokasi">
+                    <label>CDK</label>
+                </text>
+                <text id="8006" name="hph" ui:tab="nf_lokasi">
+                    <label>HPH</label>
+                </text>
+                <entity id="8007" name="akses_lokasi" ui:tab="nf_lokasi">
+                    <label type="heading">Akses ke Lokasi</label>
+                    <text id="8008" name="rute_1">
+                        <label type="number">1</label>
+                        <label>Rute 1</label>
+                    </text>
+                    <text id="8009" name="rute_2">
+                        <label type="number">2</label>
+                        <label>Rute 2</label>
+                    </text>
+                    <text id="8010" name="rute_3">
+                        <label type="number">3</label>
+                        <label>Rute 3</label>
+                    </text>
+                    <text id="8011" name="rute_4">
+                        <label type="number">4</label>
+                        <label>Rute 4</label>
+                    </text>
+                </entity>
+                
+                <entity id="8012" name="titik_ikat" ui:tab="nf_lokasi">
+                    <label type="heading">Titik Ikat</label>
+                    <text id="8013" name="titk_ikat_lokasi">
+                        <label>Lokasi</label>
+                    </text>
+                    <entity id="8014" name="titik_ikat_koordinat" ui:tab="nf_lokasi">
+                        <label type="heading">Koordinat</label>
+                        <number id="8015" key="true" name="utm_zone" required="true" type="integer">
+                            <label>UTM zone</label>
+                            <description>Valid UTM Zone between 46 and 54</description>
+                            <compare flag="error" gte="46" lte="54"/>
+                        </number>
+                        <number id="8016" key="true" name="easting" required="true" type="integer">
+                            <label>W-E</label>
+                            <description>Valid UTM easting between 166 and 834</description>
+                            <compare flag="error" gte="166" lte="834"/>
+                        </number>
+                        <number id="8017" key="true" name="northing" required="true" type="integer">
+                            <label>S-N</label>
+                            <description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
+                            <check expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)" flag="error">
+                                <message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</message>
+                                <message xml:lang="id"/>
+                            </check>
+                        </number>    
+                    </entity>
+                    <entity id="8018" name="titik_ikat_posisi" ui:tab="nf_lokasi">
+                        <label type="heading">Posisi</label>
+                        <number id="8019" key="true" name="jarak" required="true" type="real">
+                            <label>Jarak</label>
+                        </number>
+                        <number id="8020" key="true" name="azimut" required="true" type="integer">
+                            <label>Azimut</label>
+                        </number>
+                    </entity>                    
+                </entity>
+                <entity id="8021" name="titik_pusat_klaster" ui:tab="nf_lokasi">
+                    <label type="heading">Koordinat Titik Pusat Klaster</label>
+                    <number id="8022" key="true" name="utm_zone" required="true" type="integer">
+                        <label>UTM zone</label>
+                        <description>Valid UTM Zone between 46 and 54</description>
+                        <compare flag="error" gte="46" lte="54"/>
+                    </number>
+                    <number id="8023" key="true" name="easting" required="true" type="integer">
+                        <label>W-E</label>
+                        <description>Valid UTM easting between 166 and 834</description>
+                        <compare flag="error" gte="166" lte="834"/>
+                    </number>
+                    <number id="8024" key="true" name="northing" required="true" type="integer">
+                        <label>S-N</label>
+                        <description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
+                        <check expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)" flag="error">
+                            <message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</message>
+                            <message xml:lang="id"/>
+                        </check>
+                    </number>
+                </entity>
+                <entity id="8025" name="pergeseran_klaster" ui:tab="nf_lokasi">
+                    <label type="heading">Pergeseran Klaster</label>
+                    <number id="8026" key="true" name="jarak" required="true" type="real">
+                        <label>Jarak</label>
+                    </number>
+                    <number id="8027" key="true" name="azimut" required="true" type="integer">
+                        <label>Azimut</label>
+                    </number>
+                </entity>
+                <entity id="8028" name="kondisi_plot" ui:tab="nf_lokasi">
+                    <label type="heading">Kondisi Plot Klaster</label>
+                    <code id="8029" name="lama_baru" list="list_kondisi_plot">
+                        <label>Lama/Baru</label>
+                    </code>
+                    <code id="8030" name="koreksi" list="list_koreksi_plot">
+                        <label>Koreksi</label>
+                    </code>
+                </entity>                
+            </entity>
+            <!--<entity id="1375" multiple="true" name="natural_forest" ui:layout="form" ui:tab="nf">
                 <label type="heading">Enumeration, Natural Forest</label>
-                <number id="1402" key="true" name="tract_no" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1402" key="true" name="tract_no" required="true" type="integer" ui:tab="nf_lokasi">
                     <label type="number">3</label>
                     <label>Tract</label>
                     <compare flag="error" gte="1" lte="15"/>
                 </number>
-                <number id="1433" key="true" name="subplot_no" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1433" key="true" name="subplot_no" required="true" type="integer" ui:tab="nf_lokasi">
                     <label type="number">4</label>
                     <label>Sub-plot</label>
                     <compare flag="error" gte="1" lte="8"/>
                 </number>
-                <number id="1594" name="sector" type="real" ui:tab="nf_detail">
+                <number id="1594" name="sector" type="real" ui:tab="nf_lokasi">
                     <label type="number">5</label>
                     <label>Sector degrees</label>
                     <precision decimalDigits="0" unit="deg"/>
                 </number>
-                <number id="1424" name="segment_dist" relevant="sector=''" type="real" ui:tab="nf_detail">
+                <number id="1424" name="segment_dist" relevant="sector=''" type="real" ui:tab="nf_lokasi">
                     <label type="number">6</label>
                     <label>Distance to segment 0.01m</label>
                     <precision decimalDigits="2" unit="m"/>
                 </number>
-                <number id="1420" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1420" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_lokasi">
                     <label type="number">7</label>
                     <label>Large part</label>
                 </number>
-                <number id="9889" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_detail">
+                <number id="9889" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="nf_lokasi">
                     <label type="number">8</label>
                     <label>Small part</label>
                 </number>
-                <number id="1416" name="permanent" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1416" name="permanent" required="false" type="integer" ui:tab="nf_lokasi">
                     <label type="number">9</label>
                     <label>Permanent</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="1628" name="control" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1628" name="control" required="false" type="integer" ui:tab="nf_lokasi">
                     <label type="number">10</label>
                     <label>Control</label>
                     <compare flag="error" gte="1" lte="1">
                         <message>This field must be either 1 or blank</message>
                     </compare>
                 </number>
-                <number id="9569"  name="record_type" required="false" type="integer" ui:tab="nf_detail">
+                <number id="9569"  name="record_type" required="false" type="integer" ui:tab="nf_lokasi">
                     <label type="number">11</label>
                     <label>Record type</label>
                     <default value="1"/>
@@ -1858,48 +749,48 @@
                         <message>This field must be greater than 1</message>
                     </compare>
                 </number>
-                <code id="1301" list="province" name="province" required="true" ui:tab="nf_detail">
+                <code id="1301" list="province" name="province" required="true" ui:tab="nf_lokasi">
                     <label type="number">12</label>
                     <label>Province</label>
                 </code>
-                <code id="1350" list="land_system" name="land_system" required="true" ui:tab="nf_detail">
+                <code id="1350" list="land_system" name="land_system" required="true" ui:tab="nf_lokasi">
                     <label type="number">13</label>
                     <label>Land system</label>
                 </code>
-                <code id="1486" list="altitude" name="altitude" required="true" ui:tab="nf_detail">
+                <code id="1486" list="altitude" name="altitude" required="true" ui:tab="nf_lokasi">
                     <label type="number">14</label>
                     <label>Altitude</label>
                 </code>
-                <code id="1411" list="land_category" name="land_category" required="true" ui:tab="nf_detail">
+                <code id="1411" list="land_category" name="land_category" required="true" ui:tab="nf_lokasi">
                     <label type="number">15</label>
                     <label>Land category</label>
                 </code>
-                <code id="1478" list="forest_class" name="forest_type" required="true" ui:tab="nf_detail">
+                <code id="1478" list="forest_class" name="forest_type" required="true" ui:tab="nf_lokasi">
                     <label type="number">16</label>
                     <label>Forest type</label>
                 </code>
-                <code id="9794" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="nf_detail">
+                <code id="9794" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="nf_lokasi">
                     <label type="number">17</label>
                     <label>Stand condition</label>
                 </code>
-                <number id="1343" name="logging_year" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1343" name="logging_year" required="false" type="integer" ui:tab="nf_lokasi">
                     <label type="number">18</label>
                     <label>Logging year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
                 </number>
-                <code id="1382" list="terrain" name="terrain" required="true" ui:tab="nf_detail">
+                <code id="1382" list="terrain" name="terrain" required="true" ui:tab="nf_lokasi">
                     <label type="number">19</label>
                     <label>Terrain</label>
                 </code>
-                <code id="1621" list="slope" name="slope" required="true" ui:tab="nf_detail">
+                <code id="1621" list="slope" name="slope" required="true" ui:tab="nf_lokasi">
                     <label type="number">20</label>
                     <label>Slope</label>
                 </code>
-                <code id="1327" list="aspect" name="aspect" required="true" ui:tab="nf_detail">
+                <code id="1327" list="aspect" name="aspect" required="true" ui:tab="nf_lokasi">
                     <label type="number">21</label>
                     <label>Aspect</label>
                 </code>
-                <entity id="1523" multiple="false" name="record_count" ui:tab="nf_detail">
+                <entity id="1523" multiple="false" name="record_count" ui:tab="nf_lokasi">
                     <label>Number of Records</label>
                     <number id="1530" name="trees_poles" required="false" type="integer">
                         <label type="number">22</label>
@@ -1932,16 +823,16 @@
                         <compare flag="error" gte="0"/>
                     </number>
                 </entity>
-                <number id="1360" name="crew_no" required="false" type="integer" ui:tab="nf_detail">
+                <number id="1360" name="crew_no" required="false" type="integer" ui:tab="nf_lokasi">
                     <label type="number">27</label>
                     <label>Crew no.</label>
                     <compare flag="error" gte="0"/>
                 </number>
-                <code id="1533" list="month" name="month" required="true" ui:tab="nf_detail">
+                <code id="1533" list="month" name="month" required="true" ui:tab="nf_lokasi">
                     <label type="number">28</label>
                     <label>Month</label>
                 </code>
-                <number id="1593" name="year" required="true" type="integer" ui:tab="nf_detail">
+                <number id="1593" name="year" required="true" type="integer" ui:tab="nf_lokasi">
                     <label type="number">29</label>
                     <label>Year</label>
                     <compare flag="error" gte="1900" lte="2050"/>
@@ -2098,1369 +989,18 @@
                         </number>
                     </entity>
                 </entity>
-            </entity>
+            </entity>-->
             
-            <entity id="1" multiple="true" name="pmp" ui:layout="form" ui:tab="pmp">
-                <label type="heading">Plantation, Mangrove and Pine</label>
-                <number id="2" key="true" name="tract_no" required="true" type="integer" ui:tab="pmp_detail">
-                    <label type="number">3</label>
-                    <label>Tract</label>
-                    <compare flag="error" gte="1" lte="15"/>
-                </number>
-                <number id="3" key="true" name="subplot_no" required="true" type="integer" ui:tab="pmp_detail">
-                    <label type="number">4</label>
-                    <label>Sub-plot</label>
-                    <compare flag="error" gte="1" lte="8"/>
-                </number>
-                <number id="4" name="sector" type="real" ui:tab="pmp_detail">
-                    <label type="number">5</label>
-                    <label>Sector degrees</label>
-                    <precision decimalDigits="0" unit="deg"/>
-                </number>
-                <number id="5" name="segment_dist" relevant="sector=''" type="real" ui:tab="pmp_detail">
-                    <label type="number">6</label>
-                    <label>Distance to segment 0.01m</label>
-                    <precision decimalDigits="2" unit="m"/>
-                </number>
-                <number id="6" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
-                    <label type="number">7</label>
-                    <label>Large part</label>
-                </number>
-                <number id="7" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="pmp_detail">
-                    <label type="number">8</label>
-                    <label>Small part</label>
-                </number>
-                <number id="8" name="permanent" required="false" type="integer" ui:tab="pmp_detail">
-                    <label type="number">9</label>
-                    <label>Permanent</label>
-                    <compare flag="error" gte="1" lte="1">
-                        <message>This field must be either 1 or blank</message>
-                    </compare>
-                </number>
-                <number id="9" name="control" required="false" type="integer" ui:tab="pmp_detail">
-                    <label type="number">10</label>
-                    <label>Control</label>
-                    <compare flag="error" gte="1" lte="1">
-                        <message>This field must be either 1 or blank</message>
-                    </compare>
-                </number>
-                <number id="10" name="record_type" required="false" type="integer" ui:tab="pmp_detail">
-                    <label type="number">11</label>
-                    <label>Record type</label>
-                    <default value="1"/>
-                    <compare flag="error" lte="1">
-                        <message>This field must be greater than 1</message>
-                    </compare>
-                </number>
-                <code id="11" list="province" name="province" required="true" ui:tab="pmp_detail">
-                    <label type="number">12</label>
-                    <label>Province</label>
-                </code>
-                <code id="12" list="land_system" name="land_system" required="true" ui:tab="pmp_detail">
-                    <label type="number">13</label>
-                    <label>Land system</label>
-                </code>
-                <code id="13" list="altitude" name="altitude" required="true" ui:tab="pmp_detail">
-                    <label type="number">14</label>
-                    <label>Altitude</label>
-                </code>
-                <code id="14" list="land_category" name="land_category" required="true" ui:tab="pmp_detail">
-                    <label type="number">15</label>
-                    <label>Land category</label>
-                </code>
-                <code id="15" list="forest_class" name="forest_type" required="true" ui:tab="pmp_detail">
-                    <label type="number">16</label>
-                    <label>Forest type</label>
-                </code>
-                <code id="16" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="pmp_detail">
-                    <label type="number">17</label>
-                    <label>Stand condition</label>
-                </code>
-                <number id="17" name="logging_year" required="false" type="integer" ui:tab="pmp_detail">
-                    <label type="number">18</label>
-                    <label>Logging year</label>
-                    <compare flag="error" gte="1900" lte="2050"/>
-                </number>
-                <code id="18" list="terrain" name="terrain" required="true" ui:tab="pmp_detail">
-                    <label type="number">19</label>
-                    <label>Terrain</label>
-                </code>
-                <code id="19" list="slope" name="slope" required="true" ui:tab="pmp_detail">
-                    <label type="number">20</label>
-                    <label>Slope</label>
-                </code>
-                <code id="20" list="aspect" name="aspect" required="true" ui:tab="pmp_detail">
-                    <label type="number">21</label>
-                    <label>Aspect</label>
-                </code>
-                <entity id="21" multiple="false" name="record_count" ui:tab="pmp_detail">
-                    <label>Number of Records</label>
-                    <number id="22" name="trees_poles" required="false" type="integer">
-                        <label type="number">22</label>
-                        <label>Trees and poles</label>
-                        <default value="0"/>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                    <number id="23" name="seedlings" required="false" type="integer">
-                        <label type="number">23</label>
-                        <label>Seedlings</label>
-                        <default value="0"/>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                    <number id="24" name="saplings" required="false" type="integer">
-                        <label type="number">24</label>
-                        <label>Saplings</label>
-                        <default value="0"/>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                    <number id="25" name="sm_rattan" required="false" type="integer">
-                        <label type="number">25</label>
-                        <label>Rattan (&lt;=2.9m)</label>
-                        <default value="0"/>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                    <number id="26" name="lg_rattan" required="false" type="integer">
-                        <label type="number">26</label>
-                        <label>Rattan (&gt;=3m)</label>
-                        <default value="0"/>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                </entity>
-                <number id="27" name="crew_no" required="false" type="integer" ui:tab="pmp_detail">
-                    <label type="number">27</label>
-                    <label>Crew no.</label>
-                    <compare flag="error" gte="0"/>
-                </number>
-                <code id="28" list="month" name="month" required="true" ui:tab="pmp_detail">
-                    <label type="number">28</label>
-                    <label>Month</label>
-                </code>
-                <number id="29" name="year" required="true" type="integer" ui:tab="pmp_detail">
-                    <label type="number">29</label>
-                    <label>Year</label>
-                    <compare flag="error" gte="1900" lte="2050"/>
-                </number>
-                <entity id="30" multiple="true" name="tp" ui:tab="pmp_tp">
-                    <label type="heading">Trees and Poles</label>
-                    <text id="31" name="species_name">
-                        <label>Name of Species</label>
-                    </text>
-                    <taxon highestRank="genus" id="32" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
-                        <label>Name of Species</label>
-                    </taxon>
-                    <number id="33" name="diameter" type="real">
-                        <label>Diameter</label>
-                        <label type="number">14</label>
-                        <description>DBH or diameter 0.2m AB</description>
-                        <precision decimalDigits="1" unit="cm"/>
-                    </number>
-                    <number id="34" name="damage" type="integer">
-                        <label>Damage</label>
-                        <label type="number">15</label>
-                    </number>
-                    <entity id="35" multiple="false" name="lg_trees" relevant="diameter &gt;= 20">
-                        <label>Large trees</label>
-                        <description>Trees with diameter &gt;=20cm</description>
-                        <number id="36" name="buttress_height" type="real">
-                            <label>Buttress height</label>
-                            <precision decimalDigits="2" unit="cm"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="37" name="tree_height" type="real">
-                            <label>Tree height</label>
-                            <precision decimalDigits="2" unit="cm"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="38" name="bole_height" type="real">
-                            <label>Bole height</label>
-                            <precision decimalDigits="1" unit="cm"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="39" name="grade" type="integer">
-                            <label>Grade</label>
-                            <label type="number">20</label>
-                        </number>
-                        <number id="40" name="infestation" type="integer">
-                            <label type="number">21</label>
-                            <label>Infestation</label>
-                        </number>
-                    </entity>
-                    <entity id="41" multiple="false" name="bole_height">
-                        <label>Bole height</label>
-                        <number id="42" name="horizontal_distance" type="real">
-                            <label>Horizontal distance</label>
-                            <precision decimalDigits="2" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="43" name="base_height" type="real">
-                            <label>Height of base</label>
-                            <precision decimalDigits="1" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="44" name="percent_base" type="real">
-                            <label>Percent base</label>
-                            <precision decimalDigits="0" unit="percent"/>
-                        </number>
-                        <number id="45" name="percent_crown_point" type="real">
-                            <label>Percent crown point</label>
-                            <precision decimalDigits="0" unit="percent"/>
-                        </number>
-                    </entity>
-                    <entity id="46" multiple="false" name="buttress">
-                        <label>Buttress</label>
-                        <number id="47" name="horizontal_distance" type="real">
-                            <label>Horizontal distance</label>
-                            <precision decimalDigits="2" unit="m"/>
-                        </number>
-                        <number id="48" name="percent_base" type="real">
-                            <label>Percent base</label>
-                            <precision decimalDigits="0" unit="percent"/>
-                        </number>
-                        <number id="49" name="percent_buttress" type="real">
-                            <label>Percent buttress</label>
-                            <precision decimalDigits="0" unit="percent"/>
-                            <compare flag="error" gte="0" lte="100"/>
-                        </number>
-                    </entity>
-                    <entity id="50" multiple="false" name="dab">
-                        <label>DAB</label>
-                        <description>Diameter 0.2m above buttress</description>
-                        <number id="51" name="full_bars" type="real">
-                            <label>Full bars</label>
-                        </number>
-                        <number id="52" name="quarter_bars" type="real">
-                            <label>1/4 bars</label>
-                            <precision decimalDigits="1" unit="percent"/>
-                        </number>
-                    </entity>
-                </entity>
-                <entity id="53" multiple="true" name="ssr" ui:tab="pmp_ssr">
-                    <label>Seedlings, Saplings, Rattan</label>
-                    <text id="54" name="species_name">
-                        <label>Species name</label>
-                    </text>
-                    <taxon highestRank="genus" id="55" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
-                        <label>Name of Species</label>
-                    </taxon>
-                    <number id="56" name="count" required="true" type="integer">
-                        <label>Count</label>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                    <number id="57" name="seedlings" type="integer">
-                        <label>Seedlings</label>
-                        <default value="0"/>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                    <number id="58" name="saplings" type="integer">
-                        <label>Saplings</label>
-                        <default value="0"/>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                    <number id="59" name="sm_rattan" type="integer">
-                        <label>Small rattan</label>
-                        <description>Rattan &lt;= 2.9m</description>
-                        <default value="0"/>
-                        <compare flag="error" gte="0"/>
-                    </number>
-                    <entity id="60" name="lg_rattan">
-                        <label>Large rattan</label>
-                        <description>Rattan &gt;=3m long</description>
-                        <number id="61" name="stems" type="integer">
-                            <label>Stems</label>
-                            <default value="0"/>
-                            <compare flag="error" gte="0"/>
-                        </number>
-                        <number id="62" name="max_diameter" type="real">
-                            <label>Max. diameter</label>
-                            <precision decimalDigits="1" unit="cm"/>
-                            <compare flag="error" gte="0"/>
-                        </number>
-                        <number id="63" name="min_diameter" type="real">
-                            <label>Min. diameter</label>
-                            <precision decimalDigits="1" unit="cm"/>
-                            <compare flag="error" gte="0"/>
-                        </number>
-                        <number id="64" name="avg_diameter" type="real">
-                            <label>Avg. diameter</label>
-                            <precision decimalDigits="1" unit="cm"/>
-                            <compare flag="error" gte="0"/>
-                        </number>
-                        <number id="65" name="avg_length" type="real">
-                            <label>Avg. length</label>
-                            <precision decimalDigits="0" unit="m"/>
-                            <compare flag="error" gte="0"/>
-                        </number>
-                    </entity>
-                </entity>
-            </entity>
             
-            <entity id="1329" multiple="true" name="bamboo" ui:layout="form" ui:tab="bamboo">
-                <label>Bamboo</label>
-                <number id="1303" key="true" name="tract_no" required="true" type="integer" ui:tab="bamboo_detail">
-                    <label>Tract</label>
-                    <compare flag="error" gte="1" lte="15"/>
-                </number>
-                <number id="1476" key="true" name="subplot_no" required="true" type="integer" ui:tab="bamboo_detail">
-                    <label>Subplot</label>
-                    <compare flag="error" gte="1" lte="8"/>
-                </number>
-                <number id="1618" name="sector" type="real" ui:tab="bamboo_detail">
-                    <label>Sector</label>
-                    <precision decimalDigits="0" unit="deg"/>
-                </number>
-                <number id="1318" name="segment_dist" relevant="sector=''" type="real" ui:tab="bamboo_detail">
-                    <label>Segment distance</label>
-                    <precision decimalDigits="2" unit="m"/>
-                </number>
-                <number id="11724" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
-                    <label>Large part</label>
-                </number>
-                <number id="1600" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
-                    <label>Small part</label>
-                </number>
-                <number id="1466" name="permanent" required="false" type="integer" ui:tab="bamboo_detail">
-                    <label>Permanent</label>
-                    <compare flag="error" gte="1" lte="1">
-                        <message>This field must be either 1 or blank</message>
-                    </compare>
-                </number>
-                <number id="1501" name="control" required="false" type="integer" ui:tab="bamboo_detail">
-                    <label>Control</label>
-                    <compare flag="error" gte="1" lte="1">
-                        <message>This field must be either 1 or blank</message>
-                    </compare>
-                </number>
-                <entity id="1616" multiple="true" name="bamboo_enumeration" ui:tab="bamboo_enum">
-                    <label type="heading">Bamboo Enumeration</label>
-                    <text id="1294" name="name_of_species" required="true">
-                        <label>Name of species</label>
-                    </text>
-                    <entity id="1584" name="number_of_bamboo_culms">
-                        <label>Number of culmns</label>
-                        <number id="1432" name="one_year" type="integer">
-                            <label>1 - Year</label>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1344" name="two_year" type="integer">
-                            <label>2 - Year</label>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1356" name="total" type="integer">
-                            <label>Total</label>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1550" name="live_stumps" type="integer">
-                            <label>Live Stumps</label>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                    </entity>
-                    <entity id="1586" name="one_year_old">
-                        <label>1-year old</label>
-                        <entity id="1401" name="low_part">
-                            <label>Low part</label>
-                            <number id="1436" name="dbh" type="real">
-                                <label>DBH</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1474" name="length" type="real">
-                                <label>Length</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1482" name="weight" type="real">
-                                <label>Weight</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                        <entity id="1506" name="top">
-                            <label>Top</label>
-                            <number id="1418" name="length" type="real">
-                                <label>Length</label>
-                            </number>
-                            <number id="1322" name="weight" type="real">
-                                <label>Weight</label>
-                            </number>
-                        </entity>
-                    </entity>
-                    <entity id="1456" name="two_year_old">
-                        <label>2-year old</label>
-                        <entity id="1627" name="low_part">
-                            <label>Low part</label>
-                            <number id="1312" name="dbh" type="real">
-                                <label>D B H</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1368" name="length" type="real">
-                                <label>Length</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1421" name="weight" type="real">
-                                <label>Weight</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                        <entity id="1395" name="top">
-                            <label>Top</label>
-                            <number id="1546" name="length" type="real">
-                                <label>Length</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1434" name="weight" type="real">
-                                <label>Weight</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                    </entity>
-                    <entity id="1364" name="more_than_three_year_old">
-                        <label>3+year old</label>
-                        <entity id="1625" name="low_part">
-                            <number id="1470" name="dbh" type="real">
-                                <label>DBH</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1335" name="length" type="real">
-                                <label>Length</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1608" name="weight" type="real">
-                                <label>Weight</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                        <entity id="1340" name="top">
-                            <number id="1422" name="length" type="real">
-                                <label>Length</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1538" name="weight" type="real">
-                                <label>Weight</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                    </entity>
-                </entity>
-            </entity>
-            <entity id="1450" multiple="true" name="sagu" ui:layout="form" ui:tab="sagu">
-                <label>Sagu Enumeration, TSP</label>
-                <text id="1481" name="species_or_variety">
-                    <label>Species/Variety</label>
-                </text>
-                <number id="1553" name="record_type" type="integer">
-                    <label>Record Type (foxpro:15)</label>
-                </number>
-                <text id="1620" name="species_code">
-                    <label>Species Code</label>
-                </text>
-                <number id="1539" name="cons_culm_number" type="integer">
-                    <label>Cons Culm Number</label>
-                </number>
-                <number id="1311" name="clump_diameter" type="real">
-                    <label>Clump Diameter</label>
-                </number>
-                <entity id="1384" name="bole_height">
-                    <number id="1321" name="horizontal_distance" type="real">
-                        <label>Horizontal Distance</label>
-                    </number>
-                    <number id="1565" name="height_of_base" type="real">
-                        <label>Height of Base</label>
-                    </number>
-                    <number id="1443" name="percent_base" type="real">
-                        <label>Percent Base</label>
-                    </number>
-                    <number id="1437" name="percent_crown_point" type="real">
-                        <label>Percent Crown Point</label>
-                    </number>
-                </entity>
-                <entity id="1374" name="m1_m2_m3_stems">
-                    <number id="1339" name="number_of_stems_in_clump" type="integer">
-                        <label>Number of Stems in Clump</label>
-                    </number>
-                    <number id="1314" name="stems_consec_no_clump" type="integer">
-                        <label>Stems Consecutive No/Clump</label>
-                    </number>
-                    <number id="1438" name="damage" type="integer">
-                        <label>Damage</label>
-                    </number>
-                    <number id="1623" name="dbh" type="real">
-                        <label>D B H</label>
-                    </number>
-                    <number id="1552" name="bole_height" type="real">
-                        <label>Bole Height</label>
-                    </number>
-                    <number id="1563" name="maturity_class" type="integer">
-                        <label>Maturity Class</label>
-                    </number>
-                </entity>
-                <entity id="1613" name="count_for_young_or_overmature_stemps">
-                    <number id="1496" name="no_seedlings_in_sub_plot" type="integer">
-                        <label>No Seedlings in Sub Plot</label>
-                    </number>
-                    <number id="1393" name="no_seedlings_in_clump" type="integer">
-                        <label>No Seedlings in Clump</label>
-                    </number>
-                    <number id="1313" name="m4_stems_in_clump" type="integer">
-                        <label>M4 Stems in Clump</label>
-                    </number>
-                </entity>
-            </entity>
-            <entity id="1412" multiple="true" name="nipa" ui:layout="form" ui:tab="nipa">
-                <label>Nipa Enumeration, TSP</label>
-                <entity id="1615" name="data_location">
-                    <number id="1417" name="record_type" type="integer">
-                        <label>Record Type (foxpro:16)</label>
-                    </number>
-                    <code id="1451" list="province" name="province" required="true">
-                        <label>Province</label>
-                    </code>
-                    <code id="1373" list="land_system" name="land_system" required="true">
-                        <label>Land System</label>
-                    </code>
-                    <number id="1459" name="altitude" required="true" type="integer">
-                        <label>Altitude</label>
-                    </number>
-                    <code id="1408" list="land_category" name="land_category" required="true">
-                        <label>Land Category</label>
-                    </code>
-                    <code id="1542" list="forest_class" name="forest_type" required="true">
-                        <label>Forest Type</label>
-                    </code>
-                    <code id="1320" list="stand_condition" name="stand_condition" required="true">
-                        <label>Stand Condition Cut/Uncut (choice : c/u)</label>
-                    </code>
-                    <number id="1370" name="year_of_cutting" required="true" type="integer">
-                        <label>Year of Cutting</label>
-                    </number>
-                    <code id="1559" list="terrain" name="terrain" required="true">
-                        <label>Terrain</label>
-                    </code>
-                    <code id="1440" list="slope" name="slope" required="true">
-                        <label>Slope</label>
-                    </code>
-                    <code id="1561" list="aspect" name="aspect" required="true">
-                        <label>Aspect</label>
-                    </code>
-                </entity>
-                <entity id="1494" name="partition">
-                    <number id="1564" name="sector_degree" type="real">
-                        <label>Sector Degree</label>
-                    </number>
-                    <number id="1430" name="distance_to_segment" type="real">
-                        <label>Distance to Segment (empty in the foxpro)</label>
-                    </number>
-                    <number id="1457" name="large_small_part" type="integer">
-                        <label>Large / Small Part</label>
-                    </number>
-                </entity>
-                <entity id="1445" name="number_of_records">
-                    <number id="1468" name="m1" type="integer">
-                        <label>M1</label>
-                    </number>
-                    <number id="1465" name="m2" type="integer">
-                        <label>M2</label>
-                    </number>
-                    <number id="1317" name="no_of_seedlings" type="integer">
-                        <label>Number of Seedlings</label>
-                    </number>
-                </entity>
-                <number id="1556" name="crew_number" type="integer">
-                    <label>Crew Number</label>
-                </number>
-                <code id="1419" list="month" name="month" required="true">
-                    <label>Month</label>
-                </code>
-                <entity id="1423" name="data_measure">
-                    <text id="1581" name="name_of_species">
-                        <label>Name of Species</label>
-                    </text>
-                    <number id="1353" name="record_type" type="integer">
-                        <label>Record Type (foxpro:17)</label>
-                    </number>
-                    <number id="1532" name="consec_number" type="integer">
-                        <label>Consecutive Number (auto filled in FoxPro)</label>
-                    </number>
-                    <text id="1372" name="species_code">
-                        <label>Species Code</label>
-                    </text>
-                    <entity id="1519" name="number_of_leaves">
-                        <number id="1604" name="total_number_of_leaves" type="integer">
-                            <label>Total Number of Leaves</label>
-                        </number>
-                        <number id="1575" name="no_of_cull_leaves" type="integer">
-                            <label>No. of Cull Leaves</label>
-                        </number>
-                        <number id="1359" name="no_of_utilizable_leaves" type="integer">
-                            <label>No. of Utilizable Leaves</label>
-                        </number>
-                    </entity>
-                    <number id="1305" name="height_of_news_nipa" type="real">
-                        <label>Height of N-E-W-S Nipa</label>
-                    </number>
-                    <number id="1510" name="height_of_tallest_nipa" type="real">
-                        <label>Height of Tallest Nipa</label>
-                    </number>
-                    <number id="1439" name="maturity" type="integer">
-                        <label>Maturity</label>
-                    </number>
-                    <code id="1611" list="leaf_state" name="leaves_cut_or_uncut">
-                        <label>Leaves Cut/Uncut</label>
-                    </code>
-                    <number id="1509" name="flower_or_fruit" type="integer">
-                        <label>Flower or Fruit</label>
-                    </number>
-                    <code id="1536" list="open_or_closed" name="open_or_closed">
-                        <label>Open or Closed</label>
-                    </code>
-                    <number id="1500" name="horizontal_distance" type="real">
-                        <label>Horizontal Distance</label>
-                    </number>
-                    <number id="1505" name="percent_base" type="real">
-                        <label>Percent Base</label>
-                    </number>
-                    <number id="1454" name="percent_top" type="real">
-                        <label>Percent Top</label>
-                    </number>
-                    <number id="1295" name="length_news_plant" type="real">
-                        <label>Length News Plant</label>
-                    </number>
-                    <number id="1406" name="no_of_util_leaf" type="integer">
-                        <label>Number of Utility Leaf</label>
-                    </number>
-                    <number id="1444" name="total_no_of_leaf" type="integer">
-                        <label>Total Number of Leaf</label>
-                    </number>
-                </entity>
-            </entity>
-            <entity id="1514" multiple="true" name="permanent_plot_a" ui:layout="form" ui:tab="plot_a">
-                <label type="instance">Permanent Plot, A</label>
-                <number id="1292" name="hectare_plot" type="real" ui:tab="plota_detail">
-                    <label>Hectare Plot</label>
-                    <compare flag="error" gt="0"/>
-                </number>
-                <number id="1603" key="true" name="record_unit" type="integer" ui:tab="plota_detail">
-                    <label>Record Unit</label>
-                    <compare flag="error" gt="0"/>
-                </number>
-                <number id="1493" name="sector" type="real" ui:tab="plota_detail">
-                    <label>Sector</label>
-                    <precision decimalDigits="0" unit="deg"/>
-                </number>
-                <number id="1490" name="segment_dist" relevant="sector=''" type="real" ui:tab="plota_detail">
-                    <label>Segment distance</label>
-                    <precision decimalDigits="2" unit="m"/>
-                </number>
-                <number id="9579" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
-                    <label>Large part</label>
-                </number>
-                <number id="1469" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plota_detail">
-                    <label>Small part</label>
-                </number>
-                <number id="1354" name="square_5x3" type="real">
-                    <label>5x3m squares</label>
-                    <compare flag="error" gt="0"/>
-                </number>
-                <number id="1537" name="control" required="false" type="integer" ui:tab="plota_detail">
-                    <label>Control</label>
-                    <compare flag="error" gte="1" lte="1">
-                        <message>This field must be either 1 or blank</message>
-                    </compare>
-                </number>
-                <code id="1483" list="province" name="province" required="true" ui:tab="plota_detail">
-                    <label>Province</label>
-                </code>
-                <code id="1441" list="land_system" name="land_system" required="true" ui:tab="plota_detail">
-                    <label>Land system</label>
-                </code>
-                <code id="1499" list="altitude" name="altitude" required="true" ui:tab="plota_detail">
-                    <label>Altitude</label>
-                </code>
-                <code id="1390" list="land_category" name="land_category" required="true" ui:tab="plota_detail">
-                    <label>Land category</label>
-                </code>
-                <code id="1515" list="forest_class" name="forest_type" required="true" ui:tab="plota_detail">
-                    <label>Forest type</label>
-                </code>
-                <code id="10261" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="plota_detail">
-                    <label>Stand condition</label>
-                </code>
-                <number id="1497" name="logging_year" required="false" type="integer" ui:tab="plota_detail">
-                    <label>Logging year</label>
-                    <compare flag="error" gte="1900" lte="2050"/>
-                </number>
-                <code id="1323" list="terrain" name="terrain" required="true" ui:tab="plota_detail">
-                    <label>Terrain</label>
-                </code>
-                <code id="1580" list="slope" name="slope" required="true" ui:tab="plota_detail">
-                    <label>Slope</label>
-                </code>
-                <code id="1319" list="aspect" name="aspect" required="true" ui:tab="plota_detail">
-                    <label>Aspect</label>
-                </code>
-                <number id="1534" name="tp_recorded" required="true" type="integer" ui:tab="plota_detail">
-                    <label>Trees and poles recorded</label>
-                </number>
-                <number id="1516" name="crew_no" required="false" type="integer" ui:tab="plota_detail">
-                    <label>Crew no.</label>
-                    <compare flag="error" gte="0"/>
-                </number>
-                <code id="1365" list="month" name="month" required="true" ui:tab="plota_detail">
-                    <label>Month</label>
-                </code>
-                <number id="1576" name="year" required="true" type="integer" ui:tab="plota_detail">
-                    <label>Year</label>
-                    <compare flag="error" gte="1900" lte="2050"/>
-                </number>
-                <entity id="1446" multiple="true" name="plota_enum" ui:layout="table" ui:tab="plota_enum">
-                    <label>Plot A Enumeration</label>
-                    <text id="1361" name="name_of_species" required="true">
-                        <label>Name of species</label>
-                    </text>
-                    <taxon highestRank="genus" id="23443" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
-                        <label>Name of Species</label>
-                    </taxon>
-                    <number id="1442" name="dbb_or_b" type="real">
-                        <label>DBB or B 0.2m AB 0.1cm</label>
-                    </number>
-                    <number id="1507" name="damage" type="integer">
-                        <label>Damage</label>
-                    </number>
-                    <number id="9687" name="azimuth_to_tree" type="integer">
-                        <label>Azimuth to tree</label>
-                    </number>
-                    <number id="9639" name="horizontal_distance_to_tree" type="real">
-                        <label>Horizontal distance to tree</label>
-                        <precision decimalDigits="2"/>
-                    </number>
-                    <entity id="1484" name="trees_higher_than_20cm">
-                        <label>Trees of 20+cm</label>
-                        <number id="1306" name="butress_height" type="real">
-                            <label>Buttress height 0.01m</label>
-                            <precision decimalDigits="2" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1607" name="d_2point2m_ab" type="real">
-                            <label>D 2.2m AB 0.1cm</label>
-                            <precision decimalDigits="1" unit="cm"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1595" name="bole_height" type="real">
-                            <label>Bole height 0.1m</label>
-                            <precision decimalDigits="1" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1587" name="tree_height" type="real">
-                            <label>Tree height</label>
-                            <precision decimalDigits="1" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1405" name="grade" type="integer">
-                            <label>Grade</label>
-                        </number>
-                        <number id="1310" name="infestation" type="integer">
-                            <label>Infestation</label>
-                        </number>
-                        <number id="1296" name="tree_class" type="integer">
-                            <label>Tree class</label>
-                        </number>
-                        <number id="1316" name="crown_class" type="integer">
-                            <label>Crown class</label>
-                        </number>
-                        <number id="1357" name="crown_position" type="integer">
-                            <label>Crown position</label>
-                        </number>
-                    </entity>
-                    <entity id="1324" name="bole_and_tree_height">
-                        <label>Bole and tree height</label>
-                        <number id="1619" name="horizontal_distance" type="real">
-                            <label>Horizontal distance 0.01m</label>
-                            <precision decimalDigits="2" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1477" name="height_of_base" type="real">
-                            <label>Height of base 0.1m</label>
-                            <precision decimalDigits="1" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1601" name="percent_base" type="real">
-                            <label>Percent base</label>
-                            <precision decimalDigits="2"/>
-                        </number>
-                        <number id="1591" name="percent_crown_point" type="real">
-                            <label>Percent crown point</label>
-                            <precision decimalDigits="2"/>
-                        </number>
-                        <number id="1300" name="percent_top_of_tree" type="real">
-                            <label>Percent top of tree</label>
-                            <precision decimalDigits="2"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                    </entity>
-                    <entity id="1487" name="buttress_and_diameter_above_buttress">
-                        <label>Buttress and diameters above buttress</label>
-                        <number id="1471" name="horizontal_distance" type="real">
-                            <label>Horizontal distance 0.01m</label>
-                            <precision decimalDigits="2" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1513" name="percent_base" type="real">
-                            <label>Percent base</label>
-                            <precision decimalDigits="2"/>
-                        </number>
-                        <number id="1410" name="percent_buttress" type="real">
-                            <label>Percent buttress</label>
-                            <precision decimalDigits="2"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <entity id="1528" name="d_02_ab">
-                            <label>D 0.2 AB</label>
-                            <number id="1383" name="full_bars" type="real">
-                                <label>Full bars</label>
-                                <precision decimalDigits="2"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1297" name="quarter_bars" type="real">
-                                <label>1/4 bars</label>
-                                <precision decimalDigits="2"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                        <number id="1391" name="percent_2point2m_ab" type="real">
-                            <label>Percent 2.2m AB</label>
-                            <precision decimalDigits="2" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <entity id="1342" name="d_22_ab">
-                            <label>D 2.2 AB</label>
-                            <number id="1332" name="full_bars">
-                                <label>Full bars</label>
-                                <precision decimalDigits="2"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1479" name="quarter_bars" type="real">
-                                <label>1/4 bars 0.1</label>
-                                <precision decimalDigits="2"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                    </entity>
-                </entity>
-            </entity>
-            <entity id="1512" multiple="true" name="permanent_plot_b" ui:layout="form" ui:tab="plot_b">
-                <label>Permanent Plot, B</label>
-                <number id="1472" name="hectare_plot" required="true" type="real" ui:tab="plotb_detail">
-                    <label>Hectare plot</label>
-                    <compare flag="error" gt="0"/>
-                </number>
-                <number id="1588" name="record_unit" required="true" type="integer" ui:tab="plotb_detail" key="true">
-                    <label>Record unit</label>
-                    <compare flag="error" gt="0"/>
-                </number>
-                <number id="1334" name="sector" type="real" ui:tab="plotb_detail">
-                    <label>Sector</label>
-                    <precision decimalDigits="0" unit="deg"/>
-                </number>
-                <number id="1304" name="segment_dist" relevant="sector=''" type="real" ui:tab="plotb_detail">
-                    <label>Segment distance</label>
-                    <precision decimalDigits="2" unit="m"/>
-                </number>
-                <number id="1309" name="largepart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
-                    <label>Large part</label>
-                </number>
-                <number id="9746" name="smallpart" relevant="sector!='' or segment_dist!=''" required="true" type="integer" ui:tab="plotb_detail">
-                    <label>Small part</label>
-                </number>
-                <number id="1333" name="square_5x5" type="real">
-                    <label>5x5m squares</label>
-                    <compare flag="error" gt="0"/>
-                </number>
-                <number id="1504" name="control" required="false" type="integer" ui:tab="plotb_detail">
-                    <label>Control</label>
-                    <compare flag="error" gte="1" lte="1">
-                        <message>This field must be either 1 or blank</message>
-                    </compare>
-                </number>
-                <code id="23306" list="province" name="province" required="true" ui:tab="nf_detail">
-                    <label type="number">12</label>
-                    <label>Province</label>
-                </code>
-                <entity id="1526" name="number_of_records" ui:tab="plotb_detail">
-                    <label>Number of records</label>
-                    <number id="1435" name="seedlings" type="integer">
-                        <label>Seedlings</label>
-                    </number>
-                    <number id="1376" name="saplings" type="integer">
-                        <label>Saplings</label>
-                    </number>
-                    <number id="1425" name="rattan_less_than2point9m">
-                        <label>Rattan [-2.9m]</label>
-                    </number>
-                    <number id="1485" name="rattan_more_than3point0m">
-                        <label>Rattan [+3.0m]</label>
-                    </number>
-                    <number id="1462" name="bamboo" type="real">
-                        <label>Bamboo</label>
-                    </number>
-                    <number id="1566" name="depth_of_peat_layer" type="real">
-                        <label>Depth of peat layer</label>
-                    </number>
-                    <number id="1541" name="depth_of_litter" type="real">
-                        <label>Depth of litter</label>
-                    </number>
-                    <number id="13062" name="depth_of_peath" type="real">
-                        <label>Depth of peath(cm)</label>
-                    </number>
-                    <number id="13053" name="depth_of_humus" type="real">
-                        <label>Depth of humus(cm)</label>
-                    </number>
-                </entity>
-                <entity id="1400" name="a_horizon" ui:tab="plotb_detail">
-                    <label>A-horizone / 10 cm</label>
-                    <number id="1592" name="depth" type="real">
-                        <label>Depth</label>
-                    </number>
-                    <number id="1480" name="stones" type="real">
-                        <label>Stones</label>
-                    </number>
-                    <number id="1579" name="colour" type="integer">
-                        <label>Colour</label>
-                    </number>
-                    <number id="1409" name="water_regime" type="integer">
-                        <label>Water Regime</label>
-                    </number>
-                    <number id="1567" name="texture" type="integer">
-                        <label>Texture</label>
-                    </number>
-                </entity>
-                <entity id="1560" name="b_horizon" ui:tab="plotb_detail">
-                    <label>B-horizone / 30 cm</label>
-                    <number id="1572" name="depth" type="real">
-                        <label>Depth</label>
-                    </number>
-                    <number id="1290" name="stones" type="real">
-                        <label>Stones</label>
-                    </number>
-                    <number id="1378" name="colour" type="integer">
-                        <label>Colour</label>
-                    </number>
-                    <number id="1551" name="water_regime" type="integer">
-                        <label>Water Regime</label>
-                    </number>
-                    <number id="1389" name="texture" type="integer">
-                        <label>Texture</label>
-                    </number>
-                </entity>
-                <entity id="12515" name="fifty_cm" ui:tab="plotb_detail">
-                    <label>50 cm</label>
-                    <number id="12484" name="texture" type="integer">
-                        <label>Texture</label>
-                    </number>
-                    <number id="12509" name="colour" type="integer">
-                        <label>Colour</label>
-                    </number>
-                    <number id="12693" name="stones" type="real">
-                        <label>Stones</label>
-                    </number>
-                </entity>
-                <number id="1626" name="c_horizon" type="integer" ui:tab="plotb_detail">
-                    <label>C Horizon</label>
-                </number>
-                <number id="12867" name="slope_position" type="integer" ui:tab="plotb_detail">
-                    <label>Slope position</label>
-                </number>
-                <number id="1574" name="crew_number" type="integer" ui:tab="plotb_detail">
-                    <label>Crew number</label>
-                </number>
-                <code id="1328" list="month" name="month" required="true" ui:tab="plotb_detail">
-                    <label>Month</label>
-                </code>
-                <number id="1488" name="year" required="true" type="integer" ui:tab="plotb_detail">
-                    <label>Year</label>
-                    <compare flag="error" gte="1900" lte="2050"/>
-                </number>
-                <entity id="1427" multiple="true" name="plotb_ssr" ui:layout="table" ui:tab="plotb_ssr">
-                    <label>R 1m tree seedlings, r 2m tree saplings, r 5m rattan -2.9m, r 10m rattan 3+m</label>
-                    <text id="1355" name="name_of_species" required="true">
-                        <label>Name of Species</label>
-                    </text>
-                    <taxon highestRank="genus" id="23366" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
-                        <label>Name of Species</label>
-                    </taxon>
-                    <number id="1610" name="count" type="integer">
-                        <label>Count</label>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                    <number id="1377" name="seedlings" type="integer">
-                        <label>Seedlings</label>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                    <number id="1597" name="saplings" type="integer">
-                        <label>Saplings</label>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                    <number id="1346" name="rattan_lte_2point9m" type="integer">
-                        <label>Rattan -2.9m</label>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                    <entity id="1589" name="rattan_gte_3m">
-                        <label>Rattan 3+m long</label>
-                        <entity id="1345" name="s_single">
-                            <label>s single</label>
-                            <number id="1622" name="stems" type="integer">
-                                <label>Stems</label>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1596" name="d_max" type="real">
-                                <label>D max 0.1cm</label>
-                                <precision decimalDigits="2" unit="cm"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                        <entity id="1467" name="c_cluster">
-                            <label>c cluster</label>
-                            <number id="1287" name="d_min" type="real">
-                                <label>D min 0.1cm</label>
-                                <precision decimalDigits="2" unit="cm"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1428" name="d_avg" type="real">
-                                <label>D average 0.1cm</label>
-                                <precision decimalDigits="2" unit="cm"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1549" name="l_avg" type="real">
-                                <label>L average m</label>
-                                <precision decimalDigits="2" unit="m"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                    </entity>
-                </entity>
-                <entity id="1358" multiple="true" name="bamboo" ui:layout="table" ui:tab="plotb_bamboo">
-                    <label>R 10 m Bamboo</label>
-                    <text id="1525" name="name_of_species" required="true">
-                        <label>Name of Species</label>
-                    </text>
-                    <taxon highestRank="genus" id="23174" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
-                        <label>Name of Species</label>
-                    </taxon>
-                    <entity id="1293" name="no_culm">
-                        <label>Number of culmns</label>
-                        <number id="1458" name="one_year" type="integer">
-                            <label>1-year</label>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1489" name="two_year" type="integer">
-                            <label>2-year</label>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1396" name="total" type="integer">
-                            <label>Total</label>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="1475" name="live_stumps" type="integer">
-                            <label>Live stumps</label>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                    </entity>
-                    <entity id="1521" name="one_year">
-                        <label>1-year old</label>
-                        <entity id="1369" name="low_part">
-                            <label>Low part</label>
-                            <number id="1518" name="dbh" type="real">
-                                <label>Dbh 0.1cm</label>
-                                <precision decimalDigits="1" unit="cm"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1614" name="length">
-                                <label>Length 0.1m</label>
-                                <precision decimalDigits="1" unit="m"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1522" name="weight" type="real">
-                                <label>Weight 0.1kg</label>
-                                <precision decimalDigits="1" unit="kg"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                    </entity>
-                    <entity id="1381" name="two_year">
-                        <label>2-year old</label>
-                        <entity id="1426" name="low_part">
-                            <label>Low part</label>
-                            <number id="1569" name="dbh" type="real">
-                                <label>Dbh 0.1cm</label>
-                                <precision decimalDigits="1" unit="cm"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1508" name="length">
-                                <label>Length 0.1m</label>
-                                <precision decimalDigits="1" unit="m"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1568" name="weight" type="real">
-                                <label>Weight 0.1kg</label>
-                                <precision decimalDigits="1" unit="kg"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                    </entity>
-                    <entity id="1326" name="three_year">
-                        <label>3+year old</label>
-                        <entity id="1547" name="low_part">
-                            <label>Low part</label>
-                            <number id="1585" name="dbh" type="real">
-                                <label>Dbh 0.1cm</label>
-                                <precision decimalDigits="1" unit="cm"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1609" name="length">
-                                <label>Length 0.1m</label>
-                                <precision decimalDigits="1" unit="m"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                            <number id="1492" name="weight" type="real">
-                                <label>Weight 0.1kg</label>
-                                <precision decimalDigits="1" unit="kg"/>
-                                <compare flag="error" gt="0"/>
-                            </number>
-                        </entity>
-                    </entity>
-                    <number id="23501" name="azimuth_to_bamboo" type="integer">
-                        <label>Azimuth to bamboo</label>
-                        <precision decimalDigits="1" unit="cm"/>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                    <number id="23711" name="horizontal_distance_to_bamboo" type="real">
-                        <label>Horizontal distance to bamboo</label>
-                        <precision decimalDigits="1" unit="cm"/>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                </entity>
-            </entity>
-            <entity id="20000" multiple="true" name="carbon_pool_c" ui:layout="form" ui:tab="carbon_pool_c">
-                <label>Tally Sheet C - Pengukuran Semai dan Pacang</label>
-                <number id="20001" key="true" name="record_unit" type="integer" ui:tab="carbon_pool_c_detail">
-                    <label>Record Unit</label>
-                    <compare flag="error" gt="0"/>
-                </number>
-                <code id="20023" list="province" name="province" required="true" ui:tab="carbon_pool_c_detail">
-                    <label>Province</label>
-                </code>
-                <entity id="20002" name="tree" multiple="true" ui:layout="table" ui:tab="carbon_pool_c_tree">
-                    <taxon highestRank="genus" id="20003" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
-                        <label>Name of Species</label>
-                    </taxon>                    
-                    <number id="20004" name="count" type="integer">
-                        <label>Count</label>
-                    </number>
-                    <number id="20005" name="seedlings" type="integer">
-                        <label>Seedlings</label>
-                    </number>
-                    <number id="20006" name="sapling" type="integer">
-                        <label>Sapling</label>
-                    </number>
-                    <number id="20007" name="rattan_2dot9m" type="integer">
-                        <label>Rattan 2.9m</label>
-                    </number>
-                    <number id="20008" name="stems" type="integer">
-                        <label>Stems</label>
-                    </number>
-                    <entity id="20009" name="rattan_gte_3m">
-                        <label>Rattan 3+M a single cluster</label>
-                        <number id="20010" name="d_max" type="real">
-                            <label>D max</label>
-                            <precision decimalDigits="2" unit="cm"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="20011" name="d_min" type="real">
-                            <label>D min</label>
-                            <precision decimalDigits="2" unit="cm"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="20012" name="d_avg" type="real">
-                            <label>D average</label>
-                            <precision decimalDigits="2" unit="cm"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="20013" name="l_avg" type="real">
-                            <label>L average</label>
-                            <precision decimalDigits="2" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                    </entity>
-                </entity>
-                
-                <entity id="20014" name="bamboo" multiple="true" ui:layout="table" ui:tab="carbon_pool_c_bamboo">
-                    <taxon highestRank="genus" id="20015" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
-                        <label>Name of Species</label>
-                    </taxon>
-                    <entity id="20016" name="clumbs_no">
-                        <label>No. of clumbs</label>
-                        <number id="20017" name="one_year" type="integer">
-                            <label>1 year</label>
-                        </number>
-                        <number id="20018" name="two_year" type="integer">
-                            <label>2 year</label>
-                        </number>
-                        <number id="20019" name="total" type="integer">
-                            <label>Total</label>
-                        </number>
-                        <number id="20020" name="live_stumps" type="integer">
-                            <label>Live stumps</label>
-                        </number>
-                    </entity>
-                    <number id="20021" name="azimuth_to_bamboo" type="integer">
-                        <label>Azimuth to bamboo</label>
-                    </number>
-                    <number id="20022" name="horizontal_distance_bamboo" type="real">
-                        <label>Horizontal Distance Bamboo</label>
-                        <precision unit="mm" decimalDigits="1"/>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                </entity>                
-            </entity>
             
-            <entity id="30000" multiple="true" name="carbon_pool_d" ui:layout="form" ui:tab="carbon_pool_d">
-                <label>Tally Sheet D - Pengamatan Tiang dan Pohon</label>
-                <number id="30001" key="true" name="record_unit" type="integer" ui:tab="carbon_pool_d_detail">
-                    <label>Record Unit</label>
-                    <compare flag="error" gt="0"/>
-                </number>
-                <code id="30002" list="province" name="province" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Province</label>
-                </code>
-                <code id="30003" list="land_system" name="land_system" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Land system</label>
-                </code>
-                <code id="30004" list="altitude" name="altitude" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Altitude</label>
-                </code>
-                <code id="30005" list="land_category" name="land_category" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Land category</label>
-                </code>
-                <code id="30006" list="forest_class" name="forest_type" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Forest type</label>
-                </code>
-                <code id="30007" list="forest_class" name="stand_condition" parent="forest_type" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Stand condition</label>
-                </code>
-                <number id="30008" name="logging_year" type="integer" ui:tab="carbon_pool_d_detail">
-                    <label>Logging year</label>
-                    <compare flag="error" gte="1900" lte="2050"/>
-                </number>
-                <code id="30009" list="terrain" name="terrain" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Terrain</label>
-                </code>
-                <code id="30010" list="slope" name="slope" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Slope</label>
-                </code>
-                <code id="30011" list="aspect" name="aspect" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Aspect</label>
-                </code>
-                <number id="30012" name="crew_no" required="false" type="integer" ui:tab="carbon_pool_d_detail">
-                    <label>Crew no.</label>
-                    <compare flag="error" gte="0"/>
-                </number>
-                <code id="30013" list="month" name="month" required="true" ui:tab="carbon_pool_d_detail">
-                    <label>Month</label>
-                </code>
-                <number id="30014" name="year" required="true" type="integer" ui:tab="carbon_pool_d_detail">
-                    <label>Year</label>
-                    <compare flag="error" gte="1900" lte="2050"/>
-                </number>
-                
-                <entity id="30015" name="enumeration" multiple="true" ui:layout="table" ui:tab="carbon_pool_d_enumeration">
-                    <taxon highestRank="genus" id="20015" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
-                        <label>Name of Species</label>
-                    </taxon>
-                    <number id="30016" name="diameter" type="real">
-                        <label>Diameter</label>
-                        <description>DBH</description>
-                        <precision decimalDigits="1" unit="cm"/>
-                    </number>
-                    <code id="30017" list="damage" name="damage">
-                        <label>Damage</label>
-                        <label type="number">15</label>
-                    </code>
-                    <number id="30018" name="buttress_height" type="real">
-                        <label>Buttress height</label>
-                        <precision decimalDigits="2" unit="cm"/>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                    <number id="30019" name="bole_height" type="real">
-                        <label>Bole height</label>
-                        <precision decimalDigits="1" unit="cm"/>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                    <number id="30020" name="tree_height" type="real">
-                        <label>Tree height</label>
-                        <precision decimalDigits="2" unit="cm"/>
-                        <compare flag="error" gt="0"/>
-                    </number>
-                    <code id="30021" name="grade" list="grade">
-                        <label>Grade</label>
-                    </code>
-                    
-                    <entity id="30022" multiple="false" name="bole_and_tree_height">
-                        <label>Bole and tree height</label>
-                        <number id="30023" name="horizontal_distance" type="real">
-                            <label>Horizontal distance</label>
-                            <precision decimalDigits="2" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="30024" name="base_height" type="real">
-                            <label>Height base</label>
-                            <precision decimalDigits="1" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="30025" name="percent_base" type="real">
-                            <label>Percent base</label>
-                            <precision decimalDigits="0" unit="percent"/>
-                        </number>
-                        <number id="30026" name="percent_crown_point" type="real">
-                            <label>Percent crown point</label>
-                            <precision decimalDigits="0" unit="percent"/>
-                        </number>
-                        <number id="30027" name="percent_top_trees" type="real">
-                            <label>Percent top trees</label>
-                            <precision decimalDigits="0" unit="percent"/>
-                        </number>
-                    </entity>
-                    
-                    <entity id="30028" name="buttress_and_diameter_above">
-                        <label>Buttress and diameters above</label>
-                        <number id="30029" name="horizontal_distance" type="real">
-                            <label>Horizontal distance 0.01m</label>
-                            <precision decimalDigits="2" unit="m"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="30030" name="percent_base" type="real">
-                            <label>Percent base</label>
-                            <precision decimalDigits="2"/>
-                        </number>
-                        <number id="30031" name="percent_buttress" type="real">
-                            <label>Percent buttress</label>
-                            <precision decimalDigits="2"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="30032" name="full_bars" type="real">
-                            <label>Full bars</label>
-                            <precision decimalDigits="2"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                        <number id="30033" name="quarter_bars" type="real">
-                            <label>1/4 bars</label>
-                            <precision decimalDigits="2"/>
-                            <compare flag="error" gt="0"/>
-                        </number>
-                    </entity>
-                    <number id="30034" name="azimuth_to_tree" type="integer">
-                        <label>Azimuth to tree</label>
-                    </number>
-                    <number id="30035" name="horizontal_distance_to_tree" type="real">
-                        <label>Horizontal distance to tree</label>
-                        <precision decimalDigits="2"/>
-                    </number>
-                </entity>
-            </entity>
+            
+            
+            
+            
+            
+            
+            
+            
         </entity>        
     </schema>
 </survey>
