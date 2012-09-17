@@ -70,7 +70,7 @@ import org.xml.sax.SAXException;
 /**
  * @author Wibowo, Eko
  */
-public class ImportIdm {
+public class ImportIdmTest {
 
 	@Autowired
 	protected SurveyDao surveyDao;

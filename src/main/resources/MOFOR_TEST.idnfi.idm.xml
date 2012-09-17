@@ -111,6 +111,20 @@
                             </ui:tab>
                         </ui:tabs>
                     </ui:tab>
+                    <ui:tab name="informasi_klaster">
+                        <ui:label>Informasi Klaster</ui:label>
+                        <ui:tabs>
+                            <ui:tab name="informasi_klaster_detail">
+                                <ui:label>Detail</ui:label>
+                            </ui:tab>
+                            <ui:tab name="informasi_klaster_lokasi">
+                                <ui:label>Lokasi</ui:label>
+                            </ui:tab>
+                            <ui:tab name="informasi_klaster_realisasi">
+                                <ui:label>Lokasi</ui:label>
+                            </ui:tab>
+                        </ui:tabs>
+                    </ui:tab>
                 </ui:tabs>
             </ui:tabDefinition>
         </ui:flex>
@@ -1733,6 +1747,509 @@
                 <item id="6">
                     <code>5</code>
                     <label>Ficus</label>
+                </item>
+            </items>
+        </list>
+        <list id="20" name="list_bpkh_propinsi_kabupaten">
+            <label type="item">BPKH</label>
+            <label type="list">Daftar BPKH</label>
+            <codingScheme scope="local"/>
+            <hierarchy>
+                <level id="1" name="list_bpkh">
+                    <label>Daftar BPKH</label>
+                </level>
+                <level id="2" name="list_propinsi">
+                    <label>Daftar Propinsi</label>
+                </level>
+                <level id="3" name="list_kabupaten">
+                    <label>Daftar Kabupaten</label>
+                </level>
+                <level id="4" name="list_kecamatan">
+                    <label>Daftar Kecamatan</label>
+                </level>
+                <level id="5" name="list_desa">
+                    <label>Daftar Desa</label>
+                </level>
+            </hierarchy>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>BPKH 1</label>
+                    <item id="1">
+                        <code>1</code>
+                        <label>Daerah Istimewa Aceh</label>                        
+                        <item id="1">
+                            <code>1</code>
+                            <label>Aceh Barat</label>
+                            <item id="1">
+                                <code>1</code>
+                                <label>Kecamatan 1</label>
+                                <item id="1">
+                                    <code>1</code>
+                                    <label>Desa 1</label>
+                                </item>
+                            </item>
+                        </item>
+                        <item id="2">
+                            <code>2</code>
+                            <label>Aceh Barat Daya</label>
+                            <item id="1">
+                                <code>1</code>
+                                <label>Kecamatan 1</label>
+                                <item id="1">
+                                    <code>1</code>
+                                    <label>Desa 1</label>
+                                </item>
+                            </item>
+                        </item>
+                        <item id="3">
+                            <code>3</code>
+                            <label>Aceh Besar</label>
+                        </item>
+                        <item id="4">
+                            <code>4</code>
+                            <label>Aceh Jaya</label>
+                        </item>
+                        <item id="5">
+                            <code>5</code>
+                            <label>Aceh Selatan</label>
+                        </item>
+                        <item id="6">
+                            <code>6</code>
+                            <label>Aceh Singkil</label>
+                        </item>
+                        <item id="7">
+                            <code>7</code>
+                            <label>Aceh Tamiang</label>
+                        </item>
+                        <item id="8">
+                            <code>8</code>
+                            <label>Aceh Tengah</label>
+                        </item>
+                        <item id="9">
+                            <code>9</code>
+                            <label>Aceh Tenggara</label>
+                        </item>
+                        <item id="10">
+                            <code>10</code>
+                            <label>Aceh Timur</label>
+                        </item>
+                        <item id="11">
+                            <code>11</code>
+                            <label>Aceh Utara</label>
+                        </item>              
+                        <item id="12">
+                            <code>12</code>
+                            <label>Bener Meriah</label>
+                        </item>
+                        <item id="13">
+                            <code>13</code>
+                            <label>Bireuen</label>
+                        </item>
+                        <item id="14">
+                            <code>14</code>
+                            <label>Gayo Lues</label>
+                        </item>
+                        <item id="15">
+                            <code>15</code>
+                            <label>Nagan Raya</label>
+                        </item>
+                        <item id="16">
+                            <code>16</code>
+                            <label>Pidie</label>
+                        </item>
+                        <item id="17">
+                            <code>17</code>
+                            <label>Pidie Jaya</label>
+                        </item>
+                        <item id="18">
+                            <code>18</code>
+                            <label>Simeulue</label>
+                        </item>
+                        <item id="19">
+                            <code>19</code>
+                            <label>Kota Banda Aceh</label>
+                        </item>
+                        <item id="20">
+                            <code>20</code>
+                            <label>Kota Langsa</label>
+                        </item>
+                        <item id="21">
+                            <code>21</code>
+                            <label>Kota Lhokseumawe</label>
+                        </item>
+                        <item id="22">
+                            <code>22</code>
+                            <label>Kota Sabang</label>
+                        </item>
+                        <item id="23">
+                            <code>23</code>
+                            <label>Kota Subulussalam</label>
+                        </item>
+                    </item>
+                    <item id="2">
+                        <code>2</code>
+                        <label>Sumatera Utara</label>
+                    </item>
+                    <item id="3">
+                        <code>3</code>
+                        <label>Sumatera Barat</label>
+                    </item>
+                </item>
+
+                <item id="2">
+                    <code>2</code>
+                    <label>BPKH 2</label>
+                    <item id="6">
+                        <code>6</code>
+                        <label>Sumatera Selatan</label>
+                    </item>
+                    <item id="7">
+                        <code>7</code>
+                        <label>Lampung</label>
+                    </item>
+                    <item id="8">
+                        <code>8</code>
+                        <label>Bengkulu</label>
+                    </item>
+                </item>
+                
+                <item id="3">
+                    <code>3</code>
+                    <label>BPKH 3</label>
+                    <item id="18">
+                        <code>18</code>
+                        <label>Kalimantan Barat</label>
+                    </item>
+                </item>
+                
+                <item id="4">
+                    <code>4</code>
+                    <label>BPKH 4</label>
+                    <item id="21">
+                        <code>21</code>
+                        <label>Kalimantan Timur</label>
+                    </item>
+                </item>
+                
+                <item id="5">
+                    <code>5</code>
+                    <label>BPKH 5</label>
+                    <item id="19">
+                        <code>19</code>
+                        <label>Kalimantan Tengah</label>
+                    </item>
+                    <item id="20">
+                        <code>20</code>
+                        <label>Kalimantan Selatan</label>
+                    </item>
+                </item>
+                
+                <item id="6">
+                    <code>6</code>
+                    <label>BPKH 6</label>
+                    <item id="22">
+                        <code>22</code>
+                        <label>Sulawesi Utara</label>
+                    </item>
+                    <item id="32">
+                        <code>32</code>
+                        <label>Maluku Utara</label>
+                    </item>
+                </item>
+                
+                <item id="7">
+                    <code>7</code>
+                    <label>BPKH VII</label>
+                    <item id="24">
+                        <code>24</code>
+                        <label>Sulawesi Tenggara</label>
+                    </item>
+                    <item id="25">
+                        <code>25</code>
+                        <label>Sulawesi Selatan</label>
+                    </item>
+                    <item id="31">
+                        <code>31</code>
+                        <label>Sulawesi Barat</label>
+                    </item>
+                </item>
+                
+                <item id="8">
+                    <code>8</code>
+                    <label>BPKH VIII</label>
+                    <item id="14">
+                        <code>14</code>
+                        <label>Bali</label>
+                    </item>
+                    <item id="15">
+                        <code>15</code>
+                        <label>Nusa Tenggara Barat</label>
+                    </item>
+                </item>
+                
+                <item id="9">
+                    <code>9</code>
+                    <label>BPKH IX</label>
+                    <item id="26">
+                        <code>26</code>
+                        <label>Maluku</label>
+                    </item>
+                </item>
+                
+                <item id="10">
+                    <code>10</code>
+                    <label>BPKH X</label>
+                    <item id="27">
+                        <code>27</code>
+                        <label>Irian Jaya</label>
+                    </item>
+                </item>
+                
+                <item id="11">
+                    <code>11</code>
+                    <label>BPKH XI</label>
+                    <item id="9">
+                        <code>9</code>
+                        <label>Banten</label>
+                    </item>
+                    <item id="10">
+                        <code>10</code>
+                        <label>Jawa Barat</label>
+                    </item>
+                    <item id="11">
+                        <code>11</code>
+                        <label>Jawa Tengah</label>
+                    </item>
+                    <item id="12">
+                        <code>12</code>
+                        <label>DIY</label>
+                    </item>
+                    <item id="13">
+                        <code>13</code>
+                        <label>Jawa Timur</label>
+                    </item>
+                </item>
+                
+                <item id="12">
+                    <code>12</code>
+                    <label>BPKH XII</label>
+                    <item id="4">
+                        <code>4</code>
+                        <label>Riau</label>                        
+                    </item>
+                    <item id="28">
+                        <code>28</code>
+                        <label>Kepulauan Riau</label>
+                    </item>
+                </item>
+                
+                <item id="13">
+                    <code>13</code>
+                    <label>BPKH XIII</label>
+                    <item id="5">
+                        <code>5</code>
+                        <label>Jambi</label>
+                    </item>
+                    <item id="29">
+                        <code>29</code>
+                        <label>Bangka Belitung</label>
+                    </item>
+                </item>
+                
+                <item id="14">
+                    <code>14</code>
+                    <label>BPKH XIV</label>
+                    <item id="16">
+                        <code>16</code>
+                        <label>Nusa Tenggara Timur</label>
+                    </item>
+                    <item id="17">
+                        <code>17</code>
+                        <label>Timor Timur</label>
+                    </item>
+                </item>
+                
+                <item id="15">
+                    <code>15</code>
+                    <label>BPKH XV</label>
+                    <item id="30">
+                        <code>30</code>
+                        <label>Gorontalo</label>
+                    </item>
+                </item>
+                
+                <item id="16">
+                    <code>16</code>
+                    <label>BPKH XVI</label>
+                    <item id="23">
+                        <code>23</code>
+                        <label>Sulawesi Tengah</label>
+                    </item>
+                </item>
+                
+                <item id="17">
+                    <code>17</code>
+                    <label>BPKH XVII</label>
+                    <item id="33">
+                        <code>33</code>
+                        <label>Irian Barat</label>
+                    </item>
+                </item></items>
+        </list>
+        <list id="18" name="list_kondisi_plot">
+            <label type="item">Kondisi Plot</label>
+            <label type="list">Daftar Kondisi Plot</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Lama</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Baru</label>
+                </item>
+            </items>
+        </list>
+        <list id="19" name="list_koreksi_plot">
+            <label type="item">Koreksi</label>
+            <label type="list">Daftar Koreksi</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Ya</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Tidak</label>
+                </item>
+            </items>
+        </list>
+        <list id="21" name="list_lokasi_ditemukan">
+            <label type="item">Status</label>
+            <label type="list">Lokasi ditemukan</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Ya</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Tidak</label>
+                </item>
+            </items>
+        </list>
+        <list id="22" name="list_pohon_sesuai_enumerasi">
+            <label type="item">Status</label>
+            <label type="list">Pohon sesuai dengan enumerasi reguler</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Ya</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Tidak</label>
+                </item>
+            </items>
+        </list>
+        <list id="23" name="list_kondisi_tegakan">
+            <label type="item">Status</label>
+            <label type="list">Kondisi tegakan/penutupan lahan</label>
+            <items>
+                <item id="0">
+                    <code>0</code>
+                    <label>Tidak berubah</label>
+                </item>
+                <item id="1">
+                    <code>1</code>
+                    <label>HTI</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Kebun/ladang</label>
+                </item>
+                <item id="3">
+                    <code>3</code>
+                    <label>Terbakar</label>
+                </item>
+                <item id="4">
+                    <code>4</code>
+                    <label>Lokasi penebangan</label>
+                </item>
+                <item id="5">
+                    <code>5</code>
+                    <label>Lain-lain</label>
+                </item>
+            </items>
+        </list>
+        <list id="24" name="list_buku_laporan">
+            <label type="item">Status</label>
+            <label type="list">Buku laporan/tally sheet</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Ya</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Tidak</label>
+                </item>
+            </items>
+        </list>
+        <list id="25" name="list_entry_data">
+            <label type="item">Status</label>
+            <label type="list">Entry data</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Ya</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Tidak</label>
+                </item>
+            </items>
+        </list>
+        <list id="26" name="list_perbaikan_data">
+            <label type="item">Status</label>
+            <label type="list">Perbaikan data/koreksi</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Ya</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Tidak</label>
+                </item>
+            </items>
+        </list>
+        <list id="27" name="list_bisa_diproses">
+            <label type="item">Status</label>
+            <label type="list">Data bisa diproses</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Ya</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Tidak</label>
+                </item>
+            </items>
+        </list>
+        <list id="28" name="list_validasi">
+            <label type="item">Status</label>
+            <label type="list">Validasi</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Ya</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Tidak</label>
                 </item>
             </items>
         </list>
@@ -3459,6 +3976,179 @@
                         <label>Horizontal distance to tree</label>
                         <precision decimalDigits="2"/>
                     </number>
+                </entity>
+            </entity>
+            <entity id="8000" name="informasi_klaster" ui:layout="form" ui:tab="informasi_klaster">
+                <label type="heading">Informasi Klaster</label>                
+                <text id="8001" name="ketua_regu" ui:tab="informasi_klaster_detail">
+                    <label>Ketua Regu</label>
+                </text>  
+                <text id="8031" name="description" type="memo" ui:tab="informasi_klaster_detail">
+                    <label>Keterangan</label>
+                </text>
+                
+                <code id="7000" list="list_bpkh_propinsi_kabupaten" name="bpkh" required="true" ui:tab="informasi_klaster_lokasi">
+                    <label>BPKH</label>
+                </code>
+                <code id="7001" list="list_bpkh_propinsi_kabupaten" name="propinsi" parent="bpkh" required="true" ui:tab="informasi_klaster_lokasi">
+                    <label>Propinsi</label>
+                </code>
+                <code id="7002" list="list_bpkh_propinsi_kabupaten" name="kabupaten" parent="propinsi" required="true" ui:tab="informasi_klaster_lokasi">
+                    <label>Kabupaten</label>
+                </code>
+                <code id="7003" list="list_bpkh_propinsi_kabupaten" name="kecamatan" parent="kabupaten" required="true" ui:tab="informasi_klaster_lokasi">
+                    <label>Kecamatan</label>
+                </code>
+                <code id="7004" list="list_bpkh_propinsi_kabupaten" name="desa" parent="kecamatan" required="true" ui:tab="informasi_klaster_lokasi">
+                    <label>Desa</label>
+                </code>
+                
+                <text id="8003" name="rph" ui:tab="informasi_klaster_lokasi">
+                    <label>RPH</label>
+                </text>
+                <text id="8004" name="bkph" ui:tab="informasi_klaster_lokasi">
+                    <label>BKPH</label>
+                </text>
+                <text id="8005" name="cdk" ui:tab="informasi_klaster_lokasi">
+                    <label>CDK</label>
+                </text>
+                <text id="8006" name="hph" ui:tab="informasi_klaster_lokasi">
+                    <label>HPH</label>
+                </text>
+                <entity id="8007" name="akses_lokasi" ui:tab="informasi_klaster_lokasi">
+                    <label type="heading">Akses ke Lokasi</label>
+                    <text id="8008" name="rute_1">
+                        <label type="number">1</label>
+                        <label>Rute 1</label>
+                    </text>
+                    <text id="8009" name="rute_2">
+                        <label type="number">2</label>
+                        <label>Rute 2</label>
+                    </text>
+                    <text id="8010" name="rute_3">
+                        <label type="number">3</label>
+                        <label>Rute 3</label>
+                    </text>
+                    <text id="8011" name="rute_4">
+                        <label type="number">4</label>
+                        <label>Rute 4</label>
+                    </text>
+                </entity>
+                
+                <entity id="8012" name="titik_ikat" ui:tab="informasi_klaster_lokasi">
+                    <label type="heading">Titik Ikat</label>
+                    <text id="8013" name="titk_ikat_lokasi">
+                        <label>Lokasi</label>
+                    </text>
+                    <entity id="8014" name="titik_ikat_koordinat" ui:tab="informasi_klaster_lokasi">
+                        <label type="heading">Koordinat</label>
+                        <number id="8015" key="true" name="utm_zone" required="true" type="integer">
+                            <label>UTM zone</label>
+                            <description>Valid UTM Zone between 46 and 54</description>
+                            <compare flag="error" gte="46" lte="54"/>
+                        </number>
+                        <number id="8016" key="true" name="easting" required="true" type="integer">
+                            <label>W-E</label>
+                            <description>Valid UTM easting between 166 and 834</description>
+                            <compare flag="error" gte="166" lte="834"/>
+                        </number>
+                        <number id="8017" key="true" name="northing" required="true" type="integer">
+                            <label>S-N</label>
+                            <description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
+                            <check expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)" flag="error">
+                                <message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</message>
+                                <message xml:lang="id"/>
+                            </check>
+                        </number>    
+                    </entity>
+                    <entity id="8018" name="titik_ikat_posisi" ui:tab="informasi_klaster_lokasi">
+                        <label type="heading">Posisi</label>
+                        <number id="8019" key="true" name="jarak" required="true" type="real">
+                            <label>Jarak</label>
+                        </number>
+                        <number id="8020" key="true" name="azimut" required="true" type="integer">
+                            <label>Azimut</label>
+                        </number>
+                    </entity>                    
+                </entity>
+                <entity id="8021" name="titik_pusat_klaster" ui:tab="informasi_klaster_lokasi">
+                    <label type="heading">Koordinat Titik Pusat Klaster</label>
+                    <number id="8022" key="true" name="utm_zone" required="true" type="integer">
+                        <label>UTM zone</label>
+                        <description>Valid UTM Zone between 46 and 54</description>
+                        <compare flag="error" gte="46" lte="54"/>
+                    </number>
+                    <number id="8023" key="true" name="easting" required="true" type="integer">
+                        <label>W-E</label>
+                        <description>Valid UTM easting between 166 and 834</description>
+                        <compare flag="error" gte="166" lte="834"/>
+                    </number>
+                    <number id="8024" key="true" name="northing" required="true" type="integer">
+                        <label>S-N</label>
+                        <description>Valid UTM northing between 0 and 750 or between 8670 and 9999</description>
+                        <check expr="($this &gt;= 0 and $this &lt;= 750) or ($this &gt;= 8670 and $this &lt;= 9999)" flag="error">
+                            <message xml:lang="en">The northing value must be between 0 and 750 or between 8670 and 9999</message>
+                            <message xml:lang="id"/>
+                        </check>
+                    </number>
+                </entity>
+                <entity id="8025" name="pergeseran_klaster" ui:tab="informasi_klaster_lokasi">
+                    <label type="heading">Pergeseran Klaster</label>
+                    <number id="8026" key="true" name="jarak" required="true" type="real">
+                        <label>Jarak</label>
+                    </number>
+                    <number id="8027" key="true" name="azimut" required="true" type="integer">
+                        <label>Azimut</label>
+                    </number>
+                </entity>
+                <entity id="8028" name="kondisi_plot" ui:tab="informasi_klaster_lokasi">
+                    <label type="heading">Kondisi Plot Klaster</label>
+                    <code id="8029" name="lama_baru" list="list_kondisi_plot">
+                        <label>Lama/Baru</label>
+                    </code>
+                    <code id="8030" name="koreksi" list="list_koreksi_plot">
+                        <label>Koreksi</label>
+                    </code>
+                </entity>
+
+                <entity id="9000" name="informasi_klaster_realisasi" ui:tab="informasi_klaster_realisasi">
+                    <label type="heading">Realisasi / Pelaksanaan</label>
+                    <number id="9001" name="tahun_anggaran_awal" required="true" type="integer">
+                        <label>Tahun anggaran mulai</label>
+                        <compare flag="error" gte="1900" lte="2050"/>
+                    </number>
+                    <number id="9002" name="tahun_anggaran_akhir" required="true" type="integer">
+                        <label>Tahun anggaran akhir</label>
+                        <compare flag="error" gte="1900" lte="2050"/>
+                    </number>
+                    <code id="9003" name="lokasi_ditemukan" list="list_lokasi_ditemukan">
+                        <label>Lokasi ditemukan</label>
+                    </code>
+                    <code id="9004" name="pohon_sesuai_enumerasi" list="list_pohon_sesuai_enumerasi">
+                        <label>Pohon sesuai dengan enumerasi reguler</label>
+                    </code>
+                    <code id="9005" name="kondisi_tegakan" list="list_kondisi_tegakan">
+                        <label>Kondisi tegakan/penutupan lahan</label>
+                    </code>                    
+                </entity>
+                
+                <entity id="9006" name="pelaporan_pengolahan_data" ui:tab="informasi_klaster_realisasi">
+                    <label type="heading">Pelaporan dan Pengolahan Data</label>
+                    <code id="9009" name="buku_laporan" list="list_buku_laporan">
+                        <label>Buku laporan/tally sheet</label>
+                    </code>
+                    <code id="9010" name="entry_data" list="list_entry_data">
+                        <label>Entry data</label>
+                    </code>
+                    <code id="9011" name="perbaikan_data" list="list_perbaikan_data">
+                        <label>Perbaikan data/koreksi</label>
+                    </code>                    
+                    <code id="9013" name="bisa_diproses" list="list_bisa_diproses">
+                        <label>Data bisa diproses</label>
+                    </code>
+                    <code id="9014" name="validasi" list="list_validasi">
+                        <label>Validasi</label>
+                    </code>
                 </entity>
             </entity>
         </entity>        
