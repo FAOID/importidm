@@ -86,8 +86,22 @@
                             </ui:tab>
                         </ui:tabs>
                     </ui:tab>
+                    <ui:tab name="carbon_pool_a">
+                        <ui:label>Carbon Pool A</ui:label>
+                        <ui:tabs>
+                            <ui:tab name="carbon_pool_a_detail">
+                                <ui:label>Detail</ui:label>
+                            </ui:tab>
+                            <!--<ui:tab name="carbon_pool_a_rute">
+                                <ui:label>Sketsa Rute</ui:label>
+                            </ui:tab>-->
+                        </ui:tabs>                        
+                    </ui:tab>
+                    <ui:tab name="carbon_pool_b">
+                        <ui:label>Carbon Pool B</ui:label>
+                    </ui:tab>
                     <ui:tab name="carbon_pool_c">
-                        <ui:label>Carbon pool C</ui:label>
+                        <ui:label>Carbon Pool C</ui:label>
                         <ui:tabs>
                             <ui:tab name="carbon_pool_c_detail">
                                 <ui:label>Details</ui:label>
@@ -101,7 +115,7 @@
                         </ui:tabs>
                     </ui:tab>
                     <ui:tab name="carbon_pool_d">
-                        <ui:label>Carbon pool D</ui:label>
+                        <ui:label>Carbon Pool D</ui:label>
                         <ui:tabs>
                             <ui:tab name="carbon_pool_d_detail">
                                 <ui:label>Details</ui:label>
@@ -111,6 +125,14 @@
                             </ui:tab>
                         </ui:tabs>
                     </ui:tab>
+                    
+                    <ui:tab name="carbon_pool_e">
+                        <ui:label>Carbon Pool E</ui:label>
+                    </ui:tab>
+                    <ui:tab name="carbon_pool_f">
+                        <ui:label>Carbon Pool F</ui:label>
+                    </ui:tab>
+                    
                     <ui:tab name="informasi_klaster">
                         <ui:label>Informasi Klaster</ui:label>
                         <ui:tabs>
@@ -2253,6 +2275,20 @@
                 </item>
             </items>
         </list>
+        <list id="29" name="list_tingkat_pelapukan">
+            <label type="item">Status</label>
+            <label type="list">Tingkat pelapukan</label>
+            <items>
+                <item id="1">
+                    <code>1</code>
+                    <label>Lapuk</label>
+                </item>
+                <item id="2">
+                    <code>2</code>
+                    <label>Segar</label>
+                </item>
+            </items>
+        </list>
     </codeLists>
     <units>
         <unit dimension="angle" id="1" name="deg">
@@ -2262,6 +2298,10 @@
         <unit conversionFactor="10.0" dimension="volume" id="2" name="kg">
             <label>kilogram</label>
             <abbreviation>kg</abbreviation>
+        </unit>
+        <unit conversionFactor="1.0" dimension="volume" id="10" name="gr">
+            <label>gram</label>
+            <abbreviation>gr</abbreviation>
         </unit>
         <unit conversionFactor="1.0" dimension="length" id="3" name="m">
             <label>metres</label>
@@ -3752,6 +3792,69 @@
                     </number>
                 </entity>
             </entity>
+            
+            <entity id="355001" name="carbon_pool_a" ui:tab="carbon_pool_a" multiple="true" ui:layout="form">                                
+                <!-- <entity id="355008" name="pengukuran_jarak" ui:tab="carbon_pool_a_detail">-->
+                    <label>Talysheet A - Pengukuran jarak antara titik ikat dan titik pusat plot</label>                    
+                    <text id="355002" name="patok" key="true" ui:tab="carbon_pool_a_detail">
+                        <label>Patok</label>                  
+                    </text>                
+                    <number id="355003" name="azimut" type="real" ui:tab="carbon_pool_a_detail">
+                        <label>Azimut</label>
+                        <precision decimalDigits="2" unit="deg"/>
+                    </number>
+                    <number id="355004" name="jarak_lapangan" type="real" ui:tab="carbon_pool_a_detail">
+                        <label>Jarak lapangan</label>
+                        <precision decimalDigits="2" unit="m"/>
+                    </number>
+                    <number id="355005" name="helling" type="real" ui:tab="carbon_pool_a_detail">
+                        <label>Helling</label>
+                        <precision decimalDigits="2" unit="deg"/>
+                    </number>
+                    <number id="355007" name="jarak_datar" type="real" ui:tab="carbon_pool_a_detail">
+                        <label>Jarak datar</label>
+                        <precision decimalDigits="2" unit="m"/>
+                    </number>
+                    <text id="355006" name="keterangan" ui:tab="carbon_pool_a_detail">
+                        <label>Keterangan</label>
+                    </text>
+                <!--</entity>-->
+                
+                <!--
+                <text id="355008" name="sketsa" type="memo" ui:tab="carbon_pool_a_rute">
+                    <label>Sketsa rute menuju titik pusat plot contoh</label>                
+                </text>
+                -->
+            </entity>
+            
+            <entity id="356001" name="carbon_pool_b" ui:layout="form" ui:tab="carbon_pool_b" multiple="true">                                
+                <label>Talysheet B - Pengukuran Batas Plot Contoh</label>                    
+                <text id="356002" name="patok" key="true">
+                    <label>Patok</label>                  
+                </text>                
+                <number id="356003" name="azimut" type="real" >
+                    <label>Azimut</label>
+                    <precision decimalDigits="2" unit="deg"/>
+                </number>
+                <number id="356004" name="jarak_lapangan" type="real" >
+                    <label>Jarak lapangan</label>
+                    <precision decimalDigits="2" unit="m"/>
+                </number>
+                <number id="356005" name="helling" type="real" >
+                    <label>Helling</label>
+                    <precision decimalDigits="2" unit="deg"/>
+                </number>
+                <text id="356006" name="keterangan">
+                    <label>Keterangan</label>
+                </text>
+            </entity>
+            
+            <!--
+            <entity  id="356001" name="sketsa" ui:tab="carbon_pool_a">
+                
+            </entity>   
+            -->
+            
             <entity id="20000" multiple="true" name="carbon_pool_c" ui:layout="form" ui:tab="carbon_pool_c">
                 <label>Tally Sheet C - Pengukuran Semai dan Pacang</label>
                 <number id="20001" key="true" name="record_unit" type="integer" ui:tab="carbon_pool_c_detail">
@@ -3885,7 +3988,7 @@
                 </number>
                 
                 <entity id="30015" name="enumeration" multiple="true" ui:layout="table" ui:tab="carbon_pool_d_enumeration">
-                    <taxon highestRank="genus" id="20015" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
+                    <taxon highestRank="genus" id="300150" name="species" qualifiers="()parent/()parent/province" required="true" taxonomy="mofor_species">
                         <label>Name of Species</label>
                     </taxon>
                     <number id="30016" name="diameter" type="real">
@@ -3978,6 +4081,68 @@
                     </number>
                 </entity>
             </entity>
+            
+            <entity id="377000" name="carbon_pool_e" ui:layout="form" ui:tab="carbon_pool_e" multiple="true">                
+                <label>Talysheet E - Pengukuran Kayu Mati</label>                    
+                <text id="377002" name="nomor" key="true">
+                    <label>No</label>                  
+                </text>                
+                <number id="377003" name="d1" type="real" >
+                    <label>D1</label>
+                    <precision decimalDigits="2" unit="cm"/>
+                </number>
+                <number id="377004" name="d2" type="real" >
+                    <label>D2</label>
+                    <precision decimalDigits="2" unit="cm"/>
+                </number>
+                <number id="377005" name="d_rata2" type="real" >
+                    <label>D rata-rata</label>
+                    <precision decimalDigits="2" unit="cm"/>
+                </number>
+                <number id="377006" name="t" type="real">
+                    <label>T</label>
+                    <precision decimalDigits="2" unit="m"/>
+                </number>
+                
+                <code id="377007" name="tingkat_pelapukan" list="list_tingkat_pelapukan">
+                    <label>Tingkat pelapukan</label>                    
+                </code>
+            </entity>
+            
+            <entity id="399000" name="carbon_pool_f" ui:layout="form" ui:tab="carbon_pool_f" multiple="true">                
+                <label>Talysheet F - Pengukuran Tumbuhan Bawah (understory)</label>                    
+                <number id="399002" name="subplot" type="integer" key="true">
+                    <label>Sub-plot</label>                  
+                </number>                
+                <number id="399003" name="kuadran" type="integer" key="true">
+                    <label>Kuadran</label>
+                </number>
+                
+                <entity id="399901" name="berat_basah_sampel">
+                    <label>Berat basar sampel(gram)</label>
+                    <number id="399004" name="batang" type="real" >
+                        <label>Batang</label>
+                        <precision decimalDigits="4" unit="gr"/>
+                    </number>
+                    <number id="399005" name="daun" type="real" >
+                        <label>Daun</label>
+                        <precision decimalDigits="4" unit="gr"/>
+                    </number>
+                </entity>
+                
+                <entity id="399902" name="berat_basah_sub_sampel">
+                    <label>Berat basar sub-sampel(gram)</label>
+                    <number id="399006" name="batang" type="real" >
+                        <label>Batang</label>
+                        <precision decimalDigits="4" unit="gr"/>
+                    </number>
+                    <number id="399007" name="daun" type="real" >
+                        <label>Daun</label>
+                        <precision decimalDigits="4" unit="gr"/>
+                    </number>
+                </entity>
+            </entity>
+            
             <entity id="8000" name="informasi_klaster" ui:layout="form" ui:tab="informasi_klaster">
                 <label type="heading">Informasi Klaster</label>                
                 <text id="8001" name="ketua_regu" ui:tab="informasi_klaster_detail">

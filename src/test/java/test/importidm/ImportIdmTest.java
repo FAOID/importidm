@@ -329,9 +329,9 @@ public class ImportIdmTest {
 		InputStream is = ClassLoader.getSystemResource("MOFOR_TEST.idnfi.idm.xml").openStream();
 		CollectIdmlBindingContext idmlBindingContext = surveyDao.getBindingContext();
 		SurveyUnmarshaller surveyUnmarshaller = idmlBindingContext.createSurveyUnmarshaller();
-		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);
+		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);		
 		survey.setName("idnfi");
-		survey.setUri("http://www.openforis.org/idm/idnfi");		
+		survey.setUri("http://www.openforis.org/idm/idnfi");
 		surveyDao.updateModel(survey);
 	}
 
