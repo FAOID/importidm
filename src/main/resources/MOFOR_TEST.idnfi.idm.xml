@@ -121,7 +121,7 @@
                                 <ui:label>Lokasi</ui:label>
                             </ui:tab>
                             <ui:tab name="informasi_klaster_realisasi">
-                                <ui:label>Lokasi</ui:label>
+                                <ui:label>Realisasi dan Pelaporan</ui:label>
                             </ui:tab>
                         </ui:tabs>
                     </ui:tab>
