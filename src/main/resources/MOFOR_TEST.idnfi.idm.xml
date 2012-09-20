@@ -129,8 +129,18 @@
                     <ui:tab name="carbon_pool_e">
                         <ui:label>Carbon Pool E</ui:label>
                     </ui:tab>
+                    
                     <ui:tab name="carbon_pool_f">
                         <ui:label>Carbon Pool F</ui:label>
+                    </ui:tab>
+                    
+                    <ui:tab name="carbon_pool_g">
+                        <ui:label>Carbon Pool G</ui:label>
+                    </ui:tab>                    
+                    
+                    
+                    <ui:tab name="carbon_pool_h">
+                        <ui:label>Carbon Pool H</ui:label>
                     </ui:tab>
                     
                     <ui:tab name="informasi_klaster">
@@ -4119,7 +4129,7 @@
                 </number>
                 
                 <entity id="399901" name="berat_basah_sampel">
-                    <label>Berat basar sampel(gram)</label>
+                    <label>Berat basah sampel</label>
                     <number id="399004" name="batang" type="real" >
                         <label>Batang</label>
                         <precision decimalDigits="4" unit="gr"/>
@@ -4131,7 +4141,7 @@
                 </entity>
                 
                 <entity id="399902" name="berat_basah_sub_sampel">
-                    <label>Berat basar sub-sampel(gram)</label>
+                    <label>Berat basah sub-sampel</label>
                     <number id="399006" name="batang" type="real" >
                         <label>Batang</label>
                         <precision decimalDigits="4" unit="gr"/>
@@ -4141,6 +4151,57 @@
                         <precision decimalDigits="4" unit="gr"/>
                     </number>
                 </entity>
+            </entity>
+            
+            <entity id="366000" name="carbon_pool_g" ui:layout="form" ui:tab="carbon_pool_g" multiple="true">                
+                <label>Talysheet G - Pengukuran Seserah</label>
+                <number id="366002" name="subplot" type="integer" key="true">
+                    <label>Sub-plot</label>                  
+                </number>                
+                <number id="366003" name="kuadran" type="integer" key="true">
+                    <label>Kuadran</label>
+                </number>
+                
+                <number id="366004" name="berat_basah_sampel" type="real" >
+                    <label>Berat basah sampel</label>
+                    <precision decimalDigits="4" unit="gr"/>
+                </number>
+                
+                <number id="366005" name="berat_basah_subsampel" type="real" >
+                    <label>Berat basah sub-sampel</label>
+                    <precision decimalDigits="4" unit="gr"/>
+                </number>
+                            
+            </entity>
+            
+            
+            
+            <entity id="311000" name="carbon_pool_h" ui:layout="form" ui:tab="carbon_pool_h" multiple="true">                
+                <label>Talysheet H - Pengukuran Karbon Tanah</label>
+                <number id="311004" name="sub_plot" type="integer" key="true">
+                    <label>Sub-plot</label>
+                    <precision decimalDigits="0" unit="cm"/>
+                </number>
+                <number id="311002" name="awal_kedalaman" type="integer" key="true">
+                    <label>Batas awal kedalaman </label>    
+                    <precision decimalDigits="0" unit="cm"/>
+                </number>                
+                <number id="311003" name="akhir_kedalaman" type="integer" key="true">
+                    <label>Batas akhir kedalaman</label>
+                    <precision decimalDigits="0" unit="cm"/>
+                </number>
+                
+                
+                
+                <number id="311005" name="berat_basah_sampel" type="real" >
+                    <label>Berat basah sampel tanah(gram)</label>
+                    <precision decimalDigits="4" unit="gr"/>
+                </number>
+                
+                <number id="311006" name="berat_basah_subsampel" type="real" >
+                    <label>Berat basah sub-sampel tanah(gram)</label>
+                    <precision decimalDigits="4" unit="gr"/>
+                </number>
             </entity>
             
             <entity id="8000" name="informasi_klaster" ui:layout="form" ui:tab="informasi_klaster">

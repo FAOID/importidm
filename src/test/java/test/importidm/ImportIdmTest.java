@@ -332,6 +332,7 @@ public class ImportIdmTest {
 		CollectSurvey survey = (CollectSurvey) surveyUnmarshaller.unmarshal(is);		
 		survey.setName("idnfi");
 		survey.setUri("http://www.openforis.org/idm/idnfi");
+		surveyDao.clearModel();
 		surveyDao.updateModel(survey);
 	}
 
