@@ -4194,12 +4194,12 @@
                 
                 
                 <number id="311005" name="berat_basah_sampel" type="real" >
-                    <label>Berat basah sampel tanah(gram)</label>
+                    <label>Berat basah sampel tanah</label>
                     <precision decimalDigits="4" unit="gr"/>
                 </number>
                 
                 <number id="311006" name="berat_basah_subsampel" type="real" >
-                    <label>Berat basah sub-sampel tanah(gram)</label>
+                    <label>Berat basah sub-sampel tanah</label>
                     <precision decimalDigits="4" unit="gr"/>
                 </number>
             </entity>
